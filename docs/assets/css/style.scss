@@ -1,6 +1,7 @@
 ---
 ---
-@import "just-the-docs";
+@import "support/support";
+@import "custom/custom";
 
 /* Simple toggle to hide/show sidebar */
 #sidebar-toggle:checked + .main-content {
