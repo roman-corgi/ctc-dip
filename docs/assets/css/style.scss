@@ -2,35 +2,39 @@
 ---
 @import "jekyll-theme-minimal";
 
+/* 1. Force the content container to use the full screen width */
+.wrapper {
+  max-width: 95%; /* Allow images to expand */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 2. Style the header as an OVERLAY drawer (not a column) */
 @media screen and (min-width: 640px) {
   header {
-    width: 200px;
+    width: 250px;
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
-    padding: 20px;
-    background: #f4f4f4;
-    transition: transform 0.3s ease;
-    z-index: 100;
+    z-index: 1000;
+    background: #fff;
+    border-right: 1px solid #eee;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    
+    /* The "Tuck Away" logic */
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-240px); /* Leave 10px visible as a 'handle' */
   }
 
-  /* To 'hide' it, we shift it left. 
-     You can trigger this with a hover or a checkbox hack */
   header:hover {
-    transform: translateX(0);
-  }
-  
-  header:not(:hover) {
-    transform: translateX(-180px); /* Leave a tiny sliver visible */
+    transform: translateX(0); /* Slide out OVER the content */
   }
 
+  /* 3. Remove the theme's default side-by-side float */
   section {
-    margin-left: 50px; /* Space for the collapsed sliver */
-    transition: margin-left 0.3s ease;
-  }
-
-  header:hover ~ section {
-    margin-left: 220px; /* Push content over when expanded */
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
   }
 }
