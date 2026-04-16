@@ -1,0 +1,4 @@
+<configuration>
+  <l1_eng_a.outdir location="/tmp/dummy.txt"/>
+  <l2_eng_a.outdir location="/tmp/dummy.txt"/>
+</configuration>

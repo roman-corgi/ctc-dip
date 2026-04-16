@@ -1,0 +1,71 @@
+digraph AbstractDesign
+{
+  graph [splines="ortho", rankdir=LR];
+
+  l1_l2a [label="Transmutation\nl1 to L2a", shape="circle"];
+  l2a_demux [label="Demux\nExposure" shape="circle"];
+  l2a_l2b [label="Transmutation\nL2a to L2b", shape="circle"];
+  l2b_mux [label="Mux\nExposure", shape="circle"];
+  l2b_l3 [label="Transmutation\nL2b to L3", shape="circle"];
+  l3_l4 [label="Transmutation\nL3 to L4", shape="circle"];
+        
+  l1_data [label="L1 products", shape="rectangle"];
+  l1_cal [label="L1 calibration", shape="cds"];
+  l1_man [label="L1 manifest 1..1", shape="ellipse"];
+
+  l2a_data [label="L2a products", shape="rectangle"];
+  l2a_cal [label="L2a calibration", shape="cds"];
+  l2a_man [label="L2a manifest 1..1", shape="ellipse"];
+  l2a_log [label="L2a log 1..1", shape="ellipse"];
+
+  l2a_man_demux [label="L2a(E) manifest 1..1", shape="ellipse"];
+  
+  l2b_data [label="L2b products", shape="rectangle"];
+  l2b_cal [label="L2b calibration", shape="cds"];
+  l2b_man_demux [label="L2b(E) manifest 1..1", shape="ellipse"];
+  l2b_log [label="L2b log 1..1", shape="ellipse"];
+
+  l2b_man [label="L2b manifest 1..1", shape="ellipse"];
+
+  l3_data [label="L3 products", shape="rectangle"];
+  l3_cal [label="L3 calibration", shape="cds"];
+  l3_man [label="L3 manifest 1..1", shape="ellipse"];
+  l3_log [label="L3 log 1..1", shape="ellipse"];
+
+  l4_data [label="L4 products", shape="rectangle"];
+  l4_log [label="L4 log 1..1", shape="ellipse"];
+
+  l1_cal -> l1_l2a;
+  l1_data -> l1_l2a;
+  l1_man -> l1_l2a;
+  l1_l2a -> l2a_data;
+  l1_l2a -> l2a_man;  
+  l1_l2a -> l2a_log;  
+
+  l2a_cal -> l2a_l2b;
+  l2a_data -> l2a_l2b;
+
+  l2a_man -> l2a_demux;
+  l2a_demux -> l2a_man_demux;
+  l2a_man_demux -> l2a_l2b;
+  
+  l2a_l2b -> l2b_data;
+  l2a_l2b -> l2b_man_demux;
+  l2a_l2b -> l2b_log;
+
+  l2b_man_demux -> l2b_mux;
+  l2b_mux -> l2b_man;
+  
+  l2b_cal -> l2b_l3;
+  l2b_data -> l2b_l3;
+  l2b_man -> l2b_l3;
+  l2b_l3 -> l3_data;
+  l2b_l3 -> l3_man;  
+  l2b_l3 -> l3_log;  
+
+  l3_cal -> l3_l4;
+  l3_data -> l3_l4;
+  l3_man -> l3_l4;
+  l3_l4 -> l4_data;
+  l3_l4 -> l4_log;
+}

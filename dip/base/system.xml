@@ -1,0 +1,4 @@
+<system>
+  <archive location="/tmp/dummy.txt"/>
+  <staging location="/tmp/dummy.txt"/>
+</system>

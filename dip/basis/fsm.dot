@@ -1,0 +1,51 @@
+digraph transmutation_fsm
+{
+  node[shape="circle"];
+  rankdir=TB;
+
+  # DIP processing states
+  cons[id=cons, label="Construction", group="main",
+       state="construction", terminal="initial"];
+  delg[id=delg, label="Delegation", group="main",
+       state="delegation"];
+  fini[id=fini, label="final", group="main", shape="plaintext"];
+  gq[id=gq, label="General\nQuarters", group="error",
+     state="general_quarters"];
+  panic[id=panic, label="Panic", group="error",
+        state="panic"];
+  sant[id=sant, label="Sanitization",group="main",
+       state="sanitization", terminal="final"];
+  strt[id=start, label="start", group="main", shape="plaintext"];
+  ware[id=ware, label="Warehouse", group="main",
+       state="warehouse"];
+  { rank=source; "strt"; }
+  { rank=same; "gq"; "panic"; }
+
+  # DIP transitions
+  strt->cons [label="new\nwork", weight=10];
+  cons->delg [label="workspace", weight=10,
+              trigger="workspace"];
+  gq->sant [label="secured",
+            trigger="secured"];
+  panic->sant [label="sent up flare",
+               trigger="sent_up_flare"];
+  delg->ware [label="all\nproducts", weight=10,
+              trigger="all_products"];
+  ware->sant [label="archived", weight=10,
+              trigger="archived"];
+  cons->panic [label="no\nworkspace",
+               trigger="no_workspace"];
+  gq->delg [label="retry",
+            trigger="retry"];
+  gq->ware [label="recovered",
+            trigger="recovered"];
+  gq->panic [label="foundering", contraint=false,
+             trigger="foundering"];
+  delg->gq [label="incomplete\nproducts",
+            trigger="incomplete_products"];
+  delg->panic [label="no\nproducts",
+               trigger="no_products"]
+  ware->panic [label="no\narchive",
+               trigger="not_archived"];
+  sant->fini [label="clean"];
+}

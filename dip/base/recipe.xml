@@ -1,0 +1,4 @@
+<recipes>
+  <l1_eng_a.recipe location="/tmp/dummy.txt"/>
+  <l2a_eng_a.recipe location="/tmp/dummy.txt"/>
+</recipes>

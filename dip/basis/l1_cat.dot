@@ -1,0 +1,82 @@
+digraph CategorizationDesign
+{
+  graph [splines="ortho", rankdir=LR];
+
+  alarm [label="Periodic Wakeup", shape="none"];
+  scan [label="Scan for\nSignal File", shape="circle",
+        runname="clerk.scan"
+        runtype="dawgie.Analyzer"
+        fsmtype="dip.clerk.impls.scan.FSM"];
+  
+  sort [label="Categorization", shape="circle",
+        runname="clerk.categorization"
+        runtype="dawgie.Algorithm"
+        fsmtype="dip.clerk.impls.categorization.FSM"];
+        
+  l1_data [label="L1 products 1..N", shape="rectangle"];
+  l1_man [label="L1 manifest 1..1", shape="ellipse",
+          valname="clerk.scan.inbound.frames",
+          valtype="dip.base.Manifest"];
+
+  l1_cal_a_man [label="L1_cal_a manifest 1..1\nof 0..a files",
+                shape="ellipse",
+                valname="clerk.categorization.channel.cal_a",
+                valtype="dip.base.Manifest"];
+  l1_eng_a_man [label="L1_eng_a manifest 1..1\nof 0..b files",
+                shape="ellipse",
+                valname="clerk.categorization.channel.eng_a",
+                valtype="dip.base.Manifest"];
+  l1_nfov_a_man [label="L1_nfov_a manifest 1..1\nof 0..c files",
+                 shape="ellipse",
+                 valname="clerk.categorization.channel.nfov_a",
+                 valtype="dip.base.Manifest"];
+  l1_nfov_pc_man [label="L1_nfov_pc manifest 1..1\nof 0..d files",
+                  shape="ellipse",
+                  valname="clerk.categorization.channel.nfov_pc",
+                  valtype="dip.base.Manifest"];
+  l1_pol_a_man [label="L1_pol_a manifest 1..1\nof 0..e files",
+                shape="ellipse",
+                valname="clerk.categorization.channel.pol_a",
+                valtype="dip.base.Manifest"];
+  l1_pol_pc_man [label="L1_pol_pc manifest 1..1\nof 0..f files",
+                 shape="ellipse",
+                 valname="clerk.categorization.channel.pol_pc",
+                 valtype="dip.base.Manifest"];
+  l1_spy_a_man [label="L1_spy_a manifest 1..1\nof 0..g files",
+                shape="ellipse",
+                valname="clerk.categorization.channel.spy_a",
+                valtype="dip.base.Manifest"];
+  l1_spy_pc_man [label="L1_spy_pc manifest 1..1\nof 0..h files",
+                 shape="ellipse",
+                 valname="clerk.categorization.channel.spy_pc",
+                 valtype="dip.base.Manifest"];
+  l1_wfov_a_man [label="L1_wfov_a manifest 1..1\nof 0..i files",
+                 shape="ellipse",
+                 valname="clerk.categorization.channel.wfov_a",
+                 valtype="dip.base.Manifest"];
+  l1_wfov_pc_man [label="L1_wfov_pc manifest 1..1\nof 0..j files",
+                  shape="ellipse",
+                  valname="clerk.categorization.channel.wfov_pc",
+                  valtype="dip.base.Manifest"];
+  l1_unk_man [label="L1_unk manifest 1..1\nof 0..k files",
+              shape="ellipse",
+              valname="clerk.categorization.channel.unk",
+              valtype="dip.base.Manifest"];
+
+  alarm -> scan [style="dashed"];
+  scan -> l1_man;
+  l1_data -> sort [style="dashed"];
+  l1_man -> sort;
+
+  sort -> l1_cal_a_man;
+  sort -> l1_eng_a_man;
+  sort -> l1_nfov_a_man;
+  sort -> l1_nfov_pc_man;
+  sort -> l1_pol_a_man;
+  sort -> l1_pol_pc_man;
+  sort -> l1_spy_a_man;
+  sort -> l1_spy_pc_man;
+  sort -> l1_wfov_a_man;
+  sort -> l1_wfov_pc_man;
+  sort -> l1_unk_man;
+}

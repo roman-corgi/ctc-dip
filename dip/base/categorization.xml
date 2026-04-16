@@ -1,0 +1,21 @@
+<channels>
+  <cal_a/>
+  <eng_a>
+    <rule conjunction="and" keyword="VISTYPE" operator="equals-any">
+      <value>apple</value>
+      <value>banana</value>
+      <value>cherry</value>
+    </rule>
+    <rule conjunction="and not" keyword="AQ" operator="equals-any">
+      <value>0</value>
+    </rule>
+  </eng_a>
+  <nfov_a/>
+  <nfov_pc/>
+  <pol_a/>
+  <pol_pc/>
+  <spy_a/>
+  <spy_pc/>
+  <wfov_a/>
+  <wfov_pc/>
+</channels>

@@ -1,0 +1,116 @@
+digraph AbstractDesign
+{
+  graph [splines="ortho", rankdir=LR];
+
+  trans_wfov_pc_l1_l2a [label="wfov_pc Transmutation\nL1 to L2a", shape="circle"];
+  l2a_wfov_pc_demux [label="wfov_pc l2a Demux\nExposure" shape="circle"];
+  trans_wfov_pc_l2a_l2b [label="wfov_pc Transmutation\nL2a to L2b", shape="circle"];
+  l2b_wfov_pc_mux [label="wfov_pc l2b Mux\nExposure", shape="circle"];
+  trans_wfov_pc_l2b_l3 [label="wfov_pc Transmutation\nL2b to L3", shape="circle"];
+  trans_wfov_pc_l3_l4 [label="wfov_pc Transmutation\nL3 to L4", shape="circle"];
+  trans_wfov_pc_l4_tda [label="wfov_pc Transmutation\nL4 to TDA", shape="circle"];
+        
+  l1_wfov_pc_prod [label="L1_wfov_pc products 1..b", shape="rectangle"];
+  l1_wfov_pc_man [label="L1_wfov_pc manifest 1..1", shape="ellipse"];
+  l1_wfov_pc_odir [label="L1_wfov_pc output path 1..1", shape="ellipse"];
+  l1_wfov_pc_rec [label="L1_wfov_pc recipe 1..1", shape="cds"];
+  l1_wfov_pc_nln [label="L1_wfov_pc non-linear & Kgain 1..1", shape="cds"];
+
+  l2a_wfov_pc_prod [label="L2a_wfov_pc products 1..b", shape="rectangle"];
+  l2a_wfov_pc_man [label="L2a_wfov_pc manifest 1..1", shape="ellipse"];
+  l2a_wfov_pc_odir [label="L2a_wfov_pc output path 1..1", shape="ellipse"];
+  l2a_wfov_pc_rec [label="L2a_wfov_pc recipe 1..1", shape="cds"];
+  l2a_wfov_pc_cti [label="L2a_wfov_pc charge xfer inefficiency 1..1", shape="cds"];
+  l2a_wfov_pc_dnb [label="L2a_wfov_pc detector noise background 1..1", shape="cds"];
+  l2a_wfov_pc_mbpm [label="L2a_wfov_pc master bad pixel map 1..1", shape="cds"];
+  l2a_wfov_pc_ff [label="L2a_wfov_pc flat fields 1..1", shape="cds"];
+  l2a_wfov_pc_emg [label="L2a_wfov_pc EM gain 1..1", shape="cds"];
+  l2a_wfov_pc_log [label="L2a log_wfov_pc 1..1", shape="ellipse"];
+  l2a_wfov_pc_man_demux [label="L2a_wfov_pc(E) manifest 1..1", shape="ellipse"];
+  
+  l2b_wfov_pc_prod [label="L2b_wfov_pc products 1..1", shape="rectangle"];
+  l2b_wfov_pc_man [label="L2b_wfov_pc manifest 1..1", shape="ellipse"];
+  l2b_wfov_pc_odir [label="L2b_wfov_pc output path 1..1", shape="ellipse"];
+  l2b_wfov_pc_rec [label="L2b_wfov_pc recipe 1..1", shape="cds"];
+  l2b_wfov_pc_excicrf [label="L2b_wfov_pc EXCAM ICRF location 1..1", shape="cds"];
+  l2b_wfov_pc_excfovps [label="L2b_wfov_pc EXCAM FOV pixel scale 1..1", shape="cds"];
+  l2b_wfov_pc_distm [label="L2b_wfov_pc distortion map 1..1", shape="cds"];
+  l2b_wfov_pc_man_demux [label="L2b_wfov_pc(E) manifest 1..1", shape="ellipse"];
+  l2b_wfov_pc_log [label="L2b_wfov_pc log 1..1", shape="ellipse"];
+
+  l3_wfov_pc_prod [label="L3_wfov_pc products 1..1", shape="rectangle"];
+  l3_wfov_pc_odir [label="L3_wfov_pc output path 1..1", shape="ellipse"];
+  l3_wfov_pc_man [label="L3_wfov_pc manifest 1..1", shape="ellipse"];
+  l3_wfov_pc_rec [label="L3_wfov_pc recipe 1..1", shape="cds"];
+  l3_wfov_pc_cal [label="L3_wfov_pc calibration 1..1", shape="cds"];
+  l3_wfov_pc_log [label="L3_wfov_pc log 1..1", shape="ellipse"];
+
+  l4_wfov_pc_prod [label="L4_wfov_pc products 1..1", shape="rectangle"];
+  l4_wfov_pc_odir [label="L4_wfov_pc output path 1..1", shape="ellipse"];
+  l4_wfov_pc_log [label="L4_wfov_pc log 1..1", shape="ellipse"];
+  l4_wfov_pc_man [label="L4_wfov_pc manifest 1..1", shape="ellipse"];
+  l4_wfov_pc_rec [label="L4_wfov_pc recipe 1..1", shape="cds"];
+  l4_wfov_pc_afcal [label="L4_wfov_pc absolute flux calibrations 1..1", shape="cds"];
+  l4_wfov_pc_ctcal [label="L4_wfov_pc core throughput calibrations 1..1", shape="cds"];
+  l4_wfov_pc_ndfilt [label="L4_wfov_pc ND filter 1..1", shape="cds"];
+
+  l1_wfov_pc_prod -> trans_wfov_pc_l1_l2a;
+  l1_wfov_pc_man -> trans_wfov_pc_l1_l2a;
+  l1_wfov_pc_odir -> trans_wfov_pc_l1_l2a;
+  l1_wfov_pc_rec -> trans_wfov_pc_l1_l2a;
+  l1_wfov_pc_nln -> trans_wfov_pc_l1_l2a;
+
+  trans_wfov_pc_l1_l2a -> l2a_wfov_pc_prod;
+  trans_wfov_pc_l1_l2a -> l2a_wfov_pc_man;  
+  trans_wfov_pc_l1_l2a -> l2a_wfov_pc_log;  
+
+  l2a_wfov_pc_prod -> trans_wfov_pc_l2a_l2b;
+  l2a_wfov_pc_odir -> trans_wfov_pc_l2a_l2b;
+  l2a_wfov_pc_rec -> trans_wfov_pc_l2a_l2b;
+  l2a_wfov_pc_cti -> trans_wfov_pc_l2a_l2b;
+  l2a_wfov_pc_dnb -> trans_wfov_pc_l2a_l2b;
+  l2a_wfov_pc_mbpm -> trans_wfov_pc_l2a_l2b;
+  l2a_wfov_pc_ff -> trans_wfov_pc_l2a_l2b;
+  l2a_wfov_pc_emg -> trans_wfov_pc_l2a_l2b;
+
+  trans_wfov_pc_l2a_l2b -> l2b_wfov_pc_prod;
+  trans_wfov_pc_l2a_l2b -> l2b_wfov_pc_man_demux;
+  trans_wfov_pc_l2a_l2b -> l2b_wfov_pc_log;
+
+  l2a_wfov_pc_man -> l2a_wfov_pc_demux;
+  l2a_wfov_pc_demux -> l2a_wfov_pc_man_demux;
+  l2a_wfov_pc_man_demux -> trans_wfov_pc_l2a_l2b;
+  
+  l2b_wfov_pc_man_demux -> l2b_wfov_pc_mux;
+  l2b_wfov_pc_mux -> l2b_wfov_pc_man;
+  
+  l2b_wfov_pc_prod -> trans_wfov_pc_l2b_l3;
+  l2b_wfov_pc_man -> trans_wfov_pc_l2b_l3;
+  l2b_wfov_pc_odir -> trans_wfov_pc_l2b_l3;
+  l2b_wfov_pc_rec -> trans_wfov_pc_l2b_l3;
+  l2b_wfov_pc_excicrf -> trans_wfov_pc_l2b_l3;
+  l2b_wfov_pc_excfovps -> trans_wfov_pc_l2b_l3;
+  l2b_wfov_pc_distm -> trans_wfov_pc_l2b_l3;
+  trans_wfov_pc_l2b_l3 -> l3_wfov_pc_prod;
+  trans_wfov_pc_l2b_l3 -> l3_wfov_pc_man;  
+  trans_wfov_pc_l2b_l3 -> l3_wfov_pc_log;  
+
+  l3_wfov_pc_prod -> trans_wfov_pc_l3_l4;
+  l3_wfov_pc_man -> trans_wfov_pc_l3_l4;
+  l3_wfov_pc_odir -> trans_wfov_pc_l3_l4;
+  l3_wfov_pc_rec -> trans_wfov_pc_l3_l4;
+  l3_wfov_pc_cal -> trans_wfov_pc_l3_l4;
+  trans_wfov_pc_l3_l4 -> l4_wfov_pc_prod;
+  trans_wfov_pc_l3_l4 -> l4_wfov_pc_log;
+  trans_wfov_pc_l3_l4 -> l4_wfov_pc_man;
+
+  l4_wfov_pc_prod -> trans_wfov_pc_l4_tda;
+  l4_wfov_pc_man -> trans_wfov_pc_l4_tda;
+  l4_wfov_pc_odir -> trans_wfov_pc_l4_tda;
+  l4_wfov_pc_rec -> trans_wfov_pc_l4_tda;
+  l4_wfov_pc_afcal -> trans_wfov_pc_l4_tda;
+  l4_wfov_pc_ctcal -> trans_wfov_pc_l4_tda;
+  l4_wfov_pc_ndfilt -> trans_wfov_pc_l4_tda;
+  trans_wfov_pc_l4_tda -> tda_wfov_pc_prod;
+  trans_wfov_pc_l4_tda -> tda_wfov_pc_log;
+}

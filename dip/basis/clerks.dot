@@ -1,0 +1,82 @@
+digraph Clerks
+{
+  graph [splines="ortho", rankdir=LR];
+
+  alarm_cal [label="Update TBD", shape="none"];
+  alarm_rec [label="Update TBD", shape="none"];
+  
+  calib [label="Calibration", shape="circle",
+         runname="clerk.calibration"
+         runtype="dawgie.Analyzer"
+         fsmtype="dip.clerk.impls.calibration.FSM"];
+  config [label="Configuration", shape="circle",
+          runname="clerk.configuration",
+          runtype="dawgie.Analyzer",
+          fsmtype="dip.clerk.impls.config.FSM"];
+  recipe [label="Recipe", shape="circle",
+          runname="clerk.recipe"
+          runtype="dawgie.Analyzer"
+          fsmtype="dip.clerk.impls.recipe.FSM"];
+
+  eng_a_cpgs [label="CPGS eng_a 1..1", shape="cds",
+              valname="clerk.calibration.eng_a.cpgs",
+              valtype="dip.base.Cpgs"];
+  l1_eng_a_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
+                 valname="clerk.configuration.l1_eng_a.outdir",
+                 valtype="dip.base.Configuration"]
+  l1_eng_a_rec [label="recipe L1_eng_a 1..1", shape="cds",
+                valname="clerk.recipe.l1_eng_a.recipe",
+                valtype="dip.base.Recipe"];
+  l1_eng_a_nln [label="non linear calibration 1..1", shape="cds",
+                valname="clerk.calibration.l1_eng_a.nonlin",
+                valtype="dip.base.Calibration"];
+
+  l2a_eng_a_odir [label="Output path for L2a_eng_a 1..1", shape="ellipse",
+                 valname="clerk.configuration.l2_eng_a.outdir",
+                 valtype="dip.base.Configuration"]
+  l2a_eng_a_rec [label="recipe L2s_eng_a 1..1", shape="cds",
+                 valname="clerk.recipe.l2a_eng_a.recipe",
+                 valtype="dip.base.Recipe"];
+  l2a_eng_a_bpm [label="bad pixel map 1..1", shape="cds",
+                valname="clerk.calibration.l2a_eng_a.bad_pix_map",
+                valtype="dip.base.Calibration"];
+  l2a_eng_a_dt  [label="dark (traditional) 1..1", shape="cds",
+                valname="clerk.calibration.l2a_eng_a.dark_trad",
+                valtype="dip.base.Calibration"];
+  l2a_eng_a_ds  [label="dark (synthetized) 1..1", shape="cds",
+                valname="clerk.calibration.l2a_eng_a.dark_synth",
+                valtype="dip.base.Calibration"];
+  l2a_eng_a_dn  [label="dark (from noise map) 1..1", shape="cds",
+                valname="clerk.calibration.l2a_eng_a.dark_noise",
+                valtype="dip.base.Calibration"];
+  l2a_eng_a_nm  [label="noise maps 1..1", shape="cds",
+                valname="clerk.calibration.l2a_eng_a.noise_map",
+                valtype="dip.base.Calibration"];
+  l2a_eng_a_ff  [label="flat field 1..1", shape="cds",
+                valname="clerk.calibration.l2a_eng_a.flat_field",
+                valtype="dip.base.Calibration"];
+  l2a_eng_a_kg  [label="k-gain 1..1", shape="cds",
+                valname="clerk.calibration.l2a_eng_a.k_gain",
+                valtype="dip.base.Calibration"];
+  l2a_eng_a_emg [label="EM gain 1..1", shape="cds",
+                valname="clerk.calibration.l2a_eng_a.em_gain",
+                valtype="dip.base.Calibration"];
+
+  alarm_cal -> calib [style="dashed"];
+  alarm_rec -> recipe [style="dashed"];
+
+  calib -> eng_a_cpgs;
+  calib -> l1_eng_a_nln;
+  calib -> l2a_eng_a_bpm;
+  calib -> l2a_eng_a_dt;
+  calib -> l2a_eng_a_ds;
+  calib -> l2a_eng_a_dn;
+  calib -> l2a_eng_a_nm;
+  calib -> l2a_eng_a_ff;
+  calib -> l2a_eng_a_kg;
+  calib -> l2a_eng_a_emg;
+  config -> l1_eng_a_odir;
+  config -> l2a_eng_a_odir;
+  recipe -> l1_eng_a_rec;
+  recipe -> l2a_eng_a_rec;
+}

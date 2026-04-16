@@ -1,0 +1,14 @@
+<calibrations>
+  <eng_a.cpgs location="/tmp/dummy.txt">
+    There is only one CPGS per channel
+  </eng_a.cpgs>
+  <l1_eng_a.nonlin location="/tmp/dummy.txt"/>
+  <l2a_eng_a.bad_pix_map location=""/>
+  <l2a_eng_a.dark_noise location="/tmp/dummy.txt"/>
+  <l2a_eng_a.dark_synth location="/tmp/dummy.txt"/>
+  <l2a_eng_a.dark_trad location="/tmp/dummy.txt"/>
+  <l2a_eng_a.em_gain location="/tmp/dummy.txt"/>
+  <l2a_eng_a.flat_field location="/tmp/dummy.txt"/>
+  <l2a_eng_a.k_gain location="/tmp/dummy.txt"/>
+  <l2a_eng_a.noise_map location="/tmp/dummy.txt"/>
+</calibrations>

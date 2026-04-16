@@ -1,0 +1,123 @@
+digraph AbstractDesign
+{
+  graph [splines="ortho", rankdir=LR];
+
+  trans_spec_pc_l1_l2a [label="spec_pc Transmutation\nL1 to L2a", shape="circle"];
+  l2a_spec_pc_demux [label="spec_pc l2a Demux\nExposure" shape="circle"];
+  trans_spec_pc_l2a_l2b [label="spec_pc Transmutation\nL2a to L2b", shape="circle"];
+  l2b_spec_pc_mux [label="spec_pc l2b Mux\nExposure", shape="circle"];
+  trans_spec_pc_l2b_l3 [label="spec_pc Transmutation\nL2b to L3", shape="circle"];
+  trans_spec_pc_l3_l4 [label="spec_pc Transmutation\nL3 to L4", shape="circle"];
+  trans_spec_pc_l4_tda [label="spec_pc Transmutation\nL4 to TDA", shape="circle"];
+        
+  l1_spec_pc_prod [label="L1_spec_pc products 1..b", shape="rectangle"];
+  l1_spec_pc_man [label="L1_spec_pc manifest 1..1", shape="ellipse"];
+  l1_spec_pc_odir [label="L1_spec_pc output path 1..1", shape="ellipse"];
+  l1_spec_pc_rec [label="L1_spec_pc recipe 1..1", shape="cds"];
+  l1_spec_pc_nln [label="L1_spec_pc non-linear & Kgain 1..1", shape="cds"];
+
+  l2a_spec_pc_prod [label="L2a_spec_pc products 1..b", shape="rectangle"];
+  l2a_spec_pc_man [label="L2a_spec_pc manifest 1..1", shape="ellipse"];
+  l2a_spec_pc_odir [label="L2a_spec_pc output path 1..1", shape="ellipse"];
+  l2a_spec_pc_rec [label="L2a_spec_pc recipe 1..1", shape="cds"];
+  l2a_spec_pc_cti [label="L2a_spec_pc charge xfer inefficiency 1..1", shape="cds"];
+  l2a_spec_pc_dnb [label="L2a_spec_pc detector noise background 1..1", shape="cds"];
+  l2a_spec_pc_mbpm [label="L2a_spec_pc master bad pixel map 1..1", shape="cds"];
+  l2a_spec_pc_emg [label="L2a_spec_pc EM gain 1..1", shape="cds"];
+  l2a_spec_pc_log [label="L2a log_spec_pc 1..1", shape="ellipse"];
+  l2a_spec_pc_man_demux [label="L2a_spec_pc(E) manifest 1..1", shape="ellipse"];
+  
+  l2b_spec_pc_prod [label="L2b_spec_pc products 1..1", shape="rectangle"];
+  l2b_spec_pc_man [label="L2b_spec_pc manifest 1..1", shape="ellipse"];
+  l2b_spec_pc_odir [label="L2b_spec_pc output path 1..1", shape="ellipse"];
+  l2b_spec_pc_rec [label="L2b_spec_pc recipe 1..1", shape="cds"];
+  l2b_spec_pc_excicrf [label="L2b_spec_pc EXCAM ICRF location 1..1", shape="cds"];
+  l2b_spec_pc_excfovps [label="L2b_spec_pc EXCAM FOV pixel scale 1..1", shape="cds"];
+  l2b_spec_pc_cfamfo [label="L2b_spec_pc CFAM filter offsets 1..1", shape="cds"];
+  l2b_spec_pc_man_demux [label="L2b_spec_pc(E) manifest 1..1", shape="ellipse"];
+  l2b_spec_pc_log [label="L2b_spec_pc log 1..1", shape="ellipse"];
+
+  l3_spec_pc_prod [label="L3_spec_pc products 1..1", shape="rectangle"];
+  l3_spec_pc_odir [label="L3_spec_pc output path 1..1", shape="ellipse"];
+  l3_spec_pc_man [label="L3_spec_pc manifest 1..1", shape="ellipse"];
+  l3_spec_pc_rec [label="L3_spec_pc recipe 1..1", shape="cds"];
+  l3_spec_pc_dispm [label="L3_spec_pc dispersion model 1..1", shape="cds"];
+  l3_spec_pc_wavem [label="L3_spec_pc wavelength map 1..1", shape="cds"];
+  l3_spec_pc_log [label="L3_spec_pc log 1..1", shape="ellipse"];
+
+  l4_spec_pc_prod [label="L4_spec_pc products 1..1", shape="rectangle"];
+  l4_spec_pc_odir [label="L4_spec_pc output path 1..1", shape="ellipse"];
+  l4_spec_pc_log [label="L4_spec_pc log 1..1", shape="ellipse"];
+  l4_spec_pc_man [label="L4_spec_pc manifest 1..1", shape="ellipse"];
+  l4_spec_pc_rec [label="L4_spec_pc recipe 1..1", shape="cds"];
+  l4_spec_pc_afcal [label="L4_spec_pc absolute flux calibrations 1..1", shape="cds"];
+  l4_spec_pc_ndfilt [label="L4_spec_pc ND filter 1..1", shape="cds"];
+  l4_spec_pc_stmap [label="L4_spec_pc slit transmission map 1..1", shape="cds"];
+  l4_spec_pc_tspi [label="L4_spec_pc target star prism image 1..1", shape="cds"];
+  l4_spec_pc_rspi [label="L4_spec_pc reference star prism image 1..1", shape="cds"];
+  l4_spec_pc_lsf [label="L4_spec_pc line spread function 1..1", shape="cds"];
+
+  l1_spec_pc_prod -> trans_spec_pc_l1_l2a;
+  l1_spec_pc_man -> trans_spec_pc_l1_l2a;
+  l1_spec_pc_odir -> trans_spec_pc_l1_l2a;
+  l1_spec_pc_rec -> trans_spec_pc_l1_l2a;
+  l1_spec_pc_nln -> trans_spec_pc_l1_l2a;
+
+  trans_spec_pc_l1_l2a -> l2a_spec_pc_prod;
+  trans_spec_pc_l1_l2a -> l2a_spec_pc_man;  
+  trans_spec_pc_l1_l2a -> l2a_spec_pc_log;  
+
+  l2a_spec_pc_prod -> trans_spec_pc_l2a_l2b;
+  l2a_spec_pc_odir -> trans_spec_pc_l2a_l2b;
+  l2a_spec_pc_rec -> trans_spec_pc_l2a_l2b;
+  l2a_spec_pc_cti -> trans_spec_pc_l2a_l2b;
+  l2a_spec_pc_dnb -> trans_spec_pc_l2a_l2b;
+  l2a_spec_pc_mbpm -> trans_spec_pc_l2a_l2b;
+  l2a_spec_pc_emg -> trans_spec_pc_l2a_l2b;
+
+  trans_spec_pc_l2a_l2b -> l2b_spec_pc_prod;
+  trans_spec_pc_l2a_l2b -> l2b_spec_pc_man_demux;
+  trans_spec_pc_l2a_l2b -> l2b_spec_pc_log;
+
+  l2a_spec_pc_man -> l2a_spec_pc_demux;
+  l2a_spec_pc_demux -> l2a_spec_pc_man_demux;
+  l2a_spec_pc_man_demux -> trans_spec_pc_l2a_l2b;
+  
+  l2b_spec_pc_man_demux -> l2b_spec_pc_mux;
+  l2b_spec_pc_mux -> l2b_spec_pc_man;
+  
+  l2b_spec_pc_prod -> trans_spec_pc_l2b_l3;
+  l2b_spec_pc_man -> trans_spec_pc_l2b_l3;
+  l2b_spec_pc_odir -> trans_spec_pc_l2b_l3;
+  l2b_spec_pc_rec -> trans_spec_pc_l2b_l3;
+  l2b_spec_pc_excicrf -> trans_spec_pc_l2b_l3;
+  l2b_spec_pc_excfovps -> trans_spec_pc_l2b_l3;
+  l2b_spec_pc_cfamfo -> trans_spec_pc_l2b_l3;
+
+  trans_spec_pc_l2b_l3 -> l3_spec_pc_prod;
+  trans_spec_pc_l2b_l3 -> l3_spec_pc_man;  
+  trans_spec_pc_l2b_l3 -> l3_spec_pc_log;  
+
+  l3_spec_pc_prod -> trans_spec_pc_l3_l4;
+  l3_spec_pc_man -> trans_spec_pc_l3_l4;
+  l3_spec_pc_odir -> trans_spec_pc_l3_l4;
+  l3_spec_pc_rec -> trans_spec_pc_l3_l4;
+  l3_spec_pc_dispm -> trans_spec_pc_l3_l4;
+  l3_spec_pc_wavem -> trans_spec_pc_l3_l4;
+  trans_spec_pc_l3_l4 -> l4_spec_pc_prod;
+  trans_spec_pc_l3_l4 -> l4_spec_pc_log;
+  trans_spec_pc_l3_l4 -> l4_spec_pc_man;
+
+  l4_spec_pc_prod -> trans_spec_pc_l4_tda;
+  l4_spec_pc_man -> trans_spec_pc_l4_tda;
+  l4_spec_pc_odir -> trans_spec_pc_l4_tda;
+  l4_spec_pc_rec -> trans_spec_pc_l4_tda;
+  l4_spec_pc_afcal -> trans_spec_pc_l4_tda;
+  l4_spec_pc_ndfilt -> trans_spec_pc_l4_tda;
+  l4_spec_pc_stmap -> trans_spec_pc_l4_tda;
+  l4_spec_pc_tspi -> trans_spec_pc_l4_tda;
+  l4_spec_pc_rspi -> trans_spec_pc_l4_tda;
+  l4_spec_pc_lsf -> trans_spec_pc_l4_tda;
+  trans_spec_pc_l4_tda -> tda_spec_pc_prod;
+  trans_spec_pc_l4_tda -> tda_spec_pc_log;
+}
