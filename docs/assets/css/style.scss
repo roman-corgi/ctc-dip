@@ -1,0 +1,36 @@
+---
+---
+@import "jekyll-theme-minimal";
+
+@media screen and (min-width: 640px) {
+  header {
+    width: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 20px;
+    background: #f4f4f4;
+    transition: transform 0.3s ease;
+    z-index: 100;
+  }
+
+  /* To 'hide' it, we shift it left. 
+     You can trigger this with a hover or a checkbox hack */
+  header:hover {
+    transform: translateX(0);
+  }
+  
+  header:not(:hover) {
+    transform: translateX(-180px); /* Leave a tiny sliver visible */
+  }
+
+  section {
+    margin-left: 50px; /* Space for the collapsed sliver */
+    transition: margin-left 0.3s ease;
+  }
+
+  header:hover ~ section {
+    margin-left: 220px; /* Push content over when expanded */
+  }
+}
