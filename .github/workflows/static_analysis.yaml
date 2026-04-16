@@ -21,6 +21,7 @@ jobs:
       - name: build
         run: tools/build.sh ignore_checks
   Style:
+    needs: Build
     name: Coding Style
     runs-on: ubuntu-24.04
     steps:
@@ -37,6 +38,7 @@ jobs:
       - name: black
         run: black --check --diff -l 80 --skip-string-normalization --exclude="(workflows/local|binding.py)" .
   Linters:
+    needs: Build
     name: Code Quality
     runs-on: ubuntu-24.04
     steps:
@@ -55,6 +57,7 @@ jobs:
       - name: flake8
         run: flake8 --exclude=bindings --ignore E501,E203,W503 dip
   Security:
+    needs: Build
     name: Code Security
     runs-on: ubuntu-24.04
     steps:
@@ -73,6 +76,7 @@ jobs:
           bandit -f json -b .github/workflows/bandit_baseline.json -r dip
           bandit -f json -o .github/workflows/bandit_full.json -r dip || exit 0
   Delivery:
+    needs: Build
     name: Deployment (pypi) Compliance
     runs-on: ubuntu-24.04
     steps:
@@ -89,6 +93,7 @@ jobs:
       - name: pyroma
         run: pyroma --min 10 .
   Compliance:
+    needs: Build
     name: DAWGIE Compliance
     runs-on: ubuntu-24.04
     steps:

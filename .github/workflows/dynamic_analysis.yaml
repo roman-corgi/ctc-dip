@@ -21,6 +21,7 @@ jobs:
       - name: build
         run: tools/build.sh ignore_checks
   PyTesting:
+    needs: Build
     name: Test with Coverage
     runs-on: ubuntu-24.04
     steps:
