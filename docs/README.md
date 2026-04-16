@@ -1,7 +1,4 @@
 # Data Integration Processor - DIP
-![DIP](images/logo.png)
-
-# [DIP](https://roman-corgi.github.io/esp/ctc-dip)
 
 The DIP enables efficient, salable processing of exoplanet science data. The science processing is done by [corgidrp](https://github.com/roman-corgi/corgidrp). The basic clerical duties of determining what information is ready to be processed, passing it between instances of corgidrp, maintaining a record of what was done, are relegated to the DIP.
 
