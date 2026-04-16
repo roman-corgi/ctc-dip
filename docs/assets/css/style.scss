@@ -1,0 +1,15 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* Simple toggle to hide/show sidebar */
+#sidebar-toggle:checked + .main-content {
+  margin-left: 0;
+}
+#sidebar-toggle:checked ~ .side-bar {
+  transform: translateX(-100%);
+}
+
+.side-bar {
+  transition: transform 0.3s ease;
+}

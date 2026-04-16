@@ -10,3 +10,10 @@ nav_external_links:
 
 # Forces README.md to act as index files
 include: [README.md]
+
+defaults:
+  - scope:
+      path: "docs"
+    values:
+      layout: default
+      nav_exclude: false
