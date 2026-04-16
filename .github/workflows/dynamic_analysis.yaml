@@ -2,11 +2,40 @@ name: Self Diagnositics
 run-name: ${{ github.actor }} is verifying code for merge compliance
 on: [pull_request]
 jobs:
+  Build:
+    name: Generating Code
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          architecture: 'x64'
+          python-version: '3.12'
+      - name: Install xmllint
+        run: sudo apt-get install -y libxml2-utils
+      - name: Prepare Python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r .github/workflows/requirements.txt
+      - name: Run tools/build.sh
+        run: tools/build.sh ignore_checks
+      - name: Upload Workspace
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-repo-content
+          path: . # This captures EVERYTHING in the current directory
   PyTesting:
+    needs: Build
     name: Test with Coverage
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
+      - name: Download Workspace
+        uses: actions/download-artifact@v4
+        with:
+          name: full-repo-content
+          path: . # Downloads everything back into the current directory
       - uses: actions/setup-python@v6
         with:
           architecture: 'x64'
