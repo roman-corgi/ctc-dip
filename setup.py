@@ -30,8 +30,9 @@ with open(os.path.join(os.path.dirname(__file__), dip)) as f:
 t = t.replace('${ESP_GIT_REV}', version)
 with open(os.path.join(os.path.dirname(__file__), dip), 'tw') as f:
     f.write(t)
+description = 'Data Integration Processor (DIP) - the clerk that wants to be a registrar\n\n'
 with open(data_files_names[0], "rt", encoding='utf-8') as f:
-    description = f.read()
+    description += f.read()
 with open(data_files_names[1], "rt", encoding='utf-8') as f:
     license = f.read()
 setuptools.setup(
