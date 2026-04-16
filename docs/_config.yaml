@@ -1,0 +1,7 @@
+title: Data Integration Processor (DIP)
+logo: images/logo.png
+description: the clerk that wants to be a registrar
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-minimal
+markdown: kramdown

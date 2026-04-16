@@ -1,0 +1,45 @@
+name: Update Documentation
+
+on:
+  push:
+    paths:
+      - 'dip/basis/*.dot'  # Only runs when .dot files in this folder change
+
+jobs:
+  render_graphs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Graphviz
+        run: sudo apt-get install -y graphviz
+
+      - name: Create output directory
+        run: mkdir -p docs/images
+
+      - name: Process DOT files
+        run: |
+          for file in dip/basis/*.dot; do
+            # Get filename without extension
+            filename=$(basename "$file" .dot)
+            echo "Processing $filename..."
+            
+            # Generate PNG and SVG
+            # dot -Tpng "$file" -o "docs/images/${filename}.png"
+            dot -Tsvg "$file" -o "docs/images/${filename}.svg"
+          done
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/images/*.png docs/images/*.svg
+          
+          # Only commit if there are actual changes to images
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-generated diagrams from dip/basis"
+            git push
+          fi
