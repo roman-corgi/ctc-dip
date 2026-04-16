@@ -16,7 +16,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install -r .github/workflows/requirements.txt
-      run: tools/build.sh ignore_checks
+      - name: build
+        run: tools/build.sh ignore_checks
   Style:
     name: Coding Style
     runs-on: ubuntu-24.04
