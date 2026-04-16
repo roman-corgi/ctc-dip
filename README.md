@@ -1,1 +1,1 @@
-# [DIP](https://roman-corgi.github.io/ctc-dip/)
+# Read about [DIP](https://roman-corgi.github.io/ctc-dip/)
