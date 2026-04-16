@@ -38,3 +38,15 @@
     margin: 0 !important;
   }
 }
+
+/* Hide the 'View on GitHub' and 'Hosted by' credits */
+header p.view, 
+header ul, 
+footer {
+  display: none !important;
+}
+
+/* Optional: If the theme still shows a 'Maintained by' section */
+header p.downloads {
+  display: none !important;
+}
