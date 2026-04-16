@@ -2,6 +2,21 @@ name: Static Analysis
 run-name: ${{ github.actor }} is checking code quality/style for merge compliance
 on: [pull_request]
 jobs:
+  Build:
+    name: Generating Code
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          architecture: 'x64'
+          python-version: '3.12'
+      - name: Prepare Python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r .github/workflows/requirements.txt
+      run: tools/build.sh ignore_checks
   Style:
     name: Coding Style
     runs-on: ubuntu-24.04

@@ -49,15 +49,18 @@ do
 done
 KEEP_CHANGES=1 tools/run.sh Style  # reformat the generated code
 
-# do base line checks for sanity
-tools/run.sh Style Linters Compliance PyTesting
-for rpt in *.rpt.txt
-do
-    if [ -f "$rpt" ]
-    then
-        err_count=err_count+1
-    fi
-done
+if [ "$1" != "ignore_checks" ]
+then
+   # do base line checks for sanity
+   tools/run.sh Style Linters Compliance PyTesting
+   for rpt in *.rpt.txt
+   do
+       if [ -f "$rpt" ]
+       then
+           err_count=err_count+1
+       fi
+   done
+fi
 
 # give a summary message
 if [ $err_count -gt 0 ]
