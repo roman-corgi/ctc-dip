@@ -1,4 +1,4 @@
-digraph AbstractDesign
+digraph SpectroscopyPhotonCount
 {
   graph [splines="ortho", rankdir=LR];
 
@@ -14,15 +14,16 @@ digraph AbstractDesign
   l1_spec_pc_man [label="L1_spec_pc manifest 1..1", shape="ellipse"];
   l1_spec_pc_odir [label="L1_spec_pc output path 1..1", shape="ellipse"];
   l1_spec_pc_rec [label="L1_spec_pc recipe 1..1", shape="cds"];
-  l1_spec_pc_nln [label="L1_spec_pc non-linear & Kgain 1..1", shape="cds"];
+  l1_spec_pc_nllut [label="L1_spec_pc non-linear LUT 1..1", shape="cds"];
 
   l2a_spec_pc_prod [label="L2a_spec_pc products 1..b", shape="rectangle"];
   l2a_spec_pc_man [label="L2a_spec_pc manifest 1..1", shape="ellipse"];
   l2a_spec_pc_odir [label="L2a_spec_pc output path 1..1", shape="ellipse"];
   l2a_spec_pc_rec [label="L2a_spec_pc recipe 1..1", shape="cds"];
   l2a_spec_pc_cti [label="L2a_spec_pc charge xfer inefficiency 1..1", shape="cds"];
-  l2a_spec_pc_dnb [label="L2a_spec_pc detector noise background 1..1", shape="cds"];
+  l2a_spec_pc_dnb [label="L2a_spec_pc CIC/Dark Current/FPN\n or master dark 1..1", shape="cds"];
   l2a_spec_pc_mbpm [label="L2a_spec_pc master bad pixel map 1..1", shape="cds"];
+  l2a_spec_pc_kgain [label="L2a_spec_pc Kgain 1..1", shape="cds"];
   l2a_spec_pc_emg [label="L2a_spec_pc EM gain 1..1", shape="cds"];
   l2a_spec_pc_log [label="L2a log_spec_pc 1..1", shape="ellipse"];
   l2a_spec_pc_man_demux [label="L2a_spec_pc(E) manifest 1..1", shape="ellipse"];
@@ -61,7 +62,7 @@ digraph AbstractDesign
   l1_spec_pc_man -> trans_spec_pc_l1_l2a;
   l1_spec_pc_odir -> trans_spec_pc_l1_l2a;
   l1_spec_pc_rec -> trans_spec_pc_l1_l2a;
-  l1_spec_pc_nln -> trans_spec_pc_l1_l2a;
+  l1_spec_pc_nllut -> trans_spec_pc_l1_l2a;
 
   trans_spec_pc_l1_l2a -> l2a_spec_pc_prod;
   trans_spec_pc_l1_l2a -> l2a_spec_pc_man;  
@@ -70,10 +71,11 @@ digraph AbstractDesign
   l2a_spec_pc_prod -> trans_spec_pc_l2a_l2b;
   l2a_spec_pc_odir -> trans_spec_pc_l2a_l2b;
   l2a_spec_pc_rec -> trans_spec_pc_l2a_l2b;
-  l2a_spec_pc_cti -> trans_spec_pc_l2a_l2b;
+  l2a_spec_pc_cti -> trans_spec_pc_l2a_l2b [style="dashed"];
   l2a_spec_pc_dnb -> trans_spec_pc_l2a_l2b;
   l2a_spec_pc_mbpm -> trans_spec_pc_l2a_l2b;
   l2a_spec_pc_emg -> trans_spec_pc_l2a_l2b;
+  l2a_spec_pc_kgain -> trans_spec_pc_l2a_l2b;
 
   trans_spec_pc_l2a_l2b -> l2b_spec_pc_prod;
   trans_spec_pc_l2a_l2b -> l2b_spec_pc_man_demux;
