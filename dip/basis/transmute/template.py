@@ -106,6 +106,11 @@ ${values}
         return "${cls_myname}"
 
     def view(self, caller, visitor):
+        try:
+            super().view(caller, visitor)
+        except NotImplementedError:
+            pass  # ignore the error and try something else
+        dip.base.generic_view(self, visitor)
         return
     '''),
     Kind.VALUE: Template(''),
