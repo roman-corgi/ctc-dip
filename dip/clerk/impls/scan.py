@@ -17,7 +17,9 @@ class FSM(dip.base.Orchestrator):
             signal = signals.pop(0)
             manifest = self.outputs['inbound']['frames']
             manifest.deserialize(signal.parent / signal.stem)
-            dawgie.db.add(signal.name.split('.')[0].split('_')[1])
+            c,dt = signal.name.split('.')[0].split('_')[1:3]
+            d,t = dt.lower().split('t')
+            dawgie.db.add(f'{c} ({d})({t})')
             signal.unlink(missing_ok=True)
         if signals:
             # pylint: disable=fixme
