@@ -40,8 +40,9 @@ class AuxillaryFile(Contaminable, dawgie.Value):
         '''
         result = self.__class__()
         if self._name is not None:
-            result.name = location / self._name.name
-            _safe_copy(self._name, result.name)
+            result.name =  location / self._name.name
+            for expanded in self._name.parent.glob(self._name.name):
+                _safe_copy(expanded, location / expanded.name)
         return result
 
 
