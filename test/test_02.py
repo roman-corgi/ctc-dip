@@ -95,7 +95,7 @@ class BasicClerks(unittest.TestCase):
         '''.encode())
             scan._do_delegation()
             self.assertEqual(0, len(scan.outputs['inbound']['frames']))
-            fn = workspace / 'cgi_blahblah_datetime_l1_.manifest'
+            fn = workspace / 'cgi_blahblah_YYYYMMDDtHHMMSS_l1_.manifest'
             manifest = ['/a/b/c/l1.1', '/a/b/c/l1.2', '/a/b/c/l1.3']
             fn.write_text(yaml.dump(manifest))
             scan._do_delegation()
