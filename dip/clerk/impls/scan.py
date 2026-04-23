@@ -6,6 +6,8 @@ import dip.bindings.system
 
 from pathlib import Path
 
+from . import util
+
 
 class FSM(dip.base.Orchestrator):
     def _do_delegation(self):
@@ -17,9 +19,7 @@ class FSM(dip.base.Orchestrator):
             signal = signals.pop(0)
             manifest = self.outputs['inbound']['frames']
             manifest.deserialize(signal.parent / signal.stem)
-            c,dt = signal.name.split('.')[0].split('_')[1:3]
-            d,t = dt.lower().split('t')
-            dawgie.db.add(f'{c} ({d})({t})')
+            dawgie.db.add(util.l1mfn2tn(signal.name.split('.')[0]))
             signal.unlink(missing_ok=True)
         if signals:
             # pylint: disable=fixme
