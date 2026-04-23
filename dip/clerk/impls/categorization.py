@@ -1,12 +1,16 @@
 '''define the hard bits of categorization'''
 
+import dawgie
 import dip.base
 import dip.bindings.categorization
 import logging
+import shutil
 
 from astropy.io import fits
 from dip.binding_help import get_tag
 from pathlib import Path
+
+from . import util
 
 LOG = logging.getLogger(__name__)
 
@@ -68,7 +72,21 @@ class FSM(dip.base.Orchestrator):
     def _do_delegation(self):
         xml = self._load('categorization.xml')
         categories = dip.bindings.categorization.CreateFromDocument(xml)
-        for l1 in self.inputs['clerk.scan.inbound']['frames']:
+        xml = self._load('system.xml')
+        system = dip.bindings.system.CreateFromDocument(xml)
+        archive = Path(system.archive.location)
+        staging = Path(system.staging.location)
+        manifest = dip.base.Manifest()
+        mfn = staging / util.tn2l1mfn(self.target)
+        if not mfn.is_file():
+            mfn = staging / mfn.name.lower()
+        if not mfn.is_file():
+            raise dawgie.NoValidInputDataError(
+                f'No manifest file matches target name {self.target}'
+            )
+        manifest.deserialize(mfn)
+        shutil.move(mfn, archive / mfn.name)
+        for l1 in manifest:
             l1 = Path(l1)
             channels = []
             for channelname in filter(
