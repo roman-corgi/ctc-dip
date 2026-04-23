@@ -24,7 +24,10 @@ ${vrefs_init}
         machine.features = dip.base.features_asdict(self.previous())
         machine.inputs = dip.base.ds_asdict(self)
         machine.outputs.update(self.sv_as_dict())
+        machine.target = repr(self).split('.')[1]
         machine.do()
+        if machine.dawgie_exc is not None:
+            raise machine.dawgie_exc
         if machine.panicked:
             raise dawgie.AbortAEError('we sank!')
         if machine.retargets:
@@ -57,6 +60,8 @@ ${vrefs_init}
         machine.inputs = aspects
         machine.outputs.update(self.sv_as_dict())
         machine.do()
+        if machine.dawgie_exc is not None:
+            raise machine.dawgie_exc
         if machine.panicked:
             raise dawgie.AbortAEError('we sank!')
         aspects.ds().update()
@@ -85,6 +90,8 @@ ${vrefs_init}
         machine.inputs = timeline
         machine.outputs.update(self.sv_as_dict())
         machine.do()
+        if machine.dawgie_exc is not None:
+            raise machine.dawgie_exc
         if machine.panicked:
             raise dawgie.AbortAEError('we sank!')
         timeline.ds().update()
