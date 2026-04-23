@@ -88,7 +88,7 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
     @property
     def dawgie_exc(
         self,
-    ) -> [None, dawgie.NoValidInputDataError, dawgie.NoValidOutputDataError]:
+    ) -> [dawgie.NoValidInputDataError, dawgie.NoValidOutputDataError]:
         return self.__dawgie_exc
 
     @property
