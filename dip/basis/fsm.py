@@ -176,7 +176,7 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
             dawgie.NoValidInputDataError,
             dawgie.NoValidOutputDataError,
         ) as e:
-            self._dawgie_exc = e
+            self.__dawgie_exc = e
             return self.incomplete_products  # pylint: disable=no-member
         except:  # noqa; E722 # pylint: disable=bare-except
             self.__log.exception(
