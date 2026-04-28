@@ -92,8 +92,9 @@ class BasicClerks(unittest.TestCase):
             scan.outputs['inbound']['frames'] = Manifest()
             scan._load = MagicMock(return_value=f'''
 <system>
-  <archive location='{workspace}'/>
-  <staging location='{workspace}'/>
+  <archive location="{workspace}"/>
+  <journal location="{workspace}"/>
+  <staging location="{workspace}"/>
 </system>
         '''.encode())
             scan._do_delegation()
