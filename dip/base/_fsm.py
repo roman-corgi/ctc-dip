@@ -163,7 +163,7 @@ class Runner(dip.basis.fsm.AbstractModel):
         if self.__sandbox:
             self.__sandbox.cleanup()
             self.__sandbox = None
-            caldb = Path(os.expandvars('${HOME}/.corgidrp'))
+            caldb = Path(os.path.expandvars('${HOME}/.corgidrp'))
             if caldb.is_dir():
                 for item in caldb.iterdir():
                     if item.is_dir() and not item.is_symlink():
