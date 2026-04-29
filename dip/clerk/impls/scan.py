@@ -15,15 +15,10 @@ class FSM(dip.base.Orchestrator):
         system = dip.bindings.system.CreateFromDocument(xml)
         staging = Path(system.staging.location)
         signals = sorted(staging.glob('*.signal'))
-        if signals:
+        while signals:
             signal = signals.pop(0)
             manifest = self.outputs['inbound']['frames']
             manifest.deserialize(signal.parent / signal.stem)
             dawgie.db.add(util.l1mfn2tn(signal.name.split('.')[0]))
             signal.unlink(missing_ok=True)
-        if signals:
-            # pylint: disable=fixme
-            # FIXME: reque self or should this be done by an external event?
-            #        to do it locally here, need to call the API. Interesting.
-            pass
         return dip.base.ProductStatus.ALL
