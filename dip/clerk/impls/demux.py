@@ -21,6 +21,7 @@ class FSM(dip.base.Orchestrator):
         template = next(iter(self.outputs.values())).__class__
         for i, fns in enumerate(demux.values()):
             consistent = template()
+            consistent.at = self.dawgie_name
             consistent['manifest'].extend(fns)
             self.retargets[str(i)] = [consistent]
         return dip.base.ProductStatus.ALL

@@ -21,6 +21,7 @@ ${vrefs_init}
     def run(self, ds:dawgie.Dataset, _ps):
         machine = ${cls_fsm_path}.${cls_fsm_class}()
         dip.basis.fsm.build(machine)
+        machine.dawgie_name = '.'.join(repr(self).split('.')[-2:])
         machine.features = dip.base.features_asdict(self.previous())
         machine.inputs = dip.base.ds_asdict(self)
         machine.outputs.update(self.sv_as_dict())
@@ -56,6 +57,7 @@ ${vrefs_init}
     def run(self, aspects:dawgie.Aspect):
         machine = ${cls_fsm_path}.${cls_fsm_class}()
         dip.basis.fsm.build(machine)
+        machine.dawgie_name = '.'.join(repr(self).split('.')[-2:])
         machine.features = dip.base.features_asdict(self.traits())
         machine.inputs = aspects
         machine.outputs.update(self.sv_as_dict())
@@ -86,6 +88,7 @@ ${vrefs_init}
     def run(self, _ps: int, timeline: dawgie.Timeline):
         machine = ${cls_fsm_path}.${cls_fsm_class}()
         dip.basis.fsm.build(machine)
+        machine.dawgie_name = '.'.join(repr(self).split('.')[-2:])
         machine.features = dip.base.features_asdict(self.variables())
         machine.inputs = timeline
         machine.outputs.update(self.sv_as_dict())
