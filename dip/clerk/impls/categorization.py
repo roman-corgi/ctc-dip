@@ -74,7 +74,7 @@ class FSM(dip.base.Orchestrator):
         categories = dip.bindings.categorization.CreateFromDocument(xml)
         xml = self._load('system.xml')
         system = dip.bindings.system.CreateFromDocument(xml)
-        archive = Path(system.archive.location)
+        journal = Path(system.journal.location)
         staging = Path(system.staging.location)
         manifest = dip.base.Manifest()
         mfn = staging / util.tn2l1mfn(self.target)
@@ -85,7 +85,7 @@ class FSM(dip.base.Orchestrator):
                 f'No manifest file matches target name {self.target}'
             )
         manifest.deserialize(mfn)
-        shutil.move(mfn, archive / mfn.name)
+        shutil.move(mfn, journal / mfn.name)
         for l1 in manifest:
             l1 = Path(l1)
             channels = []
