@@ -18,6 +18,7 @@ class FSM(dip.base.Orchestrator):
         if signals:
             signal = signals.pop(0)
             manifest = self.outputs['inbound']['frames']
+            manifest.at = self.dawgie_name
             manifest.deserialize(signal.parent / signal.stem)
             dawgie.db.add(util.l1mfn2tn(signal.name.split('.')[0]))
             signal.unlink(missing_ok=True)

@@ -77,6 +77,15 @@ class Manifest(Contaminable, collections.UserList, dawgie.Value):
         collections.UserList.__init__(self, *args, **kwds)
         self._version_ = dawgie.VERSION(1, 0, 0)
         self._feats = []
+        self._at: str = 'unspecified'
+
+    @property
+    def at(self) -> str:
+        return self._at
+
+    @at.setter
+    def at(self, location: str):
+        self._at = location
 
     def deserialize(self, fn: str, clear: bool = True) -> typing.Self:
         '''load a manifest into this object

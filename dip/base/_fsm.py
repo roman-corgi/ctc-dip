@@ -174,6 +174,7 @@ class Runner(dip.basis.fsm.AbstractModel):
     def _do_warehouse(self) -> bool:
         '''move the data to SSC storage location'''
         self.outputs['product']['manifest'] = Manifest()
+        self.outputs['product']['manifest'].at = self.dawgie_name
         dst = None
         name = None
         for sv in self.inputs.values():

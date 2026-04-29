@@ -77,6 +77,7 @@ class FSM(dip.base.Orchestrator):
         journal = Path(system.journal.location)
         staging = Path(system.staging.location)
         manifest = dip.base.Manifest()
+        manifest.at = self.dawgie_name
         mfn = staging / util.tn2l1mfn(self.target)
         if not mfn.is_file():
             mfn = staging / mfn.name.lower()

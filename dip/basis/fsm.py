@@ -75,6 +75,7 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
     def __init__(self):
         abc.ABC.__init__(self)
         self.__dawgie_exc = None
+        self.__dawgie_name = None
         self.__features = {}
         self.__finale = None
         self.__log = LOG.getChild(self.__class__.__name__)
@@ -92,6 +93,14 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
         return self.__dawgie_exc
 
     @property
+    def dawgie_name(self) -> str:
+        return self.__dawgie_name
+
+    @dawgie_name.setter
+    def dawgie_name(self, name: str):
+        self.__dawgie_name = name
+
+    @property
     def features(self) -> {str: str}:
         return self.__features
 
@@ -102,6 +111,10 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
     @property
     def final_state(self) -> str:
         return self.__finale
+
+    @final_state.setter
+    def final_state(self, finale: str):
+        self.__finale = finale
 
     @property
     def inputs(self) -> [dawgie.Aspect, dawgie.Dataset, dawgie.Timeline]:
@@ -130,10 +143,6 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
     @target.setter
     def target(self, s: str):
         self.__target = s
-
-    @final_state.setter
-    def final_state(self, finale: str):
-        self.__finale = finale
 
     @typing.final
     def do(self):
