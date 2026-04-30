@@ -4,7 +4,7 @@ remote_theme: just-the-docs/just-the-docs
 # 2. Sidebar Branding (Logo & Navigation)
 title: Data Integration Processor (DIP)
 description: the clerk that wants to be a registrar
-logo: images/logo.png
+logo: /assets/images/logo.png
 title_only_logo: false               # Keep false to show logo next to title
 
 # External links (Repo link in sidebar)
