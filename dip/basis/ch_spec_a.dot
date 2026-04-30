@@ -1,4 +1,4 @@
-digraph AbstractDesign
+digraph SpectroscopyAnalog
 {
   graph [splines="ortho", rankdir=LR];
 
@@ -14,15 +14,16 @@ digraph AbstractDesign
   l1_spec_a_man [label="L1_spec_a manifest 1..1", shape="ellipse"];
   l1_spec_a_odir [label="L1_spec_a output path 1..1", shape="ellipse"];
   l1_spec_a_rec [label="L1_spec_a recipe 1..1", shape="cds"];
-  l1_spec_a_nln [label="L1_spec_a non-linear & Kgain 1..1", shape="cds"];
+  l1_spec_a_nllut [label="L1_spec_a non-linear LUT 1..1", shape="cds"];
 
   l2a_spec_a_prod [label="L2a_spec_a products 1..b", shape="rectangle"];
   l2a_spec_a_man [label="L2a_spec_a manifest 1..1", shape="ellipse"];
   l2a_spec_a_odir [label="L2a_spec_a output path 1..1", shape="ellipse"];
   l2a_spec_a_rec [label="L2a_spec_a recipe 1..1", shape="cds"];
   l2a_spec_a_cti [label="L2a_spec_a charge xfer inefficiency 1..1", shape="cds"];
-  l2a_spec_a_dnb [label="L2a_spec_a detector noise background 1..1", shape="cds"];
+  l2a_spec_a_dnb [label="L2a_spec_a CIC/Dark Current/FPN\n or master dark 1..1", shape="cds"];
   l2a_spec_a_mbpm [label="L2a_spec_a master bad pixel map 1..1", shape="cds"];
+  l2a_spec_a_kgain [label="L2a_spec_a Kgain 1..1", shape="cds"];
   l2a_spec_a_emg [label="L2a_spec_a EM gain 1..1", shape="cds"];
   l2a_spec_a_log [label="L2a log_spec_a 1..1", shape="ellipse"];
   l2a_spec_a_man_demux [label="L2a_spec_a(E) manifest 1..1", shape="ellipse"];
@@ -61,7 +62,7 @@ digraph AbstractDesign
   l1_spec_a_man -> trans_spec_a_l1_l2a;
   l1_spec_a_odir -> trans_spec_a_l1_l2a;
   l1_spec_a_rec -> trans_spec_a_l1_l2a;
-  l1_spec_a_nln -> trans_spec_a_l1_l2a;
+  l1_spec_a_nllut -> trans_spec_a_l1_l2a;
 
   trans_spec_a_l1_l2a -> l2a_spec_a_prod;
   trans_spec_a_l1_l2a -> l2a_spec_a_man;  
@@ -70,10 +71,11 @@ digraph AbstractDesign
   l2a_spec_a_prod -> trans_spec_a_l2a_l2b;
   l2a_spec_a_odir -> trans_spec_a_l2a_l2b;
   l2a_spec_a_rec -> trans_spec_a_l2a_l2b;
-  l2a_spec_a_cti -> trans_spec_a_l2a_l2b;
+  l2a_spec_a_cti -> trans_spec_a_l2a_l2b [style="dashed"];
   l2a_spec_a_dnb -> trans_spec_a_l2a_l2b;
   l2a_spec_a_mbpm -> trans_spec_a_l2a_l2b;
   l2a_spec_a_emg -> trans_spec_a_l2a_l2b;
+  l2a_spec_a_kgain -> trans_spec_a_l2a_l2b;
 
   trans_spec_a_l2a_l2b -> l2b_spec_a_prod;
   trans_spec_a_l2a_l2b -> l2b_spec_a_man_demux;
