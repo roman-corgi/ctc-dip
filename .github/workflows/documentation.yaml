@@ -16,7 +16,7 @@ jobs:
         run: sudo apt-get install -y graphviz
 
       - name: Create output directory
-        run: mkdir -p docs/images
+        run: mkdir -p docs/assets/images
 
       - name: Process DOT files
         run: |
@@ -26,15 +26,15 @@ jobs:
             echo "Processing $filename..."
             
             # Generate PNG and SVG
-            # dot -Tpng "$file" -o "docs/images/${filename}.png"
-            dot -Tsvg "$file" -o "docs/images/${filename}.svg"
+            # dot -Tpng "$file" -o "docs/assets/images/${filename}.png"
+            dot -Tsvg "$file" -o "docs/assets/images/${filename}.svg"
           done
 
       - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/images/*.png docs/images/*.svg
+          git add docs/assets/images/*.png docs/assets/images/*.svg
           
           # Only commit if there are actual changes to images
           if git diff --staged --quiet; then
