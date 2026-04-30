@@ -1,7 +1,23 @@
+# 1. Theme Activation
+remote_theme: just-the-docs/just-the-docs
+
+# 2. Sidebar Branding (Logo & Navigation)
 title: Data Integration Processor (DIP)
-logo: images/logo.png
 description: the clerk that wants to be a registrar
-show_downloads: true
-google_analytics:
-theme: jekyll-theme-minimal
-markdown: kramdown
+logo: images/logo.png
+title_only_logo: false               # Keep false to show logo next to title
+
+# External links (Repo link in sidebar)
+nav_external_links:
+  - title: "GitHub Repository"
+    url: "https://github.com/roman-corgi/ctc-dip"
+    hide_icon: false
+
+# 3. Zero-Boilerplate Defaults
+# This automatically applies the 'default' layout to every markdown 
+# file so you don't have to add it to each page.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
