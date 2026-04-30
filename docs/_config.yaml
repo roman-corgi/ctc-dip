@@ -6,6 +6,7 @@ title: Data Integration Processor (DIP)
 description: the clerk that wants to be a registrar
 logo: /assets/images/logo.png
 title_only_logo: false               # Keep false to show logo next to title
+nav_expand: true                     # This forces the sidebar to stay fully open
 
 # External links (Repo link in sidebar)
 nav_external_links:

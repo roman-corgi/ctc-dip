@@ -1,0 +1,8 @@
+// 1. Force the sidebar to a tiny fraction (fixed width)
+$nav-width: 200px; 
+
+// 2. Allow the documentation to fill the rest of the browser
+$content-width: 100%;
+
+// 3. Remove the built-in "max-width" that stops text from stretching
+$layout-page-max-width: none;
