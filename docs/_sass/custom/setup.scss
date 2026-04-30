@@ -6,3 +6,6 @@ $content-width: 10000px;
 
 // 3. Remove the built-in "max-width" that stops text from stretching
 $layout-page-max-width: none;
+
+// open the navigation to show full TOC without clicking
+$nav-expand: true;
