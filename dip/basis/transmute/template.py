@@ -21,10 +21,14 @@ ${vrefs_init}
     def run(self, ds:dawgie.Dataset, _ps):
         machine = ${cls_fsm_path}.${cls_fsm_class}()
         dip.basis.fsm.build(machine)
+        machine.dawgie_name = '.'.join(repr(self).split('.')[-2:])
         machine.features = dip.base.features_asdict(self.previous())
         machine.inputs = dip.base.ds_asdict(self)
         machine.outputs.update(self.sv_as_dict())
+        machine.target = repr(self).split('.')[1]
         machine.do()
+        if machine.dawgie_exc is not None:
+            raise machine.dawgie_exc
         if machine.panicked:
             raise dawgie.AbortAEError('we sank!')
         if machine.retargets:
@@ -53,10 +57,13 @@ ${vrefs_init}
     def run(self, aspects:dawgie.Aspect):
         machine = ${cls_fsm_path}.${cls_fsm_class}()
         dip.basis.fsm.build(machine)
+        machine.dawgie_name = '.'.join(repr(self).split('.')[-2:])
         machine.features = dip.base.features_asdict(self.traits())
         machine.inputs = aspects
         machine.outputs.update(self.sv_as_dict())
         machine.do()
+        if machine.dawgie_exc is not None:
+            raise machine.dawgie_exc
         if machine.panicked:
             raise dawgie.AbortAEError('we sank!')
         aspects.ds().update()
@@ -81,10 +88,13 @@ ${vrefs_init}
     def run(self, _ps: int, timeline: dawgie.Timeline):
         machine = ${cls_fsm_path}.${cls_fsm_class}()
         dip.basis.fsm.build(machine)
+        machine.dawgie_name = '.'.join(repr(self).split('.')[-2:])
         machine.features = dip.base.features_asdict(self.variables())
         machine.inputs = timeline
         machine.outputs.update(self.sv_as_dict())
         machine.do()
+        if machine.dawgie_exc is not None:
+            raise machine.dawgie_exc
         if machine.panicked:
             raise dawgie.AbortAEError('we sank!')
         timeline.ds().update()
@@ -106,6 +116,11 @@ ${values}
         return "${cls_myname}"
 
     def view(self, caller, visitor):
+        try:
+            super().view(caller, visitor)
+        except NotImplementedError:
+            pass  # ignore the error and try something else
+        dip.base.generic_view(self, visitor)
         return
     '''),
     Kind.VALUE: Template(''),

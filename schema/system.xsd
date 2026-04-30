@@ -18,11 +18,16 @@
   <xs:complexType name="system_type">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Define all of the system files.
+        Define all of the system root directories for moving and storing data.
+
+        archive - directory to write manifest and signal files for SSC pickup
+        journal - directory to move L1 manifest files from SSC once processed
+        staging - directory to read manifest and sigal files from SSC
       </xs:documentation>
     </xs:annotation>
     <xs:all>
       <xs:element default="no comment" name="archive" type="system_item"/>
+      <xs:element default="no comment" name="journal" type="system_item"/>
       <xs:element default="no comment" name="staging" type="system_item"/>
     </xs:all>
   </xs:complexType>
