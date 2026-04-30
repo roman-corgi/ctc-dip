@@ -74,6 +74,8 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
 
     def __init__(self):
         abc.ABC.__init__(self)
+        self.__dawgie_exc = None
+        self.__dawgie_name = None
         self.__features = {}
         self.__finale = None
         self.__log = LOG.getChild(self.__class__.__name__)
@@ -81,7 +83,22 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
         self.__outputs: dict[str, dawgie.StateVector] = {}
         self.__panicked = False
         self.__retargets: dict[str, list[dawgie.StateVector]] = {}
+        self.__target: str = ''
         self.state: str = None  # transitons will manage but make pylint happy
+
+    @property
+    def dawgie_exc(
+        self,
+    ) -> [dawgie.NoValidInputDataError, dawgie.NoValidOutputDataError]:
+        return self.__dawgie_exc
+
+    @property
+    def dawgie_name(self) -> str:
+        return self.__dawgie_name
+
+    @dawgie_name.setter
+    def dawgie_name(self, name: str):
+        self.__dawgie_name = name
 
     @property
     def features(self) -> {str: str}:
@@ -94,6 +111,10 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
     @property
     def final_state(self) -> str:
         return self.__finale
+
+    @final_state.setter
+    def final_state(self, finale: str):
+        self.__finale = finale
 
     @property
     def inputs(self) -> [dawgie.Aspect, dawgie.Dataset, dawgie.Timeline]:
@@ -115,9 +136,13 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
     def retargets(self) -> dict[str, list[dawgie.StateVector]]:
         return self.__retargets
 
-    @final_state.setter
-    def final_state(self, finale: str):
-        self.__finale = finale
+    @property
+    def target(self) -> str:
+        return self.__target
+
+    @target.setter
+    def target(self, s: str):
+        self.__target = s
 
     @typing.final
     def do(self):
@@ -156,6 +181,12 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
                     return self.incomplete_products  # pylint: disable=no-member
                 case _:
                     return self.incomplete_products  # pylint: disable=no-member
+        except (
+            dawgie.NoValidInputDataError,
+            dawgie.NoValidOutputDataError,
+        ) as e:
+            self.__dawgie_exc = e
+            return self.incomplete_products  # pylint: disable=no-member
         except:  # noqa; E722 # pylint: disable=bare-except
             self.__log.exception(
                 'unhandled exception caught and broadly handled here'

@@ -163,10 +163,18 @@ class Runner(dip.basis.fsm.AbstractModel):
         if self.__sandbox:
             self.__sandbox.cleanup()
             self.__sandbox = None
+            caldb = Path(os.path.expandvars('${HOME}/.corgidrp'))
+            if caldb.is_dir():
+                for item in caldb.iterdir():
+                    if item.is_dir() and not item.is_symlink():
+                        shutil.rmtree(item)
+                    else:
+                        item.unlink()
 
     def _do_warehouse(self) -> bool:
         '''move the data to SSC storage location'''
         self.outputs['product']['manifest'] = Manifest()
+        self.outputs['product']['manifest'].at = self.dawgie_name
         dst = None
         name = None
         for sv in self.inputs.values():
