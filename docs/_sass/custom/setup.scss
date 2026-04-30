@@ -7,5 +7,12 @@ $content-width: 10000px;
 // 3. Remove the built-in "max-width" that stops text from stretching
 $layout-page-max-width: none;
 
-// open the navigation to show full TOC without clicking
-$nav-expand: true;
+// 4. Force nested sidebar links to stay visible
+.nav-list .nav-list {
+  display: block !important;
+}
+
+// Hide the expand/collapse arrows since everything is unrolled
+.nav-list-expander {
+  display: none !important;
+}
