@@ -1,7 +1,8 @@
 ---
 ---
-@import "just-the-docs";
+// This is the correct entry point for Just the Docs
+@import "support/site"; 
 
-// This is also where you put your full-width fix
-$content-width: 100%;
-$nav-width: 260px;
+// Your custom "desirements"
+$content-width: 100% !default;
+$nav-width: 250px !default;
