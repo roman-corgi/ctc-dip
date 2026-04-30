@@ -11,8 +11,8 @@ There are two major design concepts:
 
 ## Finite State Machine (FSM)
 
-![FSM](/assets/images/fsm.svg)
+![FSM](/ctc-dip/assets/images/fsm.svg)
 
 ## Ideal Channel
 
-![Ideal Channel](/assets/images/abs_design.svg)
+![Ideal Channel](/ctc-dip/assets/images/abs_design.svg)
