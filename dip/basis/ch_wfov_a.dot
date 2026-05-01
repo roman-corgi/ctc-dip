@@ -65,7 +65,7 @@ digraph WideFieldOfViewAnalog
   trans_wfov_a_l1_l2a -> l2a_wfov_a_man;  
   trans_wfov_a_l1_l2a -> l2a_wfov_a_log [style="dashed"];  
 
-  l2a_wfov_a_prod -> trans_wfov_a_l2a_l2b;
+  l2a_wfov_a_prod -> trans_wfov_a_l2a_l2b [style="dashed"];
   l2a_wfov_a_odir -> trans_wfov_a_l2a_l2b;
   l2a_wfov_a_rec -> trans_wfov_a_l2a_l2b;
   l2a_wfov_a_cti -> trans_wfov_a_l2a_l2b;
@@ -86,7 +86,7 @@ digraph WideFieldOfViewAnalog
   l2b_wfov_a_man_demux -> l2b_wfov_a_mux;
   l2b_wfov_a_mux -> l2b_wfov_a_man;
   
-  l2b_wfov_a_prod -> trans_wfov_a_l2b_l3;
+  l2b_wfov_a_prod -> trans_wfov_a_l2b_l3 [style="dashed"];
   l2b_wfov_a_man -> trans_wfov_a_l2b_l3;
   l2b_wfov_a_odir -> trans_wfov_a_l2b_l3;
   l2b_wfov_a_rec -> trans_wfov_a_l2b_l3;
@@ -97,7 +97,7 @@ digraph WideFieldOfViewAnalog
   trans_wfov_a_l2b_l3 -> l3_wfov_a_man;  
   trans_wfov_a_l2b_l3 -> l3_wfov_a_log [style="dashed"];  
 
-  l3_wfov_a_prod -> trans_wfov_a_l3_l4;
+  l3_wfov_a_prod -> trans_wfov_a_l3_l4 [style="dashed"];
   l3_wfov_a_man -> trans_wfov_a_l3_l4;
   l3_wfov_a_odir -> trans_wfov_a_l3_l4;
   l3_wfov_a_rec -> trans_wfov_a_l3_l4;
@@ -106,7 +106,7 @@ digraph WideFieldOfViewAnalog
   trans_wfov_a_l3_l4 -> l4_wfov_a_log [style="dashed"];
   trans_wfov_a_l3_l4 -> l4_wfov_a_man;
 
-  l4_wfov_a_prod -> trans_wfov_a_l4_tda;
+  l4_wfov_a_prod -> trans_wfov_a_l4_tda [style="dashed"];
   l4_wfov_a_man -> trans_wfov_a_l4_tda;
   l4_wfov_a_odir -> trans_wfov_a_l4_tda;
   l4_wfov_a_rec -> trans_wfov_a_l4_tda;
