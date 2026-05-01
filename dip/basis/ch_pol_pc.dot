@@ -54,29 +54,29 @@ digraph PolarimetryPhotonCount
   l4_pol_pc_ctcal [label="L4_pol_pc core throughput calibrations 1..1", shape="cds"];
   l4_pol_pc_pafcal [label="L4_pol_pc polarimetric absolute flux calibration 1..1", shape="cds"];
 
-  l1_pol_pc_prod -> trans_pol_pc_l1_l2a;
+  l1_pol_pc_prod -> trans_pol_pc_l1_l2a [style="dashed"];
   l1_pol_pc_man -> trans_pol_pc_l1_l2a;
   l1_pol_pc_odir -> trans_pol_pc_l1_l2a;
   l1_pol_pc_rec -> trans_pol_pc_l1_l2a;
   l1_pol_pc_nllut -> trans_pol_pc_l1_l2a;
 
-  trans_pol_pc_l1_l2a -> l2a_pol_pc_prod;
+  trans_pol_pc_l1_l2a -> l2a_pol_pc_prod [style="dashed"];
   trans_pol_pc_l1_l2a -> l2a_pol_pc_man;  
-  trans_pol_pc_l1_l2a -> l2a_pol_pc_log;  
+  trans_pol_pc_l1_l2a -> l2a_pol_pc_log  [style="dashed"];  
 
   l2a_pol_pc_prod -> trans_pol_pc_l2a_l2b;
   l2a_pol_pc_odir -> trans_pol_pc_l2a_l2b;
   l2a_pol_pc_rec -> trans_pol_pc_l2a_l2b;
-  l2a_pol_pc_cti -> trans_pol_pc_l2a_l2b [style="dashed"];
+  l2a_pol_pc_cti -> trans_pol_pc_l2a_l2b;
   l2a_pol_pc_dnb -> trans_pol_pc_l2a_l2b;
   l2a_pol_pc_mbpm -> trans_pol_pc_l2a_l2b;
   l2a_pol_pc_emg -> trans_pol_pc_l2a_l2b;
   l2a_pol_pc_kgain -> trans_pol_pc_l2a_l2b;
   l2a_pol_pc_polff -> trans_pol_pc_l2a_l2b;
 
-  trans_pol_pc_l2a_l2b -> l2b_pol_pc_prod;
+  trans_pol_pc_l2a_l2b -> l2b_pol_pc_prod [style="dashed"];
   trans_pol_pc_l2a_l2b -> l2b_pol_pc_man_demux;
-  trans_pol_pc_l2a_l2b -> l2b_pol_pc_log;
+  trans_pol_pc_l2a_l2b -> l2b_pol_pc_log  [style="dashed"];
 
   l2a_pol_pc_man -> l2a_pol_pc_demux;
   l2a_pol_pc_demux -> l2a_pol_pc_man_demux;
@@ -92,17 +92,17 @@ digraph PolarimetryPhotonCount
   l2b_pol_pc_excicrf -> trans_pol_pc_l2b_l3;
   l2b_pol_pc_excfovps -> trans_pol_pc_l2b_l3;
   l2b_pol_pc_cfamfo -> trans_pol_pc_l2b_l3;
-  trans_pol_pc_l2b_l3 -> l3_pol_pc_prod;
+  trans_pol_pc_l2b_l3 -> l3_pol_pc_prod [style="dashed"];
   trans_pol_pc_l2b_l3 -> l3_pol_pc_man;  
-  trans_pol_pc_l2b_l3 -> l3_pol_pc_log;  
+  trans_pol_pc_l2b_l3 -> l3_pol_pc_log  [style="dashed"];  
 
   l3_pol_pc_prod -> trans_pol_pc_l3_l4;
   l3_pol_pc_man -> trans_pol_pc_l3_l4;
   l3_pol_pc_odir -> trans_pol_pc_l3_l4;
   l3_pol_pc_rec -> trans_pol_pc_l3_l4;
   l3_pol_pc_mueller -> trans_pol_pc_l3_l4;
-  trans_pol_pc_l3_l4 -> l4_pol_pc_prod;
-  trans_pol_pc_l3_l4 -> l4_pol_pc_log;
+  trans_pol_pc_l3_l4 -> l4_pol_pc_prod [style="dashed"];
+  trans_pol_pc_l3_l4 -> l4_pol_pc_log  [style="dashed"];
   trans_pol_pc_l3_l4 -> l4_pol_pc_man;
 
   l4_pol_pc_prod -> trans_pol_pc_l4_tda;
@@ -111,6 +111,6 @@ digraph PolarimetryPhotonCount
   l4_pol_pc_rec -> trans_pol_pc_l4_tda;
   l4_pol_pc_ctcal -> trans_pol_pc_l4_tda;
   l4_pol_pc_pafcal -> trans_pol_pc_l4_tda;
-  trans_pol_pc_l4_tda -> tda_pol_pc_prod;
-  trans_pol_pc_l4_tda -> tda_pol_pc_log;
+  trans_pol_pc_l4_tda -> tda_pol_pc_prod [style="dashed"];
+  trans_pol_pc_l4_tda -> tda_pol_pc_log  [style="dashed"];
 }

@@ -55,29 +55,29 @@ digraph WideFieldOfViewPhotonCount
   l4_wfov_pc_ctcal [label="L4_wfov_pc core throughput calibrations 1..1", shape="cds"];
   l4_wfov_pc_ndfilt [label="L4_wfov_pc ND filter 1..1", shape="cds"];
 
-  l1_wfov_pc_prod -> trans_wfov_pc_l1_l2a;
+  l1_wfov_pc_prod -> trans_wfov_pc_l1_l2a [style="dashed"];
   l1_wfov_pc_man -> trans_wfov_pc_l1_l2a;
   l1_wfov_pc_odir -> trans_wfov_pc_l1_l2a;
   l1_wfov_pc_rec -> trans_wfov_pc_l1_l2a;
   l1_wfov_pc_nllut -> trans_wfov_pc_l1_l2a;
 
-  trans_wfov_pc_l1_l2a -> l2a_wfov_pc_prod;
+  trans_wfov_pc_l1_l2a -> l2a_wfov_pc_prod [style="dashed"];
   trans_wfov_pc_l1_l2a -> l2a_wfov_pc_man;  
-  trans_wfov_pc_l1_l2a -> l2a_wfov_pc_log;  
+  trans_wfov_pc_l1_l2a -> l2a_wfov_pc_log [style="dashed"];  
 
   l2a_wfov_pc_prod -> trans_wfov_pc_l2a_l2b;
   l2a_wfov_pc_odir -> trans_wfov_pc_l2a_l2b;
   l2a_wfov_pc_rec -> trans_wfov_pc_l2a_l2b;
-  l2a_wfov_pc_cti -> trans_wfov_pc_l2a_l2b [style="dashed"];
+  l2a_wfov_pc_cti -> trans_wfov_pc_l2a_l2b;
   l2a_wfov_pc_dnb -> trans_wfov_pc_l2a_l2b;
   l2a_wfov_pc_mbpm -> trans_wfov_pc_l2a_l2b;
   l2a_wfov_pc_ff -> trans_wfov_pc_l2a_l2b;
   l2a_wfov_pc_emg -> trans_wfov_pc_l2a_l2b;
   l2a_wfov_pc_kgain -> trans_wfov_pc_l2a_l2b;
 
-  trans_wfov_pc_l2a_l2b -> l2b_wfov_pc_prod;
+  trans_wfov_pc_l2a_l2b -> l2b_wfov_pc_prod [style="dashed"];
   trans_wfov_pc_l2a_l2b -> l2b_wfov_pc_man_demux;
-  trans_wfov_pc_l2a_l2b -> l2b_wfov_pc_log;
+  trans_wfov_pc_l2a_l2b -> l2b_wfov_pc_log [style="dashed"];
 
   l2a_wfov_pc_man -> l2a_wfov_pc_demux;
   l2a_wfov_pc_demux -> l2a_wfov_pc_man_demux;
@@ -93,17 +93,17 @@ digraph WideFieldOfViewPhotonCount
   l2b_wfov_pc_excicrf -> trans_wfov_pc_l2b_l3;
   l2b_wfov_pc_excfovps -> trans_wfov_pc_l2b_l3;
   l2b_wfov_pc_distm -> trans_wfov_pc_l2b_l3;
-  trans_wfov_pc_l2b_l3 -> l3_wfov_pc_prod;
+  trans_wfov_pc_l2b_l3 -> l3_wfov_pc_prod [style="dashed"];
   trans_wfov_pc_l2b_l3 -> l3_wfov_pc_man;  
-  trans_wfov_pc_l2b_l3 -> l3_wfov_pc_log;  
+  trans_wfov_pc_l2b_l3 -> l3_wfov_pc_log [style="dashed"];  
 
   l3_wfov_pc_prod -> trans_wfov_pc_l3_l4;
   l3_wfov_pc_man -> trans_wfov_pc_l3_l4;
   l3_wfov_pc_odir -> trans_wfov_pc_l3_l4;
   l3_wfov_pc_rec -> trans_wfov_pc_l3_l4;
   l3_wfov_pc_cal -> trans_wfov_pc_l3_l4;
-  trans_wfov_pc_l3_l4 -> l4_wfov_pc_prod;
-  trans_wfov_pc_l3_l4 -> l4_wfov_pc_log;
+  trans_wfov_pc_l3_l4 -> l4_wfov_pc_prod [style="dashed"];
+  trans_wfov_pc_l3_l4 -> l4_wfov_pc_log [style="dashed"];
   trans_wfov_pc_l3_l4 -> l4_wfov_pc_man;
 
   l4_wfov_pc_prod -> trans_wfov_pc_l4_tda;
@@ -113,6 +113,6 @@ digraph WideFieldOfViewPhotonCount
   l4_wfov_pc_afcal -> trans_wfov_pc_l4_tda;
   l4_wfov_pc_ctcal -> trans_wfov_pc_l4_tda;
   l4_wfov_pc_ndfilt -> trans_wfov_pc_l4_tda;
-  trans_wfov_pc_l4_tda -> tda_wfov_pc_prod;
-  trans_wfov_pc_l4_tda -> tda_wfov_pc_log;
+  trans_wfov_pc_l4_tda -> tda_wfov_pc_prod [style="dashed"];
+  trans_wfov_pc_l4_tda -> tda_wfov_pc_log [style="dashed"];
 }

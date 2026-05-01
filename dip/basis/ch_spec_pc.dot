@@ -58,28 +58,28 @@ digraph SpectroscopyPhotonCount
   l4_spec_pc_rspi [label="L4_spec_pc reference star prism image 1..1", shape="cds"];
   l4_spec_pc_lsf [label="L4_spec_pc line spread function 1..1", shape="cds"];
 
-  l1_spec_pc_prod -> trans_spec_pc_l1_l2a;
+  l1_spec_pc_prod -> trans_spec_pc_l1_l2a [style="dashed"];
   l1_spec_pc_man -> trans_spec_pc_l1_l2a;
   l1_spec_pc_odir -> trans_spec_pc_l1_l2a;
   l1_spec_pc_rec -> trans_spec_pc_l1_l2a;
   l1_spec_pc_nllut -> trans_spec_pc_l1_l2a;
 
-  trans_spec_pc_l1_l2a -> l2a_spec_pc_prod;
+  trans_spec_pc_l1_l2a -> l2a_spec_pc_prod [style="dashed"];
   trans_spec_pc_l1_l2a -> l2a_spec_pc_man;  
-  trans_spec_pc_l1_l2a -> l2a_spec_pc_log;  
+  trans_spec_pc_l1_l2a -> l2a_spec_pc_log  [style="dashed"];  
 
   l2a_spec_pc_prod -> trans_spec_pc_l2a_l2b;
   l2a_spec_pc_odir -> trans_spec_pc_l2a_l2b;
   l2a_spec_pc_rec -> trans_spec_pc_l2a_l2b;
-  l2a_spec_pc_cti -> trans_spec_pc_l2a_l2b [style="dashed"];
+  l2a_spec_pc_cti -> trans_spec_pc_l2a_l2b;
   l2a_spec_pc_dnb -> trans_spec_pc_l2a_l2b;
   l2a_spec_pc_mbpm -> trans_spec_pc_l2a_l2b;
   l2a_spec_pc_emg -> trans_spec_pc_l2a_l2b;
   l2a_spec_pc_kgain -> trans_spec_pc_l2a_l2b;
 
-  trans_spec_pc_l2a_l2b -> l2b_spec_pc_prod;
+  trans_spec_pc_l2a_l2b -> l2b_spec_pc_prod [style="dashed"];
   trans_spec_pc_l2a_l2b -> l2b_spec_pc_man_demux;
-  trans_spec_pc_l2a_l2b -> l2b_spec_pc_log;
+  trans_spec_pc_l2a_l2b -> l2b_spec_pc_log  [style="dashed"];
 
   l2a_spec_pc_man -> l2a_spec_pc_demux;
   l2a_spec_pc_demux -> l2a_spec_pc_man_demux;
@@ -96,9 +96,9 @@ digraph SpectroscopyPhotonCount
   l2b_spec_pc_excfovps -> trans_spec_pc_l2b_l3;
   l2b_spec_pc_cfamfo -> trans_spec_pc_l2b_l3;
 
-  trans_spec_pc_l2b_l3 -> l3_spec_pc_prod;
+  trans_spec_pc_l2b_l3 -> l3_spec_pc_prod [style="dashed"];
   trans_spec_pc_l2b_l3 -> l3_spec_pc_man;  
-  trans_spec_pc_l2b_l3 -> l3_spec_pc_log;  
+  trans_spec_pc_l2b_l3 -> l3_spec_pc_log  [style="dashed"];  
 
   l3_spec_pc_prod -> trans_spec_pc_l3_l4;
   l3_spec_pc_man -> trans_spec_pc_l3_l4;
@@ -106,8 +106,8 @@ digraph SpectroscopyPhotonCount
   l3_spec_pc_rec -> trans_spec_pc_l3_l4;
   l3_spec_pc_dispm -> trans_spec_pc_l3_l4;
   l3_spec_pc_wavem -> trans_spec_pc_l3_l4;
-  trans_spec_pc_l3_l4 -> l4_spec_pc_prod;
-  trans_spec_pc_l3_l4 -> l4_spec_pc_log;
+  trans_spec_pc_l3_l4 -> l4_spec_pc_prod [style="dashed"];
+  trans_spec_pc_l3_l4 -> l4_spec_pc_log  [style="dashed"];
   trans_spec_pc_l3_l4 -> l4_spec_pc_man;
 
   l4_spec_pc_prod -> trans_spec_pc_l4_tda;
@@ -120,6 +120,6 @@ digraph SpectroscopyPhotonCount
   l4_spec_pc_tspi -> trans_spec_pc_l4_tda;
   l4_spec_pc_rspi -> trans_spec_pc_l4_tda;
   l4_spec_pc_lsf -> trans_spec_pc_l4_tda;
-  trans_spec_pc_l4_tda -> tda_spec_pc_prod;
-  trans_spec_pc_l4_tda -> tda_spec_pc_log;
+  trans_spec_pc_l4_tda -> tda_spec_pc_prod [style="dashed"];
+  trans_spec_pc_l4_tda -> tda_spec_pc_log  [style="dashed"];
 }
