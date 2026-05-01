@@ -37,25 +37,19 @@ digraph Clerks
   l2a_eng_a_rec [label="recipe L2s_eng_a 1..1", shape="cds",
                  valname="clerk.recipe.l2a_eng_a.recipe",
                  valtype="dip.base.Recipe"];
-  l2a_eng_a_bpm [label="bad pixel map 1..1", shape="cds",
+  l2a_eng_a_mbpm [label="bad pixel map 1..1", shape="cds",
                 valname="clerk.calibration.l2a_eng_a.bad_pix_map",
                 valtype="dip.base.Calibration"];
-  l2a_eng_a_dt  [label="dark (traditional) 1..1", shape="cds",
-                valname="clerk.calibration.l2a_eng_a.dark_trad",
-                valtype="dip.base.Calibration"];
-  l2a_eng_a_ds  [label="dark (synthetized) 1..1", shape="cds",
-                valname="clerk.calibration.l2a_eng_a.dark_synth",
-                valtype="dip.base.Calibration"];
-  l2a_eng_a_dn  [label="dark (from noise map) 1..1", shape="cds",
-                valname="clerk.calibration.l2a_eng_a.dark_noise",
-                valtype="dip.base.Calibration"];
+  l2a_eng_a_dnb  [label="dark (CIC/FPN/dark current) 1..1", shape="cds",
+                  valname="clerk.calibration.l2a_eng_a.darks",
+                  valtype="dip.base.Calibration"];
   l2a_eng_a_nm  [label="noise maps 1..1", shape="cds",
                 valname="clerk.calibration.l2a_eng_a.noise_map",
                 valtype="dip.base.Calibration"];
   l2a_eng_a_ff  [label="flat field 1..1", shape="cds",
                 valname="clerk.calibration.l2a_eng_a.flat_field",
                 valtype="dip.base.Calibration"];
-  l2a_eng_a_kg  [label="k-gain 1..1", shape="cds",
+  l2a_eng_a_kgain  [label="k-gain 1..1", shape="cds",
                 valname="clerk.calibration.l2a_eng_a.k_gain",
                 valtype="dip.base.Calibration"];
   l2a_eng_a_emg [label="EM gain 1..1", shape="cds",
@@ -67,13 +61,11 @@ digraph Clerks
 
   calib -> eng_a_cpgs;
   calib -> l1_eng_a_nln;
-  calib -> l2a_eng_a_bpm;
-  calib -> l2a_eng_a_dt;
-  calib -> l2a_eng_a_ds;
-  calib -> l2a_eng_a_dn;
+  calib -> l2a_eng_a_mbpm;
+  calib -> l2a_eng_a_dnb;
   calib -> l2a_eng_a_nm;
   calib -> l2a_eng_a_ff;
-  calib -> l2a_eng_a_kg;
+  calib -> l2a_eng_a_kgain;
   calib -> l2a_eng_a_emg;
   config -> l1_eng_a_odir;
   config -> l2a_eng_a_odir;
