@@ -47,6 +47,7 @@ l4_wfov_a_rec [label="L4_wfov_a recipe 1..1", shape="cds"];
 l4_wfov_a_afcal [label="L4_wfov_a absolute flux calibrations 1..1", shape="cds"];
 l4_wfov_a_ctcal [label="L4_wfov_a core throughput calibrations 1..1", shape="cds"];
 l4_wfov_a_ndfilt [label="L4_wfov_a ND filter 1..1", shape="cds"];
+tda_wfov_a_man [label="tda_wfov_a manifest 1..1", shape="ellipse", valname="l4.transmutation_wfov_a.product.manifest", valtype="dip.base.Manifest"];
 l1_wfov_a_prod -> trans_wfov_a_l1_l2a [style="dashed"];
 l1_wfov_a_man -> trans_wfov_a_l1_l2a;
 l1_wfov_a_odir -> trans_wfov_a_l1_l2a;

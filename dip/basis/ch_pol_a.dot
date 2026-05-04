@@ -46,6 +46,7 @@ l4_pol_a_odir [label="L4_pol_a output path 1..1", shape="ellipse"];
 l4_pol_a_rec [label="L4_pol_a recipe 1..1", shape="cds"];
 l4_pol_a_ctcal [label="L4_pol_a core throughput calibrations 1..1", shape="cds"];
 l4_pol_a_afcal [label="L4_pol_a polarimetric absolute flux calibration 1..1", shape="cds"];
+tda_pol_a_man [label="TDA_pol_a manifest 1..1", shape="ellipse", valname="l4.transmutation_pol_a.product.manifest", valtype="dip.base.Manifest"];
 l1_pol_a_prod -> trans_pol_a_l1_l2a [style="dashed"];
 l1_pol_a_man -> trans_pol_a_l1_l2a;
 l1_pol_a_odir -> trans_pol_a_l1_l2a;

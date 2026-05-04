@@ -47,6 +47,7 @@ l4_nfov_pc_rec [label="L4_nfov_pc recipe 1..1", shape="cds"];
 l4_nfov_pc_afcal [label="L4_nfov_pc absolute flux calibrations 1..1", shape="cds"];
 l4_nfov_pc_ctcal [label="L4_nfov_pc core throughput calibrations 1..1", shape="cds"];
 l4_nfov_pc_ndfilt [label="L4_nfov_pc ND filter 1..1", shape="cds"];
+tda_nfov_pc_man [label="TDA_nfov_pc manifest 1..1", shape="ellipse", valname="l4.transmutation_nfov_pc.product.manifest", valtype="dip.base.Manifest"];
 l1_nfov_pc_prod -> trans_nfov_pc_l1_l2a [style="dashed"];
 l1_nfov_pc_man -> trans_nfov_pc_l1_l2a;
 l1_nfov_pc_odir -> trans_nfov_pc_l1_l2a;

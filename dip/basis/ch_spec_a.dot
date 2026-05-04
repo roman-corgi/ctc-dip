@@ -50,6 +50,7 @@ l4_spec_a_stmap [label="L4_spec_a slit transmission map 1..1", shape="cds"];
 l4_spec_a_tspi [label="L4_spec_a target star prism image 1..1", shape="cds"];
 l4_spec_a_rspi [label="L4_spec_a reference star prism image 1..1", shape="cds"];
 l4_spec_a_lsf [label="L4_spec_a line spread function 1..1", shape="cds"];
+tda_spec_a_man [label="TDA_spec_a manifest 1..1", shape="ellipse", valname="l4.transmutation_spec_a.product.manifest", valtype="dip.base.Manifest"];
 l1_spec_a_prod -> trans_spec_a_l1_l2a [style="dashed"];
 l1_spec_a_man -> trans_spec_a_l1_l2a;
 l1_spec_a_odir -> trans_spec_a_l1_l2a;
