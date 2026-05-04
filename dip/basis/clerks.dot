@@ -21,19 +21,22 @@ digraph Clerks
   eng_a_cpgs [label="CPGS eng_a 1..1", shape="cds",
               valname="clerk.calibration.eng_a.cpgs",
               valtype="dip.base.Cpgs"];
+  
   l1_eng_a_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
                  valname="clerk.configuration.l1_eng_a.outdir",
-                 valtype="dip.base.Configuration"]
+                 valtype="dip.base.Configuration"];
   l1_eng_a_rec [label="recipe L1_eng_a 1..1", shape="cds",
                 valname="clerk.recipe.l1_eng_a.recipe",
                 valtype="dip.base.Recipe"];
   l1_eng_a_nln [label="non linear calibration 1..1", shape="cds",
                 valname="clerk.calibration.l1_eng_a.nonlin",
                 valtype="dip.base.Calibration"];
-
+  // end l1
+ 
+  // begin l2
   l2a_eng_a_odir [label="Output path for L2a_eng_a 1..1", shape="ellipse",
                  valname="clerk.configuration.l2_eng_a.outdir",
-                 valtype="dip.base.Configuration"]
+                 valtype="dip.base.Configuration"];
   l2a_eng_a_rec [label="recipe L2s_eng_a 1..1", shape="cds",
                  valname="clerk.recipe.l2a_eng_a.recipe",
                  valtype="dip.base.Recipe"];
@@ -55,7 +58,13 @@ digraph Clerks
   l2a_eng_a_emg [label="EM gain 1..1", shape="cds",
                 valname="clerk.calibration.l2a_eng_a.em_gain",
                 valtype="dip.base.Calibration"];
+  // end l2
 
+  // begin l3
+  // end l3
+
+  // begin l4
+  // end l4
   alarm_cal -> calib [style="dashed"];
   alarm_rec -> recipe [style="dashed"];
 
