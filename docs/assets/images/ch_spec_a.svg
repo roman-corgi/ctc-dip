@@ -227,7 +227,7 @@
 <text text-anchor="middle" x="3972.93" y="-924.8" font-family="Times,serif" font-size="14.00">L4 to TDA</text>
 </g>
 <!-- tda_spec_a_prod -->
-<g id="node51" class="node">
+<g id="node52" class="node">
 <title>tda_spec_a_prod</title>
 <ellipse fill="none" stroke="black" cx="4218.35" cy="-963" rx="87.18" ry="18"/>
 <text text-anchor="middle" x="4218.35" y="-959.3" font-family="Times,serif" font-size="14.00">tda_spec_a_prod</text>
@@ -239,7 +239,7 @@
 <polygon fill="black" stroke="black" points="4121.09,-966.5 4131.09,-963 4121.09,-959.5 4121.09,-966.5"/>
 </g>
 <!-- tda_spec_a_log -->
-<g id="node52" class="node">
+<g id="node53" class="node">
 <title>tda_spec_a_log</title>
 <ellipse fill="none" stroke="black" cx="4218.35" cy="-909" rx="79.09" ry="18"/>
 <text text-anchor="middle" x="4218.35" y="-905.3" font-family="Times,serif" font-size="14.00">tda_spec_a_log</text>
@@ -658,6 +658,12 @@
 <title>l4_spec_a_lsf&#45;&gt;trans_spec_a_l4_tda</title>
 <path fill="none" stroke="black" d="M3788.25,-798.34C3897.66,-798.34 4034.44,-798.34 4034.44,-798.34 4034.44,-798.34 4034.44,-819.92 4034.44,-819.92"/>
 <polygon fill="black" stroke="black" points="4030.94,-819.92 4034.44,-829.92 4037.94,-819.92 4030.94,-819.92"/>
+</g>
+<!-- tda_spec_a_man -->
+<g id="node51" class="node">
+<title>tda_spec_a_man</title>
+<ellipse fill="none" stroke="black" cx="135.84" cy="-288" rx="129.18" ry="18"/>
+<text text-anchor="middle" x="135.84" y="-284.3" font-family="Times,serif" font-size="14.00">TDA_spec_a manifest 1..1</text>
 </g>
 </g>
 </svg>

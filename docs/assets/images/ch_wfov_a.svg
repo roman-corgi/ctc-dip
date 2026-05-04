@@ -227,7 +227,7 @@
 <text text-anchor="middle" x="4009.57" y="-843.04" font-family="Times,serif" font-size="14.00">L4 to TDA</text>
 </g>
 <!-- tda_wfov_a_prod -->
-<g id="node48" class="node">
+<g id="node49" class="node">
 <title>tda_wfov_a_prod</title>
 <ellipse fill="none" stroke="black" cx="4257.06" cy="-881.24" rx="87.99" ry="18"/>
 <text text-anchor="middle" x="4257.06" y="-877.54" font-family="Times,serif" font-size="14.00">tda_wfov_a_prod</text>
@@ -239,7 +239,7 @@
 <polygon fill="black" stroke="black" points="4158.99,-884.74 4168.99,-881.24 4158.99,-877.74 4158.99,-884.74"/>
 </g>
 <!-- tda_wfov_a_log -->
-<g id="node49" class="node">
+<g id="node50" class="node">
 <title>tda_wfov_a_log</title>
 <ellipse fill="none" stroke="black" cx="4257.06" cy="-827.24" rx="80.69" ry="18"/>
 <text text-anchor="middle" x="4257.06" y="-823.54" font-family="Times,serif" font-size="14.00">tda_wfov_a_log</text>
@@ -622,6 +622,12 @@
 <title>l4_wfov_a_ndfilt&#45;&gt;trans_wfov_a_l4_tda</title>
 <path fill="none" stroke="black" d="M3778.4,-800.24C3778.4,-800.24 3888.17,-800.24 3888.17,-800.24"/>
 <polygon fill="black" stroke="black" points="3888.17,-803.74 3898.17,-800.24 3888.17,-796.74 3888.17,-803.74"/>
+</g>
+<!-- tda_wfov_a_man -->
+<g id="node48" class="node">
+<title>tda_wfov_a_man</title>
+<ellipse fill="none" stroke="black" cx="136.49" cy="-288.24" rx="126.18" ry="18"/>
+<text text-anchor="middle" x="136.49" y="-284.54" font-family="Times,serif" font-size="14.00">tda_wfov_a manifest 1..1</text>
 </g>
 </g>
 </svg>
