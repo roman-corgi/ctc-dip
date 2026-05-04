@@ -106,7 +106,6 @@ ${vrefs_init}
         return [${vrefs_list}]
     '''),
     Kind.STATE_VECTOR: Template('''
-# pylint: disable=too-many-instance-attributes
 class ${cls_definition}:
     def __init__(self):
         dawgie.StateVector.__init__(self)
@@ -123,7 +122,6 @@ ${values}
             pass  # ignore the error and try something else
         dip.base.generic_view(self, visitor)
         return
-# pylint: enable=too-many-instance-attributes
     '''),
     Kind.VALUE: Template(''),
 }
