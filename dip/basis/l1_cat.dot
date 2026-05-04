@@ -42,13 +42,13 @@ digraph CategorizationDesign
                  shape="ellipse",
                  valname="clerk.categorization.channel.pol_pc",
                  valtype="dip.base.Manifest"];
-  l1_spy_a_man [label="L1_spy_a manifest 1..1\nof 0..g files",
+  l1_spec_a_man [label="L1_spec_a manifest 1..1\nof 0..g files",
                 shape="ellipse",
-                valname="clerk.categorization.channel.spy_a",
+                valname="clerk.categorization.channel.spec_a",
                 valtype="dip.base.Manifest"];
-  l1_spy_pc_man [label="L1_spy_pc manifest 1..1\nof 0..h files",
+  l1_spec_pc_man [label="L1_spec_pc manifest 1..1\nof 0..h files",
                  shape="ellipse",
-                 valname="clerk.categorization.channel.spy_pc",
+                 valname="clerk.categorization.channel.spec_pc",
                  valtype="dip.base.Manifest"];
   l1_wfov_a_man [label="L1_wfov_a manifest 1..1\nof 0..i files",
                  shape="ellipse",
@@ -74,8 +74,8 @@ digraph CategorizationDesign
   sort -> l1_nfov_pc_man;
   sort -> l1_pol_a_man;
   sort -> l1_pol_pc_man;
-  sort -> l1_spy_a_man;
-  sort -> l1_spy_pc_man;
+  sort -> l1_spec_a_man;
+  sort -> l1_spec_pc_man;
   sort -> l1_wfov_a_man;
   sort -> l1_wfov_pc_man;
   sort -> l1_unk_man;
