@@ -21,7 +21,8 @@ digraph Clerks
   eng_a_cpgs [label="CPGS eng_a 1..1", shape="cds",
               valname="clerk.calibration.eng_a.cpgs",
               valtype="dip.base.Cpgs"];
-  
+
+  // begin l1
   l1_eng_a_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
                  valname="clerk.configuration.l1_eng_a.outdir",
                  valtype="dip.base.Configuration"];
