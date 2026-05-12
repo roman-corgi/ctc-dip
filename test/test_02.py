@@ -18,7 +18,7 @@ import unittest
 import yaml
 
 from astropy.io import fits
-from dip.base import Manifest
+from dip.base import Manifest, ProductStatus
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
@@ -84,7 +84,8 @@ class BasicClerks(unittest.TestCase):
         rec._do_delegation()
 
     @patch('dawgie.db.add')
-    def test_scan(self, mock_add):
+    @patch('dawgie.pl.schedule.organize')
+    def test_scan(self, mock_org, mock_add):
         with tempfile.TemporaryDirectory() as workspace:
             workspace = Path(workspace)
             scan = dip.clerk.impls.scan.FSM()
@@ -106,8 +107,8 @@ class BasicClerks(unittest.TestCase):
             self.assertEqual(0, len(scan.outputs['inbound']['frames']))
             fn = fn.with_name(fn.name + '.signal')
             fn.touch()
-            scan._do_delegation()
-            self.assertEqual(manifest, scan.outputs['inbound']['frames'])
+            self.assertEqual(ProductStatus.ALL, scan._do_delegation())
+            self.assertEqual([], scan.outputs['inbound']['frames'])
 
     def test_util(self):
         mfn = 'cgi_0200001001001001001_20260415T1655330_l1_.yaml'
