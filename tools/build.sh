@@ -16,6 +16,10 @@ else:
     b = {tag.localName() for tag in dip.bindings.$1.$1_type()._ElementMap}
 r = {f'{sv.name()}.{valname}' for sv in dip.clerk.auto.$1.Runnable().state_vectors() for valname in sv}
 print('Verification of $1 binding <-> values:', b == r)
+for k in b:
+    if k not in r: print(f'   found {k} in binding but not in autocode')
+for k in r:
+    if k not in b: print(f'   found {k} in autocode but not in binding')
 sys.exit(0 if b == r else -100)
 EOF
 }

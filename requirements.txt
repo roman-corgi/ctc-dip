@@ -1,6 +1,6 @@
 astropy
 corgidrp
-dawgie==2.1.0-rc12
+dawgie==2.1.0-rc15
 pydot
 pyxb-ctc
 pyyaml

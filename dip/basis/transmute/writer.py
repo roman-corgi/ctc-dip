@@ -102,6 +102,9 @@ def author_module(module: model.Module, path: pathlib.Path, version: str):
         restart = content.find(END)
         content = content[: finish + 1] + hold + content[restart:]
     else:
-        content = '"""auto generated"""\n\n' + content
+        content = '''"""auto generated"""
+# pylint: disable=too-many-instance-attributes,too-many-lines
+
+''' + content
     with fn.open(mode='tw', encoding='utf-8') as file:
         file.write(content)

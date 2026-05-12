@@ -14,8 +14,8 @@
   <nfov_pc/>
   <pol_a/>
   <pol_pc/>
-  <spy_a/>
-  <spy_pc/>
+  <spec_a/>
+  <spec_pc/>
   <wfov_a/>
   <wfov_pc/>
 </channels>
