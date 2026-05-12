@@ -525,7 +525,7 @@ digraph Clerks
                  valname="clerk.calibration.l3_spec_a.dispersion_model",
                  valtype="dip.base.Calibration"];
   l3_spec_a_wavem [label="spec_a dispersion model 1..1", shape="cds",
-                 valname="clerk.calibration.l3_spec_a.wavelenth_map",
+                 valname="clerk.calibration.l3_spec_a.wavelength_map",
                  valtype="dip.base.Calibration"];
 
   l3_spec_pc_odir [label="Output path for L3_spec_pc 1..1", shape="ellipse",
@@ -538,7 +538,7 @@ digraph Clerks
                  valname="clerk.calibration.l3_spec_pc.dispersion_model",
                  valtype="dip.base.Calibration"];
   l3_spec_pc_wavem [label="spec_a dispersion model 1..1", shape="cds",
-                 valname="clerk.calibration.l3_spec_pc.wavelenth_map",
+                 valname="clerk.calibration.l3_spec_pc.wavelength_map",
                  valtype="dip.base.Calibration"];
 
   l3_wfov_a_odir [label="Output path for L3_wfov_a 1..1", shape="ellipse",

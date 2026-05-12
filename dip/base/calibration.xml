@@ -2,8 +2,11 @@
   <eng_a.cpgs location="/tmp/dummy.txt">
     There is only one CPGS per channel
   </eng_a.cpgs>
-  <!-- being l1 -->
+  <!-- begin l1 -->
   <l1_eng_a.nonlin location="/tmp/dummy.txt"/>
+  <l1_nfov_a.nonlin location="/tmp/dummy.txt"/>
+  <l1_nfov_pc.nonlin location="/tmp/dummy.txt"/>
+  <l1_pol_a.nonlin location="/tmp/dummy.txt"/>
   <!-- end l1 -->
   <!-- begin l2 -->
   <l2a_eng_a.bad_pix_map location=""/>
@@ -12,9 +15,133 @@
   <l2a_eng_a.flat_field location="/tmp/dummy.txt"/>
   <l2a_eng_a.k_gain location="/tmp/dummy.txt"/>
   <l2a_eng_a.noise_map location="/tmp/dummy.txt"/>
+  <l2a_nfov_a.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_nfov_a.darks location="/tmp/dummy.txt"/>
+  <l2a_nfov_a.em_gain location="/tmp/dummy.txt"/>
+  <l2a_nfov_a.flat_field location="/tmp/dummy.txt"/>
+  <l2a_nfov_a.k_gain location="/tmp/dummy.txt"/>
+  <l2a_nfov_a.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2a_nfov_pc.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_nfov_pc.darks location="/tmp/dummy.txt"/>
+  <l2a_nfov_pc.em_gain location="/tmp/dummy.txt"/>
+  <l2a_nfov_pc.flat_field location="/tmp/dummy.txt"/>
+  <l2a_nfov_pc.k_gain location="/tmp/dummy.txt"/>
+  <l2a_nfov_pc.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2a_pol_a.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_pol_a.darks location="/tmp/dummy.txt"/>
+  <l2a_pol_a.em_gain location="/tmp/dummy.txt"/>
+  <l2a_pol_a.flat_field location="/tmp/dummy.txt"/>
+  <l2a_pol_a.k_gain location="/tmp/dummy.txt"/>
+  <l2a_pol_a.charge_xfer_eff location="/tmp/dummy.txt"/>
+
+  <l2b_nfov_a.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_nfov_a.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_nfov_a.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l2b_nfov_pc.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_nfov_pc.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_nfov_pc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l2b_pol_a.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_pol_a.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_pol_a.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l2b_pol_a.cfam_filter_offset location="/tmp/dummy.txt"/>
   <!-- end l2 -->
-  <!-- begin l3 -->
+  <!-- begin l3 -->  
+  <l3_nfov_a.calibration location="/tmp/dummy.txt"/>
+  <l3_nfov_pc.calibration location="/tmp/dummy.txt"/>
+  <l3_pol_a.mueller_matrix location="/tmp/dummy.txt"/>
   <!-- end l3 -->
   <!-- begin l4 -->
+  <l4_nfov_a.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_nfov_a.core_thruput location="/tmp/dummy.txt"/>
+  <l4_nfov_a.nd_filter location="/tmp/dummy.txt"/>
+  <l4_nfov_pc.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_nfov_pc.core_thruput location="/tmp/dummy.txt"/>
+  <l4_nfov_pc.nd_filter location="/tmp/dummy.txt"/>
   <!-- end l4 -->
+  <l4_pol_a.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_pol_a.core_thruput location="/tmp/dummy.txt"/>
+  <l4_pol_a.nd_filter location="/tmp/dummy.txt"/>
+  <l1_pol_pc.nonlin location="/tmp/dummy.txt"/>
+  <l2a_pol_pc.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_pol_pc.darks location="/tmp/dummy.txt"/>
+  <l2a_pol_pc.em_gain location="/tmp/dummy.txt"/>
+  <l2a_pol_pc.flat_field location="/tmp/dummy.txt"/>
+  <l2a_pol_pc.k_gain location="/tmp/dummy.txt"/>
+  <l2a_pol_pc.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2b_pol_pc.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_pol_pc.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_pol_pc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l2b_pol_pc.cfam_filter_offset location="/tmp/dummy.txt"/>
+  <l3_pol_pc.mueller_matrix location="/tmp/dummy.txt"/>
+  <l4_pol_pc.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_pol_pc.core_thruput location="/tmp/dummy.txt"/>
+  <l4_pol_pc.nd_filter location="/tmp/dummy.txt"/>
+  <l1_spec_a.nonlin location="/tmp/dummy.txt"/>
+  <l2a_spec_a.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_spec_a.darks location="/tmp/dummy.txt"/>
+  <l2a_spec_a.em_gain location="/tmp/dummy.txt"/>
+  <l2a_spec_a.flat_field location="/tmp/dummy.txt"/>
+  <l2a_spec_a.k_gain location="/tmp/dummy.txt"/>
+  <l2a_spec_a.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2b_spec_a.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_spec_a.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_spec_a.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l2b_spec_a.cfam_filter_offset location="/tmp/dummy.txt"/>
+  <l3_spec_a.dispersion_model location="/tmp/dummy.txt"/>
+  <l3_spec_a.wavelength_map location="/tmp/dummy.txt"/>
+  <l4_spec_a.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_spec_a.core_thruput location="/tmp/dummy.txt"/>
+  <l4_spec_a.nd_filter location="/tmp/dummy.txt"/>
+  <l4_spec_a.line_spread_function location="/tmp/dummy.txt"/>
+  <l4_spec_a.ref_star_prism_image location="/tmp/dummy.txt"/>
+  <l4_spec_a.slit_transmission_map location="/tmp/dummy.txt"/>
+  <l4_spec_a.target_star_prism_image location="/tmp/dummy.txt"/>
+  <l1_spec_pc.nonlin location="/tmp/dummy.txt"/>
+  <l2a_spec_pc.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_spec_pc.darks location="/tmp/dummy.txt"/>
+  <l2a_spec_pc.em_gain location="/tmp/dummy.txt"/>
+  <l2a_spec_pc.flat_field location="/tmp/dummy.txt"/>
+  <l2a_spec_pc.k_gain location="/tmp/dummy.txt"/>
+  <l2a_spec_pc.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2b_spec_pc.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_spec_pc.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_spec_pc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l2b_spec_pc.cfam_filter_offset location="/tmp/dummy.txt"/>
+  <l3_spec_pc.dispersion_model location="/tmp/dummy.txt"/>
+  <l3_spec_pc.wavelength_map location="/tmp/dummy.txt"/>
+  <l4_spec_pc.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_spec_pc.core_thruput location="/tmp/dummy.txt"/>
+  <l4_spec_pc.nd_filter location="/tmp/dummy.txt"/>
+  <l4_spec_pc.line_spread_function location="/tmp/dummy.txt"/>
+  <l4_spec_pc.ref_star_prism_image location="/tmp/dummy.txt"/>
+  <l4_spec_pc.slit_transmission_map location="/tmp/dummy.txt"/>
+  <l4_spec_pc.target_star_prism_image location="/tmp/dummy.txt"/>
+  <l1_wfov_a.nonlin location="/tmp/dummy.txt"/>
+  <l2a_wfov_a.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_wfov_a.darks location="/tmp/dummy.txt"/>
+  <l2a_wfov_a.em_gain location="/tmp/dummy.txt"/>
+  <l2a_wfov_a.flat_field location="/tmp/dummy.txt"/>
+  <l2a_wfov_a.k_gain location="/tmp/dummy.txt"/>
+  <l2a_wfov_a.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2b_wfov_a.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_wfov_a.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_wfov_a.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l3_wfov_a.calibration location="/tmp/dummy.txt"/>
+  <l4_wfov_a.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_wfov_a.core_thruput location="/tmp/dummy.txt"/>
+  <l4_wfov_a.nd_filter location="/tmp/dummy.txt"/>
+  <l1_wfov_pc.nonlin location="/tmp/dummy.txt"/>
+  <l2a_wfov_pc.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_wfov_pc.darks location="/tmp/dummy.txt"/>
+  <l2a_wfov_pc.em_gain location="/tmp/dummy.txt"/>
+  <l2a_wfov_pc.flat_field location="/tmp/dummy.txt"/>
+  <l2a_wfov_pc.k_gain location="/tmp/dummy.txt"/>
+  <l2a_wfov_pc.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2b_wfov_pc.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_wfov_pc.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_wfov_pc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l3_wfov_pc.calibration location="/tmp/dummy.txt"/>
+  <l4_wfov_pc.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_wfov_pc.core_thruput location="/tmp/dummy.txt"/>
+  <l4_wfov_pc.nd_filter location="/tmp/dummy.txt"/>
 </calibrations>

@@ -26,42 +26,50 @@
       <xs:element default="no comment" name="l2_eng_a.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_nfov_a.outdir" type="configuration_item"/>
-      <xs:element default="no comment" name="l2_nfov_a.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_nfov_a.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_nfov_a.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l3_nfov_a.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l4_nfov_a.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_nfov_pc.outdir" type="configuration_item"/>
-      <xs:element default="no comment" name="l2_nfov_pc.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_nfov_pc.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_nfov_pc.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l3_nfov_pc.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l4_nfov_pc.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_pol_a.outdir" type="configuration_item"/>
-      <xs:element default="no comment" name="l2_pol_a.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_pol_a.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_pol_a.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l3_pol_a.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l4_pol_a.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_pol_pc.outdir" type="configuration_item"/>
-      <xs:element default="no comment" name="l2_pol_pc.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_pol_pc.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_pol_pc.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l3_pol_pc.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l4_pol_pc.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_spec_a.outdir" type="configuration_item"/>
-      <xs:element default="no comment" name="l2_spec_a.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_spec_a.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_spec_a.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l3_spec_a.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l4_spec_a.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_spec_pc.outdir" type="configuration_item"/>
-      <xs:element default="no comment" name="l2_spec_pc.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_spec_pc.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_spec_pc.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l3_spec_pc.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l4_spec_pc.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_wfov_a.outdir" type="configuration_item"/>
-      <xs:element default="no comment" name="l2_wfov_a.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_wfov_a.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_wfov_a.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l3_wfov_a.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l4_wfov_a.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_wfov_pc.outdir" type="configuration_item"/>
-      <xs:element default="no comment" name="l2_wfov_pc.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_wfov_pc.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_wfov_pc.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l3_wfov_pc.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l4_wfov_pc.outdir" type="configuration_item"/>
     </xs:all>

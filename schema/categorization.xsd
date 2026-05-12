@@ -26,8 +26,8 @@
       <xs:element name="nfov_pc" type="channel_type"/>
       <xs:element name="pol_a" type="channel_type"/>
       <xs:element name="pol_pc" type="channel_type"/>
-      <xs:element name="spy_a" type="channel_type"/>
-      <xs:element name="spy_pc" type="channel_type"/>
+      <xs:element name="spec_a" type="channel_type"/>
+      <xs:element name="spec_pc" type="channel_type"/>
       <xs:element name="wfov_a" type="channel_type"/>
       <xs:element name="wfov_pc" type="channel_type"/>
     </xs:all>
