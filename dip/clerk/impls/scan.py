@@ -25,4 +25,6 @@ class FSM(dip.base.Orchestrator):
                 event=f'detected signal for {target}',
             )
             signal.unlink(missing_ok=True)
-        return dip.base.ProductStatus.ALL
+        raise dawgie.NoValidOutputDataError(
+            'scan asks the scheduler to do a specific task.alg never generating output'
+        )

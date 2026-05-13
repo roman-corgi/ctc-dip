@@ -30,7 +30,11 @@ class Orchestrator(dip.basis.fsm.AbstractModel):
         return True
 
     def _do_general_quarters(self) -> dip.basis.fsm.AlertStatus:
-        return dip.basis.fsm.AlertStatus.FOUNDERED
+        return (
+            dip.basis.fsm.AlertStatus.FOUNDERED
+            if self.dawgie_exc is None
+            else dip.basis.fsm.AlertStatus.SECURED
+        )
 
     def _do_sanitization(self):
         pass
