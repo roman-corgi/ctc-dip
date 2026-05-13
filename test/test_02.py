@@ -2,6 +2,7 @@
 
 '''test generic FSM transitions that they match the diagram'''
 
+import dawgie
 import dip.clerk.auto.calibration
 import dip.clerk.auto.categorization
 import dip.clerk.auto.configuration
@@ -98,16 +99,19 @@ class BasicClerks(unittest.TestCase):
   <staging location="{workspace}"/>
 </system>
         '''.encode())
-            scan._do_delegation()
+            with self.assertRaises(dawgie.NoValidOutputDataError) as cxt:
+                scan._do_delegation()
             self.assertEqual(0, len(scan.outputs['inbound']['frames']))
             fn = workspace / 'cgi_blahblah_YYYYMMDDtHHMMSS_l1_.manifest'
             manifest = ['/a/b/c/l1.1', '/a/b/c/l1.2', '/a/b/c/l1.3']
             fn.write_text(yaml.dump(manifest))
-            scan._do_delegation()
+            with self.assertRaises(dawgie.NoValidOutputDataError) as cxt:
+                scan._do_delegation()
             self.assertEqual(0, len(scan.outputs['inbound']['frames']))
             fn = fn.with_name(fn.name + '.signal')
             fn.touch()
-            self.assertEqual(ProductStatus.ALL, scan._do_delegation())
+            with self.assertRaises(dawgie.NoValidOutputDataError) as cxt:
+                scan._do_delegation()
             self.assertEqual([], scan.outputs['inbound']['frames'])
 
     def test_util(self):
