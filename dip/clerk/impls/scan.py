@@ -1,6 +1,7 @@
 '''define the hard bits of scan'''
 
 import dawgie.db
+import dawgie.pl.schedule
 import dip.base
 import dip.bindings.system
 
@@ -15,11 +16,13 @@ class FSM(dip.base.Orchestrator):
         system = dip.bindings.system.CreateFromDocument(xml)
         staging = Path(system.staging.location)
         signals = sorted(staging.glob('*.signal'))
-        while signals:
-            signal = signals.pop(0)
-            manifest = self.outputs['inbound']['frames']
-            manifest.at = self.dawgie_name
-            manifest.deserialize(signal.parent / signal.stem)
-            dawgie.db.add(util.l1mfn2tn(signal.name.split('.')[0]))
+        for signal in signals:
+            target = util.l1mfn2tn(signal.name.split('.')[0])
+            dawgie.db.add(target)
+            dawgie.pl.schedule.organize(
+                task_names=['clerk.categorization'],
+                targets=[target],
+                event=f'detected signal for {target}',
+            )
             signal.unlink(missing_ok=True)
         return dip.base.ProductStatus.ALL
