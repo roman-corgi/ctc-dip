@@ -21,7 +21,7 @@ l2a_spec_pc_kgain [label="L2a_spec_pc Kgain 1..1", shape="cds"];
 l2a_spec_pc_emg [label="L2a_spec_pc EM gain 1..1", shape="cds"];
 l2a_spec_pc_log [label="L2a log_spec_pc 1..1", shape="ellipse"];
 l2b_spec_pc_prod [label="L2b_spec_pc products 1..1", shape="rectangle"];
-l2b_spec_pc_man [label="L2b_spec_pc manifest 1..1", shape="ellipse", valname="l2b.transmutation_spec_pc.product.manifest", valtype="dip.base.Manifest"];
+l2b_spec_pc_man [label="L2b_spec_pc manifest 1..1", shape="ellipse", valname="l2a.transmutation_spec_pc.product.manifest", valtype="dip.base.Manifest"];
 l2b_spec_pc_odir [label="L2b_spec_pc output path 1..1", shape="ellipse"];
 l2b_spec_pc_rec [label="L2b_spec_pc recipe 1..1", shape="cds"];
 l2b_spec_pc_excicrf [label="L2b_spec_pc EXCAM ICRF location 1..1", shape="cds"];

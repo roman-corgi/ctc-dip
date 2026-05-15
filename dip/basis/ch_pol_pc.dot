@@ -22,7 +22,7 @@ l2a_pol_pc_kgain [label="L2a_pol_pc Kgain 1..1", shape="cds"];
 l2a_pol_pc_polff [label="L2a_pol_pc polarimetric flat fields 1..1", shape="cds"];
 l2a_pol_pc_log [label="L2a log_pol_pc 1..1", shape="ellipse"];
 l2b_pol_pc_prod [label="L2b_pol_pc products 1..1", shape="rectangle"];
-l2b_pol_pc_man [label="L2b_pol_pc manifest 1..1", shape="ellipse", valname="l2b.transmutation_pol_pc.product.manifest", valtype="dip.base.Manifest"];
+l2b_pol_pc_man [label="L2b_pol_pc manifest 1..1", shape="ellipse", valname="l2a.transmutation_pol_pc.product.manifest", valtype="dip.base.Manifest"];
 l2b_pol_pc_odir [label="L2b_pol_pc output path 1..1", shape="ellipse"];
 l2b_pol_pc_rec [label="L2b_pol_pc recipe 1..1", shape="cds"];
 l2b_pol_pc_excicrf [label="L2b_pol_pc EXCAM ICRF location 1..1", shape="cds"];

@@ -22,7 +22,7 @@ l2a_wfov_a_emg [label="L2a_wfov_a EM gain 1..1", shape="cds"];
 l2a_wfov_a_kgain [label="L2a_wfov_a Kgain 1..1", shape="cds"];
 l2a_wfov_a_log [label="L2a log_wfov_a 1..1", shape="ellipse"];
 l2b_wfov_a_prod [label="L2b_wfov_a products 1..1", shape="rectangle"];
-l2b_wfov_a_man [label="L2b_wfov_a manifest 1..1", shape="ellipse", valname="l2b.transmutation_wfov_a.product.manifest", valtype="dip.base.Manifest"];
+l2b_wfov_a_man [label="L2b_wfov_a manifest 1..1", shape="ellipse", valname="l2a.transmutation_wfov_a.product.manifest", valtype="dip.base.Manifest"];
 l2b_wfov_a_odir [label="L2b_wfov_a output path 1..1", shape="ellipse"];
 l2b_wfov_a_rec [label="L2b_wfov_a recipe 1..1", shape="cds"];
 l2b_wfov_a_excicrf [label="L2b_wfov_a EXCAM ICRF location 1..1", shape="cds"];

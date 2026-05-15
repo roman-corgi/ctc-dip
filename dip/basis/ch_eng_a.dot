@@ -19,7 +19,7 @@ l2a_eng_a_nm [label="noise maps 1..1", shape="cds"];
 l2a_eng_a_ff [label="flat field 1..1", shape="cds"];
 l2a_eng_a_kgain [label="k-gain 1..1", shape="cds"];
 l2a_eng_a_emg [label="EM gain 1..1", shape="cds"];
-l2b_eng_a_man [label="L2b manifest 1..1", shape="ellipse", valname="l2b.transmutation_eng_a.product.manifest", valtype="dip.base.Manifest"];
+l2b_eng_a_man [label="L2b manifest 1..1", shape="ellipse", valname="l2a.transmutation_eng_a.product.manifest", valtype="dip.base.Manifest"];
 l2b_eng_a_prod [label="L2b products 1..b", shape="rectangle"];
 l2b_eng_a_log [label="L2b_eng_a log 1..1", shape="ellipse"];
 l1_eng_a_prod -> trans_eng_a_l1_l2a [style="dashed"];
