@@ -45,4 +45,9 @@ l2a_eng_a_emg -> trans_eng_a_l2a_l2b;
 trans_eng_a_l2a_l2b -> l2b_eng_a_prod [style="dashed"];
 trans_eng_a_l2a_l2b -> l2b_eng_a_log [style="dashed"];
 trans_eng_a_l2a_l2b -> l2b_eng_a_man;
+
+l2a_eng_a_src [label="L2a_eng_a source manifest 1..1", shape="ellipse", valname="l1.transmutation_eng_a.source.manifest", valtype="dip.base.Manifest"];
+trans_eng_a_l1_l2a -> l2a_eng_a_src;
+l2b_eng_a_src [label="L2b source manifest 1..1", shape="ellipse", valname="l2a.transmutation_eng_a.source.manifest", valtype="dip.base.Manifest"];
+trans_eng_a_l2a_l2b -> l2b_eng_a_src;
 }
