@@ -179,6 +179,9 @@ class Runner(dip.basis.fsm.AbstractModel):
         '''move the data to SSC storage location'''
         self.outputs['product']['manifest'] = Manifest()
         self.outputs['product']['manifest'].at = self.dawgie_name
+        self.outputs['source']['manifest'] = Manifest()
+        self.outputs['source']['manifest'].at = self.dawgie_name
+        self.outputs['source']['manifest'].extend(self.__manifest)
         dst = None
         name = None
         for sv in self.inputs.values():
