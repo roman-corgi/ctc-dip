@@ -3,9 +3,7 @@ digraph Throughput
   graph [splines="ortho", rankdir=LR];
 
   trans_tp_l1_l2a_basic [label="Throughput\nTransmutation\nL1 to L2a basic", shape="circle"];
-  l2a_tp_demux [label="Throughput\nl2a Demux\nExposure" shape="circle"];
   trans_tp_l2a_l2b [label="Throughput\nTransmutation\nL2a to L2b", shape="circle"];
-  l2b_tp_mux [label="Throughput\nl2b Mux\nExposure", shape="circle"];
   trans_tp_l2b_ctp [label="Throughput\nTransmutation\nL2b to CoreThroughput", shape="circle"];
         
   l1_tp_prod [label="L1_Throughput products 1..b", shape="rectangle"];
@@ -25,7 +23,6 @@ digraph Throughput
   l2a_tp_emg [label="L2a_Throughput EM gain 1..1", shape="cds"];
   l2a_tp_kgain [label="L2_Throughput Kgain 1..1", shape="cds"];
   l2a_tp_log [label="L2a_Throughput log 1..1", shape="ellipse"];
-  l2a_tp_man_demux [label="L2a_tp(E) manifest 1..1", shape="ellipse"];
   
   l2b_tp_prod [label="L2b_Throughput products 1..1", shape="rectangle"];
   l2b_tp_man [label="L2b_Throughput manifest 1..1", shape="ellipse"];
@@ -34,7 +31,6 @@ digraph Throughput
   l2b_tp_excicrf [label="L2b_Throughput EXCAM ICRF location 1..1", shape="cds"];
   l2b_tp_excfovps [label="L2b_Throughput EXCAM FOV pixel scale 1..1", shape="cds"];
   l2b_tp_distm [label="L2b_Throughput distortion map 1..1", shape="cds"];
-  l2b_tp_man_demux [label="L2b_tp(E) manifest 1..1", shape="ellipse"];
   l2b_tp_log [label="L2b_Throughput log 1..1", shape="ellipse"];
 
   ctp_prod [label="CoreThroughput products 1..1", shape="rectangle"];
@@ -61,16 +57,8 @@ digraph Throughput
   l2a_tp_emg -> trans_tp_l2a_l2b;
 
   trans_tp_l2a_l2b -> l2b_tp_prod;
-  trans_tp_l2a_l2b -> l2b_tp_man_demux;
   trans_tp_l2a_l2b -> l2b_tp_log;
 
-  l2a_tp_man -> l2a_tp_demux;
-  l2a_tp_demux -> l2a_tp_man_demux;
-  l2a_tp_man_demux -> trans_tp_l2a_l2b;
-  
-  l2b_tp_man_demux -> l2b_tp_mux;
-  l2b_tp_mux -> l2b_tp_man;
-  
   l2b_tp_prod -> trans_tp_l2b_ctp;
   l2b_tp_man -> trans_tp_l2b_ctp;
   l2b_tp_odir -> trans_tp_l2b_ctp;
