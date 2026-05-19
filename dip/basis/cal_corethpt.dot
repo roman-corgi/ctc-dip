@@ -51,7 +51,7 @@ digraph Throughput
   l2a_tp_kgain -> trans_tp_l2a_l2b;
   l2a_tp_odir -> trans_tp_l2a_l2b;
   l2a_tp_rec -> trans_tp_l2a_l2b;
-  l2a_tp_cti -> trans_tp_l2a_l2b [style="dashed"];
+  l2a_tp_cti -> trans_tp_l2a_l2b;
   l2a_tp_dnb -> trans_tp_l2a_l2b;
   l2a_tp_mbpm -> trans_tp_l2a_l2b;
   l2a_tp_ff -> trans_tp_l2a_l2b;
