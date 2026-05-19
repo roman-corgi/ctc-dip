@@ -4,7 +4,7 @@ digraph Astrometric
 
   trans_bs_l1_l2a_basic [label="Astrometric\nTransmutation\nL1 to L2a basic", shape="circle"];
   trans_bs_l2a_l2b [label="Astrometric\nTransmutation\nL2a to L2b", shape="circle"];
-  trans_bs_l2b_ctp [label="Astrometric\nTransmutation\nL2b to CoreAstrometric", shape="circle"];
+  trans_bs_l2b_abs [label="Astrometric\nTransmutation\nL2b to CoreAstrometric", shape="circle"];
         
   l1_bs_prod [label="L1_Astrometric products 1..b", shape="rectangle"];
   l1_bs_man [label="L1_Astrometric manifest 1..1", shape="ellipse"];
@@ -30,12 +30,14 @@ digraph Astrometric
   l2b_bs_rec [label="L2b_Astrometric recipe 1..1", shape="cds"];
   l2b_bs_excicrf [label="L2b_Astrometric EXCAM ICRF location 1..1", shape="cds"];
   l2b_bs_excfovps [label="L2b_Astrometric EXCAM FOV pixel scale 1..1", shape="cds"];
-  l2b_bs_distm [label="L2b_Astrometric distortion map 1..1", shape="cds"];
-  l2b_bs_log [label="L2b_Astrometric log 1..1", shape="ellipse"];
 
-  ctp_prod [label="CoreAstrometric products 1..1", shape="rectangle"];
-  ctp_log [label="CoreAstrometric log 1..1", shape="ellipse"];
+  l2b_tp_distm [label="L2b_Astrometric distortion map 1..1", shape="cds"];
+  l2b_tp_log [label="L2b_Astrometric log 1..1", shape="ellipse"];
 
+  bs_prod [label="Astrometric products 1..1", shape="rectangle"];
+  bs_log [label="Astrometric log 1..1", shape="ellipse"];
+  bs_man [label="Astrometric manifest 1..1", shape="ellipse"];
+  
   l1_bs_prod -> trans_bs_l1_l2a_basic [style="dashed"];
   l1_bs_man -> trans_bs_l1_l2a_basic;
   l1_bs_odir -> trans_bs_l1_l2a_basic;
@@ -59,14 +61,15 @@ digraph Astrometric
   trans_bs_l2a_l2b -> l2b_bs_prod [style="dashed"];
   trans_bs_l2a_l2b -> l2b_bs_log [style="dashed"];
 
-  l2b_bs_prod -> trans_bs_l2b_ctp [style="dashed"];
-  l2b_bs_man -> trans_bs_l2b_ctp;
-  l2b_bs_odir -> trans_bs_l2b_ctp;
-  l2b_bs_rec -> trans_bs_l2b_ctp;
-  l2b_bs_excicrf -> trans_bs_l2b_ctp;
-  l2b_bs_excfovps -> trans_bs_l2b_ctp;
-  l2b_bs_distm -> trans_bs_l2b_ctp;
-  trans_bs_l2b_ctp -> ctp_prod;
-  trans_bs_l2b_ctp -> ctp_log [style="dashed"];  
+  l2b_bs_prod -> trans_bs_l2b_abs [style="dashed"];
+  l2b_bs_man -> trans_bs_l2b_abs;
+  l2b_bs_odir -> trans_bs_l2b_abs;
+  l2b_bs_rec -> trans_bs_l2b_abs;
+  l2b_bs_excicrf -> trans_bs_l2b_abs;
+  l2b_bs_excfovps -> trans_bs_l2b_abs;
+  l2b_bs_distm -> trans_bs_l2b_abs;
+  trans_bs_l2b_abs -> bs_prod [style="dashed"];
+  trans_bs_l2b_abs -> bs_man;
+  trans_bs_l2b_abs -> bs_log [style="dashed"];  
 
 }

@@ -35,6 +35,7 @@ digraph Throughput
 
   ctp_prod [label="CoreThroughput products 1..1", shape="rectangle"];
   ctp_log [label="CoreThroughput log 1..1", shape="ellipse"];
+  ctp_man [label="CoreThroughput manifest 1..1", shape="ellipse"];
 
   l1_tp_prod -> trans_tp_l1_l2a_basic [style="dashed"];
   l1_tp_man -> trans_tp_l1_l2a_basic;
@@ -66,7 +67,7 @@ digraph Throughput
   l2b_tp_excicrf -> trans_tp_l2b_ctp;
   l2b_tp_excfovps -> trans_tp_l2b_ctp;
   l2b_tp_distm -> trans_tp_l2b_ctp;
-  trans_tp_l2b_ctp -> ctp_prod;
+  trans_tp_l2b_ctp -> ctp_prod [style="dashed"];
   trans_tp_l2b_ctp -> ctp_log [style="dashed"];  
-
+  trans_tp_l2b_ctp -> ctp_man;
 }
