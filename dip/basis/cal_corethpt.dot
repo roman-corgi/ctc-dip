@@ -36,17 +36,17 @@ digraph Throughput
   ctp_prod [label="CoreThroughput products 1..1", shape="rectangle"];
   ctp_log [label="CoreThroughput log 1..1", shape="ellipse"];
 
-  l1_tp_prod -> trans_tp_l1_l2a_basic;
+  l1_tp_prod -> trans_tp_l1_l2a_basic [style="dashed"];
   l1_tp_man -> trans_tp_l1_l2a_basic;
   l1_tp_odir -> trans_tp_l1_l2a_basic;
   l1_tp_rec -> trans_tp_l1_l2a_basic;
   l1_tp_nllut -> trans_tp_l1_l2a_basic;
 
-  trans_tp_l1_l2a_basic -> l2a_tp_prod;
+  trans_tp_l1_l2a_basic -> l2a_tp_prod [style="dashed"];
   trans_tp_l1_l2a_basic -> l2a_tp_man;  
-  trans_tp_l1_l2a_basic -> l2a_tp_log;  
+  trans_tp_l1_l2a_basic -> l2a_tp_log [style="dashed"];  
 
-  l2a_tp_prod -> trans_tp_l2a_l2b;
+  l2a_tp_prod -> trans_tp_l2a_l2b [style="dashed"];
   l2a_tp_kgain -> trans_tp_l2a_l2b;
   l2a_tp_odir -> trans_tp_l2a_l2b;
   l2a_tp_rec -> trans_tp_l2a_l2b;
@@ -56,10 +56,10 @@ digraph Throughput
   l2a_tp_ff -> trans_tp_l2a_l2b;
   l2a_tp_emg -> trans_tp_l2a_l2b;
 
-  trans_tp_l2a_l2b -> l2b_tp_prod;
-  trans_tp_l2a_l2b -> l2b_tp_log;
+  trans_tp_l2a_l2b -> l2b_tp_prod [style="dashed"];
+  trans_tp_l2a_l2b -> l2b_tp_log [style="dashed"];
 
-  l2b_tp_prod -> trans_tp_l2b_ctp;
+  l2b_tp_prod -> trans_tp_l2b_ctp [style="dashed"];
   l2b_tp_man -> trans_tp_l2b_ctp;
   l2b_tp_odir -> trans_tp_l2b_ctp;
   l2b_tp_rec -> trans_tp_l2b_ctp;
@@ -67,6 +67,6 @@ digraph Throughput
   l2b_tp_excfovps -> trans_tp_l2b_ctp;
   l2b_tp_distm -> trans_tp_l2b_ctp;
   trans_tp_l2b_ctp -> ctp_prod;
-  trans_tp_l2b_ctp -> ctp_log;  
+  trans_tp_l2b_ctp -> ctp_log [style="dashed"];  
 
 }
