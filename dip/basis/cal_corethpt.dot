@@ -56,10 +56,12 @@ digraph Throughput
   l2a_tp_mbpm -> trans_tp_l2a_l2b;
   l2a_tp_ff -> trans_tp_l2a_l2b;
   l2a_tp_emg -> trans_tp_l2a_l2b;
+  l2a_tp_man -> trans_tc_l2a_l2b;
 
   trans_tp_l2a_l2b -> l2b_tp_prod [style="dashed"];
   trans_tp_l2a_l2b -> l2b_tp_log [style="dashed"];
-
+  trans_tp_l2a_l2b -> l2b_tp_man;
+  
   l2b_tp_prod -> trans_tp_l2b_ctp [style="dashed"];
   l2b_tp_man -> trans_tp_l2b_ctp;
   l2b_tp_odir -> trans_tp_l2b_ctp;

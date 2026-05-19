@@ -31,8 +31,8 @@ digraph Astrometric
   l2b_bs_excicrf [label="L2b_Astrometric EXCAM ICRF location 1..1", shape="cds"];
   l2b_bs_excfovps [label="L2b_Astrometric EXCAM FOV pixel scale 1..1", shape="cds"];
 
-  l2b_tp_distm [label="L2b_Astrometric distortion map 1..1", shape="cds"];
-  l2b_tp_log [label="L2b_Astrometric log 1..1", shape="ellipse"];
+  l2b_bs_distm [label="L2b_Astrometric distortion map 1..1", shape="cds"];
+  l2b_bs_log [label="L2b_Astrometric log 1..1", shape="ellipse"];
 
   bs_prod [label="Astrometric products 1..1", shape="rectangle"];
   bs_log [label="Astrometric log 1..1", shape="ellipse"];
@@ -57,9 +57,11 @@ digraph Astrometric
   l2a_bs_mbpm -> trans_bs_l2a_l2b;
   l2a_bs_ff -> trans_bs_l2a_l2b;
   l2a_bs_emg -> trans_bs_l2a_l2b;
-
+  l2a_bs_man -> trans_bs_l2a_l2b;
+  
   trans_bs_l2a_l2b -> l2b_bs_prod [style="dashed"];
   trans_bs_l2a_l2b -> l2b_bs_log [style="dashed"];
+  trans_bs_l2a_l2b -> l2b_bs_man;
 
   l2b_bs_prod -> trans_bs_l2b_abs [style="dashed"];
   l2b_bs_man -> trans_bs_l2b_abs;
