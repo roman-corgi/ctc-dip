@@ -26,7 +26,7 @@
 <!-- trans_bs_l1_l2a_basic&#45;&gt;l2a_bs_prod -->
 <g id="edge6" class="edge">
 <title>trans_bs_l1_l2a_basic&#45;&gt;l2a_bs_prod</title>
-<path fill="none" stroke="black" d="M514.43,-180C514.43,-180 610.88,-180 610.88,-180"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M514.43,-180C514.43,-180 610.88,-180 610.88,-180"/>
 <polygon fill="black" stroke="black" points="610.88,-183.5 620.88,-180 610.88,-176.5 610.88,-183.5"/>
 </g>
 <!-- l2a_bs_man -->
@@ -50,7 +50,7 @@
 <!-- trans_bs_l1_l2a_basic&#45;&gt;l2a_bs_log -->
 <g id="edge8" class="edge">
 <title>trans_bs_l1_l2a_basic&#45;&gt;l2a_bs_log</title>
-<path fill="none" stroke="black" d="M514.43,-72C514.43,-72 602.5,-72 602.5,-72"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M514.43,-72C514.43,-72 602.5,-72 602.5,-72"/>
 <polygon fill="black" stroke="black" points="602.5,-75.5 612.5,-72 602.5,-68.5 602.5,-75.5"/>
 </g>
 <!-- trans_bs_l2a_l2b -->
@@ -70,7 +70,7 @@
 <!-- trans_bs_l2a_l2b&#45;&gt;l2b_bs_prod -->
 <g id="edge18" class="edge">
 <title>trans_bs_l2a_l2b&#45;&gt;l2b_bs_prod</title>
-<path fill="none" stroke="black" d="M1110.76,-423C1110.76,-423 1194.37,-423 1194.37,-423"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1110.76,-423C1110.76,-423 1194.37,-423 1194.37,-423"/>
 <polygon fill="black" stroke="black" points="1194.37,-426.5 1204.37,-423 1194.37,-419.5 1194.37,-426.5"/>
 </g>
 <!-- l2b_bs_log -->
@@ -82,7 +82,7 @@
 <!-- trans_bs_l2a_l2b&#45;&gt;l2b_bs_log -->
 <g id="edge19" class="edge">
 <title>trans_bs_l2a_l2b&#45;&gt;l2b_bs_log</title>
-<path fill="none" stroke="black" d="M1110.76,-369C1110.76,-369 1186.1,-369 1186.1,-369"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1110.76,-369C1110.76,-369 1186.1,-369 1186.1,-369"/>
 <polygon fill="black" stroke="black" points="1186.1,-372.5 1196.1,-369 1186.1,-365.5 1186.1,-372.5"/>
 </g>
 <!-- trans_bs_l2b_ctp -->
@@ -114,7 +114,7 @@
 <!-- trans_bs_l2b_ctp&#45;&gt;ctp_log -->
 <g id="edge28" class="edge">
 <title>trans_bs_l2b_ctp&#45;&gt;ctp_log</title>
-<path fill="none" stroke="black" d="M1787.08,-558C1787.08,-558 1815.43,-558 1815.43,-558"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1787.08,-558C1787.08,-558 1815.43,-558 1815.43,-558"/>
 <polygon fill="black" stroke="black" points="1815.43,-561.5 1825.43,-558 1815.43,-554.5 1815.43,-561.5"/>
 </g>
 <!-- l1_bs_prod -->
@@ -126,7 +126,7 @@
 <!-- l1_bs_prod&#45;&gt;trans_bs_l1_l2a_basic -->
 <g id="edge1" class="edge">
 <title>l1_bs_prod&#45;&gt;trans_bs_l1_l2a_basic</title>
-<path fill="none" stroke="black" d="M272.41,-234C351.99,-234 444.59,-234 444.59,-234 444.59,-234 444.59,-224.44 444.59,-224.44"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M272.41,-234C351.99,-234 444.59,-234 444.59,-234 444.59,-234 444.59,-224.44 444.59,-224.44"/>
 <polygon fill="black" stroke="black" points="448.09,-224.44 444.59,-214.44 441.09,-224.44 448.09,-224.44"/>
 </g>
 <!-- l1_bs_man -->
@@ -180,7 +180,7 @@
 <!-- l2a_bs_prod&#45;&gt;trans_bs_l2a_l2b -->
 <g id="edge9" class="edge">
 <title>l2a_bs_prod&#45;&gt;trans_bs_l2a_l2b</title>
-<path fill="none" stroke="black" d="M854.26,-180C950.95,-180 1072.59,-180 1072.59,-180 1072.59,-180 1072.59,-311.36 1072.59,-311.36"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M854.26,-180C950.95,-180 1072.59,-180 1072.59,-180 1072.59,-180 1072.59,-311.36 1072.59,-311.36"/>
 <polygon fill="black" stroke="black" points="1069.09,-311.36 1072.59,-321.36 1076.09,-311.36 1069.09,-311.36"/>
 </g>
 <!-- l2a_bs_odir -->
@@ -216,7 +216,7 @@
 <!-- l2a_bs_cti&#45;&gt;trans_bs_l2a_l2b -->
 <g id="edge13" class="edge">
 <title>l2a_bs_cti&#45;&gt;trans_bs_l2a_l2b</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M894.59,-487.94C894.59,-481.65 894.59,-476.13 894.59,-476.13 894.59,-476.13 986.66,-476.13 986.66,-476.13"/>
+<path fill="none" stroke="black" d="M894.59,-487.94C894.59,-481.65 894.59,-476.13 894.59,-476.13 894.59,-476.13 986.66,-476.13 986.66,-476.13"/>
 <polygon fill="black" stroke="black" points="986.66,-479.63 996.66,-476.13 986.66,-472.63 986.66,-479.63"/>
 </g>
 <!-- l2a_bs_dnb -->
@@ -283,7 +283,7 @@
 <!-- l2b_bs_prod&#45;&gt;trans_bs_l2b_ctp -->
 <g id="edge20" class="edge">
 <title>l2b_bs_prod&#45;&gt;trans_bs_l2b_ctp</title>
-<path fill="none" stroke="black" d="M1438.85,-423C1536.48,-423 1659.59,-423 1659.59,-423 1659.59,-423 1659.59,-443.85 1659.59,-443.85"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1438.85,-423C1536.48,-423 1659.59,-423 1659.59,-423 1659.59,-423 1659.59,-443.85 1659.59,-443.85"/>
 <polygon fill="black" stroke="black" points="1656.09,-443.85 1659.59,-453.85 1663.09,-443.85 1656.09,-443.85"/>
 </g>
 <!-- l2b_bs_man -->
