@@ -1,0 +1,26 @@
+digraph PupilCalibrations
+{
+  graph [splines="ortho", rankdir=LR];
+
+  trans_pupil_l1_l2a [label="Pupil\nTransmutation\nL1 to L2a basic", shape="circle"];
+        
+  l1_pupil_prod [label="L1_Pupil products 1..b", shape="rectangle"];
+  l1_pupil_man [label="L1_Pupil manifest 1..1", shape="ellipse"];
+  l1_pupil_odir [label="L1_Pupil output path 1..1", shape="ellipse"];
+  l1_pupil_rec [label="L1_Pupil recipe 1..1", shape="cds"];
+  l1_pupil_nllut [label="L1_Pupil non-linear LUT 1..1", shape="cds"];
+
+  pupil_prod [label="Pupil products 1..1", shape="rectangle"];
+  pupil_log [label="Pupil log 1..1", shape="ellipse"];
+  pupil_man [label="Pupil manifest 1..1", shape="ellipse"];
+  
+  l1_pupil_prod -> trans_pupil_l1_l2a [style="dashed"];
+  l1_pupil_man -> trans_pupil_l1_l2a;
+  l1_pupil_odir -> trans_pupil_l1_l2a;
+  l1_pupil_rec -> trans_pupil_l1_l2a;
+  l1_pupil_nllut -> trans_pupil_l1_l2a;
+
+  trans_pupil_l1_l2a -> pupil_prod [style="dashed"];
+  trans_pupil_l1_l2a -> pupil_man;  
+  trans_pupil_l1_l2a -> pupil_log [style="dashed"];  
+}
