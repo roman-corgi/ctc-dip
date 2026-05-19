@@ -252,7 +252,7 @@
 <!-- l2a_tp_cti&#45;&gt;trans_tp_l2a_l2b -->
 <g id="edge13" class="edge">
 <title>l2a_tp_cti&#45;&gt;trans_tp_l2a_l2b</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M892.29,-487.94C892.29,-481.65 892.29,-476.13 892.29,-476.13 892.29,-476.13 984.36,-476.13 984.36,-476.13"/>
+<path fill="none" stroke="black" d="M892.29,-487.94C892.29,-481.65 892.29,-476.13 892.29,-476.13 892.29,-476.13 984.36,-476.13 984.36,-476.13"/>
 <polygon fill="black" stroke="black" points="984.36,-479.63 994.36,-476.13 984.36,-472.63 984.36,-479.63"/>
 </g>
 <!-- l2a_tp_dnb -->
