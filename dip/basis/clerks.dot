@@ -23,6 +23,36 @@ digraph Clerks
               valtype="dip.base.Cpgs"];
 
   // begin l1
+  l1_cal_boresight_odir [label="Output path for L1_cal_boresight 1..1", shape="ellipse",
+                         valname="clerk.configuration.l1_cal_boresight.outdir",
+                         valtype="dip.base.Configuration"];
+  l1_cal_boresight_rec [label="recipe L1_eng_a 1..1", shape="cds",
+                        valname="clerk.recipe.l1_cal_boresight.recipe",
+                        valtype="dip.base.Recipe"];
+  l1_cal_boresight_nllut [label="non linear calibration 1..1", shape="cds",
+                          valname="clerk.calibration.l1_cal_boresight.nonlin",
+                          valtype="dip.base.Calibration"];
+
+  l1_cal_corethpt_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
+                        valname="clerk.configuration.l1_cal_corethpt.outdir",
+                        valtype="dip.base.Configuration"];
+  l1_cal_corethpt_rec [label="recipe L1_eng_a 1..1", shape="cds",
+                       valname="clerk.recipe.l1_cal_corethpt.recipe",
+                       valtype="dip.base.Recipe"];
+  l1_cal_corethpt_nllut [label="non linear calibration 1..1", shape="cds",
+                         valname="clerk.calibration.l1_cal_corethpt.nonlin",
+                         valtype="dip.base.Calibration"];
+
+  l1_cal_pupil_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
+                     valname="clerk.configuration.l1_cal_pupil.outdir",
+                     valtype="dip.base.Configuration"];
+  l1_cal_pupil_rec [label="recipe L1_eng_a 1..1", shape="cds",
+                    valname="clerk.recipe.l1_cal_pupil.recipe",
+                    valtype="dip.base.Recipe"];
+  l1_cal_pupil_nllut [label="non linear calibration 1..1", shape="cds",
+                      valname="clerk.calibration.l1_cal_pupil.nonlin",
+                      valtype="dip.base.Calibration"];
+
   l1_eng_a_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
                  valname="clerk.configuration.l1_eng_a.outdir",
                  valtype="dip.base.Configuration"];
@@ -115,6 +145,86 @@ digraph Clerks
   // end l1
  
   // begin l2
+  l2a_cal_boresight_odir [label="Output path for L2a_cal_boresight 1..1", shape="ellipse",
+                          valname="clerk.configuration.l2a_cal_boresight.outdir",
+                          valtype="dip.base.Configuration"];
+  l2a_cal_boresight_rec [label="recipe L2a_cal_boresight 1..1", shape="cds",
+                         valname="clerk.recipe.l2a_cal_boresight.recipe",
+                         valtype="dip.base.Recipe"];
+  l2a_cal_boresight_mbpm [label="cal_boresight bad pixel map 1..1", shape="cds",
+                          valname="clerk.calibration.l2a_cal_boresight.bad_pix_map",
+                          valtype="dip.base.Calibration"];
+  l2a_cal_boresight_dnb  [label="cal_boresight dark (CIC/FPN/dark current) 1..1", shape="cds",
+                          valname="clerk.calibration.l2a_cal_boresight.darks",
+                          valtype="dip.base.Calibration"];
+  l2a_cal_boresight_cti  [label="cal_boresight charge transfer efficiency 1..1", shape="cds",
+                          valname="clerk.calibration.l2a_cal_boresight.charge_xfer_eff",
+                          valtype="dip.base.Calibration"];
+  l2a_cal_boresight_ff  [label="cal_boresight flat field 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_boresight.flat_field",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_boresight_kgain  [label="cal_boresight k-gain 1..1", shape="cds",
+                            valname="clerk.calibration.l2a_cal_boresight.k_gain",
+                            valtype="dip.base.Calibration"];
+  l2a_cal_boresight_emg [label="cal_boresight EM gain 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_boresight.em_gain",
+                         valtype="dip.base.Calibration"];
+  l2b_cal_boresight_odir [label="Output path for L2b_cal_boresight 1..1", shape="ellipse",
+                          valname="clerk.configuration.l2b_cal_boresight.outdir",
+                          valtype="dip.base.Configuration"];
+  l2b_cal_boresight_rec [label="recipe L2b_cal_boresight 1..1", shape="cds",
+                         valname="clerk.recipe.l2b_cal_boresight.recipe",
+                         valtype="dip.base.Recipe"];
+  l2b_cal_boresight_distm [label="cal_boresight distortion map 1..1", shape="cds",
+                           valname="clerk.calibration.l2b_cal_boresight.distortion_map",
+                           valtype="dip.base.Calibration"];
+  l2b_cal_boresight_excicrf [label="cal_boresight EXCAM ICRF location 1..1", shape="cds",
+                             valname="clerk.calibration.l2b_cal_boresight.excam_icrf_location",
+                             valtype="dip.base.Calibration"];
+  l2b_cal_boresight_excfovps [label="cal_boresight ECAM FOV pixel scale 1..1", shape="cds",
+                              valname="clerk.calibration.l2b_cal_boresight.excam_fov_pixel_scale",
+                              valtype="dip.base.Calibration"];
+
+  l2a_cal_corethpt_odir [label="Output path for L2a_cal_corethpt 1..1", shape="ellipse",
+                         valname="clerk.configuration.l2a_cal_corethpt.outdir",
+                         valtype="dip.base.Configuration"];
+  l2a_cal_corethpt_rec [label="recipe L2a_cal_corethpt 1..1", shape="cds",
+                        valname="clerk.recipe.l2a_cal_corethpt.recipe",
+                        valtype="dip.base.Recipe"];
+  l2a_cal_corethpt_mbpm [label="cal_corethpt bad pixel map 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_corethpt.bad_pix_map",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_corethpt_dnb  [label="cal_corethpt dark (CIC/FPN/dark current) 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_corethpt.darks",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_corethpt_cti  [label="cal_corethpt charge transfer efficiency 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_corethpt.charge_xfer_eff",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_corethpt_ff  [label="cal_corethpt flat field 1..1", shape="cds",
+                        valname="clerk.calibration.l2a_cal_corethpt.flat_field",
+                        valtype="dip.base.Calibration"];
+  l2a_cal_corethpt_kgain  [label="cal_corethpt k-gain 1..1", shape="cds",
+                           valname="clerk.calibration.l2a_cal_corethpt.k_gain",
+                           valtype="dip.base.Calibration"];
+  l2a_cal_corethpt_emg [label="cal_corethpt EM gain 1..1", shape="cds",
+                        valname="clerk.calibration.l2a_cal_corethpt.em_gain",
+                        valtype="dip.base.Calibration"];
+  l2b_cal_corethpt_odir [label="Output path for L2b_cal_corethpt 1..1", shape="ellipse",
+                         valname="clerk.configuration.l2b_cal_corethpt.outdir",
+                         valtype="dip.base.Configuration"];
+  l2b_cal_corethpt_rec [label="recipe L2b_cal_corethpt 1..1", shape="cds",
+                        valname="clerk.recipe.l2b_cal_corethpt.recipe",
+                        valtype="dip.base.Recipe"];
+  l2b_cal_corethpt_distm [label="cal_corethpt distortion map 1..1", shape="cds",
+                          valname="clerk.calibration.l2b_cal_corethpt.distortion_map",
+                          valtype="dip.base.Calibration"];
+  l2b_cal_corethpt_excicrf [label="cal_corethpt EXCAM ICRF location 1..1", shape="cds",
+                            valname="clerk.calibration.l2b_cal_corethpt.excam_icrf_location",
+                            valtype="dip.base.Calibration"];
+  l2b_cal_corethpt_excfovps [label="cal_corethpt ECAM FOV pixel scale 1..1", shape="cds",
+                             valname="clerk.calibration.l2b_cal_corethpt.excam_fov_pixel_scale",
+                             valtype="dip.base.Calibration"];
+
   l2a_eng_a_odir [label="Output path for L2a_eng_a 1..1", shape="ellipse",
                  valname="clerk.configuration.l2_eng_a.outdir",
                  valtype="dip.base.Configuration"];

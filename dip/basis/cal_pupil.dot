@@ -8,7 +8,8 @@ l1_cal_pupil_rec [label="L1_Pupil recipe 1..1", shape="cds"];
 l1_cal_pupil_nllut [label="L1_Pupil non-linear LUT 1..1", shape="cds"];
 cal_pupil_prod [label="Pupil products 1..1", shape="rectangle"];
 cal_pupil_log [label="Pupil log 1..1", shape="ellipse"];
-cal_pupil_man [label="Pupil manifest 1..1", shape="ellipse"];
+cal_pupil_man [label="Pupil product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_pupil.product.manifest", valtype="dip.base.Manifest"];
+cal_pupil_src [label="Pupil source manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_pupil.source.manifest", valtype="dip.base.Manifest"];
 l1_cal_pupil_prod -> trans_cal_pupil_l1_l2a [style="dashed"];
 l1_cal_pupil_man -> trans_cal_pupil_l1_l2a;
 l1_cal_pupil_odir -> trans_cal_pupil_l1_l2a;
@@ -16,5 +17,6 @@ l1_cal_pupil_rec -> trans_cal_pupil_l1_l2a;
 l1_cal_pupil_nllut -> trans_cal_pupil_l1_l2a;
 trans_cal_pupil_l1_l2a -> cal_pupil_prod [style="dashed"];
 trans_cal_pupil_l1_l2a -> cal_pupil_man;
+trans_cal_pupil_l1_l2a -> cal_pupil_src;
 trans_cal_pupil_l1_l2a -> cal_pupil_log [style="dashed"];
 }
