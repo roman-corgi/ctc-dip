@@ -1,5 +1,8 @@
 <channels>
   <cal_a/>
+  <cal_boresight/>
+  <cal_corethpt/>
+  <cal_pupil/>
   <eng_a>
     <rule conjunction="and" keyword="VISTYPE" operator="equals-any">
       <value>apple</value>
