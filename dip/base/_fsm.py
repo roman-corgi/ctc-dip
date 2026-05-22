@@ -56,7 +56,7 @@ class Orchestrator(dip.basis.fsm.AbstractModel):
 
     def _load(self, xmlname) -> bytes:
         xmlstr = _load_xml(xmlname)
-        return re.sub(r'^<([a-zA-Z0-9_\-]+)[^>]*>', r'<\1>', xmlstr, count=1)
+        return re.sub(rb'^<([a-zA-Z0-9_\-]+)[^>]*>', rb'<\1>', xmlstr, count=1)
 
 
 class Runner(dip.basis.fsm.AbstractModel):
