@@ -5,6 +5,7 @@ import dawgie
 import dip.basis.fsm
 import logging
 import os
+import re
 import shutil
 
 from datetime import UTC, datetime
