@@ -54,7 +54,8 @@ class Orchestrator(dip.basis.fsm.AbstractModel):
                     val.name = Path(item.location) if item.location else None
 
     def _load(self, xmlname) -> bytes:
-        return _load_xml(xmlname)
+        xmlstr = _load_xml(xmlname)
+        return re.sub(r'^<([a-zA-Z0-9_\-]+)[^>]*>', r'<\1>', xmlstr, count=1)
 
 
 class Runner(dip.basis.fsm.AbstractModel):
