@@ -22,6 +22,10 @@
       </xs:documentation>
     </xs:annotation>
     <xs:all>
+      <xs:element default="no comment" name="l1_cal_absflux.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_cal_absflux.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_cal_absflux.outdir" type="configuration_item"/>
+
       <xs:element default="no comment" name="l1_cal_boresight.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l2a_cal_boresight.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l2b_cal_boresight.outdir" type="configuration_item"/>
@@ -29,6 +33,14 @@
       <xs:element default="no comment" name="l1_cal_corethpt.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l2a_cal_corethpt.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l2b_cal_corethpt.outdir" type="configuration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_ndfiltimg.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltimg.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_cal_ndfiltimg.outdir" type="configuration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_ndfiltspec.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltspec.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l2b_cal_ndfiltspec.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_cal_pupil.outdir" type="configuration_item"/>
 

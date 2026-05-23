@@ -145,6 +145,17 @@
   <l4_wfov_pc.core_thruput location="/tmp/dummy.txt"/>
   <l4_wfov_pc.nd_filter location="/tmp/dummy.txt"/>
 
+  <l1_cal_absflux.nonlin location="/tmp/dummy.txt"/>
+  <l2a_cal_absflux.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_cal_absflux.darks location="/tmp/dummy.txt"/>
+  <l2a_cal_absflux.em_gain location="/tmp/dummy.txt"/>
+  <l2a_cal_absflux.flat_field location="/tmp/dummy.txt"/>
+  <l2a_cal_absflux.k_gain location="/tmp/dummy.txt"/>
+  <l2a_cal_absflux.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2b_cal_absflux.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_cal_absflux.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_cal_absflux.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+
   <l1_cal_boresight.nonlin location="/tmp/dummy.txt"/>
   <l2a_cal_boresight.bad_pix_map location="/tmp/dummy.txt"/>
   <l2a_cal_boresight.darks location="/tmp/dummy.txt"/>
@@ -166,6 +177,28 @@
   <l2b_cal_corethpt.distortion_map location="/tmp/dummy.txt"/>
   <l2b_cal_corethpt.excam_icrf_location location="/tmp/dummy.txt"/>
   <l2b_cal_corethpt.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+
+  <l1_cal_ndfiltimg.nonlin location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltimg.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltimg.darks location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltimg.em_gain location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltimg.flat_field location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltimg.k_gain location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltimg.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2b_cal_ndfiltimg.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_cal_ndfiltimg.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_cal_ndfiltimg.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+
+  <l1_cal_ndfiltspec.nonlin location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltspec.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltspec.darks location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltspec.em_gain location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltspec.flat_field location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltspec.k_gain location="/tmp/dummy.txt"/>
+  <l2a_cal_ndfiltspec.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2b_cal_ndfiltspec.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_cal_ndfiltspec.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_cal_ndfiltspec.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
 
   <l1_cal_pupil.nonlin location="/tmp/dummy.txt"/>
 </calibrations>

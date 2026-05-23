@@ -22,12 +22,21 @@
       </xs:documentation>
     </xs:annotation>
     <xs:all>
+      <xs:element default="no comment" name="l1_cal_absflux.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l2a_cal_absflux.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l2b_cal_absflux.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_boresight.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l2a_cal_boresight.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l2b_cal_boresight.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_corethpt.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l2a_cal_corethpt.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l2b_cal_corethpt.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_ndfiltimg.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltimg.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l2b_cal_ndfiltimg.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_ndfiltspec.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltspec.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l2b_cal_ndfiltspec.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_pupil.recipe" type="recipe_item"/>
 
       <xs:element default="no comment" name="l1_eng_a.recipe" type="recipe_item"/>
