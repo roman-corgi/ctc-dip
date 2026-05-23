@@ -19,11 +19,6 @@ class Runnable(dawgie.Analyzer):
 
     def run(self, aspects: dawgie.Aspect):
         machine = dip.terminus.est.FSM()
-        dip.basis.fsm.build(machine)
-        machine.dawgie_name = '.'.join(repr(self).split('.')[-2:])
-        machine.features = dip.base.features_asdict(self.traits())
-        machine.inputs = aspects
-        machine.outputs.update(self.sv_as_dict())
         xml = machine._load('system.xml')  # pylint: disable=protected-access
         system = dip.bindings.system.CreateFromDocument(xml)
         staging = Path(system.staging.location) / 'custom'
