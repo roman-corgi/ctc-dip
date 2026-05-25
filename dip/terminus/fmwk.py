@@ -13,6 +13,7 @@ class Runnable(dawgie.Analyzer):
     def __init__(self):
         dawgie.Analyzer.__init__(self)
         self._version_ = dawgie.VERSION(1, 0, 0)
+        self._allow_side_effect = SideEffect()
 
     def name(self) -> str:
         return 'est'
@@ -37,7 +38,22 @@ class Runnable(dawgie.Analyzer):
         )
 
     def state_vectors(self) -> [dawgie.StateVector]:
-        return []
+        return [self._allow_side_effect]
 
     def traits(self) -> [dawgie.SV_REF, dawgie.V_REF]:
         return []
+
+
+class SideEffect(dawgie.StateVector):
+    '''does nothing but allows user to run terminus.est'''
+
+    def __init__(self):
+        super().__init__()
+        self._version_ = dawgie.VERSION(1, 0, 0)
+        self['side-effect'] = dip.base.Manifest()
+
+    def name(self) -> str:
+        return 'allow'
+
+    def view(self, caller, visitor):
+        dip.base.generic_view(self, visitor)
