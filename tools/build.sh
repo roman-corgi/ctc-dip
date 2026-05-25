@@ -32,6 +32,7 @@ fi
 
 export CORGIDRP_DO_NOT_AUTO_INIT_CALDB=True
 cd $(realpath $(dirname $0)/..)
+tools/clean.sh
 export PYTHONPATH=.
 declare -i err_count=0
 python -m dip.basis.transmute -v
