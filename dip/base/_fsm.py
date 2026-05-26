@@ -55,8 +55,7 @@ class Orchestrator(dip.basis.fsm.AbstractModel):
                     val.name = Path(item.location) if item.location else None
 
     def _load(self, xmlname) -> bytes:
-        xmlstr = _load_xml(xmlname)
-        return re.sub(rb'^<([a-zA-Z0-9_\-]+)[^>]*>', rb'<\1>', xmlstr, count=1)
+        return _clean_load_xml (xmlname)
 
 
 class Runner(dip.basis.fsm.AbstractModel):
@@ -213,7 +212,7 @@ class Runner(dip.basis.fsm.AbstractModel):
         if name:
             arc = Path(
                 dip.bindings.system.CreateFromDocument(
-                    _load_xml('system.xml')
+                    _clean_load_xml('system.xml')
                 ).archive.location
             )
             manifest = arc / (name + '.yaml')
@@ -233,6 +232,11 @@ def _dissect(fn: str) -> {}:
         'o': vid[13:16],
         'v': vid[16:],
     }
+
+
+def _clean_load_xml(xmlname): -> bytes:
+    xmlstr = _load_xml(xmlname)
+    return re.sub(rb'^<([a-zA-Z0-9_\-]+)[^>]*>', rb'<\1>', xmlstr, count=1)
 
 
 def _load_xml(xmlname) -> bytes:
