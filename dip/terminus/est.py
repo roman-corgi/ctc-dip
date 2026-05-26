@@ -68,18 +68,18 @@ class FSM(dip.base.Orchestrator):
             mp.extend(Path(p) for p in m)
             mp.quarantine(self.__caldir)
         except:  # noqa; 722 # pylint: disable=bare-except
-            self.__log.exception('Cound not create a sanbox')
+            LOG.exception('Cound not create a sanbox')
             success = False
         return success
 
     def _do_delegation(self):
-        self.__log.info('doing step 1: initialize')
+        LOG.info('doing step 1: initialize')
         ctxt = corgidrp.ops.step_1_initialize()
         LOG.info('doing step 2: load cal: %s', self.__caldir)
         corgidrp.ops.step_2_load_cal(
             this_caldb=ctxt, main_cal_dir=self.__caldir
         )
-        self.__log.info(
+        LOG.info(
             'doing step 3: process data: %d, %s, %s, %s',
             len(self.__manifest),
             self.__cpgs,
@@ -92,7 +92,7 @@ class FSM(dip.base.Orchestrator):
             outputdir=str(self.__outdir),
             template=str(self.__template) if self.__template else None,
         )
-        self.__log.info('done processing')
+        LOG.info('done processing')
         return dip.basis.fsm.ProductStatus.ALL
 
     def _do_sanitization(self):
