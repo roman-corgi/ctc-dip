@@ -115,12 +115,12 @@ class FSM(dip.base.Orchestrator):
 class Operands:
     @staticmethod
     def contains_all(val, vals):
-        vl = val.split(',')
+        # vl = val.split(',')
         return all(v in vl for v in vals)
 
     @staticmethod
     def contains_any(val, vals):
-        vl = val.split(',')
+        # vl = val.split(',')
         return any(v in vl for v in vals)
 
     @staticmethod
