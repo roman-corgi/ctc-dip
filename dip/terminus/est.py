@@ -60,10 +60,13 @@ class FSM(dip.base.Orchestrator):
             self.__caldir.mkdir(parents=True, exist_ok=True)
             self.__outdir.mkdir(parents=True, exist_ok=True)
             m = dip.base.Manifest()
+            mp = dip.base.Manifest()
             m.deserialize(do['l1_manifest'])
-            self.__manifest = m.quarantine(location)
+            mp.extend(Path(p) for p in m)
+            self.__manifest = mp.quarantine(location)
             m.deserialize(do['cal_manifest'])
-            m.quarantine(self.__caldir)
+            mp.extend(Path(p) for p in m)
+            mp.quarantine(self.__caldir)
         except:  # noqa; 722 # pylint: disable=bare-except
             self.__log.exception('Cound not create a sanbox')
             success = False
