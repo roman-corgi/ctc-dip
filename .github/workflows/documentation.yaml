@@ -44,7 +44,7 @@ jobs:
                 parent=Channel
                 ;;
               ck_*)
-                dockdir"docs/design/clerk/$filename"
+                docdir="docs/design/clerk/$filename"
                 parent=Clerk
                 ;;
             esac
@@ -61,7 +61,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/assets/images/*.png docs/assets/images/*.svg
+          git add docs/assets/images/*.svg docs/design
           
           # Only commit if there are actual changes to images
           if git diff --staged --quiet; then
