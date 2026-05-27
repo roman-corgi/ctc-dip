@@ -28,13 +28,40 @@ jobs:
             # Generate PNG and SVG
             # dot -Tpng "$file" -o "docs/assets/images/${filename}.png"
             dot -Tsvg "$file" -o "docs/assets/images/${filename}.svg"
+
+            # Generate docs page
+            if ! command -v envsubst &> /dev/null; then
+              sudo apt-get update && sudo apt-get install -y gettext-base
+            fi
+            docdir=""
+            case "$filename" in
+              cal_*)
+                docdir="docs/design/calibration/$filename"
+                parent=Calibration
+                ;;
+              ch_*)
+                docdir="docs/design/channel/$filename"
+                parent=Channel
+                ;;
+              ck_*)
+                docdir="docs/design/clerk/$filename"
+                parent=Clerk
+                ;;
+            esac
+            if [ -n "$docdir" ] && [ ! -d "$docdir" ]
+            then
+                mkdir -p "$docdir"
+                name="${filename#*_}"
+                export filename name parent
+                envsubst < docs/design/README.template > "$docdir/README.md"
+            fi
           done
 
       - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/assets/images/*.png docs/assets/images/*.svg
+          git add docs/assets/images/*.svg docs/design
           
           # Only commit if there are actual changes to images
           if git diff --staged --quiet; then
