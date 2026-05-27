@@ -7,4 +7,4 @@ parent: Calibration
 
 This detailed information builds upon the conceptual foundations in [Abstract](../../abstract/README.html)
 
-![Astrometric](/ctc-dip/assets/images/cal_corethpt.svg)
+![cal_corethpt](/ctc-dip/assets/images/cal_corethpt.svg)

@@ -1,10 +1,10 @@
 ---
-title: Astrometric
+title: boresight
 parent: Calibration
 ---
 
-# Calibration: Astrometric (boresight)
+# Calibration: boresight
 
 This detailed information builds upon the conceptual foundations in [Abstract](../../abstract/README.html)
 
-![Astrometric](/ctc-dip/assets/images/cal_boresight.svg)
+![cal_boresight](/ctc-dip/assets/images/cal_boresight.svg)

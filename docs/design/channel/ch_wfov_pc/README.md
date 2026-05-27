@@ -7,4 +7,4 @@ parent: Channel
 
 This detailed information builds upon the conceptual foundations in [Abstract](../../abstract/README.html)
 
-![Astrometric](/ctc-dip/assets/images/ch_wfov_pc.svg)
+![ch_wfov_pc](/ctc-dip/assets/images/ch_wfov_pc.svg)
