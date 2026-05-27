@@ -1,5 +1,5 @@
 ---
-title: pupil
+title: pupil (k-gain, em-gain, etc.)
 parent: Calibration
 ---
 

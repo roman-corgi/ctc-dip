@@ -1,9 +1,9 @@
 ---
-title: corethpt
+title: Core Throughput
 parent: Calibration
 ---
 
-# Calibration: corethpt
+# Calibration: Core Throughput
 
 This detailed information builds upon the conceptual foundations in [Abstract](../../abstract/README.html)
 
