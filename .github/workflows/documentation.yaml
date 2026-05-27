@@ -48,7 +48,7 @@ jobs:
                 parent=Clerk
                 ;;
             esac
-            if [ -n "$docdir" ]
+            if [ -n "$docdir" ] && [ ! -d "$docdir" ]
             then
                 mkdir -p "$docdir"
                 name="${filename#*_}"
