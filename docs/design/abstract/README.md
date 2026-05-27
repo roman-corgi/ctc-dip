@@ -51,4 +51,4 @@ There are a set of clerks as well. These, like calibration, are one bubble shows
 
 ## Summary
 
-The DIP then executes the data flow represented by the detailed images using the FSM. There is no code to understand. There is only understanding and correctly representing the data flow in these diagrams ensuring the DIP flows the data as expected. The DIP, in turn, is then the sum of these images.
+The DIP then executes the data flow represented by the detailed images using the FSM. There is no code to understand. There is only understanding and correctly representing the data flow in these diagrams ensuring the DIP flows the data as expected. The DIP, in turn then, is the sum of these images.
