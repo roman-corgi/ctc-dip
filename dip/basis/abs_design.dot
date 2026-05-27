@@ -34,7 +34,7 @@ digraph AbstractDesign
   l1_data -> l1_l2a [style="dashed"];
   l1_man -> l1_l2a;
   l1_l2a -> l2a_data [style="dashed"];
-  l1_l2a -> l2a_man;  
+  l1_l2a -> l2a_man;
   l1_l2a -> l2a_log [style="dashed"];  
 
   l2a_cal -> l2a_l2b;
