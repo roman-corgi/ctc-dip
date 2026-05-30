@@ -1,6 +1,6 @@
 digraph NDImagingFilterCalibration {
     graph [splines="ortho", rankdir=LR];
-    trans_cal_ndfiltimg_l1_l2a [label="L1\nTransmutation\nND Filter Imaging", shape="circle", runname="l1.transmutation_cal_ndfiltimg", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+    trans_cal_ndfiltimg [label="L1\nTransmutation\nND Filter Imaging", shape="circle", runname="l1.transmutation_cal_ndfiltimg", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
 
     l1_cal_ndfiltimg_prod [label="L1_ND Imaging Filter products 1..b", shape="rectangle"];
     l1_cal_ndfiltimg_man [label="L1_ND Imaging Filter manifest 1..1", shape="ellipse"];
@@ -32,7 +32,6 @@ digraph NDImagingFilterCalibration {
     l2a_cal_ndfiltimg_mbpm -> trans_cal_ndfiltimg;
     l2a_cal_ndfiltimg_ff -> trans_cal_ndfiltimg;
     l2a_cal_ndfiltimg_emg -> trans_cal_ndfiltimg;
-    l2a_cal_ndfiltimg_man -> trans_cal_ndfiltimg;
 
     trans_cal_ndfiltimg -> cal_ndfiltimg_prod [style="dashed"];
     trans_cal_ndfiltimg -> cal_ndfiltimg_log [style="dashed"];

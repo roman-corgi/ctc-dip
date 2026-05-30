@@ -22,13 +22,12 @@ digraph NDSpecFilterCalibration {
     l1_cal_ndfiltspec_rec -> trans_cal_ndfiltspec;
     l1_cal_ndfiltspec_nllut -> trans_cal_ndfiltspec;
 
-    l2a_cal_ndfiltspec_kgain -> trans_cal_ndfiltspec_l2a_l2b;
-    l2a_cal_ndfiltspec_cti -> trans_cal_ndfiltspec_l2a_l2b;
-    l2a_cal_ndfiltspec_dnb -> trans_cal_ndfiltspec_l2a_l2b;
-    l2a_cal_ndfiltspec_mbpm -> trans_cal_ndfiltspec_l2a_l2b;
-    l2a_cal_ndfiltspec_ff -> trans_cal_ndfiltspec_l2a_l2b;
-    l2a_cal_ndfiltspec_emg -> trans_cal_ndfiltspec_l2a_l2b;
-    l2a_cal_ndfiltspec_man -> trans_cal_ndfiltspec_l2a_l2b;
+    l2a_cal_ndfiltspec_kgain -> trans_cal_ndfiltspec;
+    l2a_cal_ndfiltspec_cti -> trans_cal_ndfiltspec;
+    l2a_cal_ndfiltspec_dnb -> trans_cal_ndfiltspec;
+    l2a_cal_ndfiltspec_mbpm -> trans_cal_ndfiltspec;
+    l2a_cal_ndfiltspec_ff -> trans_cal_ndfiltspec;
+    l2a_cal_ndfiltspec_emg -> trans_cal_ndfiltspec;
 
     trans_cal_ndfiltspec -> cal_ndfiltspec_prod [style="dashed"];
     trans_cal_ndfiltspec -> cal_ndfiltspec_log [style="dashed"];
