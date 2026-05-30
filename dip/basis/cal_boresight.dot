@@ -19,8 +19,8 @@ digraph Astrometric {
 
     cal_boresight_prod [label="Astrometric products 1..1", shape="rectangle"];
     cal_boresight_log [label="Astrometric log 1..1", shape="ellipse"];
-    cal_boresight_man [label="Astrometric product manifest 1..1", shape="ellipse", shape="ellipse", valname="l2b.transmutation_cal_boresight.product.manifest", valtype="dip.base.Manifest"];
-    cal_boresight_src [label="Astrometric source manifest 1..1", shape="ellipse", shape="ellipse", valname="l2b.transmutation_cal_boresight.source.manifest", valtype="dip.base.Manifest"];
+    cal_boresight_man [label="Astrometric product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_boresight.product.manifest", valtype="dip.base.Manifest"];
+    cal_boresight_src [label="Astrometric source manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_boresight.source.manifest", valtype="dip.base.Manifest"];
 
     l1_cal_boresight_prod -> trans_cal_boresight [style="dashed"];
     l1_cal_boresight_man -> trans_cal_boresight;
@@ -30,7 +30,6 @@ digraph Astrometric {
     l1_cal_boresight_nllut -> trans_cal_boresight;
 
     l2a_cal_boresight_kgain -> trans_cal_boresight;
-    l2a_cal_boresight_rec -> trans_cal_boresight;
     l2a_cal_boresight_cti -> trans_cal_boresight;
     l2a_cal_boresight_dnb -> trans_cal_boresight;
     l2a_cal_boresight_mbpm -> trans_cal_boresight;

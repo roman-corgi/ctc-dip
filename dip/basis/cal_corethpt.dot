@@ -18,8 +18,8 @@ digraph Throughput {
 
     cal_corethpt_prod [label="CoreThroughput products 1..1", shape="rectangle"];
     cal_corethpt_log [label="CoreThroughput log 1..1", shape="ellipse"];
-    cal_corethpt_man [label="CoreThroughput product manifest 1..1", shape="ellipse", shape="ellipse", valname="l2b.transmutation_cal_corethpt.product.manifest", valtype="dip.base.Manifest"];
-    cal_corethpt_src [label="CoreThroughput source manifest 1..1", shape="ellipse", shape="ellipse", valname="l2b.transmutation_cal_corethpt.source.manifest", valtype="dip.base.Manifest"];
+    cal_corethpt_man [label="CoreThroughput product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_corethpt.product.manifest", valtype="dip.base.Manifest"];
+    cal_corethpt_src [label="CoreThroughput source manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_corethpt.source.manifest", valtype="dip.base.Manifest"];
 
 
     l1_cal_corethpt_prod -> trans_cal_corethpt [style="dashed"];
