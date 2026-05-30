@@ -152,9 +152,6 @@
   <l2a_cal_boresight.flat_field location="/tmp/dummy.txt"/>
   <l2a_cal_boresight.k_gain location="/tmp/dummy.txt"/>
   <l2a_cal_boresight.charge_xfer_eff location="/tmp/dummy.txt"/>
-  <l2b_cal_boresight.distortion_map location="/tmp/dummy.txt"/>
-  <l2b_cal_boresight.excam_icrf_location location="/tmp/dummy.txt"/>
-  <l2b_cal_boresight.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
 
   <l1_cal_corethpt.nonlin location="/tmp/dummy.txt"/>
   <l2a_cal_corethpt.bad_pix_map location="/tmp/dummy.txt"/>
@@ -163,9 +160,4 @@
   <l2a_cal_corethpt.flat_field location="/tmp/dummy.txt"/>
   <l2a_cal_corethpt.k_gain location="/tmp/dummy.txt"/>
   <l2a_cal_corethpt.charge_xfer_eff location="/tmp/dummy.txt"/>
-  <l2b_cal_corethpt.distortion_map location="/tmp/dummy.txt"/>
-  <l2b_cal_corethpt.excam_icrf_location location="/tmp/dummy.txt"/>
-  <l2b_cal_corethpt.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
-
-  <l1_cal_pupil.nonlin location="/tmp/dummy.txt"/>
 </calibrations>

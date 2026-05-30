@@ -40,6 +40,7 @@ mkdir -p dip/bindings
 for xsd in schema/*.xsd
 do
     mod=$(basename -s .xsd $xsd)
+    echo "Generating data binding from $xsd"
     pyxbgen --schema-location=$xsd \
             --module=$mod \
             --module-prefix=dip.bindings 2>&1 | grep -v "WARNING.*renamed to" | grep -v AbsentNamespace0

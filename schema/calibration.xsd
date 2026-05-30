@@ -172,9 +172,6 @@
       <xs:element default="no comment" name="l2a_cal_boresight.flat_field" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_boresight.k_gain" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_boresight.charge_xfer_eff" type="calibration_item"/>
-      <xs:element default="no comment" name="l2b_cal_boresight.distortion_map" type="calibration_item"/>
-      <xs:element default="no comment" name="l2b_cal_boresight.excam_icrf_location" type="calibration_item"/>
-      <xs:element default="no comment" name="l2b_cal_boresight.excam_fov_pixel_scale" type="calibration_item"/>
 
       <xs:element default="no comment" name="l1_cal_corethpt.nonlin" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_corethpt.bad_pix_map" type="calibration_item"/>
@@ -183,11 +180,6 @@
       <xs:element default="no comment" name="l2a_cal_corethpt.flat_field" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_corethpt.k_gain" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_corethpt.charge_xfer_eff" type="calibration_item"/>
-      <xs:element default="no comment" name="l2b_cal_corethpt.distortion_map" type="calibration_item"/>
-      <xs:element default="no comment" name="l2b_cal_corethpt.excam_icrf_location" type="calibration_item"/>
-      <xs:element default="no comment" name="l2b_cal_corethpt.excam_fov_pixel_scale" type="calibration_item"/>
-
-      <xs:element default="no comment" name="l1_cal_pupil.nonlin" type="calibration_item"/>
     </xs:all>
   </xs:complexType>
 
