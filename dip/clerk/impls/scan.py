@@ -28,7 +28,7 @@ class FSM(dip.base.Orchestrator):
                 cert=dawgie.context.ssl_pem_myself,
                 params={'runnables': 'clerk.categorization', 'targets': target},
                 timeout=300,
-                verify=False,
+                verify=False,  # self signed certs # nosec
             )
             resp.raise_for_status()
             if resp.json()['status'] != 'success':
