@@ -1,0 +1,36 @@
+digraph NDSpecFilterCalibration {
+    graph [splines="ortho", rankdir=LR];
+    trans_cal_ndfiltspec [label="L1\nTransmutation\nND Filter Spec", shape="circle", runname="l1.transmutation_cal_ndfiltspec", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+
+    l1_cal_ndfiltspec_nllut [label="L1_ND Spec Filter non-linear LUT 1..1", shape="cds"];
+
+    l2a_cal_ndfiltspec_cti [label="L2a_ND Spec Filter charge xfer inefficiency 1..1", shape="cds"];
+    l2a_cal_ndfiltspec_dnb [label="L2a_ND Spec Filter CIC/Dark Current/FPN\n or master dark 1..1", shape="cds"];
+    l2a_cal_ndfiltspec_mbpm [label="L2a_ND Spec Filter master bad pixel map 1..1", shape="cds"];
+    l2a_cal_ndfiltspec_ff [label="L2a_ND Spec Filter flat fields 1..1", shape="cds"];
+    l2a_cal_ndfiltspec_emg [label="L2a_ND Spec Filter EM gain 1..1", shape="cds"];
+    l2a_cal_ndfiltspec_kgain [label="L2_ND Spec Filter Kgain 1..1", shape="cds"];
+
+    cal_ndfiltspec_prod [label="ND Spec Filter products 1..1", shape="rectangle"];
+    cal_ndfiltspec_log [label="ND Spec Filter log 1..1", shape="ellipse"];
+    cal_ndfiltspec_man [label="ND Spec Filter product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_ndfiltspec.product.manifest", valtype="dip.base.Manifest"];
+    cal_ndfiltspec_src [label="ND Spec Filter source manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_ndfiltspec.source.manifest", valtype="dip.base.Manifest"];
+
+    l1_cal_ndfiltspec_prod -> trans_cal_ndfiltspec [style="dashed"];
+    l1_cal_ndfiltspec_man -> trans_cal_ndfiltspec;
+    l1_cal_ndfiltspec_odir -> trans_cal_ndfiltspec;
+    l1_cal_ndfiltspec_rec -> trans_cal_ndfiltspec;
+    l1_cal_ndfiltspec_nllut -> trans_cal_ndfiltspec;
+
+    l2a_cal_ndfiltspec_kgain -> trans_cal_ndfiltspec;
+    l2a_cal_ndfiltspec_cti -> trans_cal_ndfiltspec;
+    l2a_cal_ndfiltspec_dnb -> trans_cal_ndfiltspec;
+    l2a_cal_ndfiltspec_mbpm -> trans_cal_ndfiltspec;
+    l2a_cal_ndfiltspec_ff -> trans_cal_ndfiltspec;
+    l2a_cal_ndfiltspec_emg -> trans_cal_ndfiltspec;
+
+    trans_cal_ndfiltspec -> cal_ndfiltspec_prod [style="dashed"];
+    trans_cal_ndfiltspec -> cal_ndfiltspec_log [style="dashed"];
+    trans_cal_ndfiltspec -> cal_ndfiltspec_man;
+    trans_cal_ndfiltspec -> cal_ndfiltspec_src;
+}

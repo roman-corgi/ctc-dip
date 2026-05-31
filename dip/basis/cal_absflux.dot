@@ -1,0 +1,42 @@
+digraph AbsoluteFluxCalibration {
+    graph [splines="ortho", rankdir=LR];
+    trans_cal_absflux [label="L1\nTransmutation\nAbsFlux", shape="circle", runname="l1.transmutation_cal_absflux", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+
+    l1_cal_absflux_prod [label="L1_AbsFlux products 1..b", shape="rectangle"];
+    l1_cal_absflux_man [label="L1_AbsFlux manifest 1..1", shape="ellipse"];
+    l1_cal_absflux_odir [label="L1_AbsFlux output path 1..1", shape="ellipse"];
+    l1_cal_absflux_rec [label="L1_AbsFlux recipe 1..1", shape="cds"];
+    l1_cal_absflux_nllut [label="L1_AbsFlux non-linear LUT 1..1", shape="cds"];
+
+    l2a_cal_absflux_cti [label="L2a_AbsFlux charge xfer inefficiency 1..1", shape="cds"];
+    l2a_cal_absflux_dnb [label="L2a_AbsFlux CIC/Dark Current/FPN\n or master dark 1..1", shape="cds"];
+    l2a_cal_absflux_mbpm [label="L2a_AbsFlux master bad pixel map 1..1", shape="cds"];
+    l2a_cal_absflux_ff [label="L2a_AbsFlux flat fields 1..1", shape="cds"];
+    l2a_cal_absflux_emg [label="L2a_AbsFlux EM gain 1..1", shape="cds"];
+    l2a_cal_absflux_kgain [label="L2_AbsFlux Kgain 1..1", shape="cds"];
+    l2a_cal_absflux_log [label="L2a_AbsFlux log 1..1", shape="ellipse"];
+
+    cal_absflux_prod [label="AbsFlux products 1..1", shape="rectangle"];
+    cal_absflux_log [label="AbsFlux log 1..1", shape="ellipse"];
+    cal_absflux_man [label="AbsFlux product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_absflux.product.manifest", valtype="dip.base.Manifest"];
+    cal_absflux_src [label="AbsFlux source manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_absflux.source.manifest", valtype="dip.base.Manifest"];
+
+    l1_cal_absflux_prod -> trans_cal_absflux [style="dashed"];
+    l1_cal_absflux_man -> trans_cal_absflux;
+    l1_cal_absflux_odir -> trans_cal_absflux;
+    l1_cal_absflux_rec -> trans_cal_absflux;
+
+    l1_cal_absflux_nllut -> trans_cal_absflux;
+    
+    l2a_cal_absflux_kgain -> trans_cal_absflux;
+    l2a_cal_absflux_cti -> trans_cal_absflux;
+    l2a_cal_absflux_dnb -> trans_cal_absflux;
+    l2a_cal_absflux_mbpm -> trans_cal_absflux;
+    l2a_cal_absflux_ff -> trans_cal_absflux;
+    l2a_cal_absflux_emg -> trans_cal_absflux;
+
+    trans_cal_absflux -> cal_absflux_prod [style="dashed"];
+    trans_cal_absflux -> cal_absflux_log [style="dashed"];
+    trans_cal_absflux -> cal_absflux_man;
+    trans_cal_absflux -> cal_absflux_src;
+}

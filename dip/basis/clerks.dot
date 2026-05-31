@@ -23,6 +23,16 @@ digraph Clerks
               valtype="dip.base.Cpgs"];
 
   // begin l1
+  l1_cal_absflux_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
+                       valname="clerk.configuration.l1_cal_absflux.outdir",
+                       valtype="dip.base.Configuration"];
+  l1_cal_absflux_rec [label="recipe L1_eng_a 1..1", shape="cds",
+                      valname="clerk.recipe.l1_cal_absflux.recipe",
+                      valtype="dip.base.Recipe"];
+  l1_cal_absflux_nllut [label="non linear calibration 1..1", shape="cds",
+                        valname="clerk.calibration.l1_cal_absflux.nonlin",
+                        valtype="dip.base.Calibration"];
+
   l1_cal_boresight_odir [label="Output path for L1_cal_boresight 1..1", shape="ellipse",
                          valname="clerk.configuration.l1_cal_boresight.outdir",
                          valtype="dip.base.Configuration"];
@@ -42,6 +52,26 @@ digraph Clerks
   l1_cal_corethpt_nllut [label="non linear calibration 1..1", shape="cds",
                          valname="clerk.calibration.l1_cal_corethpt.nonlin",
                          valtype="dip.base.Calibration"];
+
+  l1_cal_ndfiltimg_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
+                        valname="clerk.configuration.l1_cal_ndfiltimg.outdir",
+                        valtype="dip.base.Configuration"];
+  l1_cal_ndfiltimg_rec [label="recipe L1_eng_a 1..1", shape="cds",
+                       valname="clerk.recipe.l1_cal_ndfiltimg.recipe",
+                       valtype="dip.base.Recipe"];
+  l1_cal_ndfiltimg_nllut [label="non linear calibration 1..1", shape="cds",
+                         valname="clerk.calibration.l1_cal_ndfiltimg.nonlin",
+                         valtype="dip.base.Calibration"];
+
+  l1_cal_ndfiltspec_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
+                          valname="clerk.configuration.l1_cal_ndfiltspec.outdir",
+                          valtype="dip.base.Configuration"];
+  l1_cal_ndfiltspec_rec [label="recipe L1_eng_a 1..1", shape="cds",
+                         valname="clerk.recipe.l1_cal_ndfiltspec.recipe",
+                         valtype="dip.base.Recipe"];
+  l1_cal_ndfiltspec_nllut [label="non linear calibration 1..1", shape="cds",
+                           valname="clerk.calibration.l1_cal_ndfiltspec.nonlin",
+                           valtype="dip.base.Calibration"];
 
   l1_cal_pupil_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
                      valname="clerk.configuration.l1_cal_pupil.outdir",
@@ -142,6 +172,25 @@ digraph Clerks
   // end l1
  
   // begin l2
+  l2a_cal_absflux_mbpm [label="cal_absflux bad pixel map 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_absflux.bad_pix_map",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_absflux_dnb  [label="cal_absflux dark (CIC/FPN/dark current) 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_absflux.darks",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_absflux_cti  [label="cal_absflux charge transfer efficiency 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_absflux.charge_xfer_eff",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_absflux_ff  [label="cal_absflux flat field 1..1", shape="cds",
+                        valname="clerk.calibration.l2a_cal_absflux.flat_field",
+                        valtype="dip.base.Calibration"];
+  l2a_cal_absflux_kgain  [label="cal_absflux k-gain 1..1", shape="cds",
+                           valname="clerk.calibration.l2a_cal_absflux.k_gain",
+                           valtype="dip.base.Calibration"];
+  l2a_cal_absflux_emg [label="cal_absflux EM gain 1..1", shape="cds",
+                        valname="clerk.calibration.l2a_cal_absflux.em_gain",
+                        valtype="dip.base.Calibration"];
+
   l2a_cal_boresight_mbpm [label="cal_boresight bad pixel map 1..1", shape="cds",
                           valname="clerk.calibration.l2a_cal_boresight.bad_pix_map",
                           valtype="dip.base.Calibration"];
@@ -178,6 +227,45 @@ digraph Clerks
                            valtype="dip.base.Calibration"];
   l2a_cal_corethpt_emg [label="cal_corethpt EM gain 1..1", shape="cds",
                         valname="clerk.calibration.l2a_cal_corethpt.em_gain",
+                        valtype="dip.base.Calibration"];
+
+  l2a_cal_ndfiltimg_mbpm [label="cal_ndfiltimg bad pixel map 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_ndfiltimg.bad_pix_map",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltimg_dnb  [label="cal_ndfiltimg dark (CIC/FPN/dark current) 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_ndfiltimg.darks",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltimg_cti  [label="cal_ndfiltimg charge transfer efficiency 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_ndfiltimg.charge_xfer_eff",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltimg_ff  [label="cal_ndfiltimg flat field 1..1", shape="cds",
+                        valname="clerk.calibration.l2a_cal_ndfiltimg.flat_field",
+                        valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltimg_kgain  [label="cal_ndfiltimg k-gain 1..1", shape="cds",
+                           valname="clerk.calibration.l2a_cal_ndfiltimg.k_gain",
+                           valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltimg_emg [label="cal_ndfiltimg EM gain 1..1", shape="cds",
+                        valname="clerk.calibration.l2a_cal_ndfiltimg.em_gain",
+                        valtype="dip.base.Calibration"];
+
+
+  l2a_cal_ndfiltspec_mbpm [label="cal_ndfiltspec bad pixel map 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_ndfiltspec.bad_pix_map",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltspec_dnb  [label="cal_ndfiltspec dark (CIC/FPN/dark current) 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_ndfiltspec.darks",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltspec_cti  [label="cal_ndfiltspec charge transfer efficiency 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_ndfiltspec.charge_xfer_eff",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltspec_ff  [label="cal_ndfiltspec flat field 1..1", shape="cds",
+                        valname="clerk.calibration.l2a_cal_ndfiltspec.flat_field",
+                        valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltspec_kgain  [label="cal_ndfiltspec k-gain 1..1", shape="cds",
+                           valname="clerk.calibration.l2a_cal_ndfiltspec.k_gain",
+                           valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltspec_emg [label="cal_ndfiltspec EM gain 1..1", shape="cds",
+                        valname="clerk.calibration.l2a_cal_ndfiltspec.em_gain",
                         valtype="dip.base.Calibration"];
 
   l2a_eng_a_odir [label="Output path for L2a_eng_a 1..1", shape="ellipse",

@@ -22,6 +22,10 @@ digraph CategorizationDesign
                 shape="ellipse",
                 valname="clerk.categorization.channel.cal_a",
                 valtype="dip.base.Manifest"];
+  l1_cal_absflux_man [label="L1_cal_absflux manifest 1..1\nof 0..a files",
+                      shape="ellipse",
+                      valname="clerk.categorization.channel.cal_absflux",
+                      valtype="dip.base.Manifest"];
   l1_cal_boresight_man [label="L1_cal_boresight manifest 1..1\nof 0..a files",
                         shape="ellipse",
                         valname="clerk.categorization.channel.cal_boresight",
@@ -30,6 +34,14 @@ digraph CategorizationDesign
                        shape="ellipse",
                        valname="clerk.categorization.channel.cal_corethpt",
                        valtype="dip.base.Manifest"];
+  l1_cal_ndfiltimg_man [label="L1_cal_ndfiltimg manifest 1..1\nof 0..a files",
+                       shape="ellipse",
+                       valname="clerk.categorization.channel.cal_ndfiltimg",
+                       valtype="dip.base.Manifest"];
+  l1_cal_ndfiltspec_man [label="L1_cal_ndfiltspec manifest 1..1\nof 0..a files",
+                         shape="ellipse",
+                         valname="clerk.categorization.channel.cal_ndfiltspec",
+                         valtype="dip.base.Manifest"];
   l1_cal_pupil_man [label="L1_cal_pupil (nonlinear, k-gain, em-gain) manifest 1..1\nof 0..a files",
                     shape="ellipse",
                     valname="clerk.categorization.channel.cal_pupil",

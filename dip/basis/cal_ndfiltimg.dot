@@ -1,0 +1,40 @@
+digraph NDImagingFilterCalibration {
+    graph [splines="ortho", rankdir=LR];
+    trans_cal_ndfiltimg [label="L1\nTransmutation\nND Filter Imaging", shape="circle", runname="l1.transmutation_cal_ndfiltimg", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+
+    l1_cal_ndfiltimg_prod [label="L1_ND Imaging Filter products 1..b", shape="rectangle"];
+    l1_cal_ndfiltimg_man [label="L1_ND Imaging Filter manifest 1..1", shape="ellipse"];
+    l1_cal_ndfiltimg_odir [label="L1_ND Imaging Filter output path 1..1", shape="ellipse"];
+    l1_cal_ndfiltimg_rec [label="L1_ND Imaging Filter recipe 1..1", shape="cds"];
+    l1_cal_ndfiltimg_nllut [label="L1_ND Imaging Filter non-linear LUT 1..1", shape="cds"];
+
+    l2a_cal_ndfiltimg_cti [label="L2a_ND Imaging Filter charge xfer inefficiency 1..1", shape="cds"];
+    l2a_cal_ndfiltimg_dnb [label="L2a_ND Imaging Filter CIC/Dark Current/FPN\n or master dark 1..1", shape="cds"];
+    l2a_cal_ndfiltimg_mbpm [label="L2a_ND Imaging Filter master bad pixel map 1..1", shape="cds"];
+    l2a_cal_ndfiltimg_ff [label="L2a_ND Imaging Filter flat fields 1..1", shape="cds"];
+    l2a_cal_ndfiltimg_emg [label="L2a_ND Imaging Filter EM gain 1..1", shape="cds"];
+    l2a_cal_ndfiltimg_kgain [label="L2_ND Imaging Filter Kgain 1..1", shape="cds"];
+    cal_ndfiltimg_prod [label="ND Imaging Filter products 1..1", shape="rectangle"];
+    cal_ndfiltimg_log [label="ND Imaging Filter log 1..1", shape="ellipse"];
+    cal_ndfiltimg_man [label="ND Imaging Filter product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_ndfiltimg.product.manifest", valtype="dip.base.Manifest"];
+    cal_ndfiltimg_src [label="ND Imaging Filter source manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_ndfiltimg.source.manifest", valtype="dip.base.Manifest"];
+
+    l1_cal_ndfiltimg_prod -> trans_cal_ndfiltimg [style="dashed"];
+    l1_cal_ndfiltimg_man -> trans_cal_ndfiltimg;
+    l1_cal_ndfiltimg_odir -> trans_cal_ndfiltimg;
+    l1_cal_ndfiltimg_rec -> trans_cal_ndfiltimg;
+
+    l1_cal_ndfiltimg_nllut -> trans_cal_ndfiltimg;
+
+    l2a_cal_ndfiltimg_kgain -> trans_cal_ndfiltimg;
+    l2a_cal_ndfiltimg_cti -> trans_cal_ndfiltimg;
+    l2a_cal_ndfiltimg_dnb -> trans_cal_ndfiltimg;
+    l2a_cal_ndfiltimg_mbpm -> trans_cal_ndfiltimg;
+    l2a_cal_ndfiltimg_ff -> trans_cal_ndfiltimg;
+    l2a_cal_ndfiltimg_emg -> trans_cal_ndfiltimg;
+
+    trans_cal_ndfiltimg -> cal_ndfiltimg_prod [style="dashed"];
+    trans_cal_ndfiltimg -> cal_ndfiltimg_log [style="dashed"];
+    trans_cal_ndfiltimg -> cal_ndfiltimg_man;
+    trans_cal_ndfiltimg -> cal_ndfiltimg_src;
+}

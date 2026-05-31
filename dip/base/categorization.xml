@@ -1,7 +1,10 @@
 <channels>
   <cal_a/>
+  <cal_absflux/>
   <cal_boresight/>
   <cal_corethpt/>
+  <cal_ndfiltimg/>
+  <cal_ndfiltspec/>
   <cal_pupil/>
   <eng_a>
     <rule conjunction="and" keyword="VISTYPE" operator="equals-any">

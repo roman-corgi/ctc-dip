@@ -21,8 +21,11 @@
     </xs:annotation>
     <xs:all>
       <xs:element name="cal_a" type="channel_type"/>
+      <xs:element name="cal_absflux" type="channel_type"/>
       <xs:element name="cal_boresight" type="channel_type"/>
       <xs:element name="cal_corethpt" type="channel_type"/>
+      <xs:element name="cal_ndfiltimg" type="channel_type"/>
+      <xs:element name="cal_ndfiltspec" type="channel_type"/>
       <xs:element name="cal_pupil" type="channel_type"/>
       <xs:element name="eng_a" type="channel_type"/>
       <xs:element name="nfov_a" type="channel_type"/>

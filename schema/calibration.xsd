@@ -165,6 +165,14 @@
       <xs:element default="no comment" name="l4_wfov_pc.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_pc.nd_filter" type="calibration_item"/>
 
+      <xs:element default="no comment" name="l1_cal_absflux.nonlin" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_absflux.bad_pix_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_absflux.darks" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_absflux.em_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_absflux.flat_field" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_absflux.k_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_absflux.charge_xfer_eff" type="calibration_item"/>
+
       <xs:element default="no comment" name="l1_cal_boresight.nonlin" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_boresight.bad_pix_map" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_boresight.darks" type="calibration_item"/>
@@ -180,6 +188,22 @@
       <xs:element default="no comment" name="l2a_cal_corethpt.flat_field" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_corethpt.k_gain" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_corethpt.charge_xfer_eff" type="calibration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_ndfiltimg.nonlin" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltimg.bad_pix_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltimg.darks" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltimg.em_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltimg.flat_field" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltimg.k_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltimg.charge_xfer_eff" type="calibration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_ndfiltspec.nonlin" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltspec.bad_pix_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltspec.darks" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltspec.em_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltspec.flat_field" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltspec.k_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_cal_ndfiltspec.charge_xfer_eff" type="calibration_item"/>
     </xs:all>
   </xs:complexType>
 
