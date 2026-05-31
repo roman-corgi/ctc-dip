@@ -142,4 +142,4 @@ jobs:
           CORGIDRP_DO_NOT_AUTO_INIT_CALDB: True
           LDTK_ROOT: ${{ runner.temp }}/.ldtk
         run: |
-          python -m dawgie.tools.compliant --ae-dir=dip --ae-pkg=dip
+          python -m dawgie.tools.compliant --ae-dir=dip --ae-pkg=dip -vv

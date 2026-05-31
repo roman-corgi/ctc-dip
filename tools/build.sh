@@ -32,6 +32,7 @@ fi
 
 export CORGIDRP_DO_NOT_AUTO_INIT_CALDB=True
 cd $(realpath $(dirname $0)/..)
+tools/clean.sh
 export PYTHONPATH=.
 declare -i err_count=0
 python -m dip.basis.transmute -v
@@ -39,6 +40,7 @@ mkdir -p dip/bindings
 for xsd in schema/*.xsd
 do
     mod=$(basename -s .xsd $xsd)
+    echo "Generating data binding from $xsd"
     pyxbgen --schema-location=$xsd \
             --module=$mod \
             --module-prefix=dip.bindings 2>&1 | grep -v "WARNING.*renamed to" | grep -v AbsentNamespace0

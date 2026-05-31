@@ -93,6 +93,9 @@ digraph CategorizationDesign
   l1_man -> sort;
 
   sort -> l1_cal_a_man;
+  sort -> l1_cal_boresight_man;
+  sort -> l1_cal_corethpt_man;
+  sort -> l1_cal_pupil_man;
   sort -> l1_eng_a_man;
   sort -> l1_nfov_a_man;
   sort -> l1_nfov_pc_man;
