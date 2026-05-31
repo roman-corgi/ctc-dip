@@ -85,8 +85,17 @@ class BasicClerks(unittest.TestCase):
         rec._do_delegation()
 
     @patch('dawgie.db.add')
-    @patch('dawgie.pl.schedule.organize')
-    def test_scan(self, mock_org, mock_add):
+    @patch('requests.post')
+    def test_scan(self, mock_post, mock_add):
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "status": "success",
+            "data": "payload",
+        }
+        mock_response.text = '{"status": "success", "data": "payload"}'
+        mock_response.raise_for_status.return_value = None
+        mock_post.return_value = mock_response
         with tempfile.TemporaryDirectory() as workspace:
             workspace = Path(workspace)
             scan = dip.clerk.impls.scan.FSM()
@@ -95,10 +104,12 @@ class BasicClerks(unittest.TestCase):
             scan._load = MagicMock(return_value=f'''
 <system>
   <archive location="{workspace}"/>
+  <dip location="https://localhost:8080"/>
   <journal location="{workspace}"/>
   <staging location="{workspace}"/>
 </system>
         '''.encode())
+
             with self.assertRaises(dawgie.NoValidOutputDataError) as cxt:
                 scan._do_delegation()
             self.assertEqual(0, len(scan.outputs['inbound']['frames']))

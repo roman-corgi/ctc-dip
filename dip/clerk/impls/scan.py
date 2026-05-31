@@ -1,13 +1,17 @@
 '''define the hard bits of scan'''
 
+import dawgie.context
 import dawgie.db
-import dawgie.pl.schedule
 import dip.base
 import dip.bindings.system
+import logging
+import requests
 
 from pathlib import Path
 
 from . import util
+
+LOG = logging.getLogger(__name__)
 
 
 class FSM(dip.base.Orchestrator):
@@ -19,12 +23,22 @@ class FSM(dip.base.Orchestrator):
         for signal in signals:
             target = util.l1mfn2tn(signal.name.split('.')[0])
             dawgie.db.add(target)
-            dawgie.pl.schedule.organize(
-                task_names=['clerk.categorization'],
-                targets=[target],
-                event=f'detected signal for {target}',
+            resp = requests.post(
+                f'{system.dip.location.rstrip('/')}/api/cmd/run',
+                cert=dawgie.context.ssl_pem_myself,
+                params={'runnables': 'clerk.categorization', 'targets': target},
+                timeout=300,
+                verify=False,
             )
-            signal.unlink(missing_ok=True)
+            resp.raise_for_status()
+            if resp.json()['status'] != 'success':
+                LOG.error(
+                    'request for clerk.categorization to run target %s failed because %s',
+                    target,
+                    resp.text,
+                )
+            else:
+                signal.unlink(missing_ok=True)
         raise dawgie.NoValidOutputDataError(
             'scan asks the scheduler to do a specific task.alg never generating output'
         )

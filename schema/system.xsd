@@ -15,6 +15,20 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <!-- defines how the system files are defined on disk for override -->
+  <xs:complexType name="system_uri">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Define the required URL
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="location" type="xs:anyURI" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:complexType name="system_type">
     <xs:annotation>
       <xs:documentation xml:lang="en">
@@ -27,6 +41,7 @@
     </xs:annotation>
     <xs:all>
       <xs:element default="no comment" name="archive" type="system_item"/>
+      <xs:element default="where to find DIP" name="dip" type="system_uri"/>
       <xs:element default="no comment" name="journal" type="system_item"/>
       <xs:element default="no comment" name="staging" type="system_item"/>
     </xs:all>

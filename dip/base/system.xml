@@ -1,5 +1,6 @@
 <system>
   <archive location="/tmp/dummy.txt"/>
+  <dip location="https://romandae-cpp:18080"/>
   <journal location="/tmp/dummy.txt"/>
   <staging location="/tmp/dummy.txt"/>
 </system>
