@@ -172,9 +172,6 @@
       <xs:element default="no comment" name="l2a_cal_absflux.flat_field" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_absflux.k_gain" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_absflux.charge_xfer_eff" type="calibration_item"/>
-      <xs:element default="no comment" name="l2b_cal_absflux.distortion_map" type="calibration_item"/>
-      <xs:element default="no comment" name="l2b_cal_absflux.excam_icrf_location" type="calibration_item"/>
-      <xs:element default="no comment" name="l2b_cal_absflux.excam_fov_pixel_scale" type="calibration_item"/>
 
       <xs:element default="no comment" name="l1_cal_boresight.nonlin" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_cal_boresight.bad_pix_map" type="calibration_item"/>

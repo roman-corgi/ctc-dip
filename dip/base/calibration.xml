@@ -152,9 +152,6 @@
   <l2a_cal_absflux.flat_field location="/tmp/dummy.txt"/>
   <l2a_cal_absflux.k_gain location="/tmp/dummy.txt"/>
   <l2a_cal_absflux.charge_xfer_eff location="/tmp/dummy.txt"/>
-  <l2b_cal_absflux.distortion_map location="/tmp/dummy.txt"/>
-  <l2b_cal_absflux.excam_icrf_location location="/tmp/dummy.txt"/>
-  <l2b_cal_absflux.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
 
   <l1_cal_boresight.nonlin location="/tmp/dummy.txt"/>
   <l2a_cal_boresight.bad_pix_map location="/tmp/dummy.txt"/>

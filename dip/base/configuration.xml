@@ -1,7 +1,5 @@
 <configuration>
   <l1_cal_absflux.outdir location="/tmp/dummy.txt"/>
-  <l2a_cal_absflux.outdir location="/tmp/dummy.txt"/>
-  <l2b_cal_absflux.outdir location="/tmp/dummy.txt"/>
   <l1_cal_boresight.outdir location="/tmp/dummy.txt"/>
   <l1_cal_corethpt.outdir location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltimg.outdir location="/tmp/dummy.txt"/>
