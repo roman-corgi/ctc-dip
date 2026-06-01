@@ -104,7 +104,8 @@ class BasicClerks(unittest.TestCase):
             scan._load = MagicMock(return_value=f'''
 <system>
   <archive location="{workspace}"/>
-  <dip location="https://localhost:8080"/>
+  <dip_api location="https://localhost:8080/api"/>
+  <dip_cid location="{workspace}/me.cert"/>
   <journal location="{workspace}"/>
   <staging location="{workspace}"/>
 </system>

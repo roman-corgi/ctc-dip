@@ -24,8 +24,8 @@ class FSM(dip.base.Orchestrator):
             target = util.l1mfn2tn(signal.name.split('.')[0])
             dawgie.db.add(target)
             resp = requests.post(
-                f'{system.dip.location.rstrip('/')}/api/cmd/run',
-                cert=dawgie.context.ssl_pem_myself,
+                f'{system.dip_api.location.rstrip('/')}/cmd/run',
+                cert=system.dip_cid.location,
                 params={'runnables': 'clerk.categorization', 'targets': target},
                 timeout=300,
                 verify=False,  # self signed certs # nosec
