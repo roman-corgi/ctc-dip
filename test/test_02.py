@@ -105,7 +105,7 @@ class BasicClerks(unittest.TestCase):
 <system>
   <archive location="{workspace}"/>
   <dip_api location="https://localhost:8080/api"/>
-  <dip_cid location=f"{workspace}/me.cert"/>
+  <dip_cid location="{workspace}/me.cert"/>
   <journal location="{workspace}"/>
   <staging location="{workspace}"/>
 </system>
