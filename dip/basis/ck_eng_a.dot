@@ -58,7 +58,7 @@ digraph EngAClerks
                 valtype="dip.base.Calibration"];
 
   alarm_cal -> calib [style="dashed"];
-  alarm_cnf -> calib [style="dashed"];
+  alarm_cnf -> config [style="dashed"];
   alarm_rec -> recipe [style="dashed"];
 
   calib -> eng_a_cpgs;

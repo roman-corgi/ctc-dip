@@ -48,7 +48,7 @@ digraph NDFiltSpecClerks
                         valtype="dip.base.Calibration"];
 
   alarm_cal -> calib [style="dashed"];
-  alarm_cnf -> calib [style="dashed"];
+  alarm_cnf -> config [style="dashed"];
   alarm_rec -> recipe [style="dashed"];
 
   calib -> l1_cal_ndfiltspec_nllut;

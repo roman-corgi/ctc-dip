@@ -28,6 +28,6 @@ digraph Clerks
           fsmtype="dip.clerk.impls.recipe.FSM"];
 
   alarm_cal -> calib [style="dashed"];
-  alarm_cnf -> calib [style="dashed"];
+  alarm_cnf -> config [style="dashed"];
   alarm_rec -> recipe [style="dashed"];
 }

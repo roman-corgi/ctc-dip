@@ -26,7 +26,7 @@ digraph PupilClerks
                     valtype="dip.base.Recipe"];
 
   alarm_cal -> calib [style="dashed"];
-  alarm_cnf -> calib [style="dashed"];
+  alarm_cnf -> config [style="dashed"];
   alarm_rec -> recipe [style="dashed"];
 
   config -> l1_cal_pupil_odir;
