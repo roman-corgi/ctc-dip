@@ -10,7 +10,6 @@ digraph PupilClerks
 {
   graph [splines="ortho", rankdir=LR];
 
-  alarm_cal [label="User requested update", shape="none"];
   alarm_cnf [label="User requested update", shape="none"];
   alarm_rec [label="User requested update", shape="none"];
   
@@ -25,7 +24,6 @@ digraph PupilClerks
                     valname="clerk.recipe.l1_cal_pupil.recipe",
                     valtype="dip.base.Recipe"];
 
-  alarm_cal -> calib [style="dashed"];
   alarm_cnf -> config [style="dashed"];
   alarm_rec -> recipe [style="dashed"];
 
