@@ -49,6 +49,14 @@ The calibration channels are far more abbriviated. Typically, they have the same
 
 There are a set of clerks as well. These, like calibration, are one bubble shows. Their whole existance is to organize the unruly world so that the DIP can flow the data through these diagrams. They take a set of L1 data and divide them into their channels. They load the calibration files and configuration information like output directories. While they do not perform any science tasks, it is important to organize the unruly world so that automatons like DIP can do their work unabated.
 
+### Calibration Channels
+
+The calibration channels are simply abbriviated science channels because the corgidrp chains recipes to make the products.
+
+### Clerks
+
+The clerks are tiny channels representing external information that flows in from XML files to become internalized within DIP for determining processing.
+
 ## Summary
 
 The DIP then executes the data flow represented by the detailed images using the FSM. There is no code to understand. There is only understanding and correctly representing the data flow in these diagrams ensuring the DIP flows the data as expected. The DIP, in turn then, is the sum of these images.
