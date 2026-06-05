@@ -37,7 +37,7 @@ export PYTHONPATH=.
 declare -i err_count=0
 python -m dip.basis.transmute -v
 mkdir -p dip/bindings
-for xsd in schema/*.xsd
+for xsd in $(ls schema/*.xsd | sort -r)
 do
     mod=$(basename -s .xsd $xsd)
     echo "Generating data binding from $xsd"
