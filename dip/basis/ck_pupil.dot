@@ -13,7 +13,6 @@ digraph PupilClerks
   alarm_cnf [label="User requested update", shape="none"];
   alarm_rec [label="User requested update", shape="none"];
   
-  calib [label="Calibration", shape="circle"];
   config [label="Configuration", shape="circle"];
   recipe [label="Recipe", shape="circle"];
 
