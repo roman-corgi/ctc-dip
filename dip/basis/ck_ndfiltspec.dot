@@ -1,0 +1,63 @@
+/* why separate channels and how are they tied back together
+*
+* The magic happens from clerks.dot. It contains the same clerks but with dawgie
+* information tied to the nodes. Since they are all named the same among these
+* channlized files and clerks.dot, the dip.basis.transmute distills then
+* condenses them into a hidden monolithic concept if they have dawgie
+* information associated with them. That is the real magic.
+*/
+digraph NDFiltSpecClerks
+{
+  graph [splines="ortho", rankdir=LR];
+
+  alarm_cal [label="User requested update", shape="none"];
+  alarm_cnf [label="User requested update", shape="none"];
+  alarm_rec [label="User requested update", shape="none"];
+  
+  calib [label="Calibration", shape="circle"];
+  config [label="Configuration", shape="circle"];
+  recipe [label="Recipe", shape="circle"];
+
+  l1_cal_ndfiltspec_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
+                          valname="clerk.configuration.l1_cal_ndfiltspec.outdir",
+                          valtype="dip.base.Configuration"];
+  l1_cal_ndfiltspec_rec [label="recipe L1_eng_a 1..1", shape="cds",
+                         valname="clerk.recipe.l1_cal_ndfiltspec.recipe",
+                         valtype="dip.base.Recipe"];
+  l1_cal_ndfiltspec_nllut [label="non linear calibration 1..1", shape="cds",
+                           valname="clerk.calibration.l1_cal_ndfiltspec.nonlin",
+                           valtype="dip.base.Calibration"];
+
+  l2a_cal_ndfiltspec_mbpm [label="cal_ndfiltspec bad pixel map 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_ndfiltspec.bad_pix_map",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltspec_dnb  [label="cal_ndfiltspec dark (CIC/FPN/dark current) 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_ndfiltspec.darks",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltspec_cti  [label="cal_ndfiltspec charge transfer efficiency 1..1", shape="cds",
+                         valname="clerk.calibration.l2a_cal_ndfiltspec.charge_xfer_eff",
+                         valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltspec_ff  [label="cal_ndfiltspec flat field 1..1", shape="cds",
+                        valname="clerk.calibration.l2a_cal_ndfiltspec.flat_field",
+                        valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltspec_kgain  [label="cal_ndfiltspec k-gain 1..1", shape="cds",
+                           valname="clerk.calibration.l2a_cal_ndfiltspec.k_gain",
+                           valtype="dip.base.Calibration"];
+  l2a_cal_ndfiltspec_emg [label="cal_ndfiltspec EM gain 1..1", shape="cds",
+                        valname="clerk.calibration.l2a_cal_ndfiltspec.em_gain",
+                        valtype="dip.base.Calibration"];
+
+  alarm_cal -> calib [style="dashed"];
+  alarm_cnf -> calib [style="dashed"];
+  alarm_rec -> recipe [style="dashed"];
+
+  calib -> l1_cal_ndfiltspec_nllut;
+  calib -> l2a_cal_ndfiltspec_mbpm;
+  calib -> l2a_cal_ndfiltspec_dnb;
+  calib -> l2a_cal_ndfiltspec_cti;
+  calib -> l2a_cal_ndfiltspec_ff;
+  calib -> l2a_cal_ndfiltspec_kgain;
+  calib -> l2a_cal_ndfiltspec_emg;
+  config -> l1_cal_ndfiltspec_odir;
+  recipe -> l1_cal_ndfiltspec_rec;
+}
