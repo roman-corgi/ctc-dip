@@ -3,6 +3,6 @@
   <dip_api location="https://dummy.com/api"/>
   <dip_cid location="/tmp/dummy.txt"/>
   <journal location="/tmp/dummy.txt"/>
-  <panics  location="/tmp/dummy.txt"/
+  <panics  location="/tmp/dummy.txt"/>
   <staging location="/tmp/dummy.txt"/>
 </system>
