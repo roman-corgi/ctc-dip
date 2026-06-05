@@ -107,6 +107,7 @@ class BasicClerks(unittest.TestCase):
   <dip_api location="https://localhost:8080/api"/>
   <dip_cid location="{workspace}/me.cert"/>
   <journal location="{workspace}"/>
+  <panics location="{workspace}"/>
   <staging location="{workspace}"/>
 </system>
         '''.encode())
