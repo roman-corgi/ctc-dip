@@ -1,0 +1,125 @@
+/* why separate channels and how are they tied back together
+*
+* The magic happens from clerks.dot. It contains the same clerks but with dawgie
+* information tied to the nodes. Since they are all named the same among these
+* channlized files and clerks.dot, the dip.basis.transmute distills then
+* condenses them into a hidden monolithic concept if they have dawgie
+* information associated with them. That is the real magic.
+*/
+digraph NFOVAClerks
+{
+  graph [splines="ortho", rankdir=LR];
+
+  alarm_cal [label="User requested update", shape="none"];
+  alarm_cnf [label="User requested update", shape="none"];
+  alarm_rec [label="User requested update", shape="none"];
+  
+  calib [label="Calibration", shape="circle"];
+  config [label="Configuration", shape="circle"];
+  recipe [label="Recipe", shape="circle"];
+
+  l1_nfov_a_odir [label="Output path for L1_nfov_a 1..1", shape="ellipse",
+                 valname="clerk.configuration.l1_nfov_a.outdir",
+                 valtype="dip.base.Configuration"];
+  l1_nfov_a_rec [label="recipe L1_nfov_a 1..1", shape="cds",
+                valname="clerk.recipe.l1_nfov_a.recipe",
+                valtype="dip.base.Recipe"];
+  l1_nfov_a_nllut [label="non linear calibration 1..1", shape="cds",
+                     valname="clerk.calibration.l1_nfov_a.nonlin",
+                     valtype="dip.base.Calibration"];
+
+  l2a_nfov_a_odir [label="Output path for L2a_nfov_a 1..1", shape="ellipse",
+                 valname="clerk.configuration.l2a_nfov_a.outdir",
+                 valtype="dip.base.Configuration"];
+  l2a_nfov_a_rec [label="recipe L2a_nfov_a 1..1", shape="cds",
+                 valname="clerk.recipe.l2a_nfov_a.recipe",
+                 valtype="dip.base.Recipe"];
+  l2a_nfov_a_mbpm [label="nfov_a bad pixel map 1..1", shape="cds",
+                valname="clerk.calibration.l2a_nfov_a.bad_pix_map",
+                valtype="dip.base.Calibration"];
+  l2a_nfov_a_dnb  [label="nfov_a dark (CIC/FPN/dark current) 1..1", shape="cds",
+                  valname="clerk.calibration.l2a_nfov_a.darks",
+                  valtype="dip.base.Calibration"];
+  l2a_nfov_a_cti  [label="nfov_a charge transfer efficiency 1..1", shape="cds",
+                valname="clerk.calibration.l2a_nfov_a.charge_xfer_eff",
+                valtype="dip.base.Calibration"];
+  l2a_nfov_a_ff  [label="nfov_a flat field 1..1", shape="cds",
+                valname="clerk.calibration.l2a_nfov_a.flat_field",
+                valtype="dip.base.Calibration"];
+  l2a_nfov_a_kgain  [label="nfov_a k-gain 1..1", shape="cds",
+                valname="clerk.calibration.l2a_nfov_a.k_gain",
+                valtype="dip.base.Calibration"];
+  l2a_nfov_a_emg [label="nfov_a EM gain 1..1", shape="cds",
+                valname="clerk.calibration.l2a_nfov_a.em_gain",
+                valtype="dip.base.Calibration"];
+  l2b_nfov_a_odir [label="Output path for L2b_nfov_a 1..1", shape="ellipse",
+                 valname="clerk.configuration.l2b_nfov_a.outdir",
+                 valtype="dip.base.Configuration"];
+  l2b_nfov_a_rec [label="recipe L2b_nfov_a 1..1", shape="cds",
+                 valname="clerk.recipe.l2b_nfov_a.recipe",
+                 valtype="dip.base.Recipe"];
+  l2b_nfov_a_distm [label="nfov_a distortion map 1..1", shape="cds",
+                 valname="clerk.calibration.l2b_nfov_a.distortion_map",
+                 valtype="dip.base.Calibration"];
+  l2b_nfov_a_excicrf [label="nfov_a EXCAM ICRF location 1..1", shape="cds",
+                 valname="clerk.calibration.l2b_nfov_a.excam_icrf_location",
+                 valtype="dip.base.Calibration"];
+  l2b_nfov_a_excfovps [label="nfov_a ECAM FOV pixel scale 1..1", shape="cds",
+                 valname="clerk.calibration.l2b_nfov_a.excam_fov_pixel_scale",
+                 valtype="dip.base.Calibration"];
+
+  l3_nfov_a_odir [label="Output path for L3_nfov_a 1..1", shape="ellipse",
+                 valname="clerk.configuration.l3_nfov_a.outdir",
+                 valtype="dip.base.Configuration"];
+  l3_nfov_a_rec [label="recipe L3_nfov_a 1..1", shape="cds",
+                 valname="clerk.recipe.l3_nfov_a.recipe",
+                 valtype="dip.base.Recipe"];
+  l3_nfov_a_cal [label="nfov_a calibration 1..1", shape="cds",
+                 valname="clerk.calibration.l3_nfov_a.calibration",
+                 valtype="dip.base.Calibration"];
+
+  l4_nfov_a_odir [label="Output path for L4_nfov_a 1..1", shape="ellipse",
+                 valname="clerk.configuration.l4_nfov_a.outdir",
+                 valtype="dip.base.Configuration"];
+  l4_nfov_a_rec [label="recipe L4_nfov_a 1..1", shape="cds",
+                 valname="clerk.recipe.l4_nfov_a.recipe",
+                 valtype="dip.base.Recipe"];
+  l4_nfov_a_afcal [label="nfov_a absolute flux 1..1", shape="cds",
+                 valname="clerk.calibration.l4_nfov_a.absolute_flux",
+                 valtype="dip.base.Calibration"];
+  l4_nfov_a_ctcal [label="nfov_a core throughput 1..1", shape="cds",
+                 valname="clerk.calibration.l4_nfov_a.core_thruput",
+                 valtype="dip.base.Calibration"];
+  l4_nfov_a_ndfilt [label="nfov_a ND filter 1..1", shape="cds",
+                 valname="clerk.calibration.l4_nfov_a.nd_filter",
+                 valtype="dip.base.Calibration"];
+
+  alarm_cal -> calib [style="dashed"];
+  alarm_cnf -> config [style="dashed"];
+  alarm_rec -> recipe [style="dashed"];
+
+  calib -> l1_nfov_a_nllut;
+  calib -> l2a_nfov_a_mbpm;
+  calib -> l2a_nfov_a_dnb;
+  calib -> l2a_nfov_a_cti;
+  calib -> l2a_nfov_a_ff;
+  calib -> l2a_nfov_a_kgain;
+  calib -> l2a_nfov_a_emg;
+  calib -> l2b_nfov_a_distm;
+  calib -> l2b_nfov_a_excicrf;
+  calib -> l2b_nfov_a_excfovps;
+  calib -> l3_nfov_a_cal;
+  calib -> l4_nfov_a_afcal;
+  calib -> l4_nfov_a_ctcal;
+  calib -> l4_nfov_a_ndfilt;
+  config -> l1_nfov_a_odir;
+  config -> l2a_nfov_a_odir;
+  config -> l2b_nfov_a_odir;
+  config -> l3_nfov_a_odir;
+  config -> l4_nfov_a_odir;
+  recipe -> l1_nfov_a_rec;
+  recipe -> l2a_nfov_a_rec;
+  recipe -> l2b_nfov_a_rec;
+  recipe -> l3_nfov_a_rec;
+  recipe -> l4_nfov_a_rec;
+}
