@@ -44,6 +44,7 @@
       <xs:element default="where to find DIP API" name="dip_api" type="system_uri"/>
       <xs:element default="where to find DIP cert" name="dip_cid" type="system_item"/>
       <xs:element default="no comment" name="journal" type="system_item"/>
+      <xs:element default="no comment" name="panics" type="system_item"/>
       <xs:element default="no comment" name="staging" type="system_item"/>
     </xs:all>
   </xs:complexType>

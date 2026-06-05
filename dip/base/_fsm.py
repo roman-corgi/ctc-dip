@@ -3,10 +3,12 @@
 import corgidrp.ops
 import dawgie
 import dip.basis.fsm
+import dip.bindings.system
 import logging
 import os
 import re
 import shutil
+import tarfile
 
 from datetime import UTC, datetime
 from dip.binding_help import get_tag
@@ -106,6 +108,16 @@ class Runner(dip.basis.fsm.AbstractModel):
             # just create it because the FSM always calls sanitzation()
             self.__sandbox = TemporaryDirectory()
             location = Path(self.__sandbox.name)
+            handler = logging.FileHandler(
+                location / f'{self.dawgie_name}.log', encoding="utf-8"
+            )
+            handler.setLevel(logging.INFO)
+            handler.setFormatter(
+                logging.Formatter(
+                    '%(asctime)s :: %(name)s :: %(levelname)s :: %(message)s'
+                )
+            )
+            logging.getLogger().addHandler(handler)
             self.__caldir = location / 'caldata'
             self.__outdir = location / 'output'
             self.__caldir.mkdir(parents=True, exist_ok=True)
@@ -163,6 +175,22 @@ class Runner(dip.basis.fsm.AbstractModel):
         information that has been prepared.
         '''
         return dip.basis.fsm.AlertStatus.FOUNDERED
+
+    def _do_panic(self):
+        '''build and bury a treasure chest'''
+        if self.__sandbox:
+            xml = _clean_load_xml('system.xml')
+            system = dip.bindings.system.CreateFromDocument(xml)
+            location = Path(self.__sandbox.name)
+            with tarfile.open(
+                Path(system.panics) / f'{self.dawgie_id}.tgz',
+                'w:gz',
+                dereference=True,
+            ) as tar:
+                tar.add(location, arcname=location.name)
+                caldb = Path(os.path.expandvars('${HOME}/.corgidrp'))
+                if caldb.is_dir():
+                    tar.add(caldb, arcname=caldb.name)
 
     def _do_sanitization(self):
         if self.__sandbox:

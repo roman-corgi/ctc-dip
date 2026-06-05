@@ -76,6 +76,7 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
         abc.ABC.__init__(self)
         self.__dawgie_exc = None
         self.__dawgie_name = None
+        self.__dawgie_id = None
         self.__features = {}
         self.__finale = None
         self.__log = LOG.getChild(self.__class__.__name__)
@@ -99,6 +100,14 @@ class AbstractModel(abc.ABC):  # pylint: disable=too-many-instance-attributes
     @dawgie_name.setter
     def dawgie_name(self, name: str):
         self.__dawgie_name = name
+
+    @property
+    def dawgie_id(self) -> str:
+        return self.__dawgie_id
+
+    @dawgie_name.setter
+    def dawgie_name(self, name: str):
+        self.__dawgie_id = name
 
     @property
     def features(self) -> {str: str}:
