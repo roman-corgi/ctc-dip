@@ -5,6 +5,7 @@
   <!-- begin l1 -->
   <l1_eng_a.nonlin location="/tmp/dummy.txt"/>
   <l1_nfov_a.nonlin location="/tmp/dummy.txt"/>
+  <l1_nfov_nc.nonlin location="/tmp/dummy.txt"/>
   <l1_nfov_pc.nonlin location="/tmp/dummy.txt"/>
   <l1_pol_a.nonlin location="/tmp/dummy.txt"/>
   <!-- end l1 -->
@@ -21,6 +22,12 @@
   <l2a_nfov_a.flat_field location="/tmp/dummy.txt"/>
   <l2a_nfov_a.k_gain location="/tmp/dummy.txt"/>
   <l2a_nfov_a.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2a_nfov_nc.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_nfov_nc.darks location="/tmp/dummy.txt"/>
+  <l2a_nfov_nc.em_gain location="/tmp/dummy.txt"/>
+  <l2a_nfov_nc.flat_field location="/tmp/dummy.txt"/>
+  <l2a_nfov_nc.k_gain location="/tmp/dummy.txt"/>
+  <l2a_nfov_nc.charge_xfer_eff location="/tmp/dummy.txt"/>
   <l2a_nfov_pc.bad_pix_map location="/tmp/dummy.txt"/>
   <l2a_nfov_pc.darks location="/tmp/dummy.txt"/>
   <l2a_nfov_pc.em_gain location="/tmp/dummy.txt"/>
@@ -37,6 +44,9 @@
   <l2b_nfov_a.distortion_map location="/tmp/dummy.txt"/>
   <l2b_nfov_a.excam_icrf_location location="/tmp/dummy.txt"/>
   <l2b_nfov_a.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l2b_nfov_nc.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_nfov_nc.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_nfov_nc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
   <l2b_nfov_pc.distortion_map location="/tmp/dummy.txt"/>
   <l2b_nfov_pc.excam_icrf_location location="/tmp/dummy.txt"/>
   <l2b_nfov_pc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
@@ -48,12 +58,16 @@
   <!-- begin l3 -->  
   <l3_nfov_a.calibration location="/tmp/dummy.txt"/>
   <l3_nfov_pc.calibration location="/tmp/dummy.txt"/>
+  <l3_nfov_nc.calibration location="/tmp/dummy.txt"/>
   <l3_pol_a.mueller_matrix location="/tmp/dummy.txt"/>
   <!-- end l3 -->
   <!-- begin l4 -->
   <l4_nfov_a.absolute_flux location="/tmp/dummy.txt"/>
   <l4_nfov_a.core_thruput location="/tmp/dummy.txt"/>
   <l4_nfov_a.nd_filter location="/tmp/dummy.txt"/>
+  <l4_nfov_nc.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_nfov_nc.core_thruput location="/tmp/dummy.txt"/>
+  <l4_nfov_nc.nd_filter location="/tmp/dummy.txt"/>
   <l4_nfov_pc.absolute_flux location="/tmp/dummy.txt"/>
   <l4_nfov_pc.core_thruput location="/tmp/dummy.txt"/>
   <l4_nfov_pc.nd_filter location="/tmp/dummy.txt"/>
@@ -96,6 +110,28 @@
   <l4_spec_a.ref_star_prism_image location="/tmp/dummy.txt"/>
   <l4_spec_a.slit_transmission_map location="/tmp/dummy.txt"/>
   <l4_spec_a.target_star_prism_image location="/tmp/dummy.txt"/>
+
+  <l1_spec_nc.nonlin location="/tmp/dummy.txt"/>
+  <l2a_spec_nc.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_spec_nc.darks location="/tmp/dummy.txt"/>
+  <l2a_spec_nc.em_gain location="/tmp/dummy.txt"/>
+  <l2a_spec_nc.flat_field location="/tmp/dummy.txt"/>
+  <l2a_spec_nc.k_gain location="/tmp/dummy.txt"/>
+  <l2a_spec_nc.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2b_spec_nc.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_spec_nc.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_spec_nc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l2b_spec_nc.cfam_filter_offset location="/tmp/dummy.txt"/>
+  <l3_spec_nc.dispersion_model location="/tmp/dummy.txt"/>
+  <l3_spec_nc.wavelength_map location="/tmp/dummy.txt"/>
+  <l4_spec_nc.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_spec_nc.core_thruput location="/tmp/dummy.txt"/>
+  <l4_spec_nc.nd_filter location="/tmp/dummy.txt"/>
+  <l4_spec_nc.line_spread_function location="/tmp/dummy.txt"/>
+  <l4_spec_nc.ref_star_prism_image location="/tmp/dummy.txt"/>
+  <l4_spec_nc.slit_transmission_map location="/tmp/dummy.txt"/>
+  <l4_spec_nc.target_star_prism_image location="/tmp/dummy.txt"/>
+
   <l1_spec_pc.nonlin location="/tmp/dummy.txt"/>
   <l2a_spec_pc.bad_pix_map location="/tmp/dummy.txt"/>
   <l2a_spec_pc.darks location="/tmp/dummy.txt"/>
@@ -116,6 +152,7 @@
   <l4_spec_pc.ref_star_prism_image location="/tmp/dummy.txt"/>
   <l4_spec_pc.slit_transmission_map location="/tmp/dummy.txt"/>
   <l4_spec_pc.target_star_prism_image location="/tmp/dummy.txt"/>
+
   <l1_wfov_a.nonlin location="/tmp/dummy.txt"/>
   <l2a_wfov_a.bad_pix_map location="/tmp/dummy.txt"/>
   <l2a_wfov_a.darks location="/tmp/dummy.txt"/>
@@ -130,6 +167,22 @@
   <l4_wfov_a.absolute_flux location="/tmp/dummy.txt"/>
   <l4_wfov_a.core_thruput location="/tmp/dummy.txt"/>
   <l4_wfov_a.nd_filter location="/tmp/dummy.txt"/>
+
+  <l1_wfov_nc.nonlin location="/tmp/dummy.txt"/>
+  <l2a_wfov_nc.bad_pix_map location="/tmp/dummy.txt"/>
+  <l2a_wfov_nc.darks location="/tmp/dummy.txt"/>
+  <l2a_wfov_nc.em_gain location="/tmp/dummy.txt"/>
+  <l2a_wfov_nc.flat_field location="/tmp/dummy.txt"/>
+  <l2a_wfov_nc.k_gain location="/tmp/dummy.txt"/>
+  <l2a_wfov_nc.charge_xfer_eff location="/tmp/dummy.txt"/>
+  <l2b_wfov_nc.distortion_map location="/tmp/dummy.txt"/>
+  <l2b_wfov_nc.excam_icrf_location location="/tmp/dummy.txt"/>
+  <l2b_wfov_nc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
+  <l3_wfov_nc.calibration location="/tmp/dummy.txt"/>
+  <l4_wfov_nc.absolute_flux location="/tmp/dummy.txt"/>
+  <l4_wfov_nc.core_thruput location="/tmp/dummy.txt"/>
+  <l4_wfov_nc.nd_filter location="/tmp/dummy.txt"/>
+
   <l1_wfov_pc.nonlin location="/tmp/dummy.txt"/>
   <l2a_wfov_pc.bad_pix_map location="/tmp/dummy.txt"/>
   <l2a_wfov_pc.darks location="/tmp/dummy.txt"/>
