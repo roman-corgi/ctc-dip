@@ -12,6 +12,11 @@
   <l2b_nfov_a.outdir location="/tmp/dummy.txt"/>
   <l3_nfov_a.outdir location="/tmp/dummy.txt"/>
   <l4_nfov_a.outdir location="/tmp/dummy.txt"/>
+  <l1_nfov_nc.outdir location="/tmp/dummy.txt"/>
+  <l2a_nfov_nc.outdir location="/tmp/dummy.txt"/>
+  <l2b_nfov_nc.outdir location="/tmp/dummy.txt"/>
+  <l3_nfov_nc.outdir location="/tmp/dummy.txt"/>
+  <l4_nfov_nc.outdir location="/tmp/dummy.txt"/>
   <l1_nfov_pc.outdir location="/tmp/dummy.txt"/>
   <l2a_nfov_pc.outdir location="/tmp/dummy.txt"/>
   <l2b_nfov_pc.outdir location="/tmp/dummy.txt"/>
@@ -32,6 +37,11 @@
   <l2b_spec_a.outdir location="/tmp/dummy.txt"/>
   <l3_spec_a.outdir location="/tmp/dummy.txt"/>
   <l4_spec_a.outdir location="/tmp/dummy.txt"/>
+  <l1_spec_nc.outdir location="/tmp/dummy.txt"/>
+  <l2a_spec_nc.outdir location="/tmp/dummy.txt"/>
+  <l2b_spec_nc.outdir location="/tmp/dummy.txt"/>
+  <l3_spec_nc.outdir location="/tmp/dummy.txt"/>
+  <l4_spec_nc.outdir location="/tmp/dummy.txt"/>
   <l1_spec_pc.outdir location="/tmp/dummy.txt"/>
   <l2a_spec_pc.outdir location="/tmp/dummy.txt"/>
   <l2b_spec_pc.outdir location="/tmp/dummy.txt"/>
@@ -42,6 +52,11 @@
   <l2b_wfov_a.outdir location="/tmp/dummy.txt"/>
   <l3_wfov_a.outdir location="/tmp/dummy.txt"/>
   <l4_wfov_a.outdir location="/tmp/dummy.txt"/>
+  <l1_wfov_nc.outdir location="/tmp/dummy.txt"/>
+  <l2a_wfov_nc.outdir location="/tmp/dummy.txt"/>
+  <l2b_wfov_nc.outdir location="/tmp/dummy.txt"/>
+  <l3_wfov_nc.outdir location="/tmp/dummy.txt"/>
+  <l4_wfov_nc.outdir location="/tmp/dummy.txt"/>
   <l1_wfov_pc.outdir location="/tmp/dummy.txt"/>
   <l2a_wfov_pc.outdir location="/tmp/dummy.txt"/>
   <l2b_wfov_pc.outdir location="/tmp/dummy.txt"/>
