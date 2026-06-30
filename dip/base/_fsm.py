@@ -183,7 +183,7 @@ class Runner(dip.basis.fsm.AbstractModel):
             system = dip.bindings.system.CreateFromDocument(xml)
             location = Path(self.__sandbox.name)
             with tarfile.open(
-                Path(system.panics) / f'{self.dawgie_id}.tgz',
+                Path(system.panics.location) / f'{self.dawgie_id}.tgz',
                 'w:gz',
                 dereference=True,
             ) as tar:
