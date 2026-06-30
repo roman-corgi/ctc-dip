@@ -1,0 +1,149 @@
+/* why separate channels and how are they tied back together
+*
+* The magic happens from clerks.dot. It contains the same clerks but with dawgie
+* information tied to the nodes. Since they are all named the same among these
+* channlized files and clerks.dot, the dip.basis.transmute distills then
+* condenses them into a hidden monolithic concept if they have dawgie
+* information associated with them. That is the real magic.
+*/
+digraph SpectroscopyNCClerks
+{
+  graph [splines="ortho", rankdir=LR];
+
+  alarm_cal [label="User requested update", shape="none"];
+  alarm_cnf [label="User requested update", shape="none"];
+  alarm_rec [label="User requested update", shape="none"];
+  
+  calib [label="Calibration", shape="circle"];
+  config [label="Configuration", shape="circle"];
+  recipe [label="Recipe", shape="circle"];
+
+  l1_spec_nc_odir [label="Output path for L1_spec_nc 1..1", shape="ellipse",
+                 valname="clerk.configuration.l1_spec_nc.outdir",
+                 valtype="dip.base.Configuration"];
+  l1_spec_nc_rec [label="recipe L1_spec_nc 1..1", shape="cds",
+                valname="clerk.recipe.l1_spec_nc.recipe",
+                valtype="dip.base.Recipe"];
+  l1_spec_nc_nllut [label="non linear calibration 1..1", shape="cds",
+                     valname="clerk.calibration.l1_spec_nc.nonlin",
+                     valtype="dip.base.Calibration"];
+
+  l2a_spec_nc_odir [label="Output path for L2a_spec_nc 1..1", shape="ellipse",
+                 valname="clerk.configuration.l2a_spec_nc.outdir",
+                 valtype="dip.base.Configuration"];
+  l2a_spec_nc_rec [label="recipe L2a_spec_nc 1..1", shape="cds",
+                 valname="clerk.recipe.l2a_spec_nc.recipe",
+                 valtype="dip.base.Recipe"];
+  l2a_spec_nc_mbpm [label="spec_nc bad pixel map 1..1", shape="cds",
+                valname="clerk.calibration.l2a_spec_nc.bad_pix_map",
+                valtype="dip.base.Calibration"];
+  l2a_spec_nc_dnb  [label="spec_nc dark (CIC/FPN/dark current) 1..1", shape="cds",
+                  valname="clerk.calibration.l2a_spec_nc.darks",
+                  valtype="dip.base.Calibration"];
+  l2a_spec_nc_cti  [label="spec_nc charge transfer efficiency 1..1", shape="cds",
+                valname="clerk.calibration.l2a_spec_nc.charge_xfer_eff",
+                valtype="dip.base.Calibration"];
+  l2a_spec_nc_ff  [label="spec_nc flat field 1..1", shape="cds",
+                valname="clerk.calibration.l2a_spec_nc.flat_field",
+                valtype="dip.base.Calibration"];
+  l2a_spec_nc_kgain  [label="spec_nc k-gain 1..1", shape="cds",
+                valname="clerk.calibration.l2a_spec_nc.k_gain",
+                valtype="dip.base.Calibration"];
+  l2a_spec_nc_emg [label="spec_nc EM gain 1..1", shape="cds",
+                valname="clerk.calibration.l2a_spec_nc.em_gain",
+                valtype="dip.base.Calibration"];
+  l2b_spec_nc_odir [label="Output path for L2b_spec_nc 1..1", shape="ellipse",
+                 valname="clerk.configuration.l2b_spec_nc.outdir",
+                 valtype="dip.base.Configuration"];
+  l2b_spec_nc_rec [label="recipe L2b_spec_nc 1..1", shape="cds",
+                 valname="clerk.recipe.l2b_spec_nc.recipe",
+                 valtype="dip.base.Recipe"];
+  l2b_spec_nc_distm [label="spec_nc distortion map 1..1", shape="cds",
+                 valname="clerk.calibration.l2b_spec_nc.distortion_map",
+                 valtype="dip.base.Calibration"];
+  l2b_spec_nc_excicrf [label="spec_nc EXCAM ICRF location 1..1", shape="cds",
+                 valname="clerk.calibration.l2b_spec_nc.excam_icrf_location",
+                 valtype="dip.base.Calibration"];
+  l2b_spec_nc_excfovps [label="spec_nc ECAM FOV pixel scale 1..1", shape="cds",
+                 valname="clerk.calibration.l2b_spec_nc.excam_fov_pixel_scale",
+                 valtype="dip.base.Calibration"];
+  l2b_spec_nc_cfamfo [label="spec_a CFAM filter offset 1..1", shape="cds",
+                 valname="clerk.calibration.l2b_spec_nc.cfam_filter_offset",
+                 valtype="dip.base.Calibration"];
+
+  l3_spec_nc_odir [label="Output path for L3_spec_nc 1..1", shape="ellipse",
+                 valname="clerk.configuration.l3_spec_nc.outdir",
+                 valtype="dip.base.Configuration"];
+  l3_spec_nc_rec [label="recipe L3_spec_nc 1..1", shape="cds",
+                 valname="clerk.recipe.l3_spec_nc.recipe",
+                 valtype="dip.base.Recipe"];
+  l3_spec_nc_dispm [label="spec_a dispersion model 1..1", shape="cds",
+                 valname="clerk.calibration.l3_spec_nc.dispersion_model",
+                 valtype="dip.base.Calibration"];
+  l3_spec_nc_wavem [label="spec_a dispersion model 1..1", shape="cds",
+                 valname="clerk.calibration.l3_spec_nc.wavelength_map",
+                 valtype="dip.base.Calibration"];
+
+  l4_spec_nc_odir [label="Output path for L4_spec_nc 1..1", shape="ellipse",
+                 valname="clerk.configuration.l4_spec_nc.outdir",
+                 valtype="dip.base.Configuration"];
+  l4_spec_nc_rec [label="recipe L4_spec_nc 1..1", shape="cds",
+                 valname="clerk.recipe.l4_spec_nc.recipe",
+                 valtype="dip.base.Recipe"];
+  l4_spec_nc_afcal [label="spec_nc absolute flux 1..1", shape="cds",
+                 valname="clerk.calibration.l4_spec_nc.absolute_flux",
+                 valtype="dip.base.Calibration"];
+  l4_spec_nc_ctcal [label="spec_nc core throughput 1..1", shape="cds",
+                 valname="clerk.calibration.l4_spec_nc.core_thruput",
+                 valtype="dip.base.Calibration"];
+  l4_spec_nc_ndfilt [label="spec_nc ND filter 1..1", shape="cds",
+                 valname="clerk.calibration.l4_spec_nc.nd_filter",
+                 valtype="dip.base.Calibration"];
+  l4_spec_nc_stmap [label="spec_nc slit transmission map 1..1", shape="cds",
+                 valname="clerk.calibration.l4_spec_nc.slit_transmission_map",
+                 valtype="dip.base.Calibration"];
+  l4_spec_nc_tspi [label="spec_nc target star prism image 1..1", shape="cds",
+                 valname="clerk.calibration.l4_spec_nc.target_star_prism_image",
+                 valtype="dip.base.Calibration"];
+  l4_spec_nc_rspi [label="spec_nc reference star prism image 1..1", shape="cds",
+                 valname="clerk.calibration.l4_spec_nc.ref_star_prism_image",
+                 valtype="dip.base.Calibration"];
+  l4_spec_nc_lsf [label="spec_nc ND filter line spread function", shape="cds",
+                 valname="clerk.calibration.l4_spec_nc.line_spread_function",
+                 valtype="dip.base.Calibration"];
+
+  alarm_cal -> calib [style="dashed"];
+  alarm_cnf -> config [style="dashed"];
+  alarm_rec -> recipe [style="dashed"];
+
+  calib -> l1_spec_nc_nllut;
+  calib -> l2a_spec_nc_mbpm;
+  calib -> l2a_spec_nc_dnb;
+  calib -> l2a_spec_nc_cti;
+  calib -> l2a_spec_nc_ff;
+  calib -> l2a_spec_nc_kgain;
+  calib -> l2a_spec_nc_emg;
+  calib -> l2b_spec_nc_distm;
+  calib -> l2b_spec_nc_excicrf;
+  calib -> l2b_spec_nc_excfovps;
+  calib -> l2b_spec_nc_cfamfo;
+  calib -> l3_spec_nc_dispm;
+  calib -> l3_spec_nc_wavem;
+  calib -> l4_spec_nc_afcal;
+  calib -> l4_spec_nc_ctcal;
+  calib -> l4_spec_nc_ndfilt;
+  calib -> l4_spec_nc_stmap;
+  calib -> l4_spec_nc_tspi;
+  calib -> l4_spec_nc_rspi;
+  calib -> l4_spec_nc_lsf;
+  config -> l1_spec_nc_odir;
+  config -> l2a_spec_nc_odir;
+  config -> l2b_spec_nc_odir;
+  config -> l3_spec_nc_odir;
+  config -> l4_spec_nc_odir;
+  recipe -> l1_spec_nc_rec;
+  recipe -> l2a_spec_nc_rec;
+  recipe -> l2b_spec_nc_rec;
+  recipe -> l3_spec_nc_rec;
+  recipe -> l4_spec_nc_rec;
+}
