@@ -17,11 +17,14 @@
     </rule>
   </eng_a>
   <nfov_a/>
+  <nfov_nc/>
   <nfov_pc/>
   <pol_a/>
   <pol_pc/>
   <spec_a/>
+  <spec_nc/>
   <spec_pc/>
   <wfov_a/>
+  <wfov_nc/>
   <wfov_pc/>
 </channels>

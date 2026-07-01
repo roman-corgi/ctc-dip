@@ -54,6 +54,10 @@ digraph CategorizationDesign
                  shape="ellipse",
                  valname="clerk.categorization.channel.nfov_a",
                  valtype="dip.base.Manifest"];
+  l1_nfov_nc_man [label="L1_nfov_nc manifest 1..1\nof 0..d files",
+                  shape="ellipse",
+                  valname="clerk.categorization.channel.nfov_nc",
+                  valtype="dip.base.Manifest"];
   l1_nfov_pc_man [label="L1_nfov_pc manifest 1..1\nof 0..d files",
                   shape="ellipse",
                   valname="clerk.categorization.channel.nfov_pc",
@@ -70,6 +74,10 @@ digraph CategorizationDesign
                 shape="ellipse",
                 valname="clerk.categorization.channel.spec_a",
                 valtype="dip.base.Manifest"];
+  l1_spec_nc_man [label="L1_spec_nc manifest 1..1\nof 0..h files",
+                 shape="ellipse",
+                 valname="clerk.categorization.channel.spec_nc",
+                 valtype="dip.base.Manifest"];
   l1_spec_pc_man [label="L1_spec_pc manifest 1..1\nof 0..h files",
                  shape="ellipse",
                  valname="clerk.categorization.channel.spec_pc",
@@ -78,6 +86,10 @@ digraph CategorizationDesign
                  shape="ellipse",
                  valname="clerk.categorization.channel.wfov_a",
                  valtype="dip.base.Manifest"];
+  l1_wfov_nc_man [label="L1_wfov_nc manifest 1..1\nof 0..j files",
+                  shape="ellipse",
+                  valname="clerk.categorization.channel.wfov_nc",
+                  valtype="dip.base.Manifest"];
   l1_wfov_pc_man [label="L1_wfov_pc manifest 1..1\nof 0..j files",
                   shape="ellipse",
                   valname="clerk.categorization.channel.wfov_pc",

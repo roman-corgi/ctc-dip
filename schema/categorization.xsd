@@ -29,12 +29,15 @@
       <xs:element name="cal_pupil" type="channel_type"/>
       <xs:element name="eng_a" type="channel_type"/>
       <xs:element name="nfov_a" type="channel_type"/>
+      <xs:element name="nfov_nc" type="channel_type"/>
       <xs:element name="nfov_pc" type="channel_type"/>
       <xs:element name="pol_a" type="channel_type"/>
       <xs:element name="pol_pc" type="channel_type"/>
       <xs:element name="spec_a" type="channel_type"/>
+      <xs:element name="spec_nc" type="channel_type"/>
       <xs:element name="spec_pc" type="channel_type"/>
       <xs:element name="wfov_a" type="channel_type"/>
+      <xs:element name="wfov_nc" type="channel_type"/>
       <xs:element name="wfov_pc" type="channel_type"/>
     </xs:all>
   </xs:complexType>

@@ -46,6 +46,21 @@
       <xs:element default="no comment" name="l4_nfov_a.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_nfov_a.nd_filter" type="calibration_item"/>
 
+      <xs:element default="no comment" name="l1_nfov_nc.nonlin" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_nfov_nc.bad_pix_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_nfov_nc.darks" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_nfov_nc.em_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_nfov_nc.flat_field" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_nfov_nc.k_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_nfov_nc.charge_xfer_eff" type="calibration_item"/>
+      <xs:element default="no comment" name="l2b_nfov_nc.distortion_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l2b_nfov_nc.excam_icrf_location" type="calibration_item"/>
+      <xs:element default="no comment" name="l2b_nfov_nc.excam_fov_pixel_scale" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_nfov_nc.calibration" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_nfov_nc.absolute_flux" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_nfov_nc.core_thruput" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_nfov_nc.nd_filter" type="calibration_item"/>
+
       <xs:element default="no comment" name="l1_nfov_pc.nonlin" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_nfov_pc.bad_pix_map" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_nfov_pc.darks" type="calibration_item"/>
@@ -114,6 +129,27 @@
       <xs:element default="no comment" name="l4_spec_a.slit_transmission_map" type="calibration_item"/>
       <xs:element default="no comment" name="l4_spec_a.target_star_prism_image" type="calibration_item"/>
 
+      <xs:element default="no comment" name="l1_spec_nc.nonlin" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_spec_nc.bad_pix_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_spec_nc.darks" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_spec_nc.em_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_spec_nc.flat_field" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_spec_nc.k_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_spec_nc.charge_xfer_eff" type="calibration_item"/>
+      <xs:element default="no comment" name="l2b_spec_nc.distortion_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l2b_spec_nc.excam_icrf_location" type="calibration_item"/>
+      <xs:element default="no comment" name="l2b_spec_nc.excam_fov_pixel_scale" type="calibration_item"/>
+      <xs:element default="no comment" name="l2b_spec_nc.cfam_filter_offset" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_spec_nc.dispersion_model" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_spec_nc.wavelength_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_spec_nc.absolute_flux" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_spec_nc.core_thruput" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_spec_nc.nd_filter" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_spec_nc.line_spread_function" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_spec_nc.ref_star_prism_image" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_spec_nc.slit_transmission_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_spec_nc.target_star_prism_image" type="calibration_item"/>
+
       <xs:element default="no comment" name="l1_spec_pc.nonlin" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_spec_pc.bad_pix_map" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_spec_pc.darks" type="calibration_item"/>
@@ -149,6 +185,21 @@
       <xs:element default="no comment" name="l4_wfov_a.absolute_flux" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_a.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_a.nd_filter" type="calibration_item"/>
+
+      <xs:element default="no comment" name="l1_wfov_nc.nonlin" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_wfov_nc.bad_pix_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_wfov_nc.darks" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_wfov_nc.em_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_wfov_nc.flat_field" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_wfov_nc.k_gain" type="calibration_item"/>
+      <xs:element default="no comment" name="l2a_wfov_nc.charge_xfer_eff" type="calibration_item"/>
+      <xs:element default="no comment" name="l2b_wfov_nc.distortion_map" type="calibration_item"/>
+      <xs:element default="no comment" name="l2b_wfov_nc.excam_icrf_location" type="calibration_item"/>
+      <xs:element default="no comment" name="l2b_wfov_nc.excam_fov_pixel_scale" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_wfov_nc.calibration" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_wfov_nc.absolute_flux" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_wfov_nc.core_thruput" type="calibration_item"/>
+      <xs:element default="no comment" name="l4_wfov_nc.nd_filter" type="calibration_item"/>
 
       <xs:element default="no comment" name="l1_wfov_pc.nonlin" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_wfov_pc.bad_pix_map" type="calibration_item"/>
