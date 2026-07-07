@@ -46,7 +46,7 @@
       <xs:element name="value" minOccurs="1" maxOccurs="unbounded" type="xs:anyType"/>
     </xs:sequence>
     <xs:attribute name="keyword" type="xs:normalizedString" use="required"/>
-    <xs:attribute name="set_operator" type="logical_operator" use="required"/>
+    <xs:attribute name="operator" type="set_operator" use="required"/>
   </xs:complexType>
 
   <xs:complexType name="rpn">
@@ -72,13 +72,11 @@
             <sch:let name="prev_operands" value="count(preceding-sibling::operand)"/>
             <sch:let name="prev_operators" value="count(preceding-sibling::operator)"/>
             <sch:let name="stack_depth_before" value="$prev_operands - $prev_operators"/>
-            
             <sch:assert test="$stack_depth_before &gt;= 2" role="error">
               Stack underflow! The operator '<sch:value-of select="text()"/>' requires two active booleans on the stack. 
               Only <sch:value-of select="$stack_depth_before"/> value(s) are available.
             </sch:assert>
           </sch:rule>
-          
         </sch:pattern>
       </xs:appinfo>
     </xs:annotation>
