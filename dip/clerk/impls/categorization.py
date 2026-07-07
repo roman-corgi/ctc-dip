@@ -69,24 +69,7 @@ class FSM(dip.base.Orchestrator):
                 return typ
         return str
 
-    def _do_delegation(self):
-        xml = self._load('categorization.xml')
-        categories = dip.bindings.categorization.CreateFromDocument(xml)
-        xml = self._load('system.xml')
-        system = dip.bindings.system.CreateFromDocument(xml)
-        journal = Path(system.journal.location)
-        staging = Path(system.staging.location)
-        manifest = dip.base.Manifest()
-        manifest.at = self.dawgie_name
-        mfn = staging / util.tn2l1mfn(self.target)
-        if not mfn.is_file():
-            mfn = staging / mfn.name.lower()
-        if not mfn.is_file():
-            raise dawgie.NoValidInputDataError(
-                f'No manifest file matches target name {self.target}'
-            )
-        manifest.deserialize(mfn)
-        shutil.move(mfn, journal / mfn.name)
+    def _collate(self, categories, manifest) -> dip.base.ProductStatus:
         for l1 in manifest:
             l1 = Path(l1)
             channels = []
@@ -110,6 +93,26 @@ class FSM(dip.base.Orchestrator):
                 self.outputs['channel']['unk'].append(l1)
         LOG.info('output: %s', str(self.outputs['channel']))
         return dip.base.ProductStatus.ALL
+
+    def _do_delegation(self):
+        xml = self._load('categorization.xml')
+        categories = dip.bindings.categorization.CreateFromDocument(xml)
+        xml = self._load('system.xml')
+        system = dip.bindings.system.CreateFromDocument(xml)
+        journal = Path(system.journal.location)
+        staging = Path(system.staging.location)
+        manifest = dip.base.Manifest()
+        manifest.at = self.dawgie_name
+        mfn = staging / util.tn2l1mfn(self.target)
+        if not mfn.is_file():
+            mfn = staging / mfn.name.lower()
+        if not mfn.is_file():
+            raise dawgie.NoValidInputDataError(
+                f'No manifest file matches target name {self.target}'
+            )
+        manifest.deserialize(mfn)
+        shutil.move(mfn, journal / mfn.name)
+        return self._collate(categories, manifest)
 
 
 class Operands:
