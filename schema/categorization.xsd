@@ -2,17 +2,6 @@
             elementFormDefault="unqualified"
             attributeFormDefault="unqualified">
   <!-- defines how the channels files are defined on disk for override -->
-  <xs:complexType name="channel_type">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">
-        Each channel is made up includes rules and excludes rules.
-      </xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="rule" minOccurs="0" maxOccurs="unbounded" type="rule_type"/>
-    </xs:sequence>
-  </xs:complexType>
-
   <xs:complexType name="channels_type">
     <xs:annotation>
       <xs:documentation xml:lang="en">
@@ -20,34 +9,33 @@
       </xs:documentation>
     </xs:annotation>
     <xs:all>
-      <xs:element name="cal_a" type="channel_type"/>
-      <xs:element name="cal_absflux" type="channel_type"/>
-      <xs:element name="cal_boresight" type="channel_type"/>
-      <xs:element name="cal_corethpt" type="channel_type"/>
-      <xs:element name="cal_ndfiltimg" type="channel_type"/>
-      <xs:element name="cal_ndfiltspec" type="channel_type"/>
-      <xs:element name="cal_pupil" type="channel_type"/>
-      <xs:element name="eng_a" type="channel_type"/>
-      <xs:element name="nfov_a" type="channel_type"/>
-      <xs:element name="nfov_nc" type="channel_type"/>
-      <xs:element name="nfov_pc" type="channel_type"/>
-      <xs:element name="pol_a" type="channel_type"/>
-      <xs:element name="pol_pc" type="channel_type"/>
-      <xs:element name="spec_a" type="channel_type"/>
-      <xs:element name="spec_nc" type="channel_type"/>
-      <xs:element name="spec_pc" type="channel_type"/>
-      <xs:element name="wfov_a" type="channel_type"/>
-      <xs:element name="wfov_nc" type="channel_type"/>
-      <xs:element name="wfov_pc" type="channel_type"/>
+      <xs:element name="cal_a" type="rpn"/>
+      <xs:element name="cal_absflux" type="rpn"/>
+      <xs:element name="cal_boresight" type="rpn"/>
+      <xs:element name="cal_corethpt" type="rpn"/>
+      <xs:element name="cal_ndfiltimg" type="rpn"/>
+      <xs:element name="cal_ndfiltspec" type="rpn"/>
+      <xs:element name="cal_pupil" type="rpn"/>
+      <xs:element name="eng_a" type="rpn"/>
+      <xs:element name="nfov_a" type="rpn"/>
+      <xs:element name="nfov_nc" type="rpn"/>
+      <xs:element name="nfov_pc" type="rpn"/>
+      <xs:element name="pol_a" type="rpn"/>
+      <xs:element name="pol_pc" type="rpn"/>
+      <xs:element name="spec_a" type="rpn"/>
+      <xs:element name="spec_nc" type="rpn"/>
+      <xs:element name="spec_pc" type="rpn"/>
+      <xs:element name="wfov_a" type="rpn"/>
+      <xs:element name="wfov_nc" type="rpn"/>
+      <xs:element name="wfov_pc" type="rpn"/>
     </xs:all>
   </xs:complexType>
 
-  <xs:complexType name="rule_type">
+  <xs:complexType name="operand_type">
     <xs:annotation>
       <xs:documentation xml:lang="en">
         Define what a list of in/ex-cludes are
 
-        @conjunction is how to join this rule with previous with the first rule applied to itself
         @keyword is the keyword from the primary header
         @operator is how the values should be checked against the header value
 
@@ -57,21 +45,62 @@
     <xs:sequence>
       <xs:element name="value" minOccurs="1" maxOccurs="unbounded" type="xs:anyType"/>
     </xs:sequence>
-    <xs:attribute name="conjunction" type="conjunction" use="required"/>
+    <xs:attribute default="false" name="not" type="xs:boolean" use="optional"/>
     <xs:attribute name="keyword" type="xs:normalizedString" use="required"/>
-    <xs:attribute name="operator" type="operator" use="required"/>
+    <xs:attribute name="operator" type="set_operator" use="required"/>
   </xs:complexType>
 
-  <xs:simpleType name="conjunction">
+  <xs:complexType name="rpn">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Each channel is made up includes rules and excludes rules.
+      </xs:documentation>
+      <xs:appinfo>
+        <sch:pattern id="rpn-stack-validation" xmlns:sch="http://oclc.org">
+          <sch:rule context="*[local-name()='channel' or @type='rpn' or type='rpn'] | rpn">
+            <sch:let name="operands_count" value="count(operand)"/>
+            <sch:let name="operators_count" value="count(operator)"/>
+            <sch:assert test="$operands_count &gt; 0" role="error">
+              An RPN sequence must contain at least one operand.
+            </sch:assert>
+            <sch:assert test="($operands_count - $operators_count) = 1" role="error">
+              Invalid RPN sequence. The layout must resolve to exactly one final boolean value. 
+              Current state: <sch:value-of select="$operands_count"/> operands and 
+              <sch:value-of select="$operators_count"/> operators.
+            </sch:assert>
+          </sch:rule>
+          <sch:rule context="*[operand or operator]/operator">
+            <sch:let name="prev_operands" value="count(preceding-sibling::operand)"/>
+            <sch:let name="prev_operators" value="count(preceding-sibling::operator)"/>
+            <sch:let name="stack_depth_before" value="$prev_operands - $prev_operators"/>
+            <sch:assert test="$stack_depth_before &gt;= 2" role="error">
+              Stack underflow! The operator '<sch:value-of select="text()"/>' requires two active booleans on the stack. 
+              Only <sch:value-of select="$stack_depth_before"/> value(s) are available.
+            </sch:assert>
+          </sch:rule>
+        </sch:pattern>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="operand" type="operand_type"/>
+        <xs:element name="operator" type="logical_operator"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="logical_operator">
     <xs:restriction base="xs:normalizedString">
       <xs:enumeration value="and"/>
-      <xs:enumeration value="and not"/>
+      <xs:enumeration value="nand"/>
+      <xs:enumeration value="nor"/>
       <xs:enumeration value="or"/>
-      <xs:enumeration value="or not"/>
+      <xs:enumeration value="xnor"/>
+      <xs:enumeration value="xor"/>
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="operator">
+  <xs:simpleType name="set_operator">
     <xs:restriction base="xs:normalizedString">
       <xs:enumeration value="contains-all"/>
       <xs:enumeration value="contains-any"/>

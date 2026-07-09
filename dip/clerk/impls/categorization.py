@@ -8,6 +8,7 @@ import shutil
 
 from astropy.io import fits
 from dip.binding_help import get_tag
+from dip.bindings.categorization import operand_type, logical_operator
 from pathlib import Path
 
 from . import util
@@ -16,51 +17,82 @@ LOG = logging.getLogger(__name__)
 
 
 class FSM(dip.base.Orchestrator):
+    # pylint: disable=too-many-branches,too-many-return-statements
     @staticmethod
-    def _apply(rules, fn):
-        if rules is None:
+    def _apply(commands, fn, tagname):
+        if commands is None or not commands.orderedContent():
             return False
         if not fn.is_file():
             LOG.error('The file %s does not exist or is not a real file', fn)
             return False
-        result = None
+        result = []
         with fits.open(fn) as hdus:
             hdr = {}
             for hdu in hdus:
                 hdr.update(hdu.header)
-            for rule in rules:
-                val = hdr[rule.keyword]
-                cast = FSM._caster(val)
-                vals = [
-                    cast(v.orderedContent()[0].value)
-                    for v in get_tag(rule, 'value')
-                ]
-                r = getattr(Operands, rule.operator.replace('-', '_'))(
-                    val, vals
-                )
-                LOG.info(
-                    'Keyword %s = "%s" and results in %s against %s',
-                    rule.keyword,
-                    val,
-                    r,
-                    vals,
-                )
-                if result is None:
-                    result = r
-                match rule.conjunction:
-                    case 'and':
-                        result = result and r
-                    case 'and not':
-                        result = result and not r
-                    case 'or':
-                        result = result or r
-                    case 'or not':
-                        result = result or not r
-                    case _:
+            for cmd in commands.orderedContent():
+                command = cmd.value
+                if isinstance(command, operand_type):
+                    val = hdr[command.keyword]
+                    cast = FSM._caster(val)
+                    vals = [
+                        cast(v.orderedContent()[0].value)
+                        for v in command.value_
+                    ]
+                    r = getattr(Operands, command.operator.replace('-', '_'))(
+                        val, vals
+                    )
+                    LOG.info(
+                        'Keyword %s = "%s" and results in %s against %s',
+                        command.keyword,
+                        val,
+                        r,
+                        vals,
+                    )
+                    result.append(not r if command.not_ else r)
+                elif isinstance(command, logical_operator):
+                    if len(result) < 2:
                         LOG.error(
-                            'do not know this conjunction %s', rule.conjunction
+                            'Stack underflow in %s. Requesting operation %s '
+                            'with less than two values in the stack.',
+                            tagname,
+                            str(command),
                         )
-        return result
+                        return False
+                    a = result.pop()
+                    b = result.pop()
+                    match command.lower():
+                        case 'and':
+                            result.append(a and b)
+                        case 'nand':
+                            result.append(not (a and b))
+                        case 'nor':
+                            result.append(not (a or b))
+                        case 'or':
+                            result.append(a or b)
+                        case 'xnor':
+                            result.append(a == b)
+                        case 'xor':
+                            result.append(a != b)
+                        case _:
+                            LOG.error(
+                                'do not know this logical operation %s',
+                                str(command),
+                            )
+                            return False
+                else:
+                    LOG.error('What?? RPN only has operands and operators')
+                    return False
+            if len(result) != 1:
+                LOG.error(
+                    'RPN stack %s should result in a single value but have %d',
+                    tagname,
+                    len(result),
+                )
+                return False
+        return result[0]
+
+    # pylint: enable=too-many-branches,too-many-return-statements
 
     @staticmethod
     def _caster(val):
@@ -77,12 +109,13 @@ class FSM(dip.base.Orchestrator):
                 lambda s: s != 'unk', self.outputs['channel']
             ):
                 channel = get_tag(categories, channelname)
-                if FSM._apply(channel.rule, l1):
+                if FSM._apply(channel, l1, channelname):
                     channels.append(channelname)
             if channels:
                 if len(channels) > 1:
                     LOG.error(
-                        'L1 file %s matches more than 1 channel %s. Adding to UNK.',
+                        'L1 file %s matches more than 1 channel %s. '
+                        'Adding to UNK.',
                         l1,
                         channels,
                     )

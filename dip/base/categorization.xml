@@ -7,14 +7,15 @@
   <cal_ndfiltspec/>
   <cal_pupil/>
   <eng_a>
-    <rule conjunction="and" keyword="VISTYPE" operator="equals-any">
+    <operand keyword="VISTYPE" operator="equals-any">
       <value>apple</value>
       <value>banana</value>
       <value>cherry</value>
-    </rule>
-    <rule conjunction="and not" keyword="AQ" operator="equals-any">
+    </operand>
+    <operand keyword="AQ" operator="equals-any">
       <value>0</value>
-    </rule>
+    </operand>
+    <operator>nand</operator>
   </eng_a>
   <nfov_a/>
   <nfov_nc/>
