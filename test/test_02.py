@@ -3,6 +3,7 @@
 '''test generic FSM transitions that they match the diagram'''
 
 import dawgie
+import dip.bindings
 import dip.clerk.auto.calibration
 import dip.clerk.auto.categorization
 import dip.clerk.auto.configuration
@@ -30,7 +31,6 @@ class BasicClerks(unittest.TestCase):
         cal.outputs.update(dip.clerk.auto.calibration.Runnable().sv_as_dict())
         cal._do_delegation()
 
-    @unittest.skip("Running out of time")
     def test_categorization(self):
         with tempfile.TemporaryDirectory() as workspace:
             cat = dip.clerk.impls.categorization.FSM()
@@ -71,7 +71,17 @@ class BasicClerks(unittest.TestCase):
                     expectation['channel']['eng_a'].append(fn)
             print(cat.inputs)
             cat.target = 'apple (cherry)(grape)(plum)'
-            cat._do_delegation()
+            with open(
+                Path(__file__).parent.parent
+                / 'dip'
+                / 'base'
+                / 'categorization.xml',
+                'rt',
+            ) as file:
+                rules = dip.bindings.categorization.CreateFromDocument(
+                    file.read()
+                )
+            cat._collate(rules, cat.inputs['clerk.scan.inbound']['frames'])
             self.assertEqual(expectation, cat.outputs)
 
     def test_configuration(self):

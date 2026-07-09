@@ -45,6 +45,7 @@
     <xs:sequence>
       <xs:element name="value" minOccurs="1" maxOccurs="unbounded" type="xs:anyType"/>
     </xs:sequence>
+    <xs:attribute default="true" name="not" type="xs:boolean" use="optional"/>
     <xs:attribute name="keyword" type="xs:normalizedString" use="required"/>
     <xs:attribute name="operator" type="set_operator" use="required"/>
   </xs:complexType>
