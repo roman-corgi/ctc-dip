@@ -49,7 +49,7 @@ class FSM(dip.base.Orchestrator):
                         r,
                         vals,
                     )
-                    result.append(r)
+                    result.append(not r if command.not_ else r)
                 elif isinstance(command, logical_operator):
                     if len(result) < 2:
                         LOG.error(
