@@ -41,7 +41,8 @@
       <xs:element default="no comment" name="l2b_nfov_a.distortion_map" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_nfov_a.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_nfov_a.excam_fov_pixel_scale" type="calibration_item"/>
-      <xs:element default="no comment" name="l3_nfov_a.calibration" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_nfov_a.astrometry" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_nfov_a.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l4_nfov_a.absolute_flux" type="calibration_item"/>
       <xs:element default="no comment" name="l4_nfov_a.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_nfov_a.nd_filter" type="calibration_item"/>
@@ -56,7 +57,8 @@
       <xs:element default="no comment" name="l2b_nfov_nc.distortion_map" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_nfov_nc.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_nfov_nc.excam_fov_pixel_scale" type="calibration_item"/>
-      <xs:element default="no comment" name="l3_nfov_nc.calibration" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_nfov_nc.astrometry" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_nfov_nc.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l4_nfov_nc.absolute_flux" type="calibration_item"/>
       <xs:element default="no comment" name="l4_nfov_nc.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_nfov_nc.nd_filter" type="calibration_item"/>
@@ -71,7 +73,8 @@
       <xs:element default="no comment" name="l2b_nfov_pc.distortion_map" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_nfov_pc.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_nfov_pc.excam_fov_pixel_scale" type="calibration_item"/>
-      <xs:element default="no comment" name="l3_nfov_pc.calibration" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_nfov_pc.astrometry" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_nfov_pc.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l4_nfov_pc.absolute_flux" type="calibration_item"/>
       <xs:element default="no comment" name="l4_nfov_pc.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_nfov_pc.nd_filter" type="calibration_item"/>
@@ -87,7 +90,9 @@
       <xs:element default="no comment" name="l2b_pol_a.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_pol_a.excam_fov_pixel_scale" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_pol_a.cfam_filter_offset" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_pol_a.astrometry" type="calibration_item"/>
       <xs:element default="no comment" name="l3_pol_a.mueller_matrix" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_pol_a.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l4_pol_a.absolute_flux" type="calibration_item"/>
       <xs:element default="no comment" name="l4_pol_a.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_pol_a.nd_filter" type="calibration_item"/>
@@ -103,7 +108,9 @@
       <xs:element default="no comment" name="l2b_pol_pc.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_pol_pc.excam_fov_pixel_scale" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_pol_pc.cfam_filter_offset" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_pol_pc.astrometry" type="calibration_item"/>
       <xs:element default="no comment" name="l3_pol_pc.mueller_matrix" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_pol_pc.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l4_pol_pc.absolute_flux" type="calibration_item"/>
       <xs:element default="no comment" name="l4_pol_pc.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_pol_pc.nd_filter" type="calibration_item"/>
@@ -119,6 +126,8 @@
       <xs:element default="no comment" name="l2b_spec_a.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_spec_a.excam_fov_pixel_scale" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_spec_a.cfam_filter_offset" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_spec_a.astrometry" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_spec_a.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l3_spec_a.dispersion_model" type="calibration_item"/>
       <xs:element default="no comment" name="l3_spec_a.wavelength_map" type="calibration_item"/>
       <xs:element default="no comment" name="l4_spec_a.absolute_flux" type="calibration_item"/>
@@ -140,6 +149,8 @@
       <xs:element default="no comment" name="l2b_spec_nc.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_spec_nc.excam_fov_pixel_scale" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_spec_nc.cfam_filter_offset" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_spec_nc.astrometry" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_spec_nc.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l3_spec_nc.dispersion_model" type="calibration_item"/>
       <xs:element default="no comment" name="l3_spec_nc.wavelength_map" type="calibration_item"/>
       <xs:element default="no comment" name="l4_spec_nc.absolute_flux" type="calibration_item"/>
@@ -161,6 +172,8 @@
       <xs:element default="no comment" name="l2b_spec_pc.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_spec_pc.excam_fov_pixel_scale" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_spec_pc.cfam_filter_offset" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_spec_pc.astrometry" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_spec_pc.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l3_spec_pc.dispersion_model" type="calibration_item"/>
       <xs:element default="no comment" name="l3_spec_pc.wavelength_map" type="calibration_item"/>
       <xs:element default="no comment" name="l4_spec_pc.absolute_flux" type="calibration_item"/>
@@ -181,7 +194,8 @@
       <xs:element default="no comment" name="l2b_wfov_a.distortion_map" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_wfov_a.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_wfov_a.excam_fov_pixel_scale" type="calibration_item"/>
-      <xs:element default="no comment" name="l3_wfov_a.calibration" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_wfov_a.astrometry" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_wfov_a.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_a.absolute_flux" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_a.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_a.nd_filter" type="calibration_item"/>
@@ -196,7 +210,8 @@
       <xs:element default="no comment" name="l2b_wfov_nc.distortion_map" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_wfov_nc.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_wfov_nc.excam_fov_pixel_scale" type="calibration_item"/>
-      <xs:element default="no comment" name="l3_wfov_nc.calibration" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_wfov_nc.astrometry" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_wfov_nc.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_nc.absolute_flux" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_nc.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_nc.nd_filter" type="calibration_item"/>
@@ -211,7 +226,8 @@
       <xs:element default="no comment" name="l2b_wfov_pc.distortion_map" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_wfov_pc.excam_icrf_location" type="calibration_item"/>
       <xs:element default="no comment" name="l2b_wfov_pc.excam_fov_pixel_scale" type="calibration_item"/>
-      <xs:element default="no comment" name="l3_wfov_pc.calibration" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_wfov_pc.astrometry" type="calibration_item"/>
+      <xs:element default="no comment" name="l3_wfov_pc.ndfilter" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_pc.absolute_flux" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_pc.core_thruput" type="calibration_item"/>
       <xs:element default="no comment" name="l4_wfov_pc.nd_filter" type="calibration_item"/>
