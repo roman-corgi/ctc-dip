@@ -113,12 +113,15 @@ digraph CategorizationDesign
   sort -> l1_cal_pupil_man;
   sort -> l1_eng_a_man;
   sort -> l1_nfov_a_man;
+  sort -> l1_nfov_nc_man;
   sort -> l1_nfov_pc_man;
   sort -> l1_pol_a_man;
   sort -> l1_pol_pc_man;
   sort -> l1_spec_a_man;
+  sort -> l1_spec_nc_man;
   sort -> l1_spec_pc_man;
   sort -> l1_wfov_a_man;
+  sort -> l1_wfov_nc_man;
   sort -> l1_wfov_pc_man;
   sort -> l1_unk_man;
 }

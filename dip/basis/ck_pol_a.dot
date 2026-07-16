@@ -77,6 +77,12 @@ digraph PolAClerks
   l3_pol_a_rec [label="recipe L3_pol_a 1..1", shape="cds",
                  valname="clerk.recipe.l3_pol_a.recipe",
                  valtype="dip.base.Recipe"];
+  l3_pol_a_ast [label="pol_a astrometry 1..1", shape="cds",
+                 valname="clerk.calibration.l3_pol_a.astrometry",
+                 valtype="dip.base.Calibration"];
+  l3_pol_a_ndf [label="pol_a astrometry 1..1", shape="cds",
+                 valname="clerk.calibration.l3_pol_a.ndfilter",
+                 valtype="dip.base.Calibration"];
   l3_pol_a_mueller [label="pol_a mueller matrix 1..1", shape="cds",
                  valname="clerk.calibration.l3_pol_a.mueller_matrix",
                  valtype="dip.base.Calibration"];
@@ -112,7 +118,9 @@ digraph PolAClerks
   calib -> l2b_pol_a_excicrf;
   calib -> l2b_pol_a_excfovps;
   calib -> l2b_pol_a_cfamfo;
+  calib -> l3_pol_a_ast;
   calib -> l3_pol_a_mueller;
+  calib -> l3_pol_a_ndf;
   calib -> l4_pol_a_afcal;
   calib -> l4_pol_a_ctcal;
   calib -> l4_pol_a_ndfilt;

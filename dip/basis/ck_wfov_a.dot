@@ -74,8 +74,11 @@ digraph WFOVAClerks
   l3_wfov_a_rec [label="recipe L3_wfov_a 1..1", shape="cds",
                  valname="clerk.recipe.l3_wfov_a.recipe",
                  valtype="dip.base.Recipe"];
-  l3_wfov_a_cal [label="wfov_a calibration 1..1", shape="cds",
-                 valname="clerk.calibration.l3_wfov_a.calibration",
+  l3_wfov_a_ast [label="wfov_a astrometry 1..1", shape="cds",
+                 valname="clerk.calibration.l3_wfov_a.astrometry",
+                 valtype="dip.base.Calibration"];
+  l3_wfov_a_ndf [label="wfov_a astrometry 1..1", shape="cds",
+                 valname="clerk.calibration.l3_wfov_a.ndfilter",
                  valtype="dip.base.Calibration"];
 
   l4_wfov_a_odir [label="Output path for L4_wfov_a 1..1", shape="ellipse",
@@ -108,7 +111,8 @@ digraph WFOVAClerks
   calib -> l2b_wfov_a_distm;
   calib -> l2b_wfov_a_excicrf;
   calib -> l2b_wfov_a_excfovps;
-  calib -> l3_wfov_a_cal;
+  calib -> l3_wfov_a_ast;
+  calib -> l3_wfov_a_ndf;
   calib -> l4_wfov_a_afcal;
   calib -> l4_wfov_a_ctcal;
   calib -> l4_wfov_a_ndfilt;

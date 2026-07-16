@@ -74,8 +74,11 @@ digraph NFOVPCClerks
   l3_nfov_pc_rec [label="recipe L3_nfov_pc 1..1", shape="cds",
                  valname="clerk.recipe.l3_nfov_pc.recipe",
                  valtype="dip.base.Recipe"];
-  l3_nfov_pc_cal [label="nfov_pc calibration 1..1", shape="cds",
-                 valname="clerk.calibration.l3_nfov_pc.calibration",
+  l3_nfov_pc_ast [label="nfov_pc astrometry 1..1", shape="cds",
+                 valname="clerk.calibration.l3_nfov_pc.astrometry",
+                 valtype="dip.base.Calibration"];
+  l3_nfov_pc_ndf [label="nfov_pc astrometry 1..1", shape="cds",
+                 valname="clerk.calibration.l3_nfov_pc.ndfilter",
                  valtype="dip.base.Calibration"];
 
   l4_nfov_pc_odir [label="Output path for L4_nfov_pc 1..1", shape="ellipse",
@@ -108,7 +111,8 @@ digraph NFOVPCClerks
   calib -> l2b_nfov_pc_distm;
   calib -> l2b_nfov_pc_excicrf;
   calib -> l2b_nfov_pc_excfovps;
-  calib -> l3_nfov_pc_cal;
+  calib -> l3_nfov_pc_ast;
+  calib -> l3_nfov_pc_ndf;
   calib -> l4_nfov_pc_afcal;
   calib -> l4_nfov_pc_ctcal;
   calib -> l4_nfov_pc_ndfilt;

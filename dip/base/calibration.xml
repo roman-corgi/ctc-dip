@@ -56,10 +56,15 @@
   <l2b_pol_a.cfam_filter_offset location="/tmp/dummy.txt"/>
   <!-- end l2 -->
   <!-- begin l3 -->  
-  <l3_nfov_a.calibration location="/tmp/dummy.txt"/>
-  <l3_nfov_pc.calibration location="/tmp/dummy.txt"/>
-  <l3_nfov_nc.calibration location="/tmp/dummy.txt"/>
+  <l3_nfov_a.astrometry location="/tmp/dummy.txt"/>
+  <l3_nfov_a.ndfilter location="/tmp/dummy.txt"/>
+  <l3_nfov_nc.astrometry location="/tmp/dummy.txt"/>
+  <l3_nfov_nc.ndfilter location="/tmp/dummy.txt"/>
+  <l3_nfov_pc.astrometry location="/tmp/dummy.txt"/>
+  <l3_nfov_pc.ndfilter location="/tmp/dummy.txt"/>
+  <l3_pol_a.astrometry location="/tmp/dummy.txt"/>
   <l3_pol_a.mueller_matrix location="/tmp/dummy.txt"/>
+  <l3_pol_a.ndfilter location="/tmp/dummy.txt"/>
   <!-- end l3 -->
   <!-- begin l4 -->
   <l4_nfov_a.absolute_flux location="/tmp/dummy.txt"/>
@@ -86,7 +91,9 @@
   <l2b_pol_pc.excam_icrf_location location="/tmp/dummy.txt"/>
   <l2b_pol_pc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
   <l2b_pol_pc.cfam_filter_offset location="/tmp/dummy.txt"/>
+  <l3_pol_pc.astrometry location="/tmp/dummy.txt"/>
   <l3_pol_pc.mueller_matrix location="/tmp/dummy.txt"/>
+  <l3_pol_pc.ndfilter location="/tmp/dummy.txt"/>
   <l4_pol_pc.absolute_flux location="/tmp/dummy.txt"/>
   <l4_pol_pc.core_thruput location="/tmp/dummy.txt"/>
   <l4_pol_pc.nd_filter location="/tmp/dummy.txt"/>
@@ -101,6 +108,8 @@
   <l2b_spec_a.excam_icrf_location location="/tmp/dummy.txt"/>
   <l2b_spec_a.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
   <l2b_spec_a.cfam_filter_offset location="/tmp/dummy.txt"/>
+  <l3_spec_a.astrometry location="/tmp/dummy.txt"/>
+  <l3_spec_a.ndfilter location="/tmp/dummy.txt"/>
   <l3_spec_a.dispersion_model location="/tmp/dummy.txt"/>
   <l3_spec_a.wavelength_map location="/tmp/dummy.txt"/>
   <l4_spec_a.absolute_flux location="/tmp/dummy.txt"/>
@@ -122,6 +131,8 @@
   <l2b_spec_nc.excam_icrf_location location="/tmp/dummy.txt"/>
   <l2b_spec_nc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
   <l2b_spec_nc.cfam_filter_offset location="/tmp/dummy.txt"/>
+  <l3_spec_nc.astrometry location="/tmp/dummy.txt"/>
+  <l3_spec_nc.ndfilter location="/tmp/dummy.txt"/>
   <l3_spec_nc.dispersion_model location="/tmp/dummy.txt"/>
   <l3_spec_nc.wavelength_map location="/tmp/dummy.txt"/>
   <l4_spec_nc.absolute_flux location="/tmp/dummy.txt"/>
@@ -143,6 +154,8 @@
   <l2b_spec_pc.excam_icrf_location location="/tmp/dummy.txt"/>
   <l2b_spec_pc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
   <l2b_spec_pc.cfam_filter_offset location="/tmp/dummy.txt"/>
+  <l3_spec_pc.astrometry location="/tmp/dummy.txt"/>
+  <l3_spec_pc.ndfilter location="/tmp/dummy.txt"/>
   <l3_spec_pc.dispersion_model location="/tmp/dummy.txt"/>
   <l3_spec_pc.wavelength_map location="/tmp/dummy.txt"/>
   <l4_spec_pc.absolute_flux location="/tmp/dummy.txt"/>
@@ -163,7 +176,8 @@
   <l2b_wfov_a.distortion_map location="/tmp/dummy.txt"/>
   <l2b_wfov_a.excam_icrf_location location="/tmp/dummy.txt"/>
   <l2b_wfov_a.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
-  <l3_wfov_a.calibration location="/tmp/dummy.txt"/>
+  <l3_wfov_a.astrometry location="/tmp/dummy.txt"/>
+  <l3_wfov_a.ndfilter location="/tmp/dummy.txt"/>
   <l4_wfov_a.absolute_flux location="/tmp/dummy.txt"/>
   <l4_wfov_a.core_thruput location="/tmp/dummy.txt"/>
   <l4_wfov_a.nd_filter location="/tmp/dummy.txt"/>
@@ -178,7 +192,8 @@
   <l2b_wfov_nc.distortion_map location="/tmp/dummy.txt"/>
   <l2b_wfov_nc.excam_icrf_location location="/tmp/dummy.txt"/>
   <l2b_wfov_nc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
-  <l3_wfov_nc.calibration location="/tmp/dummy.txt"/>
+  <l3_wfov_nc.astrometry location="/tmp/dummy.txt"/>
+  <l3_wfov_nc.ndfilter location="/tmp/dummy.txt"/>
   <l4_wfov_nc.absolute_flux location="/tmp/dummy.txt"/>
   <l4_wfov_nc.core_thruput location="/tmp/dummy.txt"/>
   <l4_wfov_nc.nd_filter location="/tmp/dummy.txt"/>
@@ -193,7 +208,8 @@
   <l2b_wfov_pc.distortion_map location="/tmp/dummy.txt"/>
   <l2b_wfov_pc.excam_icrf_location location="/tmp/dummy.txt"/>
   <l2b_wfov_pc.excam_fov_pixel_scale location="/tmp/dummy.txt"/>
-  <l3_wfov_pc.calibration location="/tmp/dummy.txt"/>
+  <l3_wfov_pc.astrometry location="/tmp/dummy.txt"/>
+  <l3_wfov_pc.ndfilter location="/tmp/dummy.txt"/>
   <l4_wfov_pc.absolute_flux location="/tmp/dummy.txt"/>
   <l4_wfov_pc.core_thruput location="/tmp/dummy.txt"/>
   <l4_wfov_pc.nd_filter location="/tmp/dummy.txt"/>

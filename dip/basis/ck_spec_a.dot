@@ -77,6 +77,12 @@ digraph SpecAClerks
   l3_spec_a_rec [label="recipe L3_spec_a 1..1", shape="cds",
                  valname="clerk.recipe.l3_spec_a.recipe",
                  valtype="dip.base.Recipe"];
+  l3_spec_a_ast [label="spec_a astrometry 1..1", shape="cds",
+                 valname="clerk.calibration.l3_spec_a.astrometry",
+                 valtype="dip.base.Calibration"];
+  l3_spec_a_ndf [label="spec_a astrometry 1..1", shape="cds",
+                 valname="clerk.calibration.l3_spec_a.ndfilter",
+                 valtype="dip.base.Calibration"];
   l3_spec_a_dispm [label="spec_a dispersion model 1..1", shape="cds",
                  valname="clerk.calibration.l3_spec_a.dispersion_model",
                  valtype="dip.base.Calibration"];
@@ -127,6 +133,8 @@ digraph SpecAClerks
   calib -> l2b_spec_a_excicrf;
   calib -> l2b_spec_a_excfovps;
   calib -> l2b_spec_a_cfamfo;
+  calib -> l3_spec_a_ast;
+  calib -> l3_spec_a_ndf;
   calib -> l3_spec_a_dispm;
   calib -> l3_spec_a_wavem;
   calib -> l4_spec_a_afcal;

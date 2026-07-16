@@ -77,6 +77,12 @@ digraph Clerks
   l3_spec_pc_rec [label="recipe L3_spec_pc 1..1", shape="cds",
                  valname="clerk.recipe.l3_spec_pc.recipe",
                  valtype="dip.base.Recipe"];
+  l3_spec_pc_ast [label="spec_pc astrometry 1..1", shape="cds",
+                 valname="clerk.calibration.l3_spec_pc.astrometry",
+                 valtype="dip.base.Calibration"];
+  l3_spec_pc_ndf [label="spec_pc astrometry 1..1", shape="cds",
+                 valname="clerk.calibration.l3_spec_pc.ndfilter",
+                 valtype="dip.base.Calibration"];
   l3_spec_pc_dispm [label="spec_a dispersion model 1..1", shape="cds",
                  valname="clerk.calibration.l3_spec_pc.dispersion_model",
                  valtype="dip.base.Calibration"];
@@ -127,6 +133,8 @@ digraph Clerks
   calib -> l2b_spec_pc_excicrf;
   calib -> l2b_spec_pc_excfovps;
   calib -> l2b_spec_pc_cfamfo;
+  calib -> l3_spec_pc_ast;
+  calib -> l3_spec_pc_ndf;
   calib -> l3_spec_pc_dispm;
   calib -> l3_spec_pc_wavem;
   calib -> l4_spec_pc_afcal;
