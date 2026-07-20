@@ -1,6 +1,7 @@
 <channels>
   <cal_a/>
   <cal_absflux/>
+  <cal_badpixelmap/>
   <cal_boresight/>
   <cal_corethpt/>
   <cal_ndfiltimg/>

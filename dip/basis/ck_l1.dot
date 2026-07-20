@@ -30,6 +30,10 @@ digraph CategorizationDesign
                         shape="ellipse",
                         valname="clerk.categorization.channel.cal_boresight",
                         valtype="dip.base.Manifest"];
+  l1_cal_bpm_man [label="L1_cal_bpm manifest 1..1\nof 0..a files",
+                        shape="ellipse",
+                        valname="clerk.categorization.channel.cal_badpixelmap",
+                        valtype="dip.base.Manifest"];
   l1_cal_corethpt_man [label="L1_cal_corethpt manifest 1..1\nof 0..a files",
                        shape="ellipse",
                        valname="clerk.categorization.channel.cal_corethpt",
@@ -107,6 +111,7 @@ digraph CategorizationDesign
   sort -> l1_cal_a_man;
   sort -> l1_cal_absflux_man;
   sort -> l1_cal_boresight_man;
+  sort -> l1_cal_bpm_man;
   sort -> l1_cal_corethpt_man;
   sort -> l1_cal_ndfiltimg_man;
   sort -> l1_cal_ndfiltspec_man;

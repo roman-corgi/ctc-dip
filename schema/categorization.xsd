@@ -11,6 +11,7 @@
     <xs:all>
       <xs:element name="cal_a" type="rpn"/>
       <xs:element name="cal_absflux" type="rpn"/>
+      <xs:element name="cal_badpixelmap" type="rpn"/>
       <xs:element name="cal_boresight" type="rpn"/>
       <xs:element name="cal_corethpt" type="rpn"/>
       <xs:element name="cal_ndfiltimg" type="rpn"/>

@@ -1,0 +1,20 @@
+digraph BadPixelMapCalibrations {
+graph [splines="ortho", rankdir=LR];
+trans_cal_bpm_l1_l2a [label="BadPixelMap\nTransmutation\nL1 to L2a basic", shape="circle", runname="l1.transmutation_cal_bpm", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+l1_cal_bpm_prod [label="L1_BadPixelMap products 1..b", shape="rectangle"];
+l1_cal_bpm_man [label="L1_BadPixelMap manifest 1..1", shape="ellipse"];
+l1_cal_bpm_odir [label="L1_BadPixelMap output path 1..1", shape="ellipse"];
+l1_cal_bpm_rec [label="L1_BadPixelMap recipe 1..1", shape="cds"];
+cal_bpm_prod [label="BadPixelMap products 1..1", shape="rectangle"];
+cal_bpm_log [label="BadPixelMap log 1..1", shape="ellipse"];
+cal_bpm_man [label="BadPixelMap product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_bpm.product.manifest", valtype="dip.base.Manifest"];
+cal_bpm_src [label="BadPixelMap source manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_bpm.source.manifest", valtype="dip.base.Manifest"];
+l1_cal_bpm_prod -> trans_cal_bpm_l1_l2a [style="dashed"];
+l1_cal_bpm_man -> trans_cal_bpm_l1_l2a;
+l1_cal_bpm_odir -> trans_cal_bpm_l1_l2a;
+l1_cal_bpm_rec -> trans_cal_bpm_l1_l2a;
+trans_cal_bpm_l1_l2a -> cal_bpm_prod [style="dashed"];
+trans_cal_bpm_l1_l2a -> cal_bpm_man;
+trans_cal_bpm_l1_l2a -> cal_bpm_src;
+trans_cal_bpm_l1_l2a -> cal_bpm_log [style="dashed"];
+}

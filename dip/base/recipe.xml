@@ -1,5 +1,6 @@
 <recipes>
   <l1_cal_absflux.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_badpixelmap.recipe location="/tmp/dummy.txt"/>
   <l1_cal_boresight.recipe location="/tmp/dummy.txt"/>
   <l1_cal_corethpt.recipe location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltimg.recipe location="/tmp/dummy.txt"/>

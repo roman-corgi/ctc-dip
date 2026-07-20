@@ -23,6 +23,9 @@
     </xs:annotation>
     <xs:all>
       <xs:element default="no comment" name="l1_cal_absflux.outdir" type="configuration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_badpixelmap.outdir" type="configuration_item"/>
+
       <xs:element default="no comment" name="l1_cal_boresight.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_cal_corethpt.outdir" type="configuration_item"/>
