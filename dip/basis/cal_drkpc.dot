@@ -1,0 +1,20 @@
+digraph DarkPhotonCountCalibrations {
+graph [splines="ortho", rankdir=LR];
+trans_cal_drkpc_l1_l2a [label="Dark(PhotonCount)\nTransmutation\nL1 to L2a basic", shape="circle", runname="l1.transmutation_cal_drkpc", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+l1_cal_drkpc_prod [label="L1_Dark(PhotonCount) products 1..b", shape="rectangle"];
+l1_cal_drkpc_man [label="L1_Dark(PhotonCount) manifest 1..1", shape="ellipse"];
+l1_cal_drkpc_odir [label="L1_Dark(PhotonCount) output path 1..1", shape="ellipse"];
+l1_cal_drkpc_rec [label="L1_Dark(PhotonCount) recipe 1..1", shape="cds"];
+cal_drkpc_prod [label="Dark(PhotonCount) products 1..1", shape="rectangle"];
+cal_drkpc_log [label="Dark(PhotonCount) log 1..1", shape="ellipse"];
+cal_drkpc_man [label="Dark(PhotonCount) product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_drkpc.product.manifest", valtype="dip.base.Manifest"];
+cal_drkpc_src [label="Dark(PhotonCount) source manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_drkpc.source.manifest", valtype="dip.base.Manifest"];
+l1_cal_drkpc_prod -> trans_cal_drkpc_l1_l2a [style="dashed"];
+l1_cal_drkpc_man -> trans_cal_drkpc_l1_l2a;
+l1_cal_drkpc_odir -> trans_cal_drkpc_l1_l2a;
+l1_cal_drkpc_rec -> trans_cal_drkpc_l1_l2a;
+trans_cal_drkpc_l1_l2a -> cal_drkpc_prod [style="dashed"];
+trans_cal_drkpc_l1_l2a -> cal_drkpc_man;
+trans_cal_drkpc_l1_l2a -> cal_drkpc_src;
+trans_cal_drkpc_l1_l2a -> cal_drkpc_log [style="dashed"];
+}
