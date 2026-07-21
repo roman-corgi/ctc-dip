@@ -30,10 +30,42 @@ digraph CategorizationDesign
                         shape="ellipse",
                         valname="clerk.categorization.channel.cal_boresight",
                         valtype="dip.base.Manifest"];
+  l1_cal_bpm_man [label="L1_cal_bpm manifest 1..1\nof 0..a files",
+                  shape="ellipse",
+                  valname="clerk.categorization.channel.cal_badpixelmap",
+                  valtype="dip.base.Manifest"];
   l1_cal_corethpt_man [label="L1_cal_corethpt manifest 1..1\nof 0..a files",
                        shape="ellipse",
                        valname="clerk.categorization.channel.cal_corethpt",
                        valtype="dip.base.Manifest"];
+  l1_cal_dpm_man [label="L1_cal_dispersionmodel manifest 1..1\nof 0..a files",
+                  shape="ellipse",
+                  valname="clerk.categorization.channel.cal_dispersionmodel",
+                  valtype="dip.base.Manifest"];
+  l1_cal_drkpc_man [label="L1_cal_drkpc manifest 1..1\nof 0..a files",
+                    shape="ellipse",
+                    valname="clerk.categorization.channel.cal_darkpc",
+                    valtype="dip.base.Manifest"];
+  l1_cal_drksynth_man [label="L1_cal_drksynth manifest 1..1\nof 0..a files",
+                       shape="ellipse",
+                       valname="clerk.categorization.channel.cal_darksynth",
+                       valtype="dip.base.Manifest"];
+  l1_cal_drktrad_man [label="L1_cal_drktrad manifest 1..1\nof 0..a files",
+                      shape="ellipse",
+                      valname="clerk.categorization.channel.cal_darktrad",
+                      valtype="dip.base.Manifest"];
+  l1_cal_ff_man [label="L1_cal_flatfield manifest 1..1\nof 0..a files",
+                 shape="ellipse",
+                 valname="clerk.categorization.channel.cal_flatfield",
+                 valtype="dip.base.Manifest"];
+  l1_cal_lsf_man [label="L1_cal_linespread manifest 1..1\nof 0..a files",
+                  shape="ellipse",
+                  valname="clerk.categorization.channel.cal_linespread",
+                  valtype="dip.base.Manifest"];
+  l1_cal_mm_man [label="L1_cal_muellermatrix manifest 1..1\nof 0..a files",
+                 shape="ellipse",
+                 valname="clerk.categorization.channel.cal_muellermatrix",
+                 valtype="dip.base.Manifest"];
   l1_cal_ndfiltimg_man [label="L1_cal_ndfiltimg manifest 1..1\nof 0..a files",
                        shape="ellipse",
                        valname="clerk.categorization.channel.cal_ndfiltimg",
@@ -46,6 +78,10 @@ digraph CategorizationDesign
                     shape="ellipse",
                     valname="clerk.categorization.channel.cal_pupil",
                     valtype="dip.base.Manifest"];
+  l1_cal_wzp_man [label="L1_cal_wlzeropoint manifest 1..1\nof 0..a files",
+                  shape="ellipse",
+                  valname="clerk.categorization.channel.cal_wlzeropoint",
+                  valtype="dip.base.Manifest"];
   l1_eng_a_man [label="L1_eng_a manifest 1..1\nof 0..b files",
                 shape="ellipse",
                 valname="clerk.categorization.channel.eng_a",
@@ -107,6 +143,7 @@ digraph CategorizationDesign
   sort -> l1_cal_a_man;
   sort -> l1_cal_absflux_man;
   sort -> l1_cal_boresight_man;
+  sort -> l1_cal_bpm_man;
   sort -> l1_cal_corethpt_man;
   sort -> l1_cal_ndfiltimg_man;
   sort -> l1_cal_ndfiltspec_man;

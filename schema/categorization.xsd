@@ -11,11 +11,20 @@
     <xs:all>
       <xs:element name="cal_a" type="rpn"/>
       <xs:element name="cal_absflux" type="rpn"/>
+      <xs:element name="cal_badpixelmap" type="rpn"/>
       <xs:element name="cal_boresight" type="rpn"/>
       <xs:element name="cal_corethpt" type="rpn"/>
+      <xs:element name="cal_darkpc" type="rpn"/>
+      <xs:element name="cal_darksynth" type="rpn"/>
+      <xs:element name="cal_darktrad" type="rpn"/>
+      <xs:element name="cal_dispersionmodel" type="rpn"/>
+      <xs:element name="cal_flatfield" type="rpn"/>
+      <xs:element name="cal_linespread" type="rpn"/>
+      <xs:element name="cal_muellermatrix" type="rpn"/>
       <xs:element name="cal_ndfiltimg" type="rpn"/>
       <xs:element name="cal_ndfiltspec" type="rpn"/>
       <xs:element name="cal_pupil" type="rpn"/>
+      <xs:element name="cal_wlzeropoint" type="rpn"/>
       <xs:element name="eng_a" type="rpn"/>
       <xs:element name="nfov_a" type="rpn"/>
       <xs:element name="nfov_nc" type="rpn"/>

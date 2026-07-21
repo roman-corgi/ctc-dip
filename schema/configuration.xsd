@@ -23,15 +23,32 @@
     </xs:annotation>
     <xs:all>
       <xs:element default="no comment" name="l1_cal_absflux.outdir" type="configuration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_badpixelmap.outdir" type="configuration_item"/>
+
       <xs:element default="no comment" name="l1_cal_boresight.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_cal_corethpt.outdir" type="configuration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_darkpc.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l1_cal_darksynth.outdir" type="configuration_item"/>
+      <xs:element default="no comment" name="l1_cal_darktrad.outdir" type="configuration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_dispersionmodel.outdir" type="configuration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_flatfield.outdir" type="configuration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_linespread.outdir" type="configuration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_muellermatrix.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_cal_ndfiltimg.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_cal_ndfiltspec.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_cal_pupil.outdir" type="configuration_item"/>
+
+      <xs:element default="no comment" name="l1_cal_wlzeropoint.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_eng_a.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l2_eng_a.outdir" type="configuration_item"/>

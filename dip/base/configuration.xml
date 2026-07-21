@@ -1,10 +1,19 @@
 <configuration>
   <l1_cal_absflux.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_badpixelmap.outdir location="/tmp/dummy.txt"/>
   <l1_cal_boresight.outdir location="/tmp/dummy.txt"/>
   <l1_cal_corethpt.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_darkpc.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_darksynth.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_darktrad.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_dispersionmodel.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_flatfield.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_linespread.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_muellermatrix.outdir location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltimg.outdir location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltspec.outdir location="/tmp/dummy.txt"/>
   <l1_cal_pupil.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_wlzeropoint.outdir location="/tmp/dummy.txt"/>
   <l1_eng_a.outdir location="/tmp/dummy.txt"/>
   <l2_eng_a.outdir location="/tmp/dummy.txt"/>
   <l1_nfov_a.outdir location="/tmp/dummy.txt"/>

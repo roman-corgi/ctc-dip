@@ -23,11 +23,20 @@
     </xs:annotation>
     <xs:all>
       <xs:element default="no comment" name="l1_cal_absflux.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_badpixelmap.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_boresight.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_corethpt.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_darkpc.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_darksynth.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_darktrad.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_dispersionmodel.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_flatfield.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_linespread.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_muellermatrix.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_ndfiltimg.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_ndfiltspec.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_pupil.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_wlzeropoint.recipe" type="recipe_item"/>
 
       <xs:element default="no comment" name="l1_eng_a.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l2a_eng_a.recipe" type="recipe_item"/>

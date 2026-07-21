@@ -1,0 +1,20 @@
+digraph DarkSyntheticCalibrations {
+graph [splines="ortho", rankdir=LR];
+trans_cal_drksynth_l1_l2a [label="Dark(Synthetic)\nTransmutation\nL1 to L2a basic", shape="circle", runname="l1.transmutation_cal_drksynth", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+l1_cal_drksynth_prod [label="L1_Dark(Synthetic) products 1..b", shape="rectangle"];
+l1_cal_drksynth_man [label="L1_Dark(Synthetic) manifest 1..1", shape="ellipse"];
+l1_cal_drksynth_odir [label="L1_Dark(Synthetic) output path 1..1", shape="ellipse"];
+l1_cal_drksynth_rec [label="L1_Dark(Synthetic) recipe 1..1", shape="cds"];
+cal_drksynth_prod [label="Dark(Synthetic) products 1..1", shape="rectangle"];
+cal_drksynth_log [label="Dark(Synthetic) log 1..1", shape="ellipse"];
+cal_drksynth_man [label="Dark(Synthetic) product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_drksynth.product.manifest", valtype="dip.base.Manifest"];
+cal_drksynth_src [label="Dark(Synthetic) source manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_drksynth.source.manifest", valtype="dip.base.Manifest"];
+l1_cal_drksynth_prod -> trans_cal_drksynth_l1_l2a [style="dashed"];
+l1_cal_drksynth_man -> trans_cal_drksynth_l1_l2a;
+l1_cal_drksynth_odir -> trans_cal_drksynth_l1_l2a;
+l1_cal_drksynth_rec -> trans_cal_drksynth_l1_l2a;
+trans_cal_drksynth_l1_l2a -> cal_drksynth_prod [style="dashed"];
+trans_cal_drksynth_l1_l2a -> cal_drksynth_man;
+trans_cal_drksynth_l1_l2a -> cal_drksynth_src;
+trans_cal_drksynth_l1_l2a -> cal_drksynth_log [style="dashed"];
+}

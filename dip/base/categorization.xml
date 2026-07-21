@@ -1,11 +1,20 @@
 <channels>
   <cal_a/>
   <cal_absflux/>
+  <cal_badpixelmap/>
   <cal_boresight/>
   <cal_corethpt/>
+  <cal_darkpc/>
+  <cal_darksynth/>
+  <cal_darktrad/>
+  <cal_dispersionmodel/>
+  <cal_flatfield/>
+  <cal_linespread/>
+  <cal_muellermatrix/>
   <cal_ndfiltimg/>
   <cal_ndfiltspec/>
   <cal_pupil/>
+  <cal_wlzeropoint/>
   <eng_a>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>apple</value>

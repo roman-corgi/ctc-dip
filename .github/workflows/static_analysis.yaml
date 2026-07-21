@@ -46,7 +46,7 @@ jobs:
           pip install -r requirements.txt
           pip install -r .github/workflows/requirements.txt
       - name: black
-        run: black --check --diff -l 80 --skip-string-normalization --exclude="(workflows/local|binding.py)" .
+        run: black --check --diff --no-cache -l 80 --skip-string-normalization --exclude="(workflows/local|binding.py)" .
   Linters:
     needs: Build
     name: Code Quality

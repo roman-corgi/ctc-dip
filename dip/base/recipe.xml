@@ -1,10 +1,19 @@
 <recipes>
   <l1_cal_absflux.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_badpixelmap.recipe location="/tmp/dummy.txt"/>
   <l1_cal_boresight.recipe location="/tmp/dummy.txt"/>
   <l1_cal_corethpt.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_darkpc.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_darksynth.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_darktrad.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_dispersionmodel.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_flatfield.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_linespread.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_muellermatrix.recipe location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltimg.recipe location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltspec.recipe location="/tmp/dummy.txt"/>
   <l1_cal_pupil.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_wlzeropoint.recipe location="/tmp/dummy.txt"/>
   <l1_eng_a.recipe location="/tmp/dummy.txt"/>
   <l2a_eng_a.recipe location="/tmp/dummy.txt"/>
   <l1_nfov_a.recipe location="/tmp/dummy.txt"/>
