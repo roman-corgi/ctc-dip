@@ -13,6 +13,7 @@
   <l1_cal_ndfiltimg.recipe location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltspec.recipe location="/tmp/dummy.txt"/>
   <l1_cal_pupil.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_wlzeropoint.recipe location="/tmp/dummy.txt"/>
   <l1_eng_a.recipe location="/tmp/dummy.txt"/>
   <l2a_eng_a.recipe location="/tmp/dummy.txt"/>
   <l1_nfov_a.recipe location="/tmp/dummy.txt"/>

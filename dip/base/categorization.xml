@@ -14,6 +14,7 @@
   <cal_ndfiltimg/>
   <cal_ndfiltspec/>
   <cal_pupil/>
+  <cal_wlzeropoint/>
   <eng_a>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>apple</value>

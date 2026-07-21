@@ -24,6 +24,7 @@
       <xs:element name="cal_ndfiltimg" type="rpn"/>
       <xs:element name="cal_ndfiltspec" type="rpn"/>
       <xs:element name="cal_pupil" type="rpn"/>
+      <xs:element name="cal_wlzeropoint" type="rpn"/>
       <xs:element name="eng_a" type="rpn"/>
       <xs:element name="nfov_a" type="rpn"/>
       <xs:element name="nfov_nc" type="rpn"/>

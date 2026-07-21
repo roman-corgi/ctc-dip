@@ -48,6 +48,8 @@
 
       <xs:element default="no comment" name="l1_cal_pupil.outdir" type="configuration_item"/>
 
+      <xs:element default="no comment" name="l1_cal_wlzeropoint.outdir" type="configuration_item"/>
+
       <xs:element default="no comment" name="l1_eng_a.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l2_eng_a.outdir" type="configuration_item"/>
 

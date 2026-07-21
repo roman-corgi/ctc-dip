@@ -1,0 +1,20 @@
+digraph WavelengthZeroPointCalibrations {
+graph [splines="ortho", rankdir=LR];
+trans_cal_wzp_l1_l2a [label="WavelengthZeroPoint\nTransmutation\nL1 to L2a basic", shape="circle", runname="l1.transmutation_cal_wzp", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+l1_cal_wzp_prod [label="L1_WavelengthZeroPoint products 1..b", shape="rectangle"];
+l1_cal_wzp_man [label="L1_WavelengthZeroPoint manifest 1..1", shape="ellipse"];
+l1_cal_wzp_odir [label="L1_WavelengthZeroPoint output path 1..1", shape="ellipse"];
+l1_cal_wzp_rec [label="L1_WavelengthZeroPoint recipe 1..1", shape="cds"];
+cal_wzp_prod [label="WavelengthZeroPoint products 1..1", shape="rectangle"];
+cal_wzp_log [label="WavelengthZeroPoint log 1..1", shape="ellipse"];
+cal_wzp_man [label="WavelengthZeroPoint product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_wzp.product.manifest", valtype="dip.base.Manifest"];
+cal_wzp_src [label="WavelengthZeroPoint source manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_wzp.source.manifest", valtype="dip.base.Manifest"];
+l1_cal_wzp_prod -> trans_cal_wzp_l1_l2a [style="dashed"];
+l1_cal_wzp_man -> trans_cal_wzp_l1_l2a;
+l1_cal_wzp_odir -> trans_cal_wzp_l1_l2a;
+l1_cal_wzp_rec -> trans_cal_wzp_l1_l2a;
+trans_cal_wzp_l1_l2a -> cal_wzp_prod [style="dashed"];
+trans_cal_wzp_l1_l2a -> cal_wzp_man;
+trans_cal_wzp_l1_l2a -> cal_wzp_src;
+trans_cal_wzp_l1_l2a -> cal_wzp_log [style="dashed"];
+}
