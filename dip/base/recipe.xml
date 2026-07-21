@@ -6,6 +6,7 @@
   <l1_cal_darkpc.recipe location="/tmp/dummy.txt"/>
   <l1_cal_darksynth.recipe location="/tmp/dummy.txt"/>
   <l1_cal_darktrad.recipe location="/tmp/dummy.txt"/>
+  <l1_cal_flatfield.recipe location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltimg.recipe location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltspec.recipe location="/tmp/dummy.txt"/>
   <l1_cal_pupil.recipe location="/tmp/dummy.txt"/>

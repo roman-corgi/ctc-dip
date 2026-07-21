@@ -1,0 +1,20 @@
+digraph FlatFieldCalibrations {
+graph [splines="ortho", rankdir=LR];
+trans_cal_ff_l1_l2a [label="FlatField\nTransmutation\nL1 to L2a basic", shape="circle", runname="l1.transmutation_cal_ff", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+l1_cal_ff_prod [label="L1_FlatField products 1..b", shape="rectangle"];
+l1_cal_ff_man [label="L1_FlatField manifest 1..1", shape="ellipse"];
+l1_cal_ff_odir [label="L1_FlatField output path 1..1", shape="ellipse"];
+l1_cal_ff_rec [label="L1_FlatField recipe 1..1", shape="cds"];
+cal_ff_prod [label="FlatField products 1..1", shape="rectangle"];
+cal_ff_log [label="FlatField log 1..1", shape="ellipse"];
+cal_ff_man [label="FlatField product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_ff.product.manifest", valtype="dip.base.Manifest"];
+cal_ff_src [label="FlatField source manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_ff.source.manifest", valtype="dip.base.Manifest"];
+l1_cal_ff_prod -> trans_cal_ff_l1_l2a [style="dashed"];
+l1_cal_ff_man -> trans_cal_ff_l1_l2a;
+l1_cal_ff_odir -> trans_cal_ff_l1_l2a;
+l1_cal_ff_rec -> trans_cal_ff_l1_l2a;
+trans_cal_ff_l1_l2a -> cal_ff_prod [style="dashed"];
+trans_cal_ff_l1_l2a -> cal_ff_man;
+trans_cal_ff_l1_l2a -> cal_ff_src;
+trans_cal_ff_l1_l2a -> cal_ff_log [style="dashed"];
+}

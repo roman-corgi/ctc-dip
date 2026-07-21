@@ -50,6 +50,10 @@ digraph CategorizationDesign
                       shape="ellipse",
                       valname="clerk.categorization.channel.cal_darktrad",
                       valtype="dip.base.Manifest"];
+  l1_cal_ff_man [label="L1_cal_flatfield manifest 1..1\nof 0..a files",
+                 shape="ellipse",
+                 valname="clerk.categorization.channel.cal_flatfield",
+                 valtype="dip.base.Manifest"];
   l1_cal_ndfiltimg_man [label="L1_cal_ndfiltimg manifest 1..1\nof 0..a files",
                        shape="ellipse",
                        valname="clerk.categorization.channel.cal_ndfiltimg",

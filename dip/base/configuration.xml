@@ -6,6 +6,7 @@
   <l1_cal_darkpc.outdir location="/tmp/dummy.txt"/>
   <l1_cal_darksynth.outdir location="/tmp/dummy.txt"/>
   <l1_cal_darktrad.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_flatfield.outdir location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltimg.outdir location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltspec.outdir location="/tmp/dummy.txt"/>
   <l1_cal_pupil.outdir location="/tmp/dummy.txt"/>
