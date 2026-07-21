@@ -34,6 +34,8 @@
       <xs:element default="no comment" name="l1_cal_darksynth.outdir" type="configuration_item"/>
       <xs:element default="no comment" name="l1_cal_darktrad.outdir" type="configuration_item"/>
 
+      <xs:element default="no comment" name="l1_cal_dispersionmodel.outdir" type="configuration_item"/>
+
       <xs:element default="no comment" name="l1_cal_flatfield.outdir" type="configuration_item"/>
 
       <xs:element default="no comment" name="l1_cal_ndfiltimg.outdir" type="configuration_item"/>

@@ -17,6 +17,7 @@
       <xs:element name="cal_darkpc" type="rpn"/>
       <xs:element name="cal_darksynth" type="rpn"/>
       <xs:element name="cal_darktrad" type="rpn"/>
+      <xs:element name="cal_dispersionmodel" type="rpn"/>
       <xs:element name="cal_flatfield" type="rpn"/>
       <xs:element name="cal_ndfiltimg" type="rpn"/>
       <xs:element name="cal_ndfiltspec" type="rpn"/>

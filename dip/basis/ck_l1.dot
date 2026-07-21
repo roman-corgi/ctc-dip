@@ -38,6 +38,10 @@ digraph CategorizationDesign
                        shape="ellipse",
                        valname="clerk.categorization.channel.cal_corethpt",
                        valtype="dip.base.Manifest"];
+  l1_cal_dpm_man [label="L1_cal_dispersionmodel manifest 1..1\nof 0..a files",
+                  shape="ellipse",
+                  valname="clerk.categorization.channel.cal_dispersionmodel",
+                  valtype="dip.base.Manifest"];
   l1_cal_drkpc_man [label="L1_cal_drkpc manifest 1..1\nof 0..a files",
                     shape="ellipse",
                     valname="clerk.categorization.channel.cal_darkpc",

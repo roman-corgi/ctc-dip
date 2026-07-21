@@ -29,6 +29,7 @@
       <xs:element default="no comment" name="l1_cal_darkpc.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_darksynth.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_darktrad.recipe" type="recipe_item"/>
+      <xs:element default="no comment" name="l1_cal_dispersionmodel.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_flatfield.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_ndfiltimg.recipe" type="recipe_item"/>
       <xs:element default="no comment" name="l1_cal_ndfiltspec.recipe" type="recipe_item"/>
