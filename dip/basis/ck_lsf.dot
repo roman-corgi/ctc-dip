@@ -1,0 +1,31 @@
+/* why separate channels and how are they tied back together
+*
+* The magic happens from clerks.dot. It contains the same clerks but with dawgie
+* information tied to the nodes. Since they are all named the same among these
+* channlized files and clerks.dot, the dip.basis.transmute distills then
+* condenses them into a hidden monolithic concept if they have dawgie
+* information associated with them. That is the real magic.
+*/
+digraph LineSpreadFunctionClerks
+{
+  graph [splines="ortho", rankdir=LR];
+
+  alarm_cnf [label="User requested update", shape="none"];
+  alarm_rec [label="User requested update", shape="none"];
+  
+  config [label="Configuration", shape="circle"];
+  recipe [label="Recipe", shape="circle"];
+
+  l1_cal_lsf_odir [label="Output path for L1_eng_a 1..1", shape="ellipse",
+                     valname="clerk.configuration.l1_cal_linespread.outdir",
+                     valtype="dip.base.Configuration"];
+  l1_cal_lsf_rec [label="recipe L1_eng_a 1..1", shape="cds",
+                    valname="clerk.recipe.l1_cal_linespread.recipe",
+                    valtype="dip.base.Recipe"];
+
+  alarm_cnf -> config [style="dashed"];
+  alarm_rec -> recipe [style="dashed"];
+
+  config -> l1_cal_lsf_odir;
+  recipe -> l1_cal_lsf_rec;
+}

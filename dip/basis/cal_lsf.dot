@@ -1,0 +1,20 @@
+digraph LineSpreadFunctionCalibrations {
+graph [splines="ortho", rankdir=LR];
+trans_cal_lsf_l1_l2a [label="LineSpreadFunction\nTransmutation\nL1 to L2a basic", shape="circle", runname="l1.transmutation_cal_lsf", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+l1_cal_lsf_prod [label="L1_LineSpreadFunction products 1..b", shape="rectangle"];
+l1_cal_lsf_man [label="L1_LineSpreadFunction manifest 1..1", shape="ellipse"];
+l1_cal_lsf_odir [label="L1_LineSpreadFunction output path 1..1", shape="ellipse"];
+l1_cal_lsf_rec [label="L1_LineSpreadFunction recipe 1..1", shape="cds"];
+cal_lsf_prod [label="LineSpreadFunction products 1..1", shape="rectangle"];
+cal_lsf_log [label="LineSpreadFunction log 1..1", shape="ellipse"];
+cal_lsf_man [label="LineSpreadFunction product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_lsf.product.manifest", valtype="dip.base.Manifest"];
+cal_lsf_src [label="LineSpreadFunction source manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_lsf.source.manifest", valtype="dip.base.Manifest"];
+l1_cal_lsf_prod -> trans_cal_lsf_l1_l2a [style="dashed"];
+l1_cal_lsf_man -> trans_cal_lsf_l1_l2a;
+l1_cal_lsf_odir -> trans_cal_lsf_l1_l2a;
+l1_cal_lsf_rec -> trans_cal_lsf_l1_l2a;
+trans_cal_lsf_l1_l2a -> cal_lsf_prod [style="dashed"];
+trans_cal_lsf_l1_l2a -> cal_lsf_man;
+trans_cal_lsf_l1_l2a -> cal_lsf_src;
+trans_cal_lsf_l1_l2a -> cal_lsf_log [style="dashed"];
+}

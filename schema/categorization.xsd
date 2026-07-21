@@ -19,6 +19,7 @@
       <xs:element name="cal_darktrad" type="rpn"/>
       <xs:element name="cal_dispersionmodel" type="rpn"/>
       <xs:element name="cal_flatfield" type="rpn"/>
+      <xs:element name="cal_linespread" type="rpn"/>
       <xs:element name="cal_muellermatrix" type="rpn"/>
       <xs:element name="cal_ndfiltimg" type="rpn"/>
       <xs:element name="cal_ndfiltspec" type="rpn"/>

@@ -8,6 +8,7 @@
   <l1_cal_darktrad.outdir location="/tmp/dummy.txt"/>
   <l1_cal_dispersionmodel.outdir location="/tmp/dummy.txt"/>
   <l1_cal_flatfield.outdir location="/tmp/dummy.txt"/>
+  <l1_cal_linespread.outdir location="/tmp/dummy.txt"/>
   <l1_cal_muellermatrix.outdir location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltimg.outdir location="/tmp/dummy.txt"/>
   <l1_cal_ndfiltspec.outdir location="/tmp/dummy.txt"/>
