@@ -9,6 +9,7 @@
   <cal_darktrad/>
   <cal_dispersionmodel/>
   <cal_flatfield/>
+  <cal_muellermatrix/>
   <cal_ndfiltimg/>
   <cal_ndfiltspec/>
   <cal_pupil/>
