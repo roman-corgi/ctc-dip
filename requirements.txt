@@ -6,4 +6,3 @@ pyxb-ctc
 pyyaml
 requests
 transitions
-pyopenssl==26.2.0
