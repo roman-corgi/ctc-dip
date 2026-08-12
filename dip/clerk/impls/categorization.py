@@ -34,7 +34,11 @@ class FSM(dip.base.Orchestrator):
                 command = cmd.value
                 if isinstance(command, operand_type):
                     if command.keyword not in hdr:
-                        LOG.warning('Keyword %s is not in the primary header of %s', command.keyword, fn.name)
+                        LOG.warning(
+                            'Keyword %s is not in the primary header of %s',
+                            command.keyword,
+                            fn.name,
+                        )
                         return False
                     val = hdr[command.keyword]
                     cast = FSM._caster(val)

@@ -1,0 +1,20 @@
+digraph PolarimetricFlatFieldCalibrations {
+graph [splines="ortho", rankdir=LR];
+trans_cal_polff_l1_l2a [label="Polarimetric FlatField\nTransmutation\nL1 to L2a basic", shape="circle", runname="l1.transmutation_cal_polff", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
+l1_cal_polff_prod [label="L1_PolarimetricFlatField products 1..b", shape="rectangle"];
+l1_cal_polff_man [label="L1_PolarimetricFlatField manifest 1..1", shape="ellipse"];
+l1_cal_polff_odir [label="L1_PolarimetricFlatField output path 1..1", shape="ellipse"];
+l1_cal_polff_rec [label="L1_PolarimetricFlatField recipe 1..1", shape="cds"];
+cal_polff_prod [label="PolarimetricFlatField products 1..1", shape="rectangle"];
+cal_polff_log [label="PolarimetricFlatField log 1..1", shape="ellipse"];
+cal_polff_man [label="PolarimetricFlatField product manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_polff.product.manifest", valtype="dip.base.Manifest"];
+cal_polff_src [label="PolarimetricFlatField source manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_polff.source.manifest", valtype="dip.base.Manifest"];
+l1_cal_polff_prod -> trans_cal_polff_l1_l2a [style="dashed"];
+l1_cal_polff_man -> trans_cal_polff_l1_l2a;
+l1_cal_polff_odir -> trans_cal_polff_l1_l2a;
+l1_cal_polff_rec -> trans_cal_polff_l1_l2a;
+trans_cal_polff_l1_l2a -> cal_polff_prod [style="dashed"];
+trans_cal_polff_l1_l2a -> cal_polff_man;
+trans_cal_polff_l1_l2a -> cal_polff_src;
+trans_cal_polff_l1_l2a -> cal_polff_log [style="dashed"];
+}
