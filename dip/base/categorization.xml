@@ -8,7 +8,26 @@
   <cal_darksynth/>
   <cal_darktrad/>
   <cal_dispersionmodel/>
-  <cal_flatfield/>
+  <cal_flatfield>
+    <operand keyword="VISTYPE" operator="equals-any">
+      <value>CGIVST_CAL_FLAT</value>
+    </operand>
+    <operand keyword="DPAMNAME" operator="equals-any" not="true">
+      <value>POL0</value>
+      <value>POL45</value>
+    </operand>
+    <operator>and</operator>
+  </cal_flatfield>
+  <cal_polff>
+    <operand keyword="VISTYPE" operator="equals-any">
+      <value>CGIVST_CAL_FLAT</value>
+    </operand>
+    <operand keyword="DPAMNAME" operator="equals-any">
+      <value>POL0</value>
+      <value>POL45</value>
+    </operand>
+    <operator>and</operator>
+  </cal_polff>
   <cal_linespread/>
   <cal_muellermatrix/>
   <cal_ndfiltimg/>
