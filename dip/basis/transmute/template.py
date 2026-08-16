@@ -122,8 +122,8 @@ ${values}
         try:
             super().view(caller, visitor)
         except NotImplementedError:
-            pass  # ignore the error and try something else
-        dip.base.generic_view(self, visitor)
+            # ignore the error and try something else
+            dip.base.generic_view(self, visitor)
         return
     '''),
     Kind.VALUE: Template(''),

@@ -51,9 +51,9 @@ class Orchestrator(dip.basis.fsm.AbstractModel):
             for valname, val in sv.items():
                 name = f'{svn}.{valname}'
                 item = get_tag(bound_xml, name)
-                if item is None:
+                if item is None:  # indicates not in XML
                     LOG.error('Could not find tag %s in %s', name, fn)
-                else:
+                else:  # indicates user left it blank
                     val.name = Path(item.location) if item.location else None
 
     def _load(self, xmlname) -> bytes:
