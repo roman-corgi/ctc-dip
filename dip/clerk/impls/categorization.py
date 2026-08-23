@@ -102,10 +102,10 @@ class FSM(dip.base.Orchestrator):
     # pylint: enable=too-many-branches,too-many-return-statements
 
     @staticmethod
-    def _bool(s:str):
+    def _bool(s: str):
         '''python bool() is insufficient for our use so make our own caster'''
-        return s.lower() in [ 't', 'tr', 'tru', 'true', '1']
-    
+        return s.lower() in ['t', 'tr', 'tru', 'true', '1']
+
     @staticmethod
     def _caster(val):
         for typ in [bool, complex, float, int]:

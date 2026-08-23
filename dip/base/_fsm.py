@@ -230,7 +230,7 @@ class Runner(dip.basis.fsm.AbstractModel):
         now = now.replace('-', '').replace(':', '')
         for fn in os.listdir(self.__outdir):
             if not fn.endswith('.fits'):
-                log.warning('not warehousing non-FITS file: %s', fn)
+                LOG.warning('not warehousing non-FITS file: %s', fn)
                 continue
             vid = _dissect(str(fn))
             dstdir = Path(dst.format(now=now, **vid))
