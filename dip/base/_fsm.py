@@ -229,14 +229,16 @@ class Runner(dip.basis.fsm.AbstractModel):
         now = datetime.now(UTC).isoformat(sep='t', timespec='seconds')[:-6]
         now = now.replace('-', '').replace(':', '')
         for fn in os.listdir(self.__outdir):
+            if not fn.endswith('.fits'):
+                log.warning('not warehousing non-FITS file: %s', fn)
+                continue
             vid = _dissect(str(fn))
             dstdir = Path(dst.format(now=now, **vid))
             dstdir.mkdir(parents=True, exist_ok=True)
             dstfn = dstdir / fn
             shutil.copy(self.__outdir / fn, dstfn)
-            if dstfn.suffix == '.fits':
-                self.outputs['product']['manifest'].append(dstfn.resolve())
-                name = dstfn.stem
+            self.outputs['product']['manifest'].append(dstfn.resolve())
+            name = dstfn.stem
         if name:
             arc = Path(
                 dip.bindings.system.CreateFromDocument(
