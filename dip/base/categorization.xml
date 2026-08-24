@@ -2,17 +2,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/roman-corgi/ctc-dip/refs/heads/main/schema/categorization.xsd">
   <cal_a/>
-  <cal_absflux/>
-  <cal_badpixelmap>
+  <cal_absflux>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>-999</value>
-      <value>N/A</value>
+      <value>CGIVST_CAO_ABSFLUX_FAINT</value>
     </operand>
     <operand keyword="FRMTYPE" not="true" operator="equals-all">
       <value>ACQ</value>
     </operand>
     <operator>and</operator>
-  </cal_badpixelmap>
+  </cal_absflux>
   <cal_boresight>
     <operand keyword="VISTYPE" operator="equals-all">
       <value>CGIVST_CAL_BORESIGHT</value>
@@ -31,6 +29,15 @@
     </operand>
     <operator>and</operator>
   </cal_corethpt>
+  <cal_flatfield>
+    <operand keyword="VISTYPE" operator="equals-all">
+      <value>CGIVST_CAL_FLAT</value>
+    </operand>
+    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+      <value>ACQ</value>
+    </operand>
+    <operator>and</operator>
+  </cal_flatfield>
   <cal_darkpc>
     <operand keyword="VISTYPE" operator="equals-all">
       <value>CGIVST_CAL_DRK</value>
@@ -82,8 +89,23 @@
     </operand>
     <operator>and</operator>
   </cal_darktrad>
+  <cal_ndfiltspec>
+    <operand keyword="VISTYPE" operator="equals-any">
+      <value>CGIVST_CAL_ABSFLUX_BRIGHT</value>
+    </operand>
+    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+      <value>ACQ</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="DPAMNAME" operator="contains-any">
+      <value>IMAGING</value>
+      <value>PRISM2</value>
+      <value>PRISM3</value>
+    </operand>
+    <operator>and</operator>
+  </cal_ndfiltspec>
   <cal_dispersionmodel>
-     <operand keyword="VISTYPE" operator="equals-any">
+    <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_CAL_SPEC_TGTREF</value>
     </operand>
     <operand keyword="FRMTYPE" not="true" operator="equals-all">
@@ -95,6 +117,34 @@
     </operand>
     <operator>and</operator>
   </cal_dispersionmodel>
+  <cal_linespread>
+    <operand keyword="VISTYPE" operator="equals-any">
+      <value>CGIVST_CAL_SPEC_LINESPREAD</value>
+    </operand>
+    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+      <value>ACQ</value>
+    </operand>
+    <operator>and</operator>
+  </cal_linespread>
+  <cal_wlzeropoint>
+    <operand keyword="VISTYPE" operator="equals-any">
+      <value>CGIVST_CAL_ABSFLUX_FAINT</value>
+      <value>CGIVST_CAL_ABSFLUX_BRIGHT</value>
+    </operand>
+    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+      <value>ACQ</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="DPAMNAME" operator="equals-any">
+      <value>PRISM2</value>
+      <value>PRISM3</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="FPAMNAME" not="true" operator="equals-any">
+      <value>ND</value>
+    </operand>
+    <operator>and</operator>
+  </cal_wlzeropoint>
   <cal_flatfield>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_CAL_FLAT</value>
@@ -115,10 +165,16 @@
     </operand>
     <operator>and</operator>
   </cal_polff>
-  <cal_linespread/>
-  <cal_muellermatrix/>
   <cal_ndfiltimg/>
-  <cal_ndfiltspec/>
+  <cal_pol_setup>
+    <operand keyword="VISTYPE" operator="equals-all">
+      <value>CGIVST_CAL_POL_SETUP</value>
+    </operand>
+    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+      <value>ACQ</value>
+    </operand>
+    <operator>and</operator>
+  </cal_pol_setup>
   <cal_pupil>
     <operand keyword="VISTYPE" operator="equals-all">
       <value>CGIVST_CAL_PUPIL_IMAGING</value>
@@ -149,6 +205,7 @@
       <value>DEFOCUS3</value>
       <value>DEFOCUS4</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
       <value>SPBAL-FPAM</value>
@@ -156,18 +213,19 @@
       <value>GITL</value>
     </operand>
     <operator>and</operator>
-    <operator>and</operator>
   </eng_a>
   <nfov_a>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
+      <value>CGIVST_TDD_SETUP_HOWFSC</value>
+      <value>CGIVST_TDD_OBS_HOWFSC</value>
     </operand>
-    <operand keyword="DPAMNAME" operator="contains-any">
-      <value>IMAGING</value>
-    </operand>
-    <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>0</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="DPAMNAME" operator="contains-any">
+      <value>IMAGING</value>
     </operand>
     <operator>and</operator>
     <operand keyword="SPAMNAME" operator="contains-any">
@@ -197,10 +255,10 @@
     <operand keyword="ISPC" operator="contains-any">
       <value>0</value>
     </operand>
-   <operand keyword="SPAMNAME" operator="contains-any">
+    <operator>and</operator>
+    <operand keyword="SPAMNAME" operator="contains-any">
       <value>OPEN</value>
     </operand>
-    <operator>and</operator>
     <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
@@ -217,6 +275,8 @@
   <nfov_pc>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
+      <value>CGIVST_TDD_SETUP_HOWFS</value>
+      <value>CGIVST_TDD_OBS_HOWFS</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>IMAGING</value>
@@ -244,77 +304,78 @@
   </nfov_pc>
   <pol_a>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_TDD_POL_OB</value>
+      <value>CGIVST_TDD_POL_OBS</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>POL0</value>
       <value>POL45</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>0</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
       <value>SPBAL-FPAM</value>
       <value>SPBAL-FSAM</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" operator="contains-any">
       <value>CONT</value>
       <value>NUM</value>
     </operand>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
     <operator>and</operator>
   </pol_a>
   <pol_pc>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_TDD_POL_OB</value>
+      <value>CGIVST_TDD_POL_OBS</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>POL0</value>
       <value>POL45</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>1</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
       <value>SPBAL-FPAM</value>
       <value>SPBAL-FSAM</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" operator="contains-any">
       <value>CONT</value>
       <value>NUM</value>
     </operand>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
     <operator>and</operator>
   </pol_pc>
   <spec_a>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
+      <value>CGIVST_TDD_SETUP_HOWFS</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>PRISM2</value>
       <value>PRISM3</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>0</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
       <value>SPBAL-FPAM</value>
       <value>SPBAL-FSAM</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" operator="contains-any">
       <value>CONT</value>
       <value>NUM</value>
     </operand>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
     <operator>and</operator>
   </spec_a>
   <spec_nc>
@@ -325,74 +386,77 @@
       <value>PRISM2</value>
       <value>PRISM3</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>0</value>
     </operand>
-   <operand keyword="FPAMNAME" not="true" operator="contains-any">
+    <operator>and</operator>
+    <operand keyword="FPAMNAME" not="true" operator="contains-any">
       <value>OPEN</value>
       <value>NUM</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
       <value>SPBAL-FPAM</value>
       <value>SPBAL-FSAM</value>
     </operand>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
     <operator>and</operator>
   </spec_nc>
   <spec_pc>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
+      <value>CGIVST_TDD_SETUP_HOWFS</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>PRISM2</value>
       <value>PRISM3</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>1</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
       <value>SPBAL-FPAM</value>
       <value>SPBAL-FSAM</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" operator="contains-any">
       <value>CONT</value>
       <value>NUM</value>
     </operand>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
     <operator>and</operator>
   </spec_pc>
   <wfov_a>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
+      <value>CGIVST_TDD_SETUP_HOWFSC</value>
+      <value>CGIVST_TDD_OBS_HOWFSC</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>IMAGING</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>0</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="SPAMNAME" operator="contains-any">
       <value>WFOV</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
       <value>SPBAL-FPAM</value>
       <value>SPBAL-FSAM</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" operator="contains-any">
       <value>CONT</value>
       <value>NUM</value>
     </operand>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
     <operator>and</operator>
   </wfov_a>
   <wfov_nc>
@@ -402,53 +466,55 @@
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>IMAGING</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>0</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="SPAMNAME" operator="contains-any">
       <value>WFOV</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
       <value>SPBAL-FPAM</value>
       <value>SPBAL-FSAM</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" operator="contains-any">
       <value>CONT</value>
       <value>NUM</value>
     </operand>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
     <operator>and</operator>
   </wfov_nc>
   <wfov_pc>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
+      <value>CGIVST_TDD_SETUP_HOWFSC</value>
+      <value>CGIVST_TDD_OBS_HOWFSC</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>IMAGING</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>1</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="SPAMNAME" operator="contains-any">
       <value>WFOV</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
       <value>SPBAL-FPAM</value>
       <value>SPBAL-FSAM</value>
     </operand>
+    <operator>and</operator>
     <operand keyword="FRMTYPE" operator="contains-any">
       <value>CONT</value>
       <value>NUM</value>
     </operand>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
-    <operator>and</operator>
     <operator>and</operator>
   </wfov_pc>
 </channels>
