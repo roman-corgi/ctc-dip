@@ -237,6 +237,7 @@ class Runner(dip.basis.fsm.AbstractModel):
             dstdir.mkdir(parents=True, exist_ok=True)
             dstfn = dstdir / fn
             shutil.copy(self.__outdir / fn, dstfn)
+            dstfn.chmod(0o444)  # make it more efficient for feeding forward (link rather than copy)
             self.outputs['product']['manifest'].append(dstfn.resolve())
             name = dstfn.stem
         if name:
