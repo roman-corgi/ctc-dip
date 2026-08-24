@@ -93,6 +93,7 @@
     <operand keyword="FPAMNAME" operator="equals-any">
       <value>OPEN</value>
     </operand>
+    <operator>and</operator>
   </cal_dispersionmodel>
   <cal_flatfield>
     <operand keyword="VISTYPE" operator="equals-any">
