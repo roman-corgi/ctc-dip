@@ -293,9 +293,10 @@ def vaporize(mash: pydot.Dot):
                             )
                         else:
                             LOG.error(
-                                '2 nodes with content %s in dot file %s.',
+                                '2 nodes with content %s in dot file %s at %s.',
                                 k,
                                 _getattr(node, 'filename'),
+                                _getattr(node, 'valname'),
                             )
                             break
                 old.update(new)

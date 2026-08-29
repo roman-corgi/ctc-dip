@@ -139,6 +139,30 @@ class FSM(dip.base.Orchestrator):
         LOG.info('output: %s', str(self.outputs['channel']))
         return dip.base.ProductStatus.ALL
 
+
+class AggFSM(FSM):
+    def _do_delegation(self):
+        xml = self._load('categorization.xml')
+        categories = dip.bindings.categorization.CreateFromDocument(xml)
+        xml = self._load('system.xml')
+        system = dip.bindings.system.CreateFromDocument(xml)
+        journal = Path(system.journal.location)
+        staging = Path(system.staging.location)
+        manifest = dip.base.Manifest()
+        manifest.at = self.dawgie_name
+        mfn = staging / util.tn2l1mfn(self.target)
+        if not mfn.is_file():
+            mfn = staging / mfn.name.lower()
+        if not mfn.is_file():
+            raise dawgie.NoValidInputDataError(
+                f'No manifest file matches target name {self.target}'
+            )
+        manifest.deserialize(mfn)
+        shutil.move(mfn, journal / mfn.name)
+        return self._collate(categories, manifest)
+
+
+class FrameFSM(FSM):
     def _do_delegation(self):
         xml = self._load('categorization.xml')
         categories = dip.bindings.categorization.CreateFromDocument(xml)

@@ -1,0 +1,166 @@
+digraph AggregrationDesign
+{
+    graph [splines="ortho", rankdir=LR];
+
+    alarm [label="Periodic Wakeup", shape="none"];
+    scan [label="Scan for\nSignal File", shape="circle"];
+    
+    agg_sort [label="Aggregration", shape="circle",
+              runname="clerk.aggregration"
+              runtype="dawgie.Algorithm"
+              fsmtype="dip.clerk.impls.categorization.AggFSM"];
+    
+    agg_data [label="L1 products 1..N", shape="rectangle"];
+    agg_man [label="L1 manifest 1..1", shape="ellipse",
+             valname="clerk.scan.inbound.aggregate",
+             valtype="dip.base.Manifest"];
+
+    agg_cal_a_man [label="agg_cal_a manifest 1..1\nof 0..a files",
+                   shape="ellipse",
+                   valname="clerk.aggregration.channel.cal_a",
+                   valtype="dip.base.Manifest"];
+    agg_cal_absflux_man [label="agg_cal_absflux manifest 1..1\nof 0..a files",
+                         shape="ellipse",
+                         valname="clerk.aggregration.channel.cal_absflux",
+                         valtype="dip.base.Manifest"];
+    agg_cal_boresight_man [label="agg_cal_boresight manifest 1..1\nof 0..a files",
+                           shape="ellipse",
+                           valname="clerk.aggregration.channel.cal_boresight",
+                           valtype="dip.base.Manifest"];
+    agg_cal_bpm_man [label="agg_cal_bpm manifest 1..1\nof 0..a files",
+                     shape="ellipse",
+                     valname="clerk.aggregration.channel.cal_badpixelmap",
+                     valtype="dip.base.Manifest"];
+    agg_cal_corethpt_man [label="agg_cal_corethpt manifest 1..1\nof 0..a files",
+                          shape="ellipse",
+                          valname="clerk.aggregration.channel.cal_corethpt",
+                          valtype="dip.base.Manifest"];
+    agg_cal_dpm_man [label="agg_cal_dispersionmodel manifest 1..1\nof 0..a files",
+                     shape="ellipse",
+                     valname="clerk.aggregration.channel.cal_dispersionmodel",
+                     valtype="dip.base.Manifest"];
+    agg_cal_drkpc_man [label="agg_cal_drkpc manifest 1..1\nof 0..a files",
+                       shape="ellipse",
+                       valname="clerk.aggregration.channel.cal_darkpc",
+                       valtype="dip.base.Manifest"];
+    agg_cal_drksynth_man [label="agg_cal_drksynth manifest 1..1\nof 0..a files",
+                          shape="ellipse",
+                          valname="clerk.aggregration.channel.cal_darksynth",
+                          valtype="dip.base.Manifest"];
+    agg_cal_drktrad_man [label="agg_cal_drktrad manifest 1..1\nof 0..a files",
+                         shape="ellipse",
+                         valname="clerk.aggregration.channel.cal_darktrad",
+                         valtype="dip.base.Manifest"];
+    agg_cal_ff_man [label="agg_cal_flatfield manifest 1..1\nof 0..a files",
+                    shape="ellipse",
+                    valname="clerk.aggregration.channel.cal_flatfield",
+                    valtype="dip.base.Manifest"];
+    agg_cal_polff_man [label="agg_cal_polff manifest 1..1\nof 0..a files",
+                       shape="ellipse",
+                       valname="clerk.aggregration.channel.cal_polff",
+                       valtype="dip.base.Manifest"];
+    agg_cal_lsf_man [label="agg_cal_linespread manifest 1..1\nof 0..a files",
+                     shape="ellipse",
+                     valname="clerk.aggregration.channel.cal_linespread",
+                     valtype="dip.base.Manifest"];
+    agg_cal_mm_man [label="agg_cal_muellermatrix manifest 1..1\nof 0..a files",
+                    shape="ellipse",
+                    valname="clerk.aggregration.channel.cal_muellermatrix",
+                    valtype="dip.base.Manifest"];
+    agg_cal_ndfiltimg_man [label="agg_cal_ndfiltimg manifest 1..1\nof 0..a files",
+                           shape="ellipse",
+                           valname="clerk.aggregration.channel.cal_ndfiltimg",
+                           valtype="dip.base.Manifest"];
+    agg_cal_ndfiltspec_man [label="agg_cal_ndfiltspec manifest 1..1\nof 0..a files",
+                            shape="ellipse",
+                            valname="clerk.aggregration.channel.cal_ndfiltspec",
+                            valtype="dip.base.Manifest"];
+    agg_cal_pupil_man [label="agg_cal_pupil (nonlinear, k-gain, em-gain) manifest 1..1\nof 0..a files",
+                       shape="ellipse",
+                       valname="clerk.aggregration.channel.cal_pupil",
+                       valtype="dip.base.Manifest"];
+    agg_cal_wzp_man [label="agg_cal_wlzeropoint manifest 1..1\nof 0..a files",
+                     shape="ellipse",
+                     valname="clerk.aggregration.channel.cal_wlzeropoint",
+                     valtype="dip.base.Manifest"];
+    agg_eng_a_man [label="agg_eng_a manifest 1..1\nof 0..b files",
+                   shape="ellipse",
+                   valname="clerk.aggregration.channel.eng_a",
+                   valtype="dip.base.Manifest"];
+    agg_nfov_a_man [label="agg_nfov_a manifest 1..1\nof 0..c files",
+                    shape="ellipse",
+                    valname="clerk.aggregration.channel.nfov_a",
+                    valtype="dip.base.Manifest"];
+    agg_nfov_nc_man [label="agg_nfov_nc manifest 1..1\nof 0..d files",
+                     shape="ellipse",
+                     valname="clerk.aggregration.channel.nfov_nc",
+                     valtype="dip.base.Manifest"];
+    agg_nfov_pc_man [label="agg_nfov_pc manifest 1..1\nof 0..d files",
+                     shape="ellipse",
+                     valname="clerk.aggregration.channel.nfov_pc",
+                     valtype="dip.base.Manifest"];
+    agg_pol_a_man [label="agg_pol_a manifest 1..1\nof 0..e files",
+                   shape="ellipse",
+                   valname="clerk.aggregration.channel.pol_a",
+                   valtype="dip.base.Manifest"];
+    agg_pol_pc_man [label="agg_pol_pc manifest 1..1\nof 0..f files",
+                    shape="ellipse",
+                    valname="clerk.aggregration.channel.pol_pc",
+                    valtype="dip.base.Manifest"];
+    agg_spec_a_man [label="agg_spec_a manifest 1..1\nof 0..g files",
+                    shape="ellipse",
+                    valname="clerk.aggregration.channel.spec_a",
+                    valtype="dip.base.Manifest"];
+    agg_spec_nc_man [label="agg_spec_nc manifest 1..1\nof 0..h files",
+                     shape="ellipse",
+                     valname="clerk.aggregration.channel.spec_nc",
+                     valtype="dip.base.Manifest"];
+    agg_spec_pc_man [label="agg_spec_pc manifest 1..1\nof 0..h files",
+                     shape="ellipse",
+                     valname="clerk.aggregration.channel.spec_pc",
+                     valtype="dip.base.Manifest"];
+    agg_wfov_a_man [label="agg_wfov_a manifest 1..1\nof 0..i files",
+                    shape="ellipse",
+                    valname="clerk.aggregration.channel.wfov_a",
+                    valtype="dip.base.Manifest"];
+    agg_wfov_nc_man [label="agg_wfov_nc manifest 1..1\nof 0..j files",
+                     shape="ellipse",
+                     valname="clerk.aggregration.channel.wfov_nc",
+                     valtype="dip.base.Manifest"];
+    agg_wfov_pc_man [label="agg_wfov_pc manifest 1..1\nof 0..j files",
+                     shape="ellipse",
+                     valname="clerk.aggregration.channel.wfov_pc",
+                     valtype="dip.base.Manifest"];
+    agg_unk_man [label="agg_unk manifest 1..1\nof 0..k files",
+                 shape="ellipse",
+                 valname="clerk.aggregration.channel.unk",
+                 valtype="dip.base.Manifest"];
+
+    alarm -> scan [style="dashed"];
+    scan -> agg_man [style="dashed"];
+    agg_data -> agg_sort [style="dashed"];
+    agg_man -> agg_sort;
+
+    agg_sort -> agg_cal_a_man;
+    agg_sort -> agg_cal_absflux_man;
+    agg_sort -> agg_cal_boresight_man;
+    agg_sort -> agg_cal_bpm_man;
+    agg_sort -> agg_cal_corethpt_man;
+    agg_sort -> agg_cal_polff_man;
+    agg_sort -> agg_cal_ndfiltimg_man;
+    agg_sort -> agg_cal_ndfiltspec_man;
+    agg_sort -> agg_cal_pupil_man;
+    agg_sort -> agg_eng_a_man;
+    agg_sort -> agg_nfov_a_man;
+    agg_sort -> agg_nfov_nc_man;
+    agg_sort -> agg_nfov_pc_man;
+    agg_sort -> agg_pol_a_man;
+    agg_sort -> agg_pol_pc_man;
+    agg_sort -> agg_spec_a_man;
+    agg_sort -> agg_spec_nc_man;
+    agg_sort -> agg_spec_pc_man;
+    agg_sort -> agg_wfov_a_man;
+    agg_sort -> agg_wfov_nc_man;
+    agg_sort -> agg_wfov_pc_man;
+    agg_sort -> agg_unk_man;
+}
