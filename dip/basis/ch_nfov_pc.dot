@@ -38,7 +38,6 @@ l3_nfov_pc_ndf [label="L3_nfov_pc ND Filter 1..1", shape="cds"];
 l3_nfov_pc_log [label="L3_nfov_pc log 1..1", shape="ellipse"];
 
 l1_nfov_pc_prod -> trans_nfov_pc_l1_l2a [style="dashed"];
-agg_nfov_pc_prod -> trans_nfov_pc_l1_l2a [style="dashed"];
 l1_nfov_pc_man -> trans_nfov_pc_l1_l2a;
 l1_nfov_pc_odir -> trans_nfov_pc_l1_l2a;
 l1_nfov_pc_rec -> trans_nfov_pc_l1_l2a;
@@ -58,7 +57,7 @@ l2a_nfov_pc_emg -> trans_nfov_pc_l2a_l2b;
 trans_nfov_pc_l2a_l2b -> l2b_nfov_pc_prod [style="dashed"];
 trans_nfov_pc_l2a_l2b -> l2b_nfov_pc_man;
 trans_nfov_pc_l2a_l2b -> l2b_nfov_pc_log [style="dashed"];
-l2a_nfov_pc_man -> trans_nfov_pc_l2a_l2b;
+agg_nfov_pc_man -> trans_nfov_pc_l2a_l2b;
 l2b_nfov_pc_prod -> trans_nfov_pc_l2b_l3 [style="dashed"];
 l2b_nfov_pc_man -> trans_nfov_pc_l2b_l3;
 l2b_nfov_pc_odir -> trans_nfov_pc_l2b_l3;
