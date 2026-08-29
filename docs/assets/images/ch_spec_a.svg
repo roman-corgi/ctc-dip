@@ -293,7 +293,7 @@
 <!-- l1_spec_a_man&#45;&gt;trans_spec_a_l1_l2a -->
 <g id="edge2" class="edge">
 <title>l1_spec_a_man&#45;&gt;trans_spec_a_l1_l2a</title>
-<path fill="none" stroke="black" d="M329.27,-180C329.27,-180 374.93,-180 374.93,-180"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M329.27,-180C329.27,-180 374.93,-180 374.93,-180"/>
 <polygon fill="black" stroke="black" points="374.93,-183.5 384.93,-180 374.93,-176.5 374.93,-183.5"/>
 </g>
 <!-- l1_spec_a_odir -->
