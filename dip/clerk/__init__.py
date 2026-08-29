@@ -7,6 +7,7 @@ import dawgie.base
 
 # pylint: disable=duplicate-code
 
+
 def analysis(
     prefix: str, ps_hint: int = 0, runid: int = -1
 ) -> dawgie.FactoryPlaceholder[dawgie.base.Analysis]:
@@ -27,6 +28,7 @@ def task(
     prefix: str, ps_hint: int = 0, runid: int = -1, target: str = '__none__'
 ) -> dawgie.FactoryPlaceholder[dawgie.base.Task]:
     raise NotImplementedError('placeholder until dawgie monkey patches me')
+
 
 # pylint: enable=duplicate-code
 # <-------------  ABOVE: auto generated code above do not edit  ------------->
