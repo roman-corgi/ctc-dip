@@ -10,7 +10,7 @@ cal_dpm_log [label="DispersionModel log 1..1", shape="ellipse"];
 cal_dpm_man [label="DispersionModel product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_dpm.product.manifest", valtype="dip.base.Manifest"];
 cal_dpm_src [label="DispersionModel source manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_dpm.source.manifest", valtype="dip.base.Manifest"];
 l1_cal_dpm_prod -> trans_cal_dpm_l1_l2a [style="dashed"];
-l1_cal_dpm_man -> trans_cal_dpm_l1_l2a;
+l1_cal_dpm_man -> trans_cal_dpm_l1_l2a [style="dotted"];
 l1_cal_dpm_odir -> trans_cal_dpm_l1_l2a;
 l1_cal_dpm_rec -> trans_cal_dpm_l1_l2a;
 trans_cal_dpm_l1_l2a -> cal_dpm_prod [style="dashed"];

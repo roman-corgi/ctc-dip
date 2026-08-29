@@ -17,7 +17,7 @@ digraph NDSpecFilterCalibration {
     cal_ndfiltspec_src [label="ND Spec Filter source manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_ndfiltspec.source.manifest", valtype="dip.base.Manifest"];
 
     l1_cal_ndfiltspec_prod -> trans_cal_ndfiltspec [style="dashed"];
-    l1_cal_ndfiltspec_man -> trans_cal_ndfiltspec;
+    l1_cal_ndfiltspec_man -> trans_cal_ndfiltspec [style="dotted"];
     l1_cal_ndfiltspec_odir -> trans_cal_ndfiltspec;
     l1_cal_ndfiltspec_rec -> trans_cal_ndfiltspec;
     l1_cal_ndfiltspec_nllut -> trans_cal_ndfiltspec;
