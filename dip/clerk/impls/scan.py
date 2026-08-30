@@ -24,7 +24,7 @@ class FSM(dip.base.Orchestrator):
             verify=False,  # self signed certs # nosec
         )
         resp.raise_for_status()
-        queued = resp.json()['status'] = 'success'
+        queued = resp.json()['status'] == 'success'
         if not queued:
             LOG.error(
                 'request for %s to run target %s failed because %s',

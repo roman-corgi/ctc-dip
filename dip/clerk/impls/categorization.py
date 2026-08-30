@@ -1,12 +1,16 @@
 '''define the hard bits of categorization'''
 
 import dawgie
+import dawgie.db
 import dip.base
 import dip.bindings.categorization
 import logging
+import requests
 import shutil
+import time
 
 from astropy.io import fits
+from dawgie.db.basis import Params
 from dip.binding_help import get_tag
 from dip.bindings.categorization import operand_type, logical_operator
 from pathlib import Path
@@ -141,6 +145,36 @@ class FSM(dip.base.Orchestrator):
 
 
 class AggFSM(FSM):
+    def _collect(
+        self, system, visits: dip.base.Manifest
+    ) -> dip.base.Manifest():
+        # give any frame categorizations that came in at the same time a chance
+        time.sleep(150)  # half the time between signal file checks
+        collection = dip.base.Manifest()
+        for visit in visits:
+            targets = set(
+                filter(
+                    lambda t, v=visit: t.startswith(f'{v} ('),
+                    dawgie.db.targets(),
+                )
+            )
+            while not targets.isdisjoint(set(self._jobs(system))):
+                LOG.warning(
+                    'Part of visit %s is being processed - '
+                    'will try again in 30 seconds.',
+                    visit,
+                )
+                time.sleep(30)
+            for frame_manifest in self._max(
+                dawgie.db.search()
+                .find(Params([-1], targets, None, None, ['product'], None))
+                .items
+            ):
+                collection.extend(
+                    dip.base.sv_lookup(frame_manifest)['manifest']
+                )
+        return collection
+
     def _do_delegation(self):
         xml = self._load('categorization.xml')
         categories = dip.bindings.categorization.CreateFromDocument(xml)
@@ -152,14 +186,54 @@ class AggFSM(FSM):
         manifest.at = self.dawgie_name
         mfn = staging / util.tn2vismfn(self.target)
         if not mfn.is_file():
-            mfn = staging / mfn.name.lower()
-        if not mfn.is_file():
-            raise dawgie.NoValidInputDataError(
-                f'No manifest file matches target name {self.target}'
+            LOG.warning(
+                'Could not find file %s. '
+                'Assuming this is a single visit request',
+                mfn.name,
             )
-        manifest.deserialize(mfn)
-        shutil.move(mfn, journal / mfn.name)
-        return self._collate(categories, manifest)
+            manifest.append(self.target)
+        else:
+            manifest.deserialize(mfn)
+            shutil.move(mfn, journal / mfn.name)
+        return self._collate(categories, self._collect(system, manifest))
+
+    def _jobs(self, system):
+        jobs = []
+        for queue in ['to-do', 'doing', 'in-progress']:
+            resp = requests.get(
+                f'{system.dip_api.location.rstrip("/")}/schedule/{queue}',
+                cert=system.dip_cid.location,
+                timeout=300,
+                verify=False,  # self signed certs # nosec
+            )
+            resp.raise_for_status()
+            if resp.json()['status'] == 'success':
+                content = resp.json()['context']
+                for item in content:
+                    if queue == 'in-progress':
+                        jobs.append(item.split('[')[1].split(']')[0])
+                    else:
+                        jobs.extend(content[item])
+            else:
+                raise ValueError(
+                    f'pipeline is not responding to query: {resp.json()["message"]}'
+                )
+
+        return jobs
+
+    def _max(self, products: [str]) -> [str]:
+        table = {}
+        for product in products:
+            name = product.split('.')
+            sl = name[2].split('_')
+            chan = '_'.join(sl[2:])
+            key = '.'.join([name[1], chan])
+            lvl = sl[0]
+            if key not in table:
+                table[key] = (lvl, product)
+            if table[key](0) < lvl:
+                table[key] = (lvl, product)
+        return sorted(t[1] for t in table.values())
 
 
 class FrameFSM(FSM):
