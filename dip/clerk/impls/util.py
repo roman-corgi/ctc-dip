@@ -21,8 +21,10 @@ def tn2l1mfn(tn: str) -> str:
             dt += 'T'
     return f'cgi_{c}_{dt}_l1_.yaml'
 
-def tn2l1mfn(tn: str) -> str:
+
+def tn2vismfn(tn: str) -> str:
     return f'V{tn}.yaml'
+
 
 def vismfn2tn(vismfn: str) -> str:
     return vismfn[1:]
