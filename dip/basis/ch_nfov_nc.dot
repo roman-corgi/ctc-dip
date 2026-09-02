@@ -4,9 +4,9 @@ trans_nfov_nc_l1_l2a [label="nfov_nc Transmutation\nL1 to L2a", shape="circle", 
 trans_nfov_nc_l2a_l2b [label="nfov_nc Transmutation\nL2a to L2b", shape="circle", runname="l2a.transmutation_nfov_nc", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
 trans_nfov_nc_l2b_l3 [label="nfov_nc Transmutation\nL2b to L3", shape="circle", runname="l2b.transmutation_nfov_nc", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
 trans_nfov_nc_l3_l4 [label="nfov_nc Transmutation\nL3 to L4", shape="circle", runname="l3.transmutation_nfov_nc", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
-trans_nfov_nc_l4_tda [label="nfov_nc Transmutation\nL4 to TDA", shape="circle", runname="l4.transmutation_nfov_nc", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
 l1_nfov_nc_prod [label="L1_nfov_nc products 1..b", shape="rectangle"];
 l1_nfov_nc_man [label="L1_nfov_nc product manifest 1..1", shape="ellipse"];
+agg_nfov_nc_man [label="L1_nfov_nc visit manifest 1..1", shape="ellipse"];
 l1_nfov_nc_odir [label="L1_nfov_nc output path 1..1", shape="ellipse"];
 l1_nfov_nc_rec [label="L1_nfov_nc recipe 1..1", shape="cds"];
 l1_nfov_nc_nllut [label="L1_nfov_nc non-linear LUT 1..1", shape="cds"];
@@ -44,7 +44,7 @@ l4_nfov_nc_rec [label="L4_nfov_nc recipe 1..1", shape="cds"];
 l4_nfov_nc_afcal [label="L4_nfov_nc absolute flux calibrations 1..1", shape="cds"];
 l4_nfov_nc_ctcal [label="L4_nfov_nc core throughput calibrations 1..1", shape="cds"];
 l4_nfov_nc_ndfilt [label="L4_nfov_nc ND filter 1..1", shape="cds"];
-tda_nfov_nc_man [label="TDA_nfov_nc product manifest 1..1", shape="ellipse", valname="l4.transmutation_nfov_nc.product.manifest", valtype="dip.base.Manifest"];
+
 l1_nfov_nc_prod -> trans_nfov_nc_l1_l2a [style="dashed"];
 l1_nfov_nc_man -> trans_nfov_nc_l1_l2a;
 l1_nfov_nc_odir -> trans_nfov_nc_l1_l2a;
@@ -77,7 +77,7 @@ trans_nfov_nc_l2b_l3 -> l3_nfov_nc_prod [style="dashed"];
 trans_nfov_nc_l2b_l3 -> l3_nfov_nc_man;
 trans_nfov_nc_l2b_l3 -> l3_nfov_nc_log [style="dashed"];
 l3_nfov_nc_prod -> trans_nfov_nc_l3_l4 [style="dashed"];
-l3_nfov_nc_man -> trans_nfov_nc_l3_l4;
+agg_nfov_nc_man -> trans_nfov_nc_l3_l4 [style="dashed"];
 l3_nfov_nc_odir -> trans_nfov_nc_l3_l4;
 l3_nfov_nc_rec -> trans_nfov_nc_l3_l4;
 l3_nfov_nc_ast -> trans_nfov_nc_l3_l4;
@@ -85,24 +85,14 @@ l3_nfov_nc_ndf -> trans_nfov_nc_l3_l4;
 trans_nfov_nc_l3_l4 -> l4_nfov_nc_prod [style="dashed"];
 trans_nfov_nc_l3_l4 -> l4_nfov_nc_log [style="dashed"];
 trans_nfov_nc_l3_l4 -> l4_nfov_nc_man;
-l4_nfov_nc_prod -> trans_nfov_nc_l4_tda [style="dashed"];
-l4_nfov_nc_man -> trans_nfov_nc_l4_tda;
-l4_nfov_nc_odir -> trans_nfov_nc_l4_tda;
-l4_nfov_nc_rec -> trans_nfov_nc_l4_tda;
-l4_nfov_nc_afcal -> trans_nfov_nc_l4_tda;
-l4_nfov_nc_ctcal -> trans_nfov_nc_l4_tda;
-l4_nfov_nc_ndfilt -> trans_nfov_nc_l4_tda;
-trans_nfov_nc_l4_tda -> tda_nfov_nc_prod [style="dashed"];
-trans_nfov_nc_l4_tda -> tda_nfov_nc_log [style="dashed"];
 
 l2a_nfov_nc_src [label="L2a_nfov_nc source manifest 1..1", shape="ellipse", valname="l1.transmutation_nfov_nc.source.manifest", valtype="dip.base.Manifest"];
 l2b_nfov_nc_src [label="L2b_nfov_nc source manifest 1..1", shape="ellipse", valname="l2a.transmutation_nfov_nc.source.manifest", valtype="dip.base.Manifest"];
 l3_nfov_nc_src [label="L3_nfov_nc source manifest 1..1", shape="ellipse", valname="l2b.transmutation_nfov_nc.source.manifest", valtype="dip.base.Manifest"];
 l4_nfov_nc_src [label="L4_nfov_nc sourcemanifest 1..1", shape="ellipse", valname="l3.transmutation_nfov_nc.source.manifest", valtype="dip.base.Manifest"];
-tda_nfov_nc_src [label="TDA_nfov_nc sourcemanifest 1..1", shape="ellipse", valname="l4.transmutation_nfov_nc.source.manifest", valtype="dip.base.Manifest"];
 trans_nfov_nc_l1_l2a -> l2a_nfov_nc_src;
 trans_nfov_nc_l2a_l2b -> l2b_nfov_nc_src;
 trans_nfov_nc_l2b_l3 -> l3_nfov_nc_src;
 trans_nfov_nc_l3_l4 -> l4_nfov_nc_src;
-trans_nfov_nc_l4_tda -> tda_nfov_nc_src;
+
 }

@@ -10,7 +10,7 @@ cal_wzp_log [label="WavelengthZeroPoint log 1..1", shape="ellipse"];
 cal_wzp_man [label="WavelengthZeroPoint product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_wzp.product.manifest", valtype="dip.base.Manifest"];
 cal_wzp_src [label="WavelengthZeroPoint source manifest 1..1", shape="ellipse", valname="l1.transmutation_cal_wzp.source.manifest", valtype="dip.base.Manifest"];
 l1_cal_wzp_prod -> trans_cal_wzp_l1_l2a [style="dashed"];
-l1_cal_wzp_man -> trans_cal_wzp_l1_l2a;
+l1_cal_wzp_man -> trans_cal_wzp_l1_l2a [style="dotted"];
 l1_cal_wzp_odir -> trans_cal_wzp_l1_l2a;
 l1_cal_wzp_rec -> trans_cal_wzp_l1_l2a;
 trans_cal_wzp_l1_l2a -> cal_wzp_prod [style="dashed"];

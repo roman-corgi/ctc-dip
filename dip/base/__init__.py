@@ -2,7 +2,7 @@
 
 from ._fsm import Orchestrator, Runner
 from ._types import Calibration, Configuration, Cpgs, Manifest, Recipe
-from ._wa import ds_asdict, features_asdict, generic_view
+from ._wa import ds_asdict, features_asdict, generic_view, sv_lookup
 from dip.basis.fsm import ProductStatus
 
 __all__ = [
@@ -17,4 +17,5 @@ __all__ = [
     'ds_asdict',
     'features_asdict',
     'generic_view',
+    'sv_lookup',
 ]

@@ -1,10 +1,10 @@
 ---
-title: bmp
+title: agg
 parent: Clerk
 ---
 
-# Calibration: bmp
+# Calibration: agg
 
 This detailed information builds upon the conceptual foundations in [Abstract](../../abstract/README.html)
 
-![ck_bmp](/ctc-dip/assets/images/ck_bmp.svg)
+![ck_agg](/ctc-dip/assets/images/ck_agg.svg)

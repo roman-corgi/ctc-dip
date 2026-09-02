@@ -33,7 +33,7 @@ class BasicClerks(unittest.TestCase):
 
     def test_categorization(self):
         with tempfile.TemporaryDirectory() as workspace:
-            cat = dip.clerk.impls.categorization.FSM()
+            cat = dip.clerk.impls.categorization.FrameFSM()
             cat.features = {'clerk.scan.inbound': ['frames']}
             cat.inputs = {'clerk.scan.inbound': {'frames': []}}
             cat.outputs.update(

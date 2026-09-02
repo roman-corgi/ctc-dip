@@ -50,7 +50,7 @@ l4_spec_nc_rspi [label="L4_spec_nc reference star prism image 1..1", shape="cds"
 l4_spec_nc_lsf [label="L4_spec_nc line spread function 1..1", shape="cds"];
 tda_spec_nc_man [label="TDA_spec_nc product manifest 1..1", shape="ellipse", valname="l4.transmutation_spec_nc.product.manifest", valtype="dip.base.Manifest"];
 l1_spec_nc_prod -> trans_spec_nc_l1_l2a [style="dashed"];
-l1_spec_nc_man -> trans_spec_nc_l1_l2a;
+l1_spec_nc_man -> trans_spec_nc_l1_l2a [style="dotted"];
 l1_spec_nc_odir -> trans_spec_nc_l1_l2a;
 l1_spec_nc_rec -> trans_spec_nc_l1_l2a;
 l1_spec_nc_nllut -> trans_spec_nc_l1_l2a;

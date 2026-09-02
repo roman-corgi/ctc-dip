@@ -77,15 +77,15 @@
 <path fill="none" stroke="black" stroke-dasharray="5,2" d="M254.84,-560C349.09,-560 476.41,-560 476.41,-560 476.41,-560 476.41,-374.85 476.41,-374.85"/>
 <polygon fill="black" stroke="black" points="479.91,-374.85 476.41,-364.85 472.91,-374.85 479.91,-374.85"/>
 </g>
-<!-- l1_cal_absflux_man -->
+<!-- agg_cal_absflux_man -->
 <g id="node3" class="node">
-<title>l1_cal_absflux_man</title>
+<title>agg_cal_absflux_man</title>
 <ellipse fill="none" stroke="black" cx="155.5" cy="-506" rx="128.08" ry="18"/>
 <text text-anchor="middle" x="155.5" y="-502.3" font-family="Times,serif" font-size="14.00">L1_AbsFlux manifest 1..1</text>
 </g>
-<!-- l1_cal_absflux_man&#45;&gt;trans_cal_absflux -->
+<!-- agg_cal_absflux_man&#45;&gt;trans_cal_absflux -->
 <g id="edge2" class="edge">
-<title>l1_cal_absflux_man&#45;&gt;trans_cal_absflux</title>
+<title>agg_cal_absflux_man&#45;&gt;trans_cal_absflux</title>
 <path fill="none" stroke="black" d="M283.88,-506C356.69,-506 433.41,-506 433.41,-506 433.41,-506 433.41,-386.3 433.41,-386.3"/>
 <polygon fill="black" stroke="black" points="436.91,-386.3 433.41,-376.3 429.91,-386.3 436.91,-386.3"/>
 </g>
