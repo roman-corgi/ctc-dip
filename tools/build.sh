@@ -53,6 +53,8 @@ do
         err_count=err_count+1
     fi
 done
+tools/fake-schematron.sh schema/categorization.xsd dip/base/categorization.xml
+err_count=err_count+$?
 KEEP_CHANGES=1 tools/run.sh Style  # reformat the generated code
 
 if [ "$1" != "ignore_checks" ]
@@ -71,7 +73,7 @@ fi
 # give a summary message
 if [ $err_count -gt 0 ]
 then
-    echo "FAILED($err_count): look back and see why. Fix it. Try again."
+    echo "FAILED $err_count check(s): look back and see why. Fix it. Try again."
 else
     echo "SUCCESS: all looks well today."
 fi
