@@ -1,10 +1,10 @@
 ---
-title: drkpc
+title: cat
 parent: Clerk
 ---
 
-# Calibration: drkpc
+# Calibration: cat
 
 This detailed information builds upon the conceptual foundations in [Abstract](../../abstract/README.html)
 
-![ck_drkpc](/ctc-dip/assets/images/ck_drkpc.svg)
+![ck_cat](/ctc-dip/assets/images/ck_cat.svg)

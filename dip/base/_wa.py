@@ -1,6 +1,8 @@
 '''work arounds for dawgie inconsistencies'''
 
 import dawgie
+import dawgie.context
+import importlib
 
 from . import _types
 
@@ -63,3 +65,32 @@ def generic_view(sv: dawgie.StateVector, visitor: dawgie.Visitor):
                 f'{k}: {type(v)} does not have a standard display'
             )
     visitor.add_declaration_inline('', div='</div>')
+
+
+def sv_lookup(name: str) -> _types.Manifest:
+    '''use a full name from dawgie.db.search().find() to resolve the object
+
+    Given a full name - rid.target.task.algorithm.state_vector.value - break
+    it is apart into its constutients, build its underlying dawgie object,
+    then load it.
+    '''
+    rid, target, task, algn, svn = name.split('.')[:5]
+    runid = int(rid)
+    mod = importlib.import_module(
+        '.'.join([dawgie.context.ae_base_package, task]).replace('..', '.')
+    )
+    bot = (
+        mod.regress(task, 1, target)
+        if runid == 0
+        else (
+            mod.analysis(task, 1, runid)
+            if target == '__all__'
+            else mod.task(task, 1, runid, target)
+        )
+    )
+    alg = list(filter(lambda x, a=algn: x.name() == a, bot.routines()))[0]
+    sv = list(filter(lambda x, s=svn: x.name() == s, alg.state_vectors()))[0]
+    dawgie.db.reset(runid, target, task, alg)
+    ds = dawgie.db.connect(alg, bot, target)
+    ds.load()
+    return sv

@@ -238,14 +238,6 @@
   <l2a_cal_corethpt.k_gain location="/tmp/dummy.txt"/>
   <l2a_cal_corethpt.charge_xfer_eff location="/tmp/dummy.txt"/>
 
-  <l1_cal_ndfiltimg.nonlin location="/tmp/dummy.txt"/>
-  <l2a_cal_ndfiltimg.bad_pix_map location="/tmp/dummy.txt"/>
-  <l2a_cal_ndfiltimg.darks location="/tmp/dummy.txt"/>
-  <l2a_cal_ndfiltimg.em_gain location="/tmp/dummy.txt"/>
-  <l2a_cal_ndfiltimg.flat_field location="/tmp/dummy.txt"/>
-  <l2a_cal_ndfiltimg.k_gain location="/tmp/dummy.txt"/>
-  <l2a_cal_ndfiltimg.charge_xfer_eff location="/tmp/dummy.txt"/>
-
   <l1_cal_ndfiltspec.nonlin location="/tmp/dummy.txt"/>
   <l2a_cal_ndfiltspec.bad_pix_map location="/tmp/dummy.txt"/>
   <l2a_cal_ndfiltspec.darks location="/tmp/dummy.txt"/>

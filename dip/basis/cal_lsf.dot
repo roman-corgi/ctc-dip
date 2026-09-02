@@ -14,7 +14,7 @@ l1_cal_lsf_man -> trans_cal_lsf_l1_l2a;
 l1_cal_lsf_odir -> trans_cal_lsf_l1_l2a;
 l1_cal_lsf_rec -> trans_cal_lsf_l1_l2a;
 trans_cal_lsf_l1_l2a -> cal_lsf_prod [style="dashed"];
-trans_cal_lsf_l1_l2a -> cal_lsf_man;
+trans_cal_lsf_l1_l2a -> cal_lsf_man [style="dotted"];
 trans_cal_lsf_l1_l2a -> cal_lsf_src;
 trans_cal_lsf_l1_l2a -> cal_lsf_log [style="dashed"];
 }

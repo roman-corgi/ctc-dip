@@ -6,12 +6,11 @@ digraph CategorizationDesign
   scan [label="Scan for\nSignal File", shape="circle",
         runname="clerk.scan"
         runtype="dawgie.Analyzer"
-        fsmtype="dip.clerk.impls.scan.FSM"];
-  
-  sort [label="Categorization", shape="circle",
+        fsmtype="dip.clerk.impls.scan.FSM"];  
+  l1_sort [label="Categorization", shape="circle",
         runname="clerk.categorization"
         runtype="dawgie.Algorithm"
-        fsmtype="dip.clerk.impls.categorization.FSM"];
+        fsmtype="dip.clerk.impls.categorization.FrameFSM"];
         
   l1_data [label="L1 products 1..N", shape="rectangle"];
   l1_man [label="L1 manifest 1..1", shape="ellipse",
@@ -141,29 +140,29 @@ digraph CategorizationDesign
 
   alarm -> scan [style="dashed"];
   scan -> l1_man;
-  l1_data -> sort [style="dashed"];
-  l1_man -> sort;
+  l1_data -> l1_sort [style="dashed"];
+  l1_man -> l1_sort;
 
-  sort -> l1_cal_a_man;
-  sort -> l1_cal_absflux_man;
-  sort -> l1_cal_boresight_man;
-  sort -> l1_cal_bpm_man;
-  sort -> l1_cal_corethpt_man;
-  sort -> l1_cal_polff_man;
-  sort -> l1_cal_ndfiltimg_man;
-  sort -> l1_cal_ndfiltspec_man;
-  sort -> l1_cal_pupil_man;
-  sort -> l1_eng_a_man;
-  sort -> l1_nfov_a_man;
-  sort -> l1_nfov_nc_man;
-  sort -> l1_nfov_pc_man;
-  sort -> l1_pol_a_man;
-  sort -> l1_pol_pc_man;
-  sort -> l1_spec_a_man;
-  sort -> l1_spec_nc_man;
-  sort -> l1_spec_pc_man;
-  sort -> l1_wfov_a_man;
-  sort -> l1_wfov_nc_man;
-  sort -> l1_wfov_pc_man;
-  sort -> l1_unk_man;
+  l1_sort -> l1_cal_a_man;
+  l1_sort -> l1_cal_absflux_man;
+  l1_sort -> l1_cal_boresight_man;
+  l1_sort -> l1_cal_bpm_man;
+  l1_sort -> l1_cal_corethpt_man;
+  l1_sort -> l1_cal_polff_man;
+  l1_sort -> l1_cal_ndfiltimg_man;
+  l1_sort -> l1_cal_ndfiltspec_man;
+  l1_sort -> l1_cal_pupil_man;
+  l1_sort -> l1_eng_a_man;
+  l1_sort -> l1_nfov_a_man;
+  l1_sort -> l1_nfov_nc_man;
+  l1_sort -> l1_nfov_pc_man;
+  l1_sort -> l1_pol_a_man;
+  l1_sort -> l1_pol_pc_man;
+  l1_sort -> l1_spec_a_man;
+  l1_sort -> l1_spec_nc_man;
+  l1_sort -> l1_spec_pc_man;
+  l1_sort -> l1_wfov_a_man;
+  l1_sort -> l1_wfov_nc_man;
+  l1_sort -> l1_wfov_pc_man;
+  l1_sort -> l1_unk_man;
 }

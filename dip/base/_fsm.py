@@ -182,15 +182,18 @@ class Runner(dip.basis.fsm.AbstractModel):
             xml = _clean_load_xml('system.xml')
             system = dip.bindings.system.CreateFromDocument(xml)
             location = Path(self.__sandbox.name)
-            with tarfile.open(
-                Path(system.panics.location) / f'{self.dawgie_id}.tgz',
-                'w:gz',
-                dereference=True,
-            ) as tar:
-                tar.add(location, arcname=location.name)
-                caldb = Path(os.path.expandvars('${HOME}/.corgidrp'))
-                if caldb.is_dir():
-                    tar.add(caldb, arcname=caldb.name)
+            with open(
+                Path(system.panics.location) / f'{self.dawgie_id}.tgz', 'wb'
+            ) as file:
+                with tarfile.open(
+                    dereference=True,
+                    fileobj=file,
+                    mode='w:gz',
+                ) as tar:
+                    tar.add(location, arcname=location.name)
+                    caldb = Path(os.path.expandvars('${HOME}/.corgidrp'))
+                    if caldb.is_dir():
+                        tar.add(caldb, arcname=caldb.name)
 
     def _do_sanitization(self):
         if self.__sandbox:

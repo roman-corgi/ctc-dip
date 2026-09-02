@@ -4,7 +4,7 @@ digraph Astrometric {
     trans_cal_boresight [label="L1\nTransmutation\nAstrometric", shape="circle", runname="l1.transmutation_cal_boresight", runtype="dawgie.Algorithm", fsmtype="dip.base.Runner"];
 
     l1_cal_boresight_prod [label="L1_Astrometric products 1..b", shape="rectangle"];
-    l1_cal_boresight_man [label="L1_Astrometric manifest 1..1", shape="ellipse"];
+    agg_cal_boresight_man [label="L1_Astrometric visit manifest 1..1", shape="ellipse"];
     l1_cal_boresight_odir [label="L1_Astrometric output path 1..1", shape="ellipse"];
     l1_cal_boresight_rec [label="L1_Astrometric recipe 1..1", shape="cds"];
 
@@ -23,7 +23,7 @@ digraph Astrometric {
     cal_boresight_src [label="Astrometric source manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_boresight.source.manifest", valtype="dip.base.Manifest"];
 
     l1_cal_boresight_prod -> trans_cal_boresight [style="dashed"];
-    l1_cal_boresight_man -> trans_cal_boresight;
+    agg_cal_boresight_man -> trans_cal_boresight;
     l1_cal_boresight_odir -> trans_cal_boresight;
     l1_cal_boresight_rec -> trans_cal_boresight;
 
