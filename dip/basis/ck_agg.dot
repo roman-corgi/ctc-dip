@@ -15,10 +15,6 @@ digraph AggregrationDesign
              valname="clerk.scan.inbound.aggregate",
              valtype="dip.base.Manifest"];
 
-    agg_cal_a_man [label="agg_cal_a manifest 1..1\nof 0..a files",
-                   shape="ellipse",
-                   valname="clerk.aggregration.channel.cal_a",
-                   valtype="dip.base.Manifest"];
     agg_cal_absflux_man [label="agg_cal_absflux manifest 1..1\nof 0..a files",
                          shape="ellipse",
                          valname="clerk.aggregration.channel.cal_absflux",
@@ -27,10 +23,6 @@ digraph AggregrationDesign
                            shape="ellipse",
                            valname="clerk.aggregration.channel.cal_boresight",
                            valtype="dip.base.Manifest"];
-    agg_cal_bpm_man [label="agg_cal_bpm manifest 1..1\nof 0..a files",
-                     shape="ellipse",
-                     valname="clerk.aggregration.channel.cal_badpixelmap",
-                     valtype="dip.base.Manifest"];
     agg_cal_corethpt_man [label="agg_cal_corethpt manifest 1..1\nof 0..a files",
                           shape="ellipse",
                           valname="clerk.aggregration.channel.cal_corethpt",
@@ -39,18 +31,6 @@ digraph AggregrationDesign
                      shape="ellipse",
                      valname="clerk.aggregration.channel.cal_dispersionmodel",
                      valtype="dip.base.Manifest"];
-    agg_cal_drkpc_man [label="agg_cal_drkpc manifest 1..1\nof 0..a files",
-                       shape="ellipse",
-                       valname="clerk.aggregration.channel.cal_darkpc",
-                       valtype="dip.base.Manifest"];
-    agg_cal_drksynth_man [label="agg_cal_drksynth manifest 1..1\nof 0..a files",
-                          shape="ellipse",
-                          valname="clerk.aggregration.channel.cal_darksynth",
-                          valtype="dip.base.Manifest"];
-    agg_cal_drktrad_man [label="agg_cal_drktrad manifest 1..1\nof 0..a files",
-                         shape="ellipse",
-                         valname="clerk.aggregration.channel.cal_darktrad",
-                         valtype="dip.base.Manifest"];
     agg_cal_ff_man [label="agg_cal_flatfield manifest 1..1\nof 0..a files",
                     shape="ellipse",
                     valname="clerk.aggregration.channel.cal_flatfield",
@@ -67,10 +47,6 @@ digraph AggregrationDesign
                     shape="ellipse",
                     valname="clerk.aggregration.channel.cal_muellermatrix",
                     valtype="dip.base.Manifest"];
-    agg_cal_ndfiltimg_man [label="agg_cal_ndfiltimg manifest 1..1\nof 0..a files",
-                           shape="ellipse",
-                           valname="clerk.aggregration.channel.cal_ndfiltimg",
-                           valtype="dip.base.Manifest"];
     agg_cal_ndfiltspec_man [label="agg_cal_ndfiltspec manifest 1..1\nof 0..a files",
                             shape="ellipse",
                             valname="clerk.aggregration.channel.cal_ndfiltspec",
@@ -141,13 +117,10 @@ digraph AggregrationDesign
     agg_data -> agg_sort [style="dashed"];
     agg_man -> agg_sort;
 
-    agg_sort -> agg_cal_a_man;
     agg_sort -> agg_cal_absflux_man;
     agg_sort -> agg_cal_boresight_man;
-    agg_sort -> agg_cal_bpm_man;
     agg_sort -> agg_cal_corethpt_man;
     agg_sort -> agg_cal_polff_man;
-    agg_sort -> agg_cal_ndfiltimg_man;
     agg_sort -> agg_cal_ndfiltspec_man;
     agg_sort -> agg_cal_pupil_man;
     agg_sort -> agg_eng_a_man;

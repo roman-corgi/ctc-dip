@@ -1,191 +1,104 @@
 <channels
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/roman-corgi/ctc-dip/refs/heads/main/schema/categorization.xsd">
-  <cal_a/>
   <cal_absflux>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_CAO_ABSFLUX_FAINT</value>
+      <value>CGIVST_CAL_ABSFLUX_FAINT</value>
     </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+    <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
     </operand>
     <operator>and</operator>
   </cal_absflux>
   <cal_boresight>
-    <operand keyword="VISTYPE" operator="equals-all">
+    <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_CAL_BORESIGHT</value>
     </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
-      <value>ACQ</value>
-    </operand>
-    <operator>and</operator>
   </cal_boresight>
   <cal_corethpt>
-    <operand keyword="VISTYPE" operator="equals-all">
+    <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_CAL_CORETHRPT</value>
     </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+    <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
     </operand>
     <operator>and</operator>
   </cal_corethpt>
-  <cal_flatfield>
-    <operand keyword="VISTYPE" operator="equals-all">
+  <cal_flatfield><!-- IMAGING and POL flats share this channel; the DRP selects
+                      the recipe from DPAMNAME. CGIVST_CAL_FLAT has no
+                      acquisition, so no FRMTYPE filter is needed. -->
+    <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_CAL_FLAT</value>
     </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
-      <value>ACQ</value>
-    </operand>
-    <operator>and</operator>
   </cal_flatfield>
-  <cal_darkpc>
-    <operand keyword="VISTYPE" operator="equals-all">
-      <value>CGIVST_CAL_DRK</value>
-    </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
-      <value>ACQ</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="PC_STAT" operator="equals-all">
-      <value>photon-counted master dark</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="IS_SYNTH" operator="equals-all">
-      <value>0</value>
-    </operand>
-    <operator>and</operator>
-  </cal_darkpc>
-  <cal_darksynth>
-    <operand keyword="VISTYPE" operator="equals-all">
-      <value>CGIVST_CAL_DRK</value>
-    </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
-      <value>ACQ</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="PC_STAT" operator="equals-all">
-      <value>analog master dark</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="IS_SYNTH" operator="equals-all">
-      <value>1</value>
-    </operand>
-    <operator>and</operator>
-  </cal_darksynth>
-  <cal_darktrad>
-    <operand keyword="VISTYPE" operator="equals-all">
-      <value>CGIVST_CAL_DRK</value>
-    </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
-      <value>ACQ</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="PC_STAT" operator="equals-all">
-      <value>analog master dark</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="IS_SYNTH" operator="equals-all">
-      <value>0</value>
-    </operand>
-    <operator>and</operator>
-  </cal_darktrad>
-  <cal_ndfiltspec>
-    <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_CAL_ABSFLUX_BRIGHT</value>
-    </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
-      <value>ACQ</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="DPAMNAME" operator="contains-any">
-      <value>IMAGING</value>
-      <value>PRISM2</value>
-      <value>PRISM3</value>
-    </operand>
-    <operator>and</operator>
-  </cal_ndfiltspec>
   <cal_dispersionmodel>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_CAL_SPEC_TGTREF</value>
+      <!--  <value>CGIVST_CAL_SPEC_TGTREF</value>  -->
+      <value>PAUSED_FOR_REVIEW</value>
     </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+    <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FPAMNAME" operator="equals-any">
+    <operand keyword="FPAMNAME" operator="contains-any">
       <value>OPEN</value>
     </operand>
     <operator>and</operator>
   </cal_dispersionmodel>
   <cal_linespread>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_CAL_SPEC_LINESPREAD</value>
+      <!--  <value>CGIVST_CAL_SPEC_LINESPREAD</value>  -->
+      <value>PAUSED_FOR_REVIEW</value>
     </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+    <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
     </operand>
     <operator>and</operator>
   </cal_linespread>
+  <cal_ndfiltspec/><!-- deactivated pending review -->
   <cal_wlzeropoint>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_CAL_ABSFLUX_FAINT</value>
-      <value>CGIVST_CAL_ABSFLUX_BRIGHT</value>
+      <value>PAUSED_FOR_REVIEW</value>
+      <!--  <value>CGIVST_CAL_ABSFLUX_FAINT</value>
+      <value>CGIVST_CAL_ABSFLUX_BRIGHT</value>  -->
     </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+    <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="DPAMNAME" operator="equals-any">
+    <operand keyword="DPAMNAME" operator="contains-any">
       <value>PRISM2</value>
       <value>PRISM3</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FPAMNAME" not="true" operator="equals-any">
+    <operand keyword="FPAMNAME" not="true" operator="contains-any">
       <value>ND</value>
     </operand>
     <operator>and</operator>
   </cal_wlzeropoint>
-  <cal_flatfield>
+  <cal_polff/><!-- deactivated: polarimetric flats are selected by cal_flatfield
+                   so that a CGIVST_CAL_FLAT frame cannot match two channels -->
+  <cal_muellermatrix>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_CAL_FLAT</value>
-    </operand>
-    <operand keyword="DPAMNAME" operator="equals-any" not="true">
-      <value>POL0</value>
-      <value>POL45</value>
-    </operand>
-    <operator>and</operator>
-  </cal_flatfield>
-  <cal_polff>
-    <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_CAL_FLAT</value>
-    </operand>
-    <operand keyword="DPAMNAME" operator="equals-any">
-      <value>POL0</value>
-      <value>POL45</value>
-    </operand>
-    <operator>and</operator>
-  </cal_polff>
-  <cal_ndfiltimg/>
-  <cal_pol_setup>
-    <operand keyword="VISTYPE" operator="equals-all">
       <value>CGIVST_CAL_POL_SETUP</value>
     </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+    <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
     </operand>
     <operator>and</operator>
-  </cal_pol_setup>
+  </cal_muellermatrix>
   <cal_pupil>
-    <operand keyword="VISTYPE" operator="equals-all">
+    <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_CAL_PUPIL_IMAGING</value>
     </operand>
-    <operand keyword="FRMTYPE" not="true" operator="equals-all">
+    <operand keyword="FRMTYPE" not="true" operator="equals-any">
       <value>ACQ</value>
     </operand>
     <operator>and</operator>
   </cal_pupil>
-  <cal_wlzeropoint/>
-  <eng_a>
+  <eng_a><!-- excluding CONT keeps HOWFSC science frames in nfov_a/wfov_a and
+             SATSPOTS=False keeps science sat spot frames out; the remaining
+             FRMTYPEs entering here are NUM and GITL -->
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_ENG_OTA_WVFRNT</value>
       <value>CGIVST_ENG_PFAC</value>
@@ -210,11 +123,15 @@
       <value>ACQ</value>
       <value>SPBAL-FPAM</value>
       <value>SPBAL-FSAM</value>
-      <value>GITL</value>
+      <value>CONT</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="SATSPOTS" operator="equals-any">
+      <value>0</value>
     </operand>
     <operator>and</operator>
   </eng_a>
-  <nfov_a>
+  <nfov_a><!-- "science" coronagraphic frames or "science sat spot" frames -->
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
       <value>CGIVST_TDD_SETUP_HOWFSC</value>
@@ -232,19 +149,34 @@
       <value>OPEN</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" operator="contains-any">
+    <operand keyword="FRMTYPE" operator="equals-any">
       <value>CONT</value>
-      <value>NUM</value>
     </operand>
     <operator>and</operator>
+    <operand keyword="VISTYPE" operator="equals-any">
+      <value>CGIVST_TDD_OBS</value>
+      <value>CGIVST_TDD_SETUP_HOWFSC</value>
+      <value>CGIVST_TDD_OBS_HOWFSC</value>
+    </operand>
+    <operand keyword="SATSPOTS" operator="equals-any">
+      <value>1</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="ISPC" operator="contains-any">
+      <value>0</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="DPAMNAME" operator="contains-any">
+      <value>IMAGING</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="SPAMNAME" operator="contains-any">
+      <value>OPEN</value>
+    </operand>
+    <operator>and</operator>
+    <operator>or</operator>
   </nfov_a>
-  <nfov_nc>
+  <nfov_nc><!-- CGIVST_CAL_TGTREF_PHOT is always analog and only collects NUM -->
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_CAL_TGTREF_PHOT</value>
     </operand>
@@ -252,31 +184,16 @@
       <value>IMAGING</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="ISPC" operator="contains-any">
-      <value>0</value>
-    </operand>
-    <operator>and</operator>
     <operand keyword="SPAMNAME" operator="contains-any">
       <value>OPEN</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="contains-any">
-      <value>CONT</value>
-      <value>NUM</value>
-    </operand>
-    <operator>and</operator>
   </nfov_nc>
-  <nfov_pc>
+  <nfov_pc><!-- sat spots are always analog NUM so no sat spot rule is needed -->
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
-      <value>CGIVST_TDD_SETUP_HOWFS</value>
-      <value>CGIVST_TDD_OBS_HOWFS</value>
+      <value>CGIVST_TDD_SETUP_HOWFSC</value>
+      <value>CGIVST_TDD_OBS_HOWFSC</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>IMAGING</value>
@@ -290,19 +207,14 @@
       <value>OPEN</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" operator="contains-any">
+    <operand keyword="FRMTYPE" operator="equals-any">
       <value>CONT</value>
-      <value>NUM</value>
     </operand>
     <operator>and</operator>
   </nfov_pc>
-  <pol_a>
+  <pol_a><!-- CGIVST_TDD_POL_OBS has no EXCAM acquisition. NFOV and WFOV
+             polarimetry share this channel; they are never presented
+             simultaneously. -->
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_POL_OBS</value>
     </operand>
@@ -315,17 +227,27 @@
       <value>0</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" operator="contains-any">
+    <operand keyword="FRMTYPE" operator="equals-any">
       <value>CONT</value>
-      <value>NUM</value>
     </operand>
     <operator>and</operator>
+    <operand keyword="VISTYPE" operator="equals-any">
+      <value>CGIVST_TDD_POL_OBS</value>
+    </operand>
+    <operand keyword="SATSPOTS" operator="equals-any">
+      <value>1</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="ISPC" operator="contains-any">
+      <value>0</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="DPAMNAME" operator="contains-any">
+      <value>POL0</value>
+      <value>POL45</value>
+    </operand>
+    <operator>and</operator>
+    <operator>or</operator>
   </pol_a>
   <pol_pc>
     <operand keyword="VISTYPE" operator="equals-any">
@@ -340,22 +262,16 @@
       <value>1</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" operator="contains-any">
+    <operand keyword="FRMTYPE" operator="equals-any">
       <value>CONT</value>
-      <value>NUM</value>
     </operand>
     <operator>and</operator>
   </pol_pc>
   <spec_a>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_TDD_OBS</value>
-      <value>CGIVST_TDD_SETUP_HOWFS</value>
+      <!--  <value>CGIVST_TDD_OBS</value>
+      <value>CGIVST_TDD_SETUP_HOWFSC</value>  -->
+      <value>PAUSED_FOR_REVIEW</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>PRISM2</value>
@@ -366,21 +282,15 @@
       <value>0</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" operator="contains-any">
+    <operand keyword="FRMTYPE" operator="equals-any">
       <value>CONT</value>
-      <value>NUM</value>
     </operand>
     <operator>and</operator>
   </spec_a>
   <spec_nc>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_CAL_SPEC_TGTREF</value>
+      <!--  <value>CGIVST_CAL_SPEC_TGTREF</value>  -->
+      <value>PAUSED_FOR_REVIEW</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>PRISM2</value>
@@ -393,7 +303,6 @@
     <operator>and</operator>
     <operand keyword="FPAMNAME" not="true" operator="contains-any">
       <value>OPEN</value>
-      <value>NUM</value>
     </operand>
     <operator>and</operator>
     <operand keyword="FRMTYPE" not="true" operator="equals-any">
@@ -405,8 +314,9 @@
   </spec_nc>
   <spec_pc>
     <operand keyword="VISTYPE" operator="equals-any">
-      <value>CGIVST_TDD_OBS</value>
-      <value>CGIVST_TDD_SETUP_HOWFS</value>
+      <!--  <value>CGIVST_TDD_OBS</value>
+      <value>CGIVST_TDD_SETUP_HOWFSC</value>  -->
+      <value>PAUSED_FOR_REVIEW</value>
     </operand>
     <operand keyword="DPAMNAME" operator="contains-any">
       <value>PRISM2</value>
@@ -417,49 +327,57 @@
       <value>1</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" operator="contains-any">
+    <operand keyword="FRMTYPE" operator="equals-any">
       <value>CONT</value>
-      <value>NUM</value>
     </operand>
     <operator>and</operator>
   </spec_pc>
-  <wfov_a>
+  <wfov_a><!-- same as nfov_a except SPAMNAME -->
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
       <value>CGIVST_TDD_SETUP_HOWFSC</value>
       <value>CGIVST_TDD_OBS_HOWFSC</value>
     </operand>
-    <operand keyword="DPAMNAME" operator="contains-any">
-      <value>IMAGING</value>
-    </operand>
-    <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>0</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="DPAMNAME" operator="contains-any">
+      <value>IMAGING</value>
     </operand>
     <operator>and</operator>
     <operand keyword="SPAMNAME" operator="contains-any">
       <value>WFOV</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" operator="contains-any">
+    <operand keyword="FRMTYPE" operator="equals-any">
       <value>CONT</value>
-      <value>NUM</value>
     </operand>
     <operator>and</operator>
+    <operand keyword="VISTYPE" operator="equals-any">
+      <value>CGIVST_TDD_OBS</value>
+      <value>CGIVST_TDD_SETUP_HOWFSC</value>
+      <value>CGIVST_TDD_OBS_HOWFSC</value>
+    </operand>
+    <operand keyword="SATSPOTS" operator="equals-any">
+      <value>1</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="ISPC" operator="contains-any">
+      <value>0</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="DPAMNAME" operator="contains-any">
+      <value>IMAGING</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="SPAMNAME" operator="contains-any">
+      <value>WFOV</value>
+    </operand>
+    <operator>and</operator>
+    <operator>or</operator>
   </wfov_a>
-  <wfov_nc>
+  <wfov_nc><!-- same as nfov_nc except SPAMNAME -->
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_CAL_TGTREF_PHOT</value>
     </operand>
@@ -467,27 +385,12 @@
       <value>IMAGING</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="ISPC" operator="contains-any">
-      <value>0</value>
-    </operand>
-    <operator>and</operator>
     <operand keyword="SPAMNAME" operator="contains-any">
       <value>WFOV</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" operator="contains-any">
-      <value>CONT</value>
-      <value>NUM</value>
-    </operand>
-    <operator>and</operator>
   </wfov_nc>
-  <wfov_pc>
+  <wfov_pc><!-- same as nfov_pc except SPAMNAME -->
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
       <value>CGIVST_TDD_SETUP_HOWFSC</value>
@@ -505,15 +408,8 @@
       <value>WFOV</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" operator="contains-any">
+    <operand keyword="FRMTYPE" operator="equals-any">
       <value>CONT</value>
-      <value>NUM</value>
     </operand>
     <operator>and</operator>
   </wfov_pc>
