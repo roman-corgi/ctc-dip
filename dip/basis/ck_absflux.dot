@@ -46,6 +46,13 @@ digraph AbsFluxClerks
                         valname="clerk.calibration.l2a_cal_absflux.em_gain",
                         valtype="dip.base.Calibration"];
 
+  /* container-level .corgidrp cache subtree (copy_tree item). Declared once
+   * here; channel graphs that need it (cal_absflux, cal_ndfiltspec) add an
+   * edge calspec_cache -> their transmutation node. */
+  calspec_cache [label="CALSPEC reference spectra tree 1..1", shape="cds",
+                 valname="clerk.calibration.cache.calspec_data",
+                 valtype="dip.base.Calibration"];
+
   alarm_cal -> calib [style="dashed"];
   alarm_cnf -> config [style="dashed"];
   alarm_rec -> recipe [style="dashed"];
@@ -57,6 +64,7 @@ digraph AbsFluxClerks
   calib -> l2a_cal_absflux_ff;
   calib -> l2a_cal_absflux_kgain;
   calib -> l2a_cal_absflux_emg;
+  calib -> calspec_cache;
   config -> l1_cal_absflux_odir;
   recipe -> l1_cal_absflux_rec;
 }
