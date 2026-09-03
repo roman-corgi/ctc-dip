@@ -243,8 +243,9 @@ class Runner(dip.basis.fsm.AbstractModel):
             dstfn.chmod(
                 0o444
             )  # make it more efficient for feeding forward (link rather than copy)
-            self.outputs['product']['manifest'].append(dstfn.resolve())
-            name = dstfn.stem
+            if not fn.endswith('_cal.fits'):
+                self.outputs['product']['manifest'].append(dstfn.resolve())
+                name = dstfn.stem
         if name:
             arc = Path(
                 dip.bindings.system.CreateFromDocument(
