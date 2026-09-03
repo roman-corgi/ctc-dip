@@ -1,7 +1,6 @@
 <channels
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/roman-corgi/ctc-dip/refs/heads/main/schema/categorization.xsd">
-  <cal_a/><!-- not defined in the categorization spec -->
   <cal_absflux>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_CAL_ABSFLUX_FAINT</value>
@@ -11,7 +10,6 @@
     </operand>
     <operator>and</operator>
   </cal_absflux>
-  <cal_badpixelmap/><!-- deprecated: only produced within the flat field recipe -->
   <cal_boresight>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_CAL_BORESIGHT</value>
@@ -26,9 +24,6 @@
     </operand>
     <operator>and</operator>
   </cal_corethpt>
-  <cal_darkpc/> <!-- deprecated: manual processing only -->
-  <cal_darksynth/> <!-- deprecated: derived during L2a to L2b -->
-  <cal_darktrad/> <!-- deprecated: manual processing only -->
   <cal_flatfield><!-- IMAGING and POL flats share this channel; the DRP selects
                       the recipe from DPAMNAME. CGIVST_CAL_FLAT has no
                       acquisition, so no FRMTYPE filter is needed. -->
@@ -60,12 +55,7 @@
     </operand>
     <operator>and</operator>
   </cal_linespread>
-  <cal_ndfiltimg/><!-- deactivated: requires an ensemble rule spanning
-                       CGIVST_CAL_ABSFLUX_BRIGHT and CGIVST_CAL_ABSFLUX_FAINT,
-                       which categorization cannot express. Manual only. -->
-  <cal_ndfiltspec/><!-- deactivated pending review. When reactivated the spec says:
-                        VISTYPE = CGIVST_CAL_ABSFLUX_BRIGHT, FRMTYPE != ACQ,
-                        DPAMNAME = PRISM2 | PRISM3, FPAMNAME = ND -->
+  <cal_ndfiltspec/><!-- deactivated pending review -->
   <cal_wlzeropoint>
     <operand keyword="VISTYPE" operator="equals-any">
       <value>PAUSED_FOR_REVIEW</value>
@@ -137,13 +127,11 @@
     </operand>
     <operator>and</operator>
     <operand keyword="SATSPOTS" operator="equals-any">
-      <value>False</value>
+      <value>0</value>
     </operand>
     <operator>and</operator>
   </eng_a>
-  <nfov_a><!-- "science" coronagraphic frames or "science sat spot" frames. The sat
-              spot branch needs no ISPC or FRMTYPE filter: sat spots are always
-              analog NUM, and SATSPOTS is only set in TDD_... visits. -->
+  <nfov_a><!-- "science" coronagraphic frames or "science sat spot" frames -->
     <operand keyword="VISTYPE" operator="equals-any">
       <value>CGIVST_TDD_OBS</value>
       <value>CGIVST_TDD_SETUP_HOWFSC</value>
@@ -171,7 +159,11 @@
       <value>CGIVST_TDD_OBS_HOWFSC</value>
     </operand>
     <operand keyword="SATSPOTS" operator="equals-any">
-      <value>True</value>
+      <value>1</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="ISPC" operator="contains-any">
+      <value>0</value>
     </operand>
     <operator>and</operator>
     <operand keyword="DPAMNAME" operator="contains-any">
@@ -243,7 +235,11 @@
       <value>CGIVST_TDD_POL_OBS</value>
     </operand>
     <operand keyword="SATSPOTS" operator="equals-any">
-      <value>True</value>
+      <value>1</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="ISPC" operator="contains-any">
+      <value>0</value>
     </operand>
     <operator>and</operator>
     <operand keyword="DPAMNAME" operator="contains-any">
@@ -284,12 +280,6 @@
     <operator>and</operator>
     <operand keyword="ISPC" operator="contains-any">
       <value>0</value>
-    </operand>
-    <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
     </operand>
     <operator>and</operator>
     <operand keyword="FRMTYPE" operator="equals-any">
@@ -337,12 +327,6 @@
       <value>1</value>
     </operand>
     <operator>and</operator>
-    <operand keyword="FRMTYPE" not="true" operator="equals-any">
-      <value>ACQ</value>
-      <value>SPBAL-FPAM</value>
-      <value>SPBAL-FSAM</value>
-    </operand>
-    <operator>and</operator>
     <operand keyword="FRMTYPE" operator="equals-any">
       <value>CONT</value>
     </operand>
@@ -376,7 +360,11 @@
       <value>CGIVST_TDD_OBS_HOWFSC</value>
     </operand>
     <operand keyword="SATSPOTS" operator="equals-any">
-      <value>True</value>
+      <value>1</value>
+    </operand>
+    <operator>and</operator>
+    <operand keyword="ISPC" operator="contains-any">
+      <value>0</value>
     </operand>
     <operator>and</operator>
     <operand keyword="DPAMNAME" operator="contains-any">

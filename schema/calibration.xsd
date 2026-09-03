@@ -11,6 +11,7 @@
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="location" type="xs:normalizedString" use="required"/>
+        <xs:attribute default="false" name="copy_tree" type="xs:boolean" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -22,6 +23,9 @@
       </xs:documentation>
     </xs:annotation>
     <xs:all>
+      <!-- container-level .corgidrp cache subdirs (copy_tree items) -->
+      <xs:element default="no comment" name="cache.calspec_data" type="calibration_item"/>
+
       <xs:element default="no comment" name="eng_a.cpgs" type="calibration_item"/>
       <xs:element default="no comment" name="l1_eng_a.nonlin" type="calibration_item"/>
       <xs:element default="no comment" name="l2a_eng_a.bad_pix_map" type="calibration_item"/>

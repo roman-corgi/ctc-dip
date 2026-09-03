@@ -15,6 +15,7 @@ digraph AbsoluteFluxCalibration {
     l2a_cal_absflux_emg [label="L2a_AbsFlux EM gain 1..1", shape="cds"];
     l2a_cal_absflux_kgain [label="L2_AbsFlux Kgain 1..1", shape="cds"];
     l2a_cal_absflux_log [label="L2a_AbsFlux log 1..1", shape="ellipse"];
+    calspec_cache [label="CALSPEC reference spectra tree 1..1", shape="cds"];
 
     cal_absflux_prod [label="AbsFlux products 1..1", shape="rectangle"];
     cal_absflux_log [label="AbsFlux log 1..1", shape="ellipse"];
@@ -34,6 +35,7 @@ digraph AbsoluteFluxCalibration {
     l2a_cal_absflux_mbpm -> trans_cal_absflux;
     l2a_cal_absflux_ff -> trans_cal_absflux;
     l2a_cal_absflux_emg -> trans_cal_absflux;
+    calspec_cache -> trans_cal_absflux;
 
     trans_cal_absflux -> cal_absflux_prod [style="dashed"];
     trans_cal_absflux -> cal_absflux_log [style="dashed"];

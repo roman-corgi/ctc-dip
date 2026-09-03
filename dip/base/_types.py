@@ -20,9 +20,19 @@ class Contaminable(abc.ABC):  # pylint: disable=too-few-public-methods
 
 class AuxillaryFile(Contaminable, dawgie.Value):
     def __init__(self):
+        self._copy_tree = False
         self._feats = []
         self._name = None
         self._version_ = dawgie.VERSION(1, 0, 0)
+
+    @property
+    def copy_tree(self) -> bool:
+        '''when True, name points at a directory tree to replicate wholesale'''
+        return self._copy_tree
+
+    @copy_tree.setter
+    def copy_tree(self, flag: bool):
+        self._copy_tree = bool(flag)
 
     @property
     def name(self) -> pathlib.Path:
@@ -41,6 +51,7 @@ class AuxillaryFile(Contaminable, dawgie.Value):
         The object returned is same class with the new location.
         '''
         result = self.__class__()
+        result.copy_tree = self._copy_tree
         if self._name is not None:
             result.name = location / self._name.name
             for expanded in self._name.parent.glob(self._name.name):
@@ -130,3 +141,23 @@ def _safe_copy(src: pathlib.Path, dst: pathlib.Path):
         dst.symlink_to(src)
     else:
         shutil.copy(src, dst)
+
+
+def replicate_tree(src: pathlib.Path, dst_root: pathlib.Path):
+    '''replicate the directory tree at src into dst_root
+
+    dst_root is the destination base; the tree is placed at
+    dst_root / src.name so the source subdirectory name is preserved (e.g. a
+    src of .../calspec_data lands at dst_root/calspec_data). Each file is
+    link-or-copied via _safe_copy: read-only sources are symlinked, writable
+    sources are copied. Directory structure is recreated with mkdir.
+    '''
+    src = pathlib.Path(src)
+    dst = pathlib.Path(dst_root) / src.name
+    for dirpath, _dirnames, filenames in os.walk(src):
+        rel = pathlib.Path(dirpath).relative_to(src)
+        (dst / rel).mkdir(parents=True, exist_ok=True)
+        for filename in filenames:
+            target = dst / rel / filename
+            if not target.exists():
+                _safe_copy(pathlib.Path(dirpath) / filename, target)

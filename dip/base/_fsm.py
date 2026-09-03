@@ -23,6 +23,7 @@ from ._types import (
     Cpgs,
     Manifest,
     Recipe,
+    replicate_tree,
 )
 
 LOG = logging.getLogger(__name__)
@@ -55,6 +56,10 @@ class Orchestrator(dip.basis.fsm.AbstractModel):
                     LOG.error('Could not find tag %s in %s', name, fn)
                 else:  # indicates user left it blank
                     val.name = Path(item.location) if item.location else None
+                    # copy_tree only exists on calibration items; config/recipe
+                    # bindings lack the attribute, so guard with getattr
+                    if hasattr(val, 'copy_tree'):
+                        val.copy_tree = bool(getattr(item, 'copy_tree', False))
 
     def _load(self, xmlname) -> bytes:
         return _clean_load_xml(xmlname)
@@ -123,10 +128,24 @@ class Runner(dip.basis.fsm.AbstractModel):
             self.__caldir.mkdir(parents=True, exist_ok=True)
             self.__outdir.mkdir(parents=True, exist_ok=True)
             self.__log.info('inputs: %s', str(self.inputs))
+            caldb = Path(os.path.expandvars('${HOME}/.corgidrp'))
             for svn, sv in self.inputs.items():
                 for name in self.features[svn]:
                     val = sv[name]
                     if not isinstance(val, Contaminable):
+                        continue
+                    # a copy_tree calibration names a whole .corgidrp subdir
+                    # tree (e.g. calspec_data) rather than a single file. It is
+                    # not a caldata override; replicate it into the ~/.corgidrp
+                    # cache so the DRP finds it by path, and skip the single
+                    # file quarantine (its name is a directory).
+                    if (
+                        isinstance(val, Calibration)
+                        and val.copy_tree
+                        and val.name is not None
+                    ):
+                        caldb.mkdir(parents=True, exist_ok=True)
+                        replicate_tree(val.name, caldb)
                         continue
                     locale = (
                         self.__caldir

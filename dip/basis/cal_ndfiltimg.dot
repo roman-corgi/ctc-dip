@@ -14,6 +14,7 @@ digraph NDImagingFilterCalibration {
     l2a_cal_ndfiltimg_ff [label="L2a_ND Imaging Filter flat fields 1..1", shape="cds"];
     l2a_cal_ndfiltimg_emg [label="L2a_ND Imaging Filter EM gain 1..1", shape="cds"];
     l2a_cal_ndfiltimg_kgain [label="L2_ND Imaging Filter Kgain 1..1", shape="cds"];
+    calspec_cache [label="CALSPEC reference spectra tree 1..1", shape="cds"];
     cal_ndfiltimg_prod [label="ND Imaging Filter products 1..1", shape="rectangle"];
     cal_ndfiltimg_log [label="ND Imaging Filter log 1..1", shape="ellipse"];
     cal_ndfiltimg_man [label="ND Imaging Filter product manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_ndfiltimg.product.manifest", valtype="dip.base.Manifest"];
@@ -32,6 +33,7 @@ digraph NDImagingFilterCalibration {
     l2a_cal_ndfiltimg_mbpm -> trans_cal_ndfiltimg;
     l2a_cal_ndfiltimg_ff -> trans_cal_ndfiltimg;
     l2a_cal_ndfiltimg_emg -> trans_cal_ndfiltimg;
+    calspec_cache -> trans_cal_ndfiltimg;
 
     trans_cal_ndfiltimg -> cal_ndfiltimg_prod [style="dashed"];
     trans_cal_ndfiltimg -> cal_ndfiltimg_log [style="dashed"];
