@@ -23,12 +23,21 @@ class AuxillaryFile(Contaminable, dawgie.Value):
         self._copy_tree = False
         self._feats = []
         self._name = None
-        self._version_ = dawgie.VERSION(1, 0, 0)
+        # bumped to 1.1.0: added _copy_tree attribute. Previously-pickled
+        # instances from before this change are missing the attribute; the
+        # version bump tells dawgie those cached values are stale so they
+        # get recomputed rather than unpickled as-is.
+        self._version_ = dawgie.VERSION(1, 1, 0)
 
     @property
     def copy_tree(self) -> bool:
-        '''when True, name points at a directory tree to replicate wholesale'''
-        return self._copy_tree
+        '''when True, name points at a directory tree to replicate wholesale
+
+        Uses getattr with a default so any instance that slips through
+        without the attribute set (e.g. an old cached value that somehow
+        still gets unpickled) does not raise AttributeError.
+        '''
+        return getattr(self, '_copy_tree', False)
 
     @copy_tree.setter
     def copy_tree(self, flag: bool):
