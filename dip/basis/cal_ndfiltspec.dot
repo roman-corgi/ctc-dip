@@ -10,6 +10,7 @@ digraph NDSpecFilterCalibration {
     l2a_cal_ndfiltspec_ff [label="L2a_ND Spec Filter flat fields 1..1", shape="cds"];
     l2a_cal_ndfiltspec_emg [label="L2a_ND Spec Filter EM gain 1..1", shape="cds"];
     l2a_cal_ndfiltspec_kgain [label="L2_ND Spec Filter Kgain 1..1", shape="cds"];
+    calspec_cache [label="CALSPEC reference spectra tree 1..1", shape="cds"];
 
     cal_ndfiltspec_prod [label="ND Spec Filter products 1..1", shape="rectangle"];
     cal_ndfiltspec_log [label="ND Spec Filter log 1..1", shape="ellipse"];
@@ -17,7 +18,7 @@ digraph NDSpecFilterCalibration {
     cal_ndfiltspec_src [label="ND Spec Filter source manifest 1..1", shape="ellipse", shape="ellipse", valname="l1.transmutation_cal_ndfiltspec.source.manifest", valtype="dip.base.Manifest"];
 
     l1_cal_ndfiltspec_prod -> trans_cal_ndfiltspec [style="dashed"];
-    l1_cal_ndfiltspec_man -> trans_cal_ndfiltspec [style="dotted"];
+    l1_cal_ndfiltspec_man -> trans_cal_ndfiltspec;
     l1_cal_ndfiltspec_odir -> trans_cal_ndfiltspec;
     l1_cal_ndfiltspec_rec -> trans_cal_ndfiltspec;
     l1_cal_ndfiltspec_nllut -> trans_cal_ndfiltspec;
@@ -28,6 +29,7 @@ digraph NDSpecFilterCalibration {
     l2a_cal_ndfiltspec_mbpm -> trans_cal_ndfiltspec;
     l2a_cal_ndfiltspec_ff -> trans_cal_ndfiltspec;
     l2a_cal_ndfiltspec_emg -> trans_cal_ndfiltspec;
+    calspec_cache -> trans_cal_ndfiltspec;
 
     trans_cal_ndfiltspec -> cal_ndfiltspec_prod [style="dashed"];
     trans_cal_ndfiltspec -> cal_ndfiltspec_log [style="dashed"];
