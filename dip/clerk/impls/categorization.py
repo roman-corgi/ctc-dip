@@ -231,7 +231,7 @@ class AggFSM(FSM):
             lvl = sl[0]
             if key not in table:
                 table[key] = (lvl, product)
-            if table[key](0) < lvl:
+            if table[key][0] < lvl:
                 table[key] = (lvl, product)
         return sorted(t[1] for t in table.values())
 
