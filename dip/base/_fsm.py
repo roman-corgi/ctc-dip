@@ -299,4 +299,4 @@ def _load_xml(xmlname) -> bytes:
     fn = Path('/proj/dip/etc') / xmlname
     if not fn.is_file():
         fn = resources.files('dip.base') / xmlname
-    return fn.read_bytes()
+    return os.path.expandvars(fn.read_bytes())
