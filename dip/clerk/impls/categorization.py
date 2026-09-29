@@ -21,6 +21,7 @@ LOG = logging.getLogger(__name__)
 
 
 class FSM(dip.base.Orchestrator):
+    # REDO: # pylint: disable=abstract-method
     # pylint: disable=too-many-branches,too-many-return-statements
     @staticmethod
     def _apply(commands, fn, tagname):

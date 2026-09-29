@@ -30,6 +30,7 @@ LOG = logging.getLogger(__name__)
 
 
 class Orchestrator(dip.basis.fsm.AbstractModel):
+    # REDO: # pylint: disable=abstract-method
     def _do_construction(self) -> bool:
         return True
 
