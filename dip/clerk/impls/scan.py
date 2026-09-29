@@ -43,6 +43,7 @@ class FSM(dip.base.Orchestrator):
         xml = self._load('system.xml')
         system = dip.bindings.system.CreateFromDocument(xml)
         staging = Path(system.staging.location)
+        LOG.info('Scanning for *.signal files in %s', staging)
         signals = sorted(staging.glob('*.signal'))
         for signal in signals:
             queued = False
