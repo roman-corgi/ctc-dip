@@ -189,7 +189,7 @@ class AggFSM(FSM):
                     for chan, manifest in sv.items():
                         if chan not in channels and chan != 'unk':
                             collection.update(manifest)
-        return Manifest(sorted(collection))
+        return dip.base.Manifest(sorted(collection))
 
     def _do_delegation(self):
         xml = self._load('categorization.xml')
