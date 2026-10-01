@@ -166,14 +166,20 @@ class AggFSM(FSM):
                     visit,
                 )
                 time.sleep(30)
-            for frame_manifest in self._max(
+            frame_products = self._max(
                 dawgie.db.search()
-                .find(Params([-1], targets, None, None, ['product'], None))
+                .find(Params([-1], targets, None, None, ['channel','product'], None))
                 .items
-            ):
-                collection.extend(
-                    dip.base.sv_lookup(frame_manifest)['manifest']
-                )
+            )
+            channels = [self._key(p).split('.')[1] for p in frame_products]
+            for frame_manifest in frame_products:
+                sv = dip.base.sv_lookup(frame_manifest)
+                if 'manifest' in sv:
+                    collection.extend(sv['manifest'])
+                else:
+                    for chan,manifest in sv.items():
+                        if chan not in channels and chan != 'unk':
+                            collection.extend(manifest)
         return collection
 
     def _do_delegation(self):
@@ -222,17 +228,28 @@ class AggFSM(FSM):
 
         return jobs
 
+    @staticmethod
+    def _key(fullname: str) -> str:
+        '''the target and channel a dawgie full name belongs to
+
+        Full names out of dawgie.db.search() are runid.target.task.alg.sv and
+        transmutation algorithms are always named transmutation_<channel>, so
+        the channel is everything after the first underscore of the algorithm.
+        '''
+        name = fullname.split('.')
+        return '.'.join([name[1], '_'.join(name[3].split('_')[1:])])
+
     def _max(self, products: [str]) -> [str]:
+        '''keep only the highest level product of each target and channel
+
+        The task name carries the level, which sorts correctly as a string for
+        the levels that exist: l1 < l2a < l2b < l3 < l4.
+        '''
         table = {}
         for product in products:
-            name = product.split('.')
-            sl = name[2].split('_')
-            chan = '_'.join(sl[2:])
-            key = '.'.join([name[1], chan])
-            lvl = sl[0]
-            if key not in table:
-                table[key] = (lvl, product)
-            if table[key][0] < lvl:
+            key = self._key(product)
+            lvl = product.split('.')[2]
+            if key not in table or table[key][0] < lvl:
                 table[key] = (lvl, product)
         return sorted(t[1] for t in table.values())
 
