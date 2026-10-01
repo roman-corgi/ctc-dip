@@ -168,7 +168,16 @@ class AggFSM(FSM):
                 time.sleep(30)
             frame_products = self._max(
                 dawgie.db.search()
-                .find(Params([-1], targets, None, None, ['channel','product'], None))
+                .find(
+                    Params(
+                        [-1],
+                        list(targets),
+                        None,
+                        None,
+                        ['channel', 'product'],
+                        None,
+                    )
+                )
                 .items
             )
             channels = [self._key(p).split('.')[1] for p in frame_products]
@@ -177,7 +186,7 @@ class AggFSM(FSM):
                 if 'manifest' in sv:
                     collection.extend(sv['manifest'])
                 else:
-                    for chan,manifest in sv.items():
+                    for chan, manifest in sv.items():
                         if chan not in channels and chan != 'unk':
                             collection.extend(manifest)
         return collection
