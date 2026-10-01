@@ -151,7 +151,7 @@ class AggFSM(FSM):
     ) -> dip.base.Manifest():
         # give any frame categorizations that came in at the same time a chance
         time.sleep(150)  # half the time between signal file checks
-        collection = dip.base.Manifest()
+        collection = set()
         for visit in visits:
             targets = set(
                 filter(
@@ -184,12 +184,12 @@ class AggFSM(FSM):
             for frame_manifest in frame_products:
                 sv = dip.base.sv_lookup(frame_manifest)
                 if 'manifest' in sv:
-                    collection.extend(sv['manifest'])
+                    collection.update(sv['manifest'])
                 else:
                     for chan, manifest in sv.items():
                         if chan not in channels and chan != 'unk':
-                            collection.extend(manifest)
-        return collection
+                            collection.update(manifest)
+        return dip.base.Manifest(sorted(collection))
 
     def _do_delegation(self):
         xml = self._load('categorization.xml')

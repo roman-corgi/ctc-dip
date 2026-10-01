@@ -175,4 +175,4 @@ class AggregationClerk(unittest.TestCase):
             self._system(), Manifest(['0200001001001001004'])
         )
 
-        self.assertEqual(frames, list(collection))
+        self.assertEqual(sorted(frames), list(collection))
