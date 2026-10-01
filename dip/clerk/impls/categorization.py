@@ -209,7 +209,7 @@ class AggFSM(FSM):
             )
             resp.raise_for_status()
             if resp.json()['status'] == 'success':
-                content = resp.json()['context']
+                content = resp.json()['content']
                 for item in content:
                     if queue == 'in-progress':
                         jobs.append(item.split('[')[1].split(']')[0])
