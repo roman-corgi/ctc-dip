@@ -25,7 +25,7 @@ jobs:
         run: |
           tools/clean.sh
           tools/build.sh
-          python -m pip wheel -w dist --no-deps Python/
+          python -m pip wheel -w dist --no-deps .
       - name: Upload distributions
         uses: actions/upload-artifact@v4
         with:
