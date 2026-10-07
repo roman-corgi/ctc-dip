@@ -30,5 +30,5 @@ packages = { find = {} }
 "dip.base" = ["*.xml"]
 
 [tool.setuptools_scm]
-fallback_version = "0.0.0-test"
+fallback_version = "0.0.0"
 version_file = "dip/_version.py"
