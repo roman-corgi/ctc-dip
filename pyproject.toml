@@ -7,13 +7,15 @@ authors = [
     { name = "Al Niessner", email = "Al.Niessner@xxx.xxx.gov" }
 ]
 classifiers = [
+    "Development Status :: 5 -- Production/Stable",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
-    "Operating System :: OS Independent",
-    "Development Status :: 5 -- Production/Stable",
 ]
 description = "ROMAN CGI Data Integration Processor (DIP)"
 dynamic = ["version"]
+keywords = ["roman", "cgi", "corgi", "corgidrp"]
 license-files = ["LICENSE.txt"]
 name = "DIP"
 readme = "README.md"
