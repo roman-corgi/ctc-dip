@@ -12,6 +12,7 @@ notes.txt
 .DS_Store
 **/auto/
 **/bindings/
+dip/_version.py
 dip/l1/
 dip/l2a/
 dip/l2b/
