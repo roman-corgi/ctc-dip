@@ -14,7 +14,7 @@ classifiers = [
 ]
 description = "ROMAN CGI Data Integration Processor (DIP)"
 dynamic = ["version"]
-license = { file = "LICENSE.txt" }
+license-files = ["LICENSE"]
 name = "DIP"
 readme = "README.md"
 requires-python = ">=3.11"
