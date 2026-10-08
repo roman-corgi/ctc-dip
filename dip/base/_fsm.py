@@ -1,5 +1,6 @@
 '''Data Integration Processor (DIP) base elements'''
 
+import abc
 import corgidrp.ops
 import dawgie
 import dip.basis.fsm
@@ -30,7 +31,6 @@ LOG = logging.getLogger(__name__)
 
 
 class Orchestrator(dip.basis.fsm.AbstractModel):
-    # REDO: # pylint: disable=abstract-method
     def _do_construction(self) -> bool:
         return True
 
@@ -40,6 +40,10 @@ class Orchestrator(dip.basis.fsm.AbstractModel):
             if self.dawgie_exc is None
             else dip.basis.fsm.AlertStatus.SECURED
         )
+
+    @abc.abstractmethod
+    def _do_delegation(self):
+        pass
 
     def _do_sanitization(self):
         pass

@@ -1,5 +1,6 @@
 '''define the hard bits of categorization'''
 
+import abc
 import dawgie
 import dawgie.db
 import dip.base
@@ -21,7 +22,6 @@ LOG = logging.getLogger(__name__)
 
 
 class FSM(dip.base.Orchestrator):
-    # REDO: # pylint: disable=abstract-method
     # pylint: disable=too-many-branches,too-many-return-statements
     @staticmethod
     def _apply(commands, fn, tagname):
@@ -54,7 +54,7 @@ class FSM(dip.base.Orchestrator):
                     r = getattr(Operands, command.operator.replace('-', '_'))(
                         val, vals
                     )
-                    LOG.info(
+                    LOG.debug(
                         'Keyword %s = "%s" and results in %s against %s',
                         command.keyword,
                         val,
@@ -141,8 +141,12 @@ class FSM(dip.base.Orchestrator):
                     self.outputs['channel'][channels[0]].append(l1)
             else:
                 self.outputs['channel']['unk'].append(l1)
-        LOG.info('output: %s', str(self.outputs['channel']))
+        LOG.debug('output: %s', str(self.outputs['channel']))
         return dip.base.ProductStatus.ALL
+
+    @abc.abstractmethod
+    def _do_delegation(self):
+        pass
 
 
 class AggFSM(FSM):

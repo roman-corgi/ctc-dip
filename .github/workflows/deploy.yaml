@@ -5,7 +5,7 @@ on:
 permissions:
   contents: read
 jobs:
-  Build:
+  Package:
     name: Build DIP
     runs-on: ubuntu-latest
     steps:
