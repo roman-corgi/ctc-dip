@@ -17,7 +17,7 @@ dynamic = ["version"]
 keywords = ["roman", "cgi", "corgi", "corgidrp"]
 license="LicenseRef-Proprietary"
 license-files = ["LICENSE.txt"]
-name = "DIP"
+name = "ctc-dip"
 readme = "README.md"
 requires-python = ">3.11"
 
