@@ -35,7 +35,7 @@ cd $(realpath $(dirname $0)/..)
 tools/clean.sh
 export PYTHONPATH=.
 declare -i err_count=0
-python -m dip.basis.transmute -v
+python -m dip.basis.transmute --version '1, 0, 0' -v
 mkdir -p dip/bindings
 for xsd in $(ls schema/*.xsd | sort -r)
 do
