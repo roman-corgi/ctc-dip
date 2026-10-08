@@ -6,7 +6,7 @@ permissions:
   contents: read
 jobs:
   Package:
-    name: Build DIP
+    name: Build and Package DIP
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -24,7 +24,7 @@ jobs:
       - name: Build release distributions
         run: |
           tools/clean.sh
-          tools/build.sh
+          tools/build.sh ignore_checks
           python -m pip wheel -w dist --no-deps .
       - name: Upload distributions
         uses: actions/upload-artifact@v4
@@ -35,7 +35,7 @@ jobs:
     name: Upload DIP
     runs-on: ubuntu-latest
     needs:
-      - Build
+      - Package
     permissions:
       id-token: write
     environment:

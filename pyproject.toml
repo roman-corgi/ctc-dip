@@ -61,5 +61,5 @@ __commit_id__: str | None
 __version__ = version = {version!r}
 __version_tuple__ = version_tuple = {version_tuple!r}
 
-__commit_id__ = commit_id = {commit_id!r}
+__commit_id__ = commit_id = {scm_version.node!r}
 """
