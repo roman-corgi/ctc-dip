@@ -13,7 +13,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 description = "ROMAN CGI Data Integration Processor (DIP)"
-dynamic = ["version"]
+dynamic = ["dependencies", "version"]
 keywords = ["roman", "cgi", "corgi", "corgidrp"]
 license="LicenseRef-Proprietary"
 license-files = ["LICENSE.txt"]
@@ -26,6 +26,9 @@ Homepage = "https://roman-corgi.github.io/ctc-dip/"
 
 [tool.setuptools]
 packages = { find = {} }
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
 
 [tool.setuptools.package-data]
 "dip.basis" = ["*.dot"]
