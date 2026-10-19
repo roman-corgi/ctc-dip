@@ -54,7 +54,7 @@ def generic_view(sv: dawgie.StateVector, visitor: dawgie.Visitor):
     '''
     visitor.add_declaration_inline('', div='<div><hr>')
     for k, v in sorted(sv.items(), key=lambda t: t[0]):
-        if isinstance(v, _types.AuxillaryFile):
+        if isinstance(v, (_types.AuxillaryFile, _types.Configuration)):
             visitor.add_declaration_inline(f'{k}:', tag='b')
             visitor.add_declaration_inline(str(v.name))
         elif isinstance(v, _types.Manifest):
