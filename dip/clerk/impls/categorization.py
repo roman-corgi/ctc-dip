@@ -163,6 +163,9 @@ class AggFSM(FSM):
                     dawgie.db.targets(),
                 )
             )
+            if not targets:
+                LOG.warning('The visit %s does not appear to be an aggregate. Skipping.', visit)
+                continue  # nothing to see here after all
             while not targets.isdisjoint(set(self._jobs(system))):
                 LOG.warning(
                     'Part of visit %s is being processed - '
