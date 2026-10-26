@@ -64,6 +64,7 @@ class FSM(dip.base.Orchestrator):
             m.deserialize(do['l1_manifest'])
             mp.extend(Path(p) for p in m)
             self.__manifest = mp.quarantine(location)
+            mp = dip.base.Manifest()
             m.deserialize(do['cal_manifest'])
             mp.extend(Path(p) for p in m)
             mp.quarantine(self.__caldir)
