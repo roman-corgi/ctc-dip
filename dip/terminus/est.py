@@ -47,7 +47,7 @@ class FSM(dip.base.Orchestrator):
             do = yaml.safe_load(self._todo.read_text(encoding='utf-8'))
             for k, t in [
                 ('cal_manifest', True),
-                ('l1_manifest', True),
+                ('input_manifest', True),
                 ('outdir', False),
                 ('recipe', True),
             ]:
