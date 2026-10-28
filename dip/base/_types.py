@@ -102,6 +102,22 @@ class Manifest(Contaminable, collections.UserList, dawgie.Value):
         self._at: str = 'unspecified'
         self._now = datetime.now(UTC)
 
+    def __getstate__(self) -> dict:
+        '''pickle state, omitting the creation time when empty
+
+        dawgie decides a value is new, and schedules every algorithm that
+        depends on it, by hashing its pickle. With _now included, every empty
+        channel manifest from categorization hashes uniquely and fires its
+        downstream channel. Dropping _now when empty makes all empty manifests
+        identical so only populated channels fire. Non-empty manifests keep _now
+        so re-running the same files still re-triggers downstream processing.
+
+        Returns the instance __dict__ (a copy without _now when empty).
+        '''
+        if self.data:
+            return self.__dict__
+        return {k: v for k, v in self.__dict__.items() if k != '_now'}
+
     @property
     def at(self) -> str:
         return self._at
