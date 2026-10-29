@@ -47,7 +47,7 @@ class FSM(dip.base.Orchestrator):
             do = yaml.safe_load(self._todo.read_text(encoding='utf-8'))
             for k, t in [
                 ('cal_manifest', True),
-                ('l1_manifest', True),
+                ('input_manifest', True),
                 ('outdir', False),
                 ('recipe', True),
             ]:
@@ -61,7 +61,7 @@ class FSM(dip.base.Orchestrator):
             self.__outdir.mkdir(parents=True, exist_ok=True)
             m = dip.base.Manifest()
             mp = dip.base.Manifest()
-            m.deserialize(do['l1_manifest'])
+            m.deserialize(do['input_manifest'])
             mp.extend(Path(p) for p in m)
             self.__manifest = mp.quarantine(location)
             mp = dip.base.Manifest()
