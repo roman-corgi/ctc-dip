@@ -93,15 +93,6 @@ class FSM(dip.base.Orchestrator):
             outputdir=str(self.__outdir),
             template=str(self.__template) if self.__template else None,
         )
-        LOG.info(
-            'marking files owned by me as read-only in %s', str(self.__outdir)
-        )
-        for path in self.__outdir.rglob("*"):
-            try:
-                if path.is_file() and path.stat().st_uid == os.getuid():
-                    path.chmod(0x444)
-            except (PermissionError, FileNotFoundError):
-                continue
         LOG.info('done processing')
         return dip.basis.fsm.ProductStatus.ALL
 
@@ -116,6 +107,21 @@ class FSM(dip.base.Orchestrator):
                         shutil.rmtree(item)
                     else:
                         item.unlink()
+
+    def _do_warehouse(self) -> bool:
+        LOG.info(
+            'marking files owned by me as read-only in %s', str(self.__outdir)
+        )
+        for path in self.__outdir.rglob("*"):
+            try:
+                if path.is_file() and path.stat().st_uid == os.getuid():
+                    path.chmod(0x444)
+            except (PermissionError, FileNotFoundError):
+                LOG.exception(
+                    'could not set permissions as read-only on file %s because',
+                    str(path),
+                )
+        return True
 
 
 def _check(key: str, path: str, isfile: bool = True) -> Path:
