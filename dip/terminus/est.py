@@ -45,12 +45,21 @@ class FSM(dip.base.Orchestrator):
         try:  # pylint: disable=consider-using-with
             # just create it because the FSM always calls sanitzation()
             do = yaml.safe_load(self._todo.read_text(encoding='utf-8'))
-            for k, t in [
-                ('cal_manifest', True),
-                ('input_manifest', True),
-                ('outdir', False),
-                ('recipe', True),
+            # (yaml_key, type(isfile), optional)
+            for k, t, o in [
+                ('cal_manifest', True, False),
+                ('configuration_file', True, True),
+                ('input_manifest', True, False),
+                ('outdir', False, False),
+                ('recipe', True, False),
+                ('user_templates', False, True),
             ]:
+                if k not in do:
+                    if o:
+                        continue
+                    raise ValueError(
+                        f'The key {k} must be present in do.*.yaml'
+                    )
                 do[k] = _check(k, do[k], t)
             self.__sandbox = TemporaryDirectory()
             location = Path(self.__sandbox.name)
@@ -68,6 +77,10 @@ class FSM(dip.base.Orchestrator):
             m.deserialize(do['cal_manifest'])
             mp.extend(Path(p) for p in m)
             mp.quarantine(self.__caldir)
+            for k in ['configuration_file', 'user_templates']:
+                if k in do:
+                    fn = 'corgidrp.cfg' if 'configuration_file' == k else k
+                    Path(location / fn).symlink_to(do['k'])
         except:  # noqa; 722 # pylint: disable=bare-except
             LOG.exception('Cound not create a sanbox')
             success = False
