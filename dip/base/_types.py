@@ -119,7 +119,7 @@ class Manifest(Contaminable, collections.UserList, dawgie.Value):
         if clear:
             self.clear()
         with open(fn, 'rt', encoding='utf-8') as file:
-            self.extend(yaml.safe_load(file))
+            self.extend(yaml.safe_load(os.path.expandvars(file.read())))
 
     def features(self):
         return self._feats

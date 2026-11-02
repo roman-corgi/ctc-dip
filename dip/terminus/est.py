@@ -44,7 +44,9 @@ class FSM(dip.base.Orchestrator):
         success = True
         try:  # pylint: disable=consider-using-with
             # just create it because the FSM always calls sanitzation()
-            do = yaml.safe_load(self._todo.read_text(encoding='utf-8'))
+            do = yaml.safe_load(
+                os.path.expandvars(self._todo.read_text(encoding='utf-8')) 
+            )
             # (yaml_key, type(isfile), optional)
             for k, t, o in [
                 ('cal_manifest', True, False),
