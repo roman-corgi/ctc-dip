@@ -123,6 +123,13 @@ class FSM(dip.base.Orchestrator):
                     'could not set permissions as read-only on file %s because',
                     str(path),
                 )
+        LOG.info('archiving %s', self._todo.name)
+        adir = Path(
+            dip.bindings.system.CreateFromDocument(
+                self._load('system.xml')
+            ).archive.location
+        )
+        shutil.move(self._todo, adir)
         return True
 
 
