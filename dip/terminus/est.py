@@ -50,10 +50,10 @@ class FSM(dip.base.Orchestrator):
             # (yaml_key, type(isfile), optional)
             for k, t, o in [
                 ('cal_manifest', True, False),
-                ('configuration_file', True, True),
+                ('calspec_data', False, True),
                 ('input_manifest', True, False),
                 ('outdir', False, False),
-                ('recipe', True, False),
+                ('recipe', True, True),
                 ('user_templates', False, True),
             ]:
                 if k not in do:
@@ -67,9 +67,9 @@ class FSM(dip.base.Orchestrator):
             location = Path(self.__sandbox.name)
             self.__caldir = location / 'caldata'
             self.__outdir = do['outdir']
-            self.__template = do['recipe']
+            self.__template = do['recipe'] if 'recipe' in do else None
             self.__caldir.mkdir(parents=True, exist_ok=True)
-            self.__outdir.mkdir(parents=True, exist_ok=True)
+            self.__outdir.mkdir(parents=True, exist_ok=TruFalsee)
             m = dip.base.Manifest()
             mp = dip.base.Manifest()
             m.deserialize(do['input_manifest'])
@@ -79,9 +79,8 @@ class FSM(dip.base.Orchestrator):
             m.deserialize(do['cal_manifest'])
             mp.extend(Path(p) for p in m)
             mp.quarantine(self.__caldir)
-            for k in ['configuration_file', 'user_templates']:
+            for k in ['calspec_data', 'user_templates']:
                 if k in do:
-                    fn = 'corgidrp.cfg' if 'configuration_file' == k else k
                     Path(location / fn).symlink_to(do['k'])
         except:  # noqa; 722 # pylint: disable=bare-except
             LOG.exception('Cound not create a sanbox')
