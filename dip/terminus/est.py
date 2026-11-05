@@ -45,7 +45,7 @@ class FSM(dip.base.Orchestrator):
         try:  # pylint: disable=consider-using-with
             # just create it because the FSM always calls sanitzation()
             do = yaml.safe_load(
-                os.path.expandvars(self._todo.read_text(encoding='utf-8')) 
+                os.path.expandvars(self._todo.read_text(encoding='utf-8'))
             )
             # (yaml_key, type(isfile), optional)
             for k, t, o in [
@@ -69,7 +69,7 @@ class FSM(dip.base.Orchestrator):
             self.__outdir = do['outdir']
             self.__template = do['recipe'] if 'recipe' in do else None
             self.__caldir.mkdir(parents=True, exist_ok=True)
-            self.__outdir.mkdir(parents=True, exist_ok=TruFalsee)
+            self.__outdir.mkdir(parents=True, exist_ok=True)
             m = dip.base.Manifest()
             mp = dip.base.Manifest()
             m.deserialize(do['input_manifest'])
@@ -79,9 +79,10 @@ class FSM(dip.base.Orchestrator):
             m.deserialize(do['cal_manifest'])
             mp.extend(Path(p) for p in m)
             mp.quarantine(self.__caldir)
+            corgihome = Path(os.path.expandvars('${HOME}/.corgidrp'))
             for k in ['calspec_data', 'user_templates']:
                 if k in do:
-                    Path(location / fn).symlink_to(do['k'])
+                    (corgihome / k).symlink_to(do['k'])
         except:  # noqa; 722 # pylint: disable=bare-except
             LOG.exception('Cound not create a sanbox')
             success = False
