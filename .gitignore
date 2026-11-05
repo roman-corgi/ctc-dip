@@ -12,7 +12,7 @@ notes.txt
 .DS_Store
 **/auto/
 **/bindings/
-DIP.egg-info/
+ctc_dip.egg-info/
 dip/_version.py
 dip/l1/
 dip/l2a/
