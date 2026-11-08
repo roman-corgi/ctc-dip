@@ -47,18 +47,27 @@ class FSM(dip.base.Orchestrator):
             do = yaml.safe_load(
                 os.path.expandvars(self._todo.read_text(encoding='utf-8'))
             )
-            for k, t in [
-                ('cal_manifest', True),
-                ('input_manifest', True),
-                ('outdir', False),
-                ('recipe', True),
+            # (yaml_key, type(isfile), optional)
+            for k, t, o in [
+                ('cal_manifest', True, False),
+                ('calspec_data', False, True),
+                ('input_manifest', True, False),
+                ('outdir', False, False),
+                ('recipe', True, True),
+                ('user_templates', False, True),
             ]:
+                if k not in do:
+                    if o:
+                        continue
+                    raise ValueError(
+                        f'The key {k} must be present in do.*.yaml'
+                    )
                 do[k] = _check(k, do[k], t)
             self.__sandbox = TemporaryDirectory()
             location = Path(self.__sandbox.name)
             self.__caldir = location / 'caldata'
             self.__outdir = do['outdir']
-            self.__template = do['recipe']
+            self.__template = do['recipe'] if 'recipe' in do else None
             self.__caldir.mkdir(parents=True, exist_ok=True)
             self.__outdir.mkdir(parents=True, exist_ok=True)
             m = dip.base.Manifest()
@@ -70,6 +79,10 @@ class FSM(dip.base.Orchestrator):
             m.deserialize(do['cal_manifest'])
             mp.extend(Path(p) for p in m)
             mp.quarantine(self.__caldir)
+            corgihome = Path(os.path.expandvars('${HOME}/.corgidrp'))
+            for k in ['calspec_data', 'user_templates']:
+                if k in do:
+                    (corgihome / k).symlink_to(do['k'])
         except:  # noqa; 722 # pylint: disable=bare-except
             LOG.exception('Cound not create a sanbox')
             success = False
