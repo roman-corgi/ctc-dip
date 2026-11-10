@@ -82,7 +82,8 @@ class FSM(dip.base.Orchestrator):
             corgihome = Path(os.path.expandvars('${HOME}/.corgidrp'))
             for k in ['calspec_data', 'user_templates']:
                 if k in do:
-                    (corgihome / k).symlink_to(do['k'])
+                    mp = mp.from_dir(do[k])
+                    mp.quarantine(corgihome / k)
         except:  # noqa; 722 # pylint: disable=bare-except
             LOG.exception('Cound not create a sanbox')
             success = False

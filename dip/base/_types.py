@@ -124,6 +124,18 @@ class Manifest(Contaminable, collections.UserList, dawgie.Value):
     def features(self):
         return self._feats
 
+    def from_dir(self, path: pathlib.Path) -> typing.Self:
+        '''load all files in a directory
+
+        Rather than create a manifest.yaml file, just load the entire contents
+        of a directory as a manifest.
+        '''
+        if not path.is_dir():
+            raise TypeError('must be a directory and exist')
+        result = Manifest()
+        result.extend(fn for fn in path.iterdir() if fn.is_file())
+        return result
+
     def quarantine(self, location: pathlib.Path) -> typing.Self:
         '''move the contents to the quarenteen location
 
