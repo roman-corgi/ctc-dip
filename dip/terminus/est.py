@@ -131,7 +131,7 @@ class FSM(dip.base.Orchestrator):
         for path in self.__outdir.rglob("*"):
             try:
                 if path.is_file() and path.stat().st_uid == os.getuid():
-                    path.chmod(0x444)
+                    path.chmod(0o444)
             except (PermissionError, FileNotFoundError):
                 LOG.exception(
                     'could not set permissions as read-only on file %s because',
