@@ -9,8 +9,6 @@ import shutil
 import typing
 import yaml
 
-from datetime import UTC, datetime
-
 
 class Contaminable(abc.ABC):  # pylint: disable=too-few-public-methods
     @abc.abstractmethod
@@ -100,7 +98,6 @@ class Manifest(Contaminable, collections.UserList, dawgie.Value):
         self._version_ = dawgie.VERSION(1, 0, 0)
         self._feats = []
         self._at: str = 'unspecified'
-        self._now = datetime.now(UTC)
 
     @property
     def at(self) -> str:
