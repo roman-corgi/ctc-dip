@@ -83,6 +83,7 @@ class FSM(dip.base.Orchestrator):
             for k in ['calspec_data', 'user_templates']:
                 if k in do:
                     mp = mp.from_dir(do[k])
+                    (corgihome / k).mkdir(parents=True, exist_ok=True)
                     mp.quarantine(corgihome / k)
         except:  # noqa; 722 # pylint: disable=bare-except
             LOG.exception('Cound not create a sanbox')
