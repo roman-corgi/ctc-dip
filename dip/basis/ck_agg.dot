@@ -120,9 +120,14 @@ digraph AggregationDesign
     agg_sort -> agg_cal_absflux_man;
     agg_sort -> agg_cal_boresight_man;
     agg_sort -> agg_cal_corethpt_man;
+    agg_sort -> agg_cal_dpm_man;
+    agg_sort -> agg_cal_ff_man;
     agg_sort -> agg_cal_polff_man;
+    agg_sort -> agg_cal_lsf_man;
+    agg_sort -> agg_cal_mm_man;
     agg_sort -> agg_cal_ndfiltspec_man;
     agg_sort -> agg_cal_pupil_man;
+    agg_sort -> agg_cal_wzp_man;
     agg_sort -> agg_eng_a_man;
     agg_sort -> agg_nfov_a_man;
     agg_sort -> agg_nfov_nc_man;
