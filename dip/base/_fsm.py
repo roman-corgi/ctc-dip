@@ -267,7 +267,7 @@ class Runner(dip.basis.fsm.AbstractModel):
             dstfn.chmod(
                 0o444
             )  # make it more efficient for feeding forward (link rather than copy)
-            if not fn.endswith('_cal.fits'):
+            if re.fullmatch(r".*_l[1-4][ab_]\.fits", dstfn.name):
                 self.outputs['product']['manifest'].append(dstfn.resolve())
                 name = dstfn.stem
         if name:
